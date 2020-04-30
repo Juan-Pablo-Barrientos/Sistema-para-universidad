@@ -59,7 +59,8 @@ namespace BusinessEntity
         public enum TipoPersona
         {
             Alumno,
-            Docente
+            Docente,
+            perro
         }
 
         private TipoPersona _TiposPersonas;
