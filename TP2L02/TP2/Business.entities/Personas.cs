@@ -65,7 +65,7 @@ namespace BusinessEntity
             queso,
             pimiento,
             lapapota,
-            lapapota2
+            lapapota2,
 
         }
 
