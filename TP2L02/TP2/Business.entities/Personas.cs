@@ -61,7 +61,9 @@ namespace BusinessEntity
             Alumno,
             Docente,
             perro,
-            papa
+            papa,
+            papota
+
         }
 
         private TipoPersona _TiposPersonas;
