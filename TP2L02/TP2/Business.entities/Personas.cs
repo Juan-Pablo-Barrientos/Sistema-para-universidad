@@ -63,8 +63,7 @@ namespace BusinessEntity
             jefeCatedra,
             papa,
             queso,
-            pimiento,
-            piedra
+            pimiento
 
         }
 
