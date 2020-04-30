@@ -67,6 +67,7 @@ namespace BusinessEntity
             remolacha
 
 
+
         }
 
         private TipoPersona _TiposPersonas;
