@@ -61,7 +61,8 @@ namespace BusinessEntity
             Alumno,
             Docente,
             jefeCatedra,
-            papa
+            papa,
+            queso
 
         }
 
