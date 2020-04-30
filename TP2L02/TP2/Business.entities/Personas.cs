@@ -64,6 +64,8 @@ namespace BusinessEntity
             papa,
             queso,
             pimiento,
+            lapapota
+
         }
 
         private TipoPersona _TiposPersonas;
