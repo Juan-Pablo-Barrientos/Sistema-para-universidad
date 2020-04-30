@@ -62,7 +62,8 @@ namespace BusinessEntity
             Docente,
             jefeCatedra,
             papa,
-            queso
+            queso,
+            pimiento
 
         }
 
