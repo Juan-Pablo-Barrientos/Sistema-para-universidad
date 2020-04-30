@@ -59,7 +59,13 @@ namespace BusinessEntity
         public enum TipoPersona
         {
             Alumno,
-            Docente
+            Docente,
+            jefeCatedra,
+            papa,
+            queso,
+            pimiento,
+            lapapota,
+            lapapota2
 
         }
 
