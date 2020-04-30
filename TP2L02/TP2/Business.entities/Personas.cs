@@ -60,7 +60,8 @@ namespace BusinessEntity
         {
             Alumno,
             Docente,
-            perro
+            perro,
+            papa
         }
 
         private TipoPersona _TiposPersonas;
