@@ -56,14 +56,20 @@ namespace BusinessEntity
             get { return _Telefono; }
             set { _Telefono = value; }
         }
-        /*private TiposPersonas _TipoPersona;
-        public TiposPersonas TipoPersona
+        public enum TipoPersona
         {
-            get { return _TipoPersona; }
-            set { _TipoPersona = value; }
+            Alumno,
+            Docente
 
         }
-        */
+
+        private TipoPersona _TiposPersonas;
+        public TipoPersona TiposPersonas
+        {
+            get { return _TiposPersonas; }
+            set { _TiposPersonas = value; }
+        }
+         
 
 
 

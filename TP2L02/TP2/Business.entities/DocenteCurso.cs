@@ -8,6 +8,14 @@ namespace Business.entities
 {
     class DocenteCurso
     {
+        public enum TiposCargos
+        {
+            Docente,
+            Jefecatedra,
+            Auxiliar
+
+        }
+
         private TiposCargos _Cargo;
         public TiposCargos Cargo
         {
