@@ -64,9 +64,7 @@ namespace BusinessEntity
             papa,
             queso,
             pimiento,
-            remolacha
-
-
+            piedra
 
         }
 
