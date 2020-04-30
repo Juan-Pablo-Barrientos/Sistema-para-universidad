@@ -60,7 +60,8 @@ namespace BusinessEntity
         {
             Alumno,
             Docente,
-            jefeCatedra
+            jefeCatedra,
+            papa
 
         }
 
