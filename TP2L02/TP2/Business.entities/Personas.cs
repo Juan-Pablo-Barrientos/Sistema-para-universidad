@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Business.Logic;
 
 
-namespace BusinessEntity
+namespace Business.Entities
 {
-    public class Personas
+    public class Personas : BusinessEntity
     {
         private string _Apellido;
         public string Apellido

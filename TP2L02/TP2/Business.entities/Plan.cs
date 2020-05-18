@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using Business.Logic;
 
 
-namespace BusinessEntity
+namespace Business.Entities
 {
 
-    public class Plan
+    public class Plan : BusinessEntity
     {
         private string _Descripcion;
         public string Descripcion

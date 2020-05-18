@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Business.Logic;
 
-namespace BusinessEntity
+namespace Business.Entities
 {
-    public class Comision
+    public class Comision : BusinessEntity
     {
         private int _AnioEspecialidad;
         public int AnioEspecialidad

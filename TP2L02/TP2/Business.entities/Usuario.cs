@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
-using Business.Logic;
+using Business.Entities;
 
-namespace TP2.Entidades
+namespace Business.Entities
 {
-    public class Usuario
+    public class Usuario : BusinessEntity
     {
+        
         private string _NombreUsuario;
         public string NombreUsuario
         {
@@ -48,7 +50,6 @@ namespace TP2.Entidades
             get { return _Habilitado; }
             set { _Habilitado = value; }
         }
-
 
     }
 }

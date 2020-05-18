@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Business.Logic;
 
-namespace BusinessEntity
+namespace Business.Entities
 {
-    public class ModuloUsuario
+    public class ModuloUsuario : BusinessEntity
     {
         private int _IdUsuario;
         public int IdUsuario

@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Business.Logic;
 
-namespace BusinessEntity
+namespace Business.Entities
 {
-    public class Curso
+    public class Curso : BusinessEntity
     {
         private int _AnioCalendario;
         public int AnioCalendario

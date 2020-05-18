@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Business.Logic;
 
-namespace Business.entities
+namespace Business.Entities
 {
-    class DocenteCurso
+    class DocenteCurso : BusinessEntity
     {
         public enum TiposCargos
         {

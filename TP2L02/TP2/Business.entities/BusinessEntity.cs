@@ -8,7 +8,7 @@ using Business.Logic;
 
 namespace Business.Entities
 {
-    public class BussinessEntity
+    public class BusinessEntity
     {
         public enum States
         {
@@ -24,17 +24,12 @@ namespace Business.Entities
             get { return _State; }
             set { _State = value; }
         }
+        private int _ID;
+        public int ID { get => _ID; set => _ID = value; }
 
-
-        public BussinessEntity()
+        public BusinessEntity()
         {
             this.State = States.New;
-        }
-        private int _ID;
-        public int ID
-        {
-            get {return _ID ;}
-            set { _ID = value; }
         }
 
     }

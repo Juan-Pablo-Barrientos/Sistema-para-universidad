@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Business.Logic;
 
-namespace BusinessEntity
+namespace Business.Entities
 {
-    public class AlumnosIncripcion
+    public class AlumnosIncripcion : BusinessEntity
     {
         private string _Condicion;
         public string Condicion

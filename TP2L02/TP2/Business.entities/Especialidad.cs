@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Business.Logic;
 
-namespace BusinessEntity
+namespace Business.Entities
 {
-    public class Especialidad
+    public class Especialidad : BusinessEntity
     {
         private string _Descripcion;
         public string Descripcion
