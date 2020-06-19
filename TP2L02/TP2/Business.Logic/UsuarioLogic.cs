@@ -13,13 +13,12 @@ namespace Business.Logic
     {
         private Data.Database.UsuarioAdapter _UsuarioData;
         public UsuarioAdapter UsuarioData { get => _UsuarioData; set => _UsuarioData = value; }
-        
-        
+
+
         //Metodos
         public UsuarioLogic()
         {
-            this.UsuarioData=null;
-
+            UsuarioData = new Data.Database.UsuarioAdapter();
         }
 
         public List<Usuario> GetAll()
