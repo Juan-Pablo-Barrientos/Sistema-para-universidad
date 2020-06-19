@@ -17,11 +17,11 @@ namespace Business.Entities
             get { return _NombreUsuario; }
             set { _NombreUsuario = value; }
         }
-        private string _clave;
-        public string clave
+        private string _Clave;
+        public string Clave
         {
-            get { return _clave; }
-            set { _clave = value; }
+            get { return _Clave; }
+            set { _Clave = value; }
         }
 
         private string _Nombre;
@@ -38,11 +38,11 @@ namespace Business.Entities
             set { _Apellido = value; }
         }
 
-        private string _Email;
-        public string Email
+        private string _EMail;
+        public string EMail
         {
-            get { return _Email; }
-            set { _Email = value; }
+            get { return _EMail; }
+            set { _EMail = value; }
         }
         private bool _Habilitado;
         public bool Habilitado
