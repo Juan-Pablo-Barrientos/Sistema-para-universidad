@@ -27,9 +27,8 @@ namespace UI.Consola
                 Console.WriteLine("4 - Modificar");
                 Console.WriteLine("5 - Eliminar");
                 Console.WriteLine("6 - Salir");
-                
-
-
+            
+            
             }
 
 
