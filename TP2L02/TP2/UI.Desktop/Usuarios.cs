@@ -52,14 +52,15 @@ namespace UI.Desktop
         {
             int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;            
             UsuarioDesktop formUsuario = new UsuarioDesktop(ID,ApplicationForm.ModoForm.Alta);
-            /*
+            
+            
+            
             if (formUsuario.ShowDialog() == DialogResult.OK)
             {
                 // Read the contents of testDialog's TextBox.
                  new UsuarioLogic().Delete(ID);
             }       
-            */
-            //formUsuario.ShowDialog();
+            
             this.Listar();
         }
 

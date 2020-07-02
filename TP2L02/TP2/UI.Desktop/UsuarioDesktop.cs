@@ -68,6 +68,7 @@ namespace UI.Desktop
                 UsuarioActual.NombreUsuario = txtUsuario.Text;
                 UsuarioActual.Clave = txtClave.Text;
                 UsuarioActual.Clave = txtConfirmarClave.Text;
+                UsuarioActual.Habilitado = chkHabilitado.Checked;
 
                 switch (Modo)
                 {
@@ -140,6 +141,8 @@ namespace UI.Desktop
         public UsuarioDesktop()
         {
             InitializeComponent();
+            this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
         }
 
         private void UsuarioDesktop_Load(object sender, EventArgs e)
@@ -155,7 +158,7 @@ namespace UI.Desktop
                 
                 Close();
             }
-         //  DialogResult der = DialogResult.OK; 
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
