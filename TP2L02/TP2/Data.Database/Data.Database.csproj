@@ -47,7 +47,7 @@
     <Compile Include="UsuarioAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Source\Repos\PusleXD\TP2-.net\TP2L02\TP2\Business.entities\Business.entities.csproj">
+    <ProjectReference Include="..\Business.entities\Business.entities.csproj">
       <Project>{7aec145a-027f-4656-855f-b910f9bd0ebe}</Project>
       <Name>Business.entities</Name>
     </ProjectReference>
