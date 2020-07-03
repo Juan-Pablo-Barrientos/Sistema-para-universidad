@@ -12,15 +12,14 @@ namespace Data.Database
         const string consKeyDefaultCnnString = "ConnStringLocal";
         //private SqlConnection sqlConnection = new SqlConnection("ConnectionString;");
 
-
+        
         private SqlConnection _sqlConn;
-        public SqlConnection sqlConn { get => _sqlConn; set => sqlConn = value; }
+        public SqlConnection sqlConn { get => _sqlConn; set => _sqlConn = value; }
 
         protected void OpenConnection()
         {
             string stringconnection = ConfigurationManager.ConnectionStrings[consKeyDefaultCnnString].ConnectionString;
-
-            SqlConnection sqlConn = new SqlConnection(stringconnection);
+            sqlConn = new SqlConnection(stringconnection);
             sqlConn.Open();
         }
 

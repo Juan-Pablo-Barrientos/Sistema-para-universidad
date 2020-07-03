@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Data.Database;
 using Business.Entities;
 
+
 namespace Business.Logic
 {
 
@@ -38,5 +39,6 @@ namespace Business.Logic
         {
             UsuarioData.Save(Usuario);
         }
+      
     }
 }

@@ -123,11 +123,6 @@ namespace Data.Database
         }
               
             
-            
-        
-        
-        
-     
 
         public Business.Entities.Usuario GetOne(int ID)
         {
