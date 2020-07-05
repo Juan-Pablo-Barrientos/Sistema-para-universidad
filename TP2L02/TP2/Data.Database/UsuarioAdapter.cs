@@ -279,11 +279,12 @@ namespace Data.Database
         {
             if (usuario.State == BusinessEntity.States.New)
             {
-                this.Delete(usuario.ID);
+
+                this.Insert(usuario);
             }
             else if (usuario.State == BusinessEntity.States.Deleted)
             {
-                this.Insert(usuario); 
+                this.Delete(usuario.ID);
             }
             else if (usuario.State == BusinessEntity.States.Modified)
             {
