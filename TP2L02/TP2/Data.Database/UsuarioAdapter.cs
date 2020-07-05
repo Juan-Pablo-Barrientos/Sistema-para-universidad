@@ -4,6 +4,7 @@ using System.Text;
 using Business.Entities;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq.Expressions;
 
 namespace Data.Database
 {
@@ -61,62 +62,72 @@ namespace Data.Database
         }
         #endregion
 
+
         public List<Usuario> GetAll()
         {
             //return new List<Usuario>(Usuarios);
 
             //instanciamos el objeto lista a retornar
             List<Usuario> usuarios = new List<Usuario>();
-
-            //abrimos la conexion a la base de datos con el metodo que creamos antes
-            this.OpenConnection();
-
-            /*
-             * creamos un objeto SqlCommand que sera la sentencia Sql
-             * que vamos a ejecutar contra la base de datos
-             * (los datos de la BD usuario, contraseña, servidor, etc.
-             * estan en el connection strin)
-             */
-
-            SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios", sqlConn);
-
-            /*
-             * instanciamos un objeto DataReader que sera
-             * el que recuperara los datos de la BD
-             */
-            SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
-
-            /*
-             * Read() lee una fila de las devueltas por el comando sql
-             * carga los datos en drUsuarios para poder accederlos,
-             * devuelve verdadero mientras haya podido leer datos y 
-             * avanza a la fila siguiente para el proximo read
-             */
-            while (drUsuarios.Read())
+            try
             {
-                /*creamos un objeto Usuario de la capa de entidades para 
-                 * copiar los datos de la fila del DataReader al objeto de
-                 * entidades
+                //abrimos la conexion a la base de datos con el metodo que creamos antes
+                this.OpenConnection();
+
+                /*
+                 * creamos un objeto SqlCommand que sera la sentencia Sql
+                 * que vamos a ejecutar contra la base de datos
+                 * (los datos de la BD usuario, contraseña, servidor, etc.
+                 * estan en el connection strin)
                  */
 
-                Usuario usr = new Usuario();
+                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios", sqlConn);
 
-                //ahora copiamos los datos de la fila al objeto
-                usr.ID = (int) drUsuarios["id_usuario"];
-                usr.NombreUsuario = (string) drUsuarios["nombre_usuario"];
-                usr.Clave = (string) drUsuarios["clave"];
-                usr.Habilitado = (bool) drUsuarios["habilitado"];
-                usr.Nombre = (string) drUsuarios["nombre"];
-                usr.Apellido = (string) drUsuarios["Apellido"];
-                usr.EMail = (string) drUsuarios["email"];
-                //agregamos el objeto con datos a la lista que devolveremos
-                usuarios.Add(usr);
+                /*
+                 * instanciamos un objeto DataReader que sera
+                 * el que recuperara los datos de la BD
+                 */
+                SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+
+                /*
+                 * Read() lee una fila de las devueltas por el comando sql
+                 * carga los datos en drUsuarios para poder accederlos,
+                 * devuelve verdadero mientras haya podido leer datos y 
+                 * avanza a la fila siguiente para el proximo read
+                 */
+                while (drUsuarios.Read())
+                {
+                    /*creamos un objeto Usuario de la capa de entidades para 
+                     * copiar los datos de la fila del DataReader al objeto de
+                     * entidades
+                     */
+
+                    Usuario usr = new Usuario();
+
+                    //ahora copiamos los datos de la fila al objeto
+                    usr.ID = (int)drUsuarios["id_usuario"];
+                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    usr.Clave = (string)drUsuarios["clave"];
+                    usr.Habilitado = (bool)drUsuarios["habilitado"];
+                    usr.Nombre = (string)drUsuarios["nombre"];
+                    usr.Apellido = (string)drUsuarios["Apellido"];
+                    usr.EMail = (string)drUsuarios["email"];
+                    //agregamos el objeto con datos a la lista que devolveremos
+                    usuarios.Add(usr);
+                }
+
+                //cerramos el DataReader y la conexion a la BD
+                drUsuarios.Close();
             }
-
-            //cerramos el DataReader y la conexion a la BD
-            drUsuarios.Close();
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de usuarios", Ex);
+                throw ExcepcionManejada;
+            }
+            finally { 
             this.CloseConnection();
-
+                    }
             //devolvemos el objeto
             return usuarios;
 
@@ -126,36 +137,157 @@ namespace Data.Database
 
         public Business.Entities.Usuario GetOne(int ID)
         {
-            return Usuarios.Find(delegate(Usuario u) { return u.ID == ID; });
+            Usuario usr = new Usuario();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios where id_usuario=@id", sqlConn);
+                cmdUsuarios.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+                if (drUsuarios.Read())
+                {
+                    usr.ID = (int)drUsuarios["id_usuario"];
+                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    usr.Clave = (string)drUsuarios["clave"];
+                    usr.Habilitado = (bool)drUsuarios["habilitado"];
+                    usr.Nombre = (string)drUsuarios["nombre"];
+                    usr.Apellido = (string)drUsuarios["apellido"];
+                    usr.EMail = (string)drUsuarios["email"];
+
+                }
+                drUsuarios.Close();
+            }
+      /*   catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de usuarios", Ex);
+                throw ExcepcionManejada;
+            
+            }*/
+            finally
+            {
+                this.CloseConnection();
+            }
+            return usr;
+
+            // return Usuarios.Find(delegate(Usuario u) { return u.ID == ID; });
+
         }
 
         public void Delete(int ID)
         {
-            Usuarios.Remove(this.GetOne(ID));
+            try
+            {
+                this.OpenConnection();
+                //creamos la sentencia sql y asignamos un valor al parametro
+                SqlCommand cmdDelete =
+                    new SqlCommand("delete usuarios where id_usuario=@id", sqlConn);
+                cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                //ejecutamos la sentencia sql
+                cmdDelete.ExecuteNonQuery();
+            }
+            //Usuarios.Remove(this.GetOne(ID));
+      
+      /*   catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de usuarios", Ex);
+                throw ExcepcionManejada;
+            
+            }*/
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
+        protected void Update(Usuario usuario)
+
+        {
+
+            try
+            {
+
+                this.OpenConnection();
+                SqlCommand cmdSave = new SqlCommand(
+                "UPDATE usuarios SET nombre_usuario = @nombre_usuario, clave = @clave, " +
+                "habilitado = @habilitado, nombre = @nombre, apellido = @apellido, email = @email " +
+                "WHERE id_usuario = @ id", sqlConn);
+            
+
+    cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = usuario.ID;
+                cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
+                cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
+                cmdSave.Parameters.Add("@habilitado", SqlDbType.VarChar, 50).Value = usuario.Habilitado;
+                cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
+                cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
+                cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.EMail;
+                cmdSave.ExecuteNonQuery();
+            }
+
+            catch (Exception Ex)
+            {
+
+                Exception ExcepcionManejada =
+                    new Exception("Error al modificar datos del usuario", Ex);
+                throw ExcepcionManejada;
+            }
+
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
+
+
+        protected void Insert(Usuario usuario)
+        {
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdSave = new SqlCommand(
+                "insert into usuarios(nombre_usuario,clave,habilitado,nombre,apellido,email)" +
+                "values(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email) " +
+                "select @@identity", //esta linea es para recuperar el ID que asigno el sql automaticamente
+                sqlConn);
+
+                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = usuario.ID;
+                cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
+                cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
+                cmdSave.Parameters.Add("@habilitado", SqlDbType.VarChar, 50).Value = usuario.Habilitado;
+                cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
+                cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
+                cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.EMail;
+                usuario.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
+                //asi se obtiene el ID que asigno al BD automaticamente
+            }
+
+            catch (Exception Ex)
+            {
+
+                Exception ExcepcionManejada =
+                    new Exception("Error al modificar datos del usuario", Ex);
+                throw ExcepcionManejada;
+            }
+
+            finally
+            {
+                this.CloseConnection();
+            }
         }
 
         public void Save(Usuario usuario)
         {
             if (usuario.State == BusinessEntity.States.New)
             {
-                int NextID = 0;
-                foreach (Usuario usr in Usuarios)
-                {
-                    if (usr.ID > NextID)
-                    {
-                        NextID = usr.ID;
-                    }
-                }
-                usuario.ID = NextID + 1;
-                Usuarios.Add(usuario);
+                this.Delete(usuario.ID);
             }
             else if (usuario.State == BusinessEntity.States.Deleted)
             {
-                this.Delete(usuario.ID);
+                this.Insert(usuario); 
             }
             else if (usuario.State == BusinessEntity.States.Modified)
             {
-                Usuarios[Usuarios.FindIndex(delegate(Usuario u) { return u.ID == usuario.ID; })]=usuario;
+                this.Update(usuario);
             }
             usuario.State = BusinessEntity.States.Unmodified;            
         }
