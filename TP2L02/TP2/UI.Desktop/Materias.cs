@@ -11,9 +11,9 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
-    public partial class Materia : Form
+    public partial class Materias : Form
     {
-        public Materia()
+        public Materias()
         {
             InitializeComponent();
             this.dgvMaterias.AutoGenerateColumns = false;
