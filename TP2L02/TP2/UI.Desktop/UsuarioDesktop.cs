@@ -10,16 +10,26 @@ using System.Windows.Forms;
 using Business.Logic;
 using Business.Entities;
 
+
 namespace UI.Desktop
 {
     public partial class UsuarioDesktop : ApplicationForm
     {
-
         public Usuario UsuarioActual;
+
+        #region constructores
+        public UsuarioDesktop()
+        {
+            InitializeComponent();
+            this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+        }
+      
         public UsuarioDesktop(ModoForm modo) : this()
         {
             Modo = modo;
         }
+
 
         public UsuarioDesktop(int ID, ModoForm modo) : this()
         {
@@ -28,6 +38,8 @@ namespace UI.Desktop
             MapearDeDatos();
 
         }
+        #endregion
+
         public override void MapearDeDatos()
         {
             this.txtID.Text = this.UsuarioActual.ID.ToString();
@@ -127,7 +139,7 @@ namespace UI.Desktop
                 return (false);
             }
 
-            if (!((txtEmail.Text.Contains("@")) && (txtEmail.Text.Contains(".com"))))
+            if (Business.Logic.Validar.EsMailValido(txtEmail.Text.Trim()))
             {
                 Notificar("El email ingresado no es válido. ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return (false);
@@ -138,12 +150,7 @@ namespace UI.Desktop
         }
 
 
-        public UsuarioDesktop()
-        {
-            InitializeComponent();
-            this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-        }
+       
 
         private void UsuarioDesktop_Load(object sender, EventArgs e)
         {
