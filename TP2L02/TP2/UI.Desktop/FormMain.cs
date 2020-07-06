@@ -17,21 +17,20 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FormMain_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void tsbUsuarios_Click(object sender, EventArgs e)
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Usuarios FormUsuarios = new Usuarios();
-            FormUsuarios.ShowDialog();
+
         }
 
-        private void tsbMaterias_Click(object sender, EventArgs e)
+        private void materiasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Materias FormMaterias = new Materias();
-            FormMaterias.ShowDialog();
+
         }
     }
 }
