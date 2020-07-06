@@ -157,20 +157,20 @@ namespace Data.Database
                 }
                 drUsuarios.Close();
             }
-      /*   catch (Exception Ex)
+         catch (Exception Ex)
             {
                 Exception ExcepcionManejada =
-                new Exception("Error al recuperar lista de usuarios", Ex);
+                new Exception("Error al recuperar usuario", Ex);
                 throw ExcepcionManejada;
             
-            }*/
+            }
             finally
             {
                 this.CloseConnection();
             }
             return usr;
 
-            // return Usuarios.Find(delegate(Usuario u) { return u.ID == ID; });
+         
 
         }
 
@@ -186,15 +186,14 @@ namespace Data.Database
                 //ejecutamos la sentencia sql
                 cmdDelete.ExecuteNonQuery();
             }
-            //Usuarios.Remove(this.GetOne(ID));
       
-      /*   catch (Exception Ex)
+         catch (Exception Ex)
             {
                 Exception ExcepcionManejada =
-                new Exception("Error al recuperar lista de usuarios", Ex);
+                new Exception("Error al recuperar usuario", Ex);
                 throw ExcepcionManejada;
             
-            }*/
+            }
             finally
             {
                 this.CloseConnection();
