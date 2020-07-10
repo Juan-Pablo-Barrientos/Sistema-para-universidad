@@ -181,28 +181,28 @@ namespace Data.Database
                 {
                     this.OpenConnection();
                     SqlCommand cmdSave = new SqlCommand(
-                    "insert into materias(id_materia,desc_materia,hs_semanales,hs_totales,id_plan)" +
+                    "insert into materias(id_materia,desc_materia,hs_semanales,hs_totales,@id_plan)" +
                     "values(@id_materia,@desc_materia,@hs_semanales,@hs_totales,@id_plan) " +
                     "select @@identity", //esta linea es para recuperar el ID que asigno el sql automaticamente 
                     sqlConn);
 
-                    cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = materia.ID;
+                    cmdSave.Parameters.Add("@id_materia", SqlDbType.Int).Value = materia.ID;
                     cmdSave.Parameters.Add("@desc_materia", SqlDbType.VarChar, 50).Value = materia.Descripcion;
                     cmdSave.Parameters.Add("@hs_semanales", SqlDbType.Int, 50).Value = materia.HSSemanales;
                     cmdSave.Parameters.Add("@hs_totales", SqlDbType.Int, 50).Value = materia.HSTotales;
-                    cmdSave.Parameters.Add("@id_plan", SqlDbType.Int, 50).Value = materia.IDPlan;
+                 //  cmdSave.Parameters.Add("@id_plan", SqlDbType.Int, 50).Value = materia.IDPlan;
                     materia.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
                     //asi se obtiene el ID que asigno al BD automaticamente
                 }
 
-                catch (Exception Ex)
+         /*       catch (Exception Ex)
                 {
 
                     Exception ExcepcionManejada =
                         new Exception("Error al crear la materia", Ex);
                     throw ExcepcionManejada;
                 }
-
+                */
                 finally
                 {
                     this.CloseConnection();
