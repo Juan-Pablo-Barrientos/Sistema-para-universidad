@@ -57,9 +57,6 @@ namespace UI.Desktop
             {
                 new UsuarioLogic().Delete(ID);
             }
-
-
-
            
             this.Listar();
         }

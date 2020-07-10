@@ -91,12 +91,12 @@ namespace Data.Database
                         Mat.Descripcion = (string)drMaterias["desc_materia"];
                         Mat.HSTotales = (int)drMaterias["hs_semanales"];
                         Mat.HSSemanales = (int)drMaterias["hs_totales"];
-                        Mat.IDPlan = (int)drMaterias["id_plan"];
-
+                  //    Mat.IDPlan = (int)drMaterias["id_plan"];
+                  // Temporalmente no implementado, cambiar cunado se añada el ID de plan
                     }
                     drMaterias.Close();
                 }
-                   catch (Exception Ex)
+                  catch (Exception Ex)
                       {
                           Exception ExcepcionManejada =
                           new Exception("Error al recuperar materia", Ex);
@@ -157,7 +157,8 @@ namespace Data.Database
                     cmdSave.Parameters.Add("@hs_semanales", SqlDbType.Int, 50).Value = materia.HSSemanales;
                     cmdSave.Parameters.Add("@hs_totales", SqlDbType.Int, 50).Value = materia.HSTotales;
                     //cmdSave.Parameters.Add("@id_plan", SqlDbType.VarChar, 50).Value = materia.IDPlan;
-                    cmdSave.ExecuteNonQuery();
+                    // Temporalmente no implementado, cambiar cunado se añada el ID de plan
+                cmdSave.ExecuteNonQuery();
                 }
 
                 catch (Exception Ex)

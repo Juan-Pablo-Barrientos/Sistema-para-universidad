@@ -17,9 +17,10 @@ namespace UI.Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MateriaDesktop());
+            Application.Run(new Materias());
             //Application.Run(new Materias());
-        }// TERMINAR MATERIADESKTOP, TERCER ABM, EXPRESION REGULAR, CONCATENAR NOTIFICACION DE VALIDAR
+        }//  TERCER ABM, EXPRESION REGULAR, CONCATENAR NOTIFICACION DE VALIDAR
         //NOTIFICACION TIENE Q SER UN METODO BUSINESS LOGIC,UNIFICAR MENUS,LOGIN APENAS INICIA.
+        //Materias se modifico para que ID PLAN sea NULL, MateriaAdapter con lineas ID PLAN comentadas.
     }
 }

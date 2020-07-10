@@ -57,11 +57,11 @@
             // tscMateria.ContentPanel
             // 
             this.tscMateria.ContentPanel.Controls.Add(this.tableLayoutPanel1);
-            this.tscMateria.ContentPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tscMateria.ContentPanel.Margin = new System.Windows.Forms.Padding(2);
             this.tscMateria.ContentPanel.Size = new System.Drawing.Size(683, 341);
             this.tscMateria.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscMateria.Location = new System.Drawing.Point(0, 0);
-            this.tscMateria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tscMateria.Margin = new System.Windows.Forms.Padding(2);
             this.tscMateria.Name = "tscMateria";
             this.tscMateria.Size = new System.Drawing.Size(683, 366);
             this.tscMateria.TabIndex = 0;
@@ -81,7 +81,7 @@
             this.tableLayoutPanel1.Controls.Add(this.dgvMaterias, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -93,7 +93,7 @@
             // 
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalir.Location = new System.Drawing.Point(615, 318);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(66, 21);
             this.btnSalir.TabIndex = 0;
@@ -105,7 +105,7 @@
             // 
             this.Actualizar.Dock = System.Windows.Forms.DockStyle.Right;
             this.Actualizar.Location = new System.Drawing.Point(531, 318);
-            this.Actualizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Actualizar.Margin = new System.Windows.Forms.Padding(2);
             this.Actualizar.Name = "Actualizar";
             this.Actualizar.Size = new System.Drawing.Size(80, 21);
             this.Actualizar.TabIndex = 1;
@@ -127,7 +127,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.dgvMaterias, 2);
             this.dgvMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMaterias.Location = new System.Drawing.Point(2, 2);
-            this.dgvMaterias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvMaterias.Margin = new System.Windows.Forms.Padding(2);
             this.dgvMaterias.MultiSelect = false;
             this.dgvMaterias.Name = "dgvMaterias";
             this.dgvMaterias.ReadOnly = true;
@@ -203,6 +203,7 @@
             this.tsNuevo.Name = "tsNuevo";
             this.tsNuevo.Size = new System.Drawing.Size(46, 22);
             this.tsNuevo.Text = "Nuevo";
+            this.tsNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
             // 
             // tsEditar
             // 
@@ -212,6 +213,7 @@
             this.tsEditar.Name = "tsEditar";
             this.tsEditar.Size = new System.Drawing.Size(41, 22);
             this.tsEditar.Text = "Editar";
+            this.tsEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
             // tsEliminar
             // 
@@ -223,15 +225,15 @@
             this.tsEliminar.Text = "Eliminar";
             this.tsEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
-            // Materia
+            // Materias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 366);
             this.Controls.Add(this.tscMateria);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Materia";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "Materias";
             this.Text = "Materias";
             this.Load += new System.EventHandler(this.MateriaForm_Load);
             this.tscMateria.ContentPanel.ResumeLayout(false);

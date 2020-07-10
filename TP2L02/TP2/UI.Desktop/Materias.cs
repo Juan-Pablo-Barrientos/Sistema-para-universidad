@@ -47,9 +47,25 @@ namespace UI.Desktop
             this.Listar();
         }
 
-        //NUEVO Y EDITAR PENDIENTE
+        //NUEVO Y EDITAR , en proceso 
 
+        private void tsbNuevo_Click(object sender, EventArgs e)
+        {
+            MateriaDesktop formMateria = new MateriaDesktop(ApplicationForm.ModoForm.Alta);
+            formMateria.ShowDialog();
+            this.Listar();
+        }
 
+        private void tsbEditar_Click(object sender, EventArgs e)
+        {
+            int ID = ((Business.Entities.Materia)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
+            MateriaDesktop formMateria = new MateriaDesktop(ID, ApplicationForm.ModoForm.Alta);
 
+            if (formMateria.ShowDialog() == DialogResult.OK)
+            {
+                new MateriaLogic().Delete(ID);
+            }
+            this.Listar();
+        }
     }
 }
