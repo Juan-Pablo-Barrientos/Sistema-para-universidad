@@ -17,6 +17,7 @@ namespace UI.Desktop
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MateriaDesktop());
-        }
+        }// TERMINAR MATERIADESKTOP, TERCER ABM, EXPRESION REGULAR, CONCATENAR NOTIFICACION DE VALIDAR
+        //NOTIFICACION TIENE Q SER UN METODO BUSINESS LOGIC,UNIFICAR MENUS,LOGIN APENAS INICIA.
     }
 }
