@@ -59,9 +59,9 @@ namespace UI.Desktop
 
         private void especialidadaltaMenuStrip_Click(object sender, EventArgs e)
         {
-            //EspecializacionDesktop formEspecializacion = new EspecializacionDesktop(ApplicationForm.ModoForm.Alta);
-            //formEspecializacion.ShowDialog();
-            //Cuando tengas el alta saca los comments
+            EspecialidadDesktop formEspecializacion = new EspecialidadDesktop(ApplicationForm.ModoForm.Alta);
+            formEspecializacion.ShowDialog();
+            
         }
 
         private void especialidadlistadoMenuStrip_Click(object sender, EventArgs e)

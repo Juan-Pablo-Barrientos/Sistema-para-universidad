@@ -33,14 +33,14 @@
             this.tscEspecializaciones = new System.Windows.Forms.ToolStripContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvEspecialidades = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.tsEspecializaciones = new System.Windows.Forms.ToolStrip();
             this.tsNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsEditar = new System.Windows.Forms.ToolStripButton();
             this.tsEliminar = new System.Windows.Forms.ToolStripButton();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tscEspecializaciones.ContentPanel.SuspendLayout();
             this.tscEspecializaciones.TopToolStripPanel.SuspendLayout();
             this.tscEspecializaciones.SuspendLayout();
@@ -56,11 +56,12 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(600, 366);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // tscEspecializaciones
@@ -69,11 +70,13 @@
             // tscEspecializaciones.ContentPanel
             // 
             this.tscEspecializaciones.ContentPanel.Controls.Add(this.tableLayoutPanel1);
-            this.tscEspecializaciones.ContentPanel.Size = new System.Drawing.Size(800, 423);
+            this.tscEspecializaciones.ContentPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tscEspecializaciones.ContentPanel.Size = new System.Drawing.Size(600, 341);
             this.tscEspecializaciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscEspecializaciones.Location = new System.Drawing.Point(0, 0);
+            this.tscEspecializaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tscEspecializaciones.Name = "tscEspecializaciones";
-            this.tscEspecializaciones.Size = new System.Drawing.Size(800, 450);
+            this.tscEspecializaciones.Size = new System.Drawing.Size(600, 366);
             this.tscEspecializaciones.TabIndex = 2;
             this.tscEspecializaciones.Text = "toolStripContainer1";
             // 
@@ -91,11 +94,12 @@
             this.tableLayoutPanel1.Controls.Add(this.btnSalir, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 423);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 341);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dgvEspecialidades
@@ -106,76 +110,16 @@
             this.descripcion});
             this.tableLayoutPanel1.SetColumnSpan(this.dgvEspecialidades, 2);
             this.dgvEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEspecialidades.Location = new System.Drawing.Point(3, 3);
+            this.dgvEspecialidades.Location = new System.Drawing.Point(2, 2);
+            this.dgvEspecialidades.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvEspecialidades.MultiSelect = false;
             this.dgvEspecialidades.Name = "dgvEspecialidades";
             this.dgvEspecialidades.RowHeadersWidth = 51;
             this.dgvEspecialidades.RowTemplate.Height = 24;
-            this.dgvEspecialidades.Size = new System.Drawing.Size(794, 388);
+            this.dgvEspecialidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEspecialidades.ShowCellErrors = false;
+            this.dgvEspecialidades.Size = new System.Drawing.Size(596, 314);
             this.dgvEspecialidades.TabIndex = 0;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(611, 397);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(105, 23);
-            this.btnActualizar.TabIndex = 1;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.buttonActualizar_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(722, 397);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 2;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.buttonSalir_Click);
-            // 
-            // tsEspecializaciones
-            // 
-            this.tsEspecializaciones.Dock = System.Windows.Forms.DockStyle.None;
-            this.tsEspecializaciones.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.tsEspecializaciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsNuevo,
-            this.tsEditar,
-            this.tsEliminar});
-            this.tsEspecializaciones.Location = new System.Drawing.Point(4, 0);
-            this.tsEspecializaciones.Name = "tsEspecializaciones";
-            this.tsEspecializaciones.Size = new System.Drawing.Size(188, 27);
-            this.tsEspecializaciones.TabIndex = 0;
-            // 
-            // tsNuevo
-            // 
-            this.tsNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsNuevo.Image")));
-            this.tsNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsNuevo.Name = "tsNuevo";
-            this.tsNuevo.Size = new System.Drawing.Size(56, 24);
-            this.tsNuevo.Text = "Nuevo";
-            this.tsNuevo.Click += new System.EventHandler(this.tsNuevo_Click);
-            // 
-            // tsEditar
-            // 
-            this.tsEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsEditar.Image")));
-            this.tsEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsEditar.Name = "tsEditar";
-            this.tsEditar.Size = new System.Drawing.Size(52, 24);
-            this.tsEditar.Text = "Editar";
-            this.tsEditar.Click += new System.EventHandler(this.tsEditar_Click);
-            // 
-            // tsEliminar
-            // 
-            this.tsEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsEliminar.Image")));
-            this.tsEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsEliminar.Name = "tsEliminar";
-            this.tsEliminar.Size = new System.Drawing.Size(67, 24);
-            this.tsEliminar.Text = "Eliminar";
-            this.tsEliminar.Click += new System.EventHandler(this.tsEliminar_Click);
             // 
             // id
             // 
@@ -193,14 +137,81 @@
             this.descripcion.Name = "descripcion";
             this.descripcion.Width = 125;
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizar.Location = new System.Drawing.Point(459, 320);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(79, 19);
+            this.btnActualizar.TabIndex = 1;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.buttonActualizar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(542, 320);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(56, 19);
+            this.btnSalir.TabIndex = 2;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.buttonSalir_Click);
+            // 
+            // tsEspecializaciones
+            // 
+            this.tsEspecializaciones.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsEspecializaciones.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.tsEspecializaciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsNuevo,
+            this.tsEditar,
+            this.tsEliminar});
+            this.tsEspecializaciones.Location = new System.Drawing.Point(3, 0);
+            this.tsEspecializaciones.Name = "tsEspecializaciones";
+            this.tsEspecializaciones.Size = new System.Drawing.Size(153, 25);
+            this.tsEspecializaciones.TabIndex = 0;
+            // 
+            // tsNuevo
+            // 
+            this.tsNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsNuevo.Image")));
+            this.tsNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsNuevo.Name = "tsNuevo";
+            this.tsNuevo.Size = new System.Drawing.Size(46, 22);
+            this.tsNuevo.Text = "Nuevo";
+            this.tsNuevo.Click += new System.EventHandler(this.tsNuevo_Click);
+            // 
+            // tsEditar
+            // 
+            this.tsEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsEditar.Image")));
+            this.tsEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsEditar.Name = "tsEditar";
+            this.tsEditar.Size = new System.Drawing.Size(41, 22);
+            this.tsEditar.Text = "Editar";
+            this.tsEditar.Click += new System.EventHandler(this.tsEditar_Click);
+            // 
+            // tsEliminar
+            // 
+            this.tsEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsEliminar.Image")));
+            this.tsEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsEliminar.Name = "tsEliminar";
+            this.tsEliminar.Size = new System.Drawing.Size(54, 22);
+            this.tsEliminar.Text = "Eliminar";
+            this.tsEliminar.Click += new System.EventHandler(this.tsEliminar_Click);
+            // 
             // Especialidades
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.tscEspecializaciones);
             this.Controls.Add(this.tableLayoutPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Especialidades";
             this.Text = "Especialidades";
             this.Load += new System.EventHandler(this.Especialidades_Load);

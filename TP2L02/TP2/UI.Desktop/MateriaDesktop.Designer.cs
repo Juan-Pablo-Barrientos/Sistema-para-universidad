@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.idmateria = new System.Windows.Forms.Label();
+            this.hstotales = new System.Windows.Forms.Label();
             this.idplan = new System.Windows.Forms.Label();
             this.descripcion = new System.Windows.Forms.Label();
             this.hssemanales = new System.Windows.Forms.Label();
-            this.hstotales = new System.Windows.Forms.Label();
             this.txtIdmateria = new System.Windows.Forms.TextBox();
             this.txtHssemanales = new System.Windows.Forms.TextBox();
             this.txtIdplan = new System.Windows.Forms.TextBox();
             this.txtHstotales = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108F));
             this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.idmateria, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.hstotales, 2, 1);
@@ -74,16 +74,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(408, 120);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(303, 93);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 0;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(203, 93);
@@ -102,6 +92,15 @@
             this.idmateria.Size = new System.Drawing.Size(56, 13);
             this.idmateria.TabIndex = 2;
             this.idmateria.Text = "ID Materia";
+            // 
+            // hstotales
+            // 
+            this.hstotales.AutoSize = true;
+            this.hstotales.Location = new System.Drawing.Point(203, 30);
+            this.hstotales.Name = "hstotales";
+            this.hstotales.Size = new System.Drawing.Size(72, 13);
+            this.hstotales.TabIndex = 6;
+            this.hstotales.Text = "Horas totales ";
             // 
             // idplan
             // 
@@ -129,15 +128,6 @@
             this.hssemanales.Size = new System.Drawing.Size(88, 13);
             this.hssemanales.TabIndex = 5;
             this.hssemanales.Text = "Horas semanales";
-            // 
-            // hstotales
-            // 
-            this.hstotales.AutoSize = true;
-            this.hstotales.Location = new System.Drawing.Point(203, 30);
-            this.hstotales.Name = "hstotales";
-            this.hstotales.Size = new System.Drawing.Size(72, 13);
-            this.hstotales.TabIndex = 6;
-            this.hstotales.Text = "Horas totales ";
             // 
             // txtIdmateria
             // 
@@ -176,8 +166,19 @@
             this.txtDescripcion.Size = new System.Drawing.Size(94, 20);
             this.txtDescripcion.TabIndex = 11;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(303, 93);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 0;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // MateriaDesktop
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(408, 120);
