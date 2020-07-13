@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,6 +32,42 @@ namespace UI.Desktop
         private void materiasToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+        private void materialistadomenu_Click(object sender, EventArgs e)
+        {
+            Materias formMateria = new Materias();
+            formMateria.ShowDialog();
+        }
+
+        private void materiaAltaMenu_Click(object sender, EventArgs e)
+        {
+            MateriaDesktop formMateria = new MateriaDesktop(ApplicationForm.ModoForm.Alta);
+            formMateria.ShowDialog();
+        }
+
+        private void usuarioListadoMenu_Click(object sender, EventArgs e)
+        {
+            Usuarios formUsuario = new Usuarios();
+            formUsuario.ShowDialog();
+        }
+
+        private void usuariosAltaMenu_Click(object sender, EventArgs e)
+        {
+            UsuarioDesktop formUsuario = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
+            formUsuario.ShowDialog();
+        }
+
+        private void especialidadaltaMenuStrip_Click(object sender, EventArgs e)
+        {
+            //EspecializacionDesktop formEspecializacion = new EspecializacionDesktop(ApplicationForm.ModoForm.Alta);
+            //formEspecializacion.ShowDialog();
+            //Cuando tengas el alta saca los comments
+        }
+
+        private void especialidadlistadoMenuStrip_Click(object sender, EventArgs e)
+        {
+            Especialidades formEspecializaciones = new Especialidades();
+            formEspecializaciones.ShowDialog();
         }
     }
 }

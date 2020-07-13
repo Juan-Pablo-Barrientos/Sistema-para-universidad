@@ -32,11 +32,14 @@
             this.ArchivoMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MateriasMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.materiaListadoMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.materiaAltaMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.UsuariosMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioListadoMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosAltaMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.especializacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.especialidadlistadoMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.especialidadaltaMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +49,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ArchivoMenu,
             this.MateriasMenu,
-            this.UsuariosMenu});
+            this.UsuariosMenu,
+            this.especializacionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -64,52 +68,79 @@
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // MateriasMenu
             // 
             this.MateriasMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listadoToolStripMenuItem1,
-            this.altaToolStripMenuItem1});
+            this.materiaListadoMenu,
+            this.materiaAltaMenu});
             this.MateriasMenu.Name = "MateriasMenu";
             this.MateriasMenu.Size = new System.Drawing.Size(80, 24);
             this.MateriasMenu.Text = "Materias";
             this.MateriasMenu.Click += new System.EventHandler(this.materiasToolStripMenuItem_Click);
             // 
-            // listadoToolStripMenuItem1
+            // materiaListadoMenu
             // 
-            this.listadoToolStripMenuItem1.Name = "listadoToolStripMenuItem1";
-            this.listadoToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.listadoToolStripMenuItem1.Text = "Listado";
+            this.materiaListadoMenu.Name = "materiaListadoMenu";
+            this.materiaListadoMenu.Size = new System.Drawing.Size(140, 26);
+            this.materiaListadoMenu.Text = "Listado";
+            this.materiaListadoMenu.Click += new System.EventHandler(this.materialistadomenu_Click);
             // 
-            // altaToolStripMenuItem1
+            // materiaAltaMenu
             // 
-            this.altaToolStripMenuItem1.Name = "altaToolStripMenuItem1";
-            this.altaToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.altaToolStripMenuItem1.Text = "Alta";
+            this.materiaAltaMenu.Name = "materiaAltaMenu";
+            this.materiaAltaMenu.Size = new System.Drawing.Size(140, 26);
+            this.materiaAltaMenu.Text = "Alta";
+            this.materiaAltaMenu.Click += new System.EventHandler(this.materiaAltaMenu_Click);
             // 
             // UsuariosMenu
             // 
             this.UsuariosMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listadoToolStripMenuItem,
-            this.altaToolStripMenuItem});
+            this.usuarioListadoMenu,
+            this.usuariosAltaMenu});
             this.UsuariosMenu.Name = "UsuariosMenu";
             this.UsuariosMenu.Size = new System.Drawing.Size(79, 24);
             this.UsuariosMenu.Text = "Usuarios";
             // 
-            // listadoToolStripMenuItem
+            // usuarioListadoMenu
             // 
-            this.listadoToolStripMenuItem.Name = "listadoToolStripMenuItem";
-            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.listadoToolStripMenuItem.Text = "Listado";
+            this.usuarioListadoMenu.Name = "usuarioListadoMenu";
+            this.usuarioListadoMenu.Size = new System.Drawing.Size(140, 26);
+            this.usuarioListadoMenu.Text = "Listado";
+            this.usuarioListadoMenu.Click += new System.EventHandler(this.usuarioListadoMenu_Click);
             // 
-            // altaToolStripMenuItem
+            // usuariosAltaMenu
             // 
-            this.altaToolStripMenuItem.Name = "altaToolStripMenuItem";
-            this.altaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.altaToolStripMenuItem.Text = "Alta";
+            this.usuariosAltaMenu.Name = "usuariosAltaMenu";
+            this.usuariosAltaMenu.Size = new System.Drawing.Size(140, 26);
+            this.usuariosAltaMenu.Text = "Alta";
+            this.usuariosAltaMenu.Click += new System.EventHandler(this.usuariosAltaMenu_Click);
+            // 
+            // especializacionesToolStripMenuItem
+            // 
+            this.especializacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.especialidadlistadoMenuStrip,
+            this.especialidadaltaMenuStrip});
+            this.especializacionesToolStripMenuItem.Name = "especializacionesToolStripMenuItem";
+            this.especializacionesToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
+            this.especializacionesToolStripMenuItem.Text = "Especializaciones";
+            // 
+            // especialidadlistadoMenuStrip
+            // 
+            this.especialidadlistadoMenuStrip.Name = "especialidadlistadoMenuStrip";
+            this.especialidadlistadoMenuStrip.Size = new System.Drawing.Size(224, 26);
+            this.especialidadlistadoMenuStrip.Text = "Listado";
+            this.especialidadlistadoMenuStrip.Click += new System.EventHandler(this.especialidadlistadoMenuStrip_Click);
+            // 
+            // especialidadaltaMenuStrip
+            // 
+            this.especialidadaltaMenuStrip.Name = "especialidadaltaMenuStrip";
+            this.especialidadaltaMenuStrip.Size = new System.Drawing.Size(224, 26);
+            this.especialidadaltaMenuStrip.Text = "Alta";
+            this.especialidadaltaMenuStrip.Click += new System.EventHandler(this.especialidadaltaMenuStrip_Click);
             // 
             // FormMain
             // 
@@ -135,10 +166,13 @@
         private System.Windows.Forms.ToolStripMenuItem ArchivoMenu;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MateriasMenu;
-        private System.Windows.Forms.ToolStripMenuItem listadoToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem materiaListadoMenu;
+        private System.Windows.Forms.ToolStripMenuItem materiaAltaMenu;
         private System.Windows.Forms.ToolStripMenuItem UsuariosMenu;
-        private System.Windows.Forms.ToolStripMenuItem listadoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuarioListadoMenu;
+        private System.Windows.Forms.ToolStripMenuItem usuariosAltaMenu;
+        private System.Windows.Forms.ToolStripMenuItem especializacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem especialidadlistadoMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem especialidadaltaMenuStrip;
     }
 }
