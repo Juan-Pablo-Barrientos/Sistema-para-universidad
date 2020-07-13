@@ -125,8 +125,8 @@
             this.especialidadlistadoMenuStrip,
             this.especialidadaltaMenuStrip});
             this.especializacionesToolStripMenuItem.Name = "especializacionesToolStripMenuItem";
-            this.especializacionesToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
-            this.especializacionesToolStripMenuItem.Text = "Especializaciones";
+            this.especializacionesToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
+            this.especializacionesToolStripMenuItem.Text = "Especialidades";
             // 
             // especialidadlistadoMenuStrip
             // 
