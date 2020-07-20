@@ -143,6 +143,7 @@
             this.txtHssemanales.Name = "txtHssemanales";
             this.txtHssemanales.Size = new System.Drawing.Size(100, 20);
             this.txtHssemanales.TabIndex = 8;
+            this.txtHssemanales.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // txtIdplan
             // 
@@ -158,6 +159,7 @@
             this.txtHstotales.Name = "txtHstotales";
             this.txtHstotales.Size = new System.Drawing.Size(100, 20);
             this.txtHstotales.TabIndex = 10;
+            this.txtHstotales.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // txtDescripcion
             // 

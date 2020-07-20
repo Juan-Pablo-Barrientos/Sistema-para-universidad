@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
+using Util.entities;
 
 namespace UI.Desktop
 {
@@ -72,11 +73,11 @@ namespace UI.Desktop
                 MateriaActual = new Materia();
             }
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
-            {
-                MateriaActual.Descripcion = txtDescripcion.Text;
-                MateriaActual.HSSemanales =Convert.ToInt32( txtHssemanales.Text);
-                MateriaActual.HSTotales =Convert.ToInt32( txtHstotales.Text);
-                                       
+            {              
+                MateriaActual.Descripcion = txtDescripcion.Text;                           
+                MateriaActual.HSSemanales = Convert.ToInt32(txtHssemanales.Text);
+                MateriaActual.HSTotales = Convert.ToInt32(txtHstotales.Text);
+                
                 switch (Modo)
                 {
                     case ModoForm.Alta:
@@ -103,45 +104,18 @@ namespace UI.Desktop
             }
         }
         public override void GuardarCambios()
-        {
-            MapearADatos();
+        {          
             new MateriaLogic().Save(MateriaActual);
         }
         public override bool Validar()
         {
-
-            // Validar que los campos no esten vacios 
-
-            foreach (Control oControls in this.Controls) // Buscamos en cada TextBox de nuestro Formulario.
-            {
-                if (oControls is TextBox & oControls.Text == String.Empty) // Verificamos que no este vacio.
-                {
-                    Notificar("Hay al menos un campo vacío. Por favor, completelo/s. ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return (false);
-                }
-            }
-
-            //Validar el interior de los campos 
-
-       /*     if (txtClave.Text != txtConfirmarClave.Text)
-            {
-                Notificar("La clave ingresada no coincide con la clave de confirmación. ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return (false);
-            }
-            else if (txtClave.Text.Length < 8)
-            {
-                Notificar("La clave ingresada debe ser al menos de 8 carateres de longitud.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return (false);
-            }
-
-            if (Business.Logic.Validar.EsMailValido(txtEmail.Text.Trim()))
-            {
-                Notificar("El email ingresado no es válido. ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return (false);
-            }
-                */
-            return (true); 
-
+            // Los dos IF convierten el .Text en 0 si esta vacio. .Text devolvera un string vacio si es null, pero Conver.ToInt32(String.empty) dara error.
+            if (txtHssemanales.Text == "") txtHssemanales.Text ="0";
+            if (txtHstotales.Text == "") txtHstotales.Text ="0";
+            MapearADatos();
+            var validador = Business.Logic.ValidarMateria.Validar(MateriaActual);
+            if (!validador.EsValido()) Notificar(validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
+            return validador.EsValido();
         }
 
    
@@ -165,5 +139,15 @@ namespace UI.Desktop
         {
             
         }
+
+        //Este metodo esta linkeado con el evento KeyPress, no permite que se ingrese otro caracter que no sea numerico
+        //Lo TextBox para la hora lo usan
+        private void SoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
+        {           
+            if (!char.IsDigit(e.KeyChar) && (e.KeyChar != '.') )       
+            {
+                e.Handled = true;
+            }          
+        }     
     }
 }

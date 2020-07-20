@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Entities;
 using Business.Logic;
+using Util.entities;
 
 namespace UI.Desktop
 {
@@ -98,44 +99,14 @@ namespace UI.Desktop
         }
         public override void GuardarCambios()
         {
-            MapearADatos();
             new EspecialidadesLogic().Save(EspecialidadActual);
         }
         public override bool Validar()
         {
-
-            // Validar que los campos no esten vacios 
-
-            foreach (Control oControls in this.Controls) // Buscamos en cada TextBox de nuestro Formulario.
-            {
-                if (oControls is TextBox & oControls.Text == String.Empty) // Verificamos que no este vacio.
-                {
-                    Notificar("Hay al menos un campo vacío. Por favor, completelo/s. ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return (false);
-                }
-            }
-
-            //validar el interior de los campos 
-
-            //if (txtclave.text != txtconfirmarclave.text)
-            //{
-            //    notificar("la clave ingresada no coincide con la clave de confirmación. ", messageboxbuttons.ok, messageboxicon.error);
-            //    return (false);
-            //}
-            //else if (txtclave.text.length < 8)
-            //{
-            //    notificar("la clave ingresada debe ser al menos de 8 carateres de longitud.", messageboxbuttons.ok, messageboxicon.error);
-            //    return (false);
-            //}
-
-            //if (business.logic.validar.esmailvalido(txtemail.text.trim()))
-            //{
-            //    notificar("el email ingresado no es válido. ", messageboxbuttons.ok, messageboxicon.error);
-            //    return (false);
-            //}
-
-            return (true);
-
+            MapearADatos();
+            var validador = Business.Logic.ValidarEspecialidad.Validar(EspecialidadActual);
+            if (!validador.EsValido()) Notificar(validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
+            return validador.EsValido();
         }
 
 
