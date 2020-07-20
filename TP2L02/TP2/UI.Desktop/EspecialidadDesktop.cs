@@ -105,7 +105,7 @@ namespace UI.Desktop
         {
             MapearADatos();
             var validador = Business.Logic.ValidarEspecialidad.Validar(EspecialidadActual);
-            if (!validador.EsValido()) Notificar(validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
+            if (!validador.EsValido()) BusinessLogic.Notificar("Especialidad",validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
             return validador.EsValido();
         }
 

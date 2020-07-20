@@ -20,7 +20,7 @@ namespace UI.Desktop
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormMain());
         }
-        //NOTIFICACION TIENE Q SER UN METODO BUSINESS LOGIC,LOGIN APENAS INICIA.
+        //LOGIN APENAS INICIA.
         //Materias se modifico para que ID PLAN sea NULL, MateriaAdapter con lineas ID PLAN comentadas.
     }
 }

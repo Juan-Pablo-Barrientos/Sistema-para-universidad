@@ -114,7 +114,7 @@ namespace UI.Desktop
             if (txtHstotales.Text == "") txtHstotales.Text ="0";
             MapearADatos();
             var validador = Business.Logic.ValidarMateria.Validar(MateriaActual);
-            if (!validador.EsValido()) Notificar(validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
+            if (!validador.EsValido()) BusinessLogic.Notificar("Materia",validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
             return validador.EsValido();
         }
 

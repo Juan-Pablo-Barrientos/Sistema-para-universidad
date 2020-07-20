@@ -82,7 +82,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(354, 139);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(382, 139);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // nombre
@@ -170,10 +170,9 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtApellido.Location = new System.Drawing.Point(246, 29);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(326, 20);
+            this.txtApellido.Size = new System.Drawing.Size(124, 20);
             this.txtApellido.TabIndex = 12;
             // 
             // txtEmail
@@ -186,10 +185,9 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtUsuario.Location = new System.Drawing.Point(246, 55);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(326, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(124, 20);
             this.txtUsuario.TabIndex = 14;
             // 
             // txtClave
@@ -202,10 +200,9 @@
             // 
             // txtConfirmarClave
             // 
-            this.txtConfirmarClave.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtConfirmarClave.Location = new System.Drawing.Point(246, 81);
             this.txtConfirmarClave.Name = "txtConfirmarClave";
-            this.txtConfirmarClave.Size = new System.Drawing.Size(326, 20);
+            this.txtConfirmarClave.Size = new System.Drawing.Size(124, 20);
             this.txtConfirmarClave.TabIndex = 16;
             // 
             // btnCancelar
@@ -244,10 +241,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(354, 139);
+            this.ClientSize = new System.Drawing.Size(382, 139);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UsuarioDesktop";
             this.Text = "Usuario";
             this.Load += new System.EventHandler(this.UsuarioDesktop_Load);

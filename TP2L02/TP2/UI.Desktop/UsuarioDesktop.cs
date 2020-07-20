@@ -115,7 +115,7 @@ namespace UI.Desktop
             //Para validar se usa UsuarioActual y se lo envia a ValidarUsuario. ValidarUsuario devuelve validador, que indentificara los errores de haberlos
             MapearADatos();
             var validador = Business.Logic.ValidarUsuario.Validar(UsuarioActual,txtConfirmarClave.Text);  
-            if(!validador.EsValido()) Notificar(validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
+            if(!validador.EsValido()) BusinessLogic.Notificar("Usuario",validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
             return validador.EsValido();         
         }
 
