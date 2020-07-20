@@ -115,25 +115,25 @@ namespace UI.Desktop
                 }
             }
 
-            //Validar el interior de los campos 
+            //validar el interior de los campos 
 
-            /*     if (txtClave.Text != txtConfirmarClave.Text)
-                 {
-                     Notificar("La clave ingresada no coincide con la clave de confirmación. ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                     return (false);
-                 }
-                 else if (txtClave.Text.Length < 8)
-                 {
-                     Notificar("La clave ingresada debe ser al menos de 8 carateres de longitud.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                     return (false);
-                 }
+            //if (txtclave.text != txtconfirmarclave.text)
+            //{
+            //    notificar("la clave ingresada no coincide con la clave de confirmación. ", messageboxbuttons.ok, messageboxicon.error);
+            //    return (false);
+            //}
+            //else if (txtclave.text.length < 8)
+            //{
+            //    notificar("la clave ingresada debe ser al menos de 8 carateres de longitud.", messageboxbuttons.ok, messageboxicon.error);
+            //    return (false);
+            //}
 
-                 if (Business.Logic.Validar.EsMailValido(txtEmail.Text.Trim()))
-                 {
-                     Notificar("El email ingresado no es válido. ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                     return (false);
-                 }
-                     */
+            //if (business.logic.validar.esmailvalido(txtemail.text.trim()))
+            //{
+            //    notificar("el email ingresado no es válido. ", messageboxbuttons.ok, messageboxicon.error);
+            //    return (false);
+            //}
+
             return (true);
 
         }

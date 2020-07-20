@@ -78,8 +78,7 @@ namespace UI.Desktop
                 UsuarioActual.Apellido = txtApellido.Text;
                 UsuarioActual.EMail = txtEmail.Text;
                 UsuarioActual.NombreUsuario = txtUsuario.Text;
-                UsuarioActual.Clave = txtClave.Text;
-                UsuarioActual.Clave = txtConfirmarClave.Text;
+                UsuarioActual.Clave = txtClave.Text;           
                 UsuarioActual.Habilitado = chkHabilitado.Checked;
 
                 switch (Modo)
@@ -108,49 +107,17 @@ namespace UI.Desktop
             }
         }
         public override void GuardarCambios()
-        {
-            MapearADatos();
+        {           
             new UsuarioLogic().Save(UsuarioActual);
         }
         public override bool Validar()
         {
-
-            // Validar que los campos no esten vacios 
-
-            foreach (Control oControls in this.Controls) // Buscamos en cada TextBox de nuestro Formulario.
-            {
-                if (oControls is TextBox & oControls.Text == String.Empty) // Verificamos que no este vacio.
-                {
-                    Notificar("Hay al menos un campo vacío. Por favor, completelo/s. ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return (false);
-                }
-            }
-
-            //Validar el interior de los campos 
-
-            if (txtClave.Text != txtConfirmarClave.Text)
-            {
-                Notificar("La clave ingresada no coincide con la clave de confirmación. ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return (false);
-            }
-            else if (txtClave.Text.Length < 8)
-            {
-                Notificar("La clave ingresada debe ser al menos de 8 carateres de longitud.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return (false);
-            }
-
-            if (Business.Logic.Validar.EsMailValido(txtEmail.Text.Trim()))
-            {
-                Notificar("El email ingresado no es válido. ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return (false);
-            }
-           
-            return (true);
-
+            //Para validar se usa UsuarioActual y se lo envia a ValidarUsuario. ValidarUsuario devuelve validador, que indentificara los errores de haberlos
+            MapearADatos();
+            var validador = Business.Logic.ValidarUsuario.Validar(UsuarioActual,txtConfirmarClave.Text);  
+            if(!validador.EsValido()) Notificar(validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
+            return validador.EsValido();         
         }
-
-
-       
 
         private void UsuarioDesktop_Load(object sender, EventArgs e)
         {
@@ -161,11 +128,9 @@ namespace UI.Desktop
         {
             if (Validar())
             {
-                GuardarCambios();
-                
+                GuardarCambios();               
                 Close();
-            }
-
+            }     
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
