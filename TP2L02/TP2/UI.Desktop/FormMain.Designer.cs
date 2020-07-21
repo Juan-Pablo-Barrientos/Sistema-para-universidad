@@ -131,14 +131,14 @@
             // especialidadlistadoMenuStrip
             // 
             this.especialidadlistadoMenuStrip.Name = "especialidadlistadoMenuStrip";
-            this.especialidadlistadoMenuStrip.Size = new System.Drawing.Size(224, 26);
+            this.especialidadlistadoMenuStrip.Size = new System.Drawing.Size(140, 26);
             this.especialidadlistadoMenuStrip.Text = "Listado";
             this.especialidadlistadoMenuStrip.Click += new System.EventHandler(this.especialidadlistadoMenuStrip_Click);
             // 
             // especialidadaltaMenuStrip
             // 
             this.especialidadaltaMenuStrip.Name = "especialidadaltaMenuStrip";
-            this.especialidadaltaMenuStrip.Size = new System.Drawing.Size(224, 26);
+            this.especialidadaltaMenuStrip.Size = new System.Drawing.Size(140, 26);
             this.especialidadaltaMenuStrip.Text = "Alta";
             this.especialidadaltaMenuStrip.Click += new System.EventHandler(this.especialidadaltaMenuStrip_Click);
             // 
@@ -152,7 +152,9 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
             this.Text = "Academia";
-            this.Load += new System.EventHandler(this.FormMain_Click);
+            this.Activated += new System.EventHandler(this.FormMain_Activated);
+            this.Load += new System.EventHandler(this.FormMainLoad);
+            this.Shown += new System.EventHandler(this.FormMain_Shown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

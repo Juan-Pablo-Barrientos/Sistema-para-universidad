@@ -20,7 +20,7 @@ namespace UI.Desktop
 
         private void FormMain_Click(object sender, EventArgs e)
         {
-
+           
         }
 
 
@@ -68,6 +68,25 @@ namespace UI.Desktop
         {
             Especialidades formEspecializaciones = new Especialidades();
             formEspecializaciones.ShowDialog();
+        }
+
+        private void FormMainLoad(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void FormMain_Activated(object sender, EventArgs e)
+        {
+            
+        }
+        private void FormMain_Shown(object sender, EventArgs e)
+        {
+            FormLogin appLogin = new FormLogin();
+            if (appLogin.ShowDialog() != DialogResult.OK)
+            {
+                this.Dispose();
+            }
         }
     }
 }
