@@ -266,7 +266,8 @@ namespace Data.Database
             {
 
                 Exception ExcepcionManejada =
-                    new Exception("Error al modificar datos del usuario", Ex);
+                new Exception("Error al modificar datos del usuario", Ex);
+
                 throw ExcepcionManejada;
             }
 

@@ -40,20 +40,23 @@ namespace UI.Desktop
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+
             usrActual = new UsuarioLogic().getOneNombre(txtNombre.Text);
-            if (usrActual.Clave != txtContra.Text)
+            Validador validador = new Validador();
+            if (String.IsNullOrEmpty(usrActual.NombreUsuario))
             {
-                MessageBox.Show("Contraseña Incorrecta");
+                BusinessLogic.Notificar("Error", "El usuario no existe", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else {
-                this.DialogResult = DialogResult.OK;
+            else
+            { 
+            if (usrActual.Clave != txtContra.Text) validador.AgregarError("Contraseña incorrecta");                    
+          
+            if (!usrActual.Habilitado)validador.AgregarError("El Usuario no esta habilitado");
+                                    
+            if (validador.EsValido())  this.DialogResult = DialogResult.OK;
+         
+            else BusinessLogic.Notificar("Error", validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-
-
-
-
         }
     }
 }
