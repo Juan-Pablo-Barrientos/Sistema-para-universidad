@@ -43,21 +43,21 @@ namespace UI.Desktop
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            //ModuloDesktop formModulo = new ModuloDesktop(ApplicationForm.ModoForm.Alta);
-            //formModulo.ShowDialog();
-            //this.Listar();
+            ModuloDesktop formModulo = new ModuloDesktop(ApplicationForm.ModoForm.Alta);
+            formModulo.ShowDialog();
+            this.Listar();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            //int ID = ((Business.Entities.Modulo)this.dgvModulo.SelectedRows[0].DataBoundItem).ID;
-            //ModuloDesktop formModulo = new ModuloDesktop(ID, ApplicationForm.ModoForm.Alta);
+            int ID = ((Business.Entities.Modulo)this.dgvModulo.SelectedRows[0].DataBoundItem).ID;
+            ModuloDesktop formModulo = new ModuloDesktop(ID, ApplicationForm.ModoForm.Alta);
 
-            //if (formModulo.ShowDialog() == DialogResult.OK)
-            //{
-            //    new ModuloLogic().Delete(ID);
-            //}
-            //this.Listar();
+            if (formModulo.ShowDialog() == DialogResult.OK)
+            {
+                new ModuloLogic().Delete(ID);
+            }
+            this.Listar();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

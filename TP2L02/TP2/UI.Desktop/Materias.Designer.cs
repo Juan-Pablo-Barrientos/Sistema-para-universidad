@@ -57,13 +57,13 @@
             // tscMateria.ContentPanel
             // 
             this.tscMateria.ContentPanel.Controls.Add(this.tableLayoutPanel1);
-            this.tscMateria.ContentPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tscMateria.ContentPanel.Size = new System.Drawing.Size(911, 423);
+            this.tscMateria.ContentPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tscMateria.ContentPanel.Size = new System.Drawing.Size(683, 341);
             this.tscMateria.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscMateria.Location = new System.Drawing.Point(0, 0);
-            this.tscMateria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tscMateria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tscMateria.Name = "tscMateria";
-            this.tscMateria.Size = new System.Drawing.Size(911, 450);
+            this.tscMateria.Size = new System.Drawing.Size(683, 366);
             this.tscMateria.TabIndex = 0;
             this.tscMateria.Text = "toolStripContainer1";
             // 
@@ -81,21 +81,21 @@
             this.tableLayoutPanel1.Controls.Add(this.dgvMaterias, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(911, 423);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(683, 341);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnSalir
             // 
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.Location = new System.Drawing.Point(820, 395);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSalir.Location = new System.Drawing.Point(615, 318);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(88, 26);
+            this.btnSalir.Size = new System.Drawing.Size(66, 21);
             this.btnSalir.TabIndex = 0;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -104,10 +104,10 @@
             // Actualizar
             // 
             this.Actualizar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Actualizar.Location = new System.Drawing.Point(707, 395);
-            this.Actualizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Actualizar.Location = new System.Drawing.Point(531, 318);
+            this.Actualizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Actualizar.Name = "Actualizar";
-            this.Actualizar.Size = new System.Drawing.Size(107, 26);
+            this.Actualizar.Size = new System.Drawing.Size(80, 21);
             this.Actualizar.TabIndex = 1;
             this.Actualizar.Text = "Actualizar";
             this.Actualizar.UseVisualStyleBackColor = true;
@@ -126,15 +126,15 @@
             this.ID_Plan});
             this.tableLayoutPanel1.SetColumnSpan(this.dgvMaterias, 2);
             this.dgvMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMaterias.Location = new System.Drawing.Point(3, 2);
-            this.dgvMaterias.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvMaterias.Location = new System.Drawing.Point(2, 2);
+            this.dgvMaterias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvMaterias.MultiSelect = false;
             this.dgvMaterias.Name = "dgvMaterias";
             this.dgvMaterias.ReadOnly = true;
             this.dgvMaterias.RowHeadersWidth = 51;
             this.dgvMaterias.RowTemplate.Height = 24;
             this.dgvMaterias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMaterias.Size = new System.Drawing.Size(905, 389);
+            this.dgvMaterias.Size = new System.Drawing.Size(679, 312);
             this.dgvMaterias.TabIndex = 2;
             // 
             // id
@@ -190,9 +190,9 @@
             this.tsNuevo,
             this.tsEditar,
             this.tsEliminar});
-            this.toolStrip1.Location = new System.Drawing.Point(4, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(188, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(153, 25);
             this.toolStrip1.TabIndex = 0;
             // 
             // tsNuevo
@@ -201,7 +201,7 @@
             this.tsNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsNuevo.Image")));
             this.tsNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsNuevo.Name = "tsNuevo";
-            this.tsNuevo.Size = new System.Drawing.Size(56, 24);
+            this.tsNuevo.Size = new System.Drawing.Size(46, 22);
             this.tsNuevo.Text = "Nuevo";
             this.tsNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
             // 
@@ -211,7 +211,7 @@
             this.tsEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsEditar.Image")));
             this.tsEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsEditar.Name = "tsEditar";
-            this.tsEditar.Size = new System.Drawing.Size(52, 24);
+            this.tsEditar.Size = new System.Drawing.Size(41, 22);
             this.tsEditar.Text = "Editar";
             this.tsEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
@@ -221,18 +221,19 @@
             this.tsEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsEliminar.Image")));
             this.tsEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsEliminar.Name = "tsEliminar";
-            this.tsEliminar.Size = new System.Drawing.Size(67, 24);
+            this.tsEliminar.Size = new System.Drawing.Size(54, 22);
             this.tsEliminar.Text = "Eliminar";
             this.tsEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
             // Materias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 450);
+            this.ClientSize = new System.Drawing.Size(683, 366);
             this.Controls.Add(this.tscMateria);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximizeBox = false;
             this.Name = "Materias";
             this.Text = "Materias";
             this.Load += new System.EventHandler(this.MateriaForm_Load);

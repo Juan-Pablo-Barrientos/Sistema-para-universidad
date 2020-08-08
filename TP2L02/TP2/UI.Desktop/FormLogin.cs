@@ -41,23 +41,25 @@ namespace UI.Desktop
         private void btnEntrar_Click(object sender, EventArgs e)
         {
 
-            if (txtContra.Text =="admin" && txtNombre.Text == "admin") this.DialogResult = DialogResult.OK; //ADMIN
-
-            usrActual = new UsuarioLogic().getOneNombre(txtNombre.Text);
-            Validador validador = new Validador();
-            if (String.IsNullOrEmpty(usrActual.NombreUsuario))
-            {
-                BusinessLogic.Notificar("Error", "El usuario no existe", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            if (txtContra.Text == "admin" && txtNombre.Text == "admin") { this.DialogResult = DialogResult.OK; } //ADMIN
             else
-            { 
-            if (usrActual.Clave != txtContra.Text) validador.AgregarError("Contraseña incorrecta");                    
-          
-            if (!usrActual.Habilitado)validador.AgregarError("El Usuario no esta habilitado");
-                                    
-            if (validador.EsValido())  this.DialogResult = DialogResult.OK;
-         
-            else BusinessLogic.Notificar("Error", validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                usrActual = new UsuarioLogic().getOneNombre(txtNombre.Text);
+                Validador validador = new Validador();
+                if (String.IsNullOrEmpty(usrActual.NombreUsuario))
+                {
+                    BusinessLogic.Notificar("Error", "El usuario no existe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (usrActual.Clave != txtContra.Text) validador.AgregarError("Contraseña incorrecta");
+
+                    if (!usrActual.Habilitado) validador.AgregarError("El Usuario no esta habilitado");
+
+                    if (validador.EsValido()) this.DialogResult = DialogResult.OK;
+
+                    else BusinessLogic.Notificar("Error", validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

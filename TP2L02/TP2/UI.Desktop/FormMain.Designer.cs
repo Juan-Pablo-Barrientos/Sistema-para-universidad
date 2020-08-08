@@ -57,7 +57,8 @@
             this.modulosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(600, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -66,13 +67,13 @@
             this.ArchivoMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loginToolStripMenuItem});
             this.ArchivoMenu.Name = "ArchivoMenu";
-            this.ArchivoMenu.Size = new System.Drawing.Size(73, 24);
+            this.ArchivoMenu.Size = new System.Drawing.Size(60, 20);
             this.ArchivoMenu.Text = "Archivo";
             // 
             // loginToolStripMenuItem
             // 
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
@@ -82,21 +83,21 @@
             this.materiaListadoMenu,
             this.materiaAltaMenu});
             this.MateriasMenu.Name = "MateriasMenu";
-            this.MateriasMenu.Size = new System.Drawing.Size(80, 24);
+            this.MateriasMenu.Size = new System.Drawing.Size(64, 20);
             this.MateriasMenu.Text = "Materias";
             this.MateriasMenu.Click += new System.EventHandler(this.materiasToolStripMenuItem_Click);
             // 
             // materiaListadoMenu
             // 
             this.materiaListadoMenu.Name = "materiaListadoMenu";
-            this.materiaListadoMenu.Size = new System.Drawing.Size(140, 26);
+            this.materiaListadoMenu.Size = new System.Drawing.Size(112, 22);
             this.materiaListadoMenu.Text = "Listado";
             this.materiaListadoMenu.Click += new System.EventHandler(this.materialistadomenu_Click);
             // 
             // materiaAltaMenu
             // 
             this.materiaAltaMenu.Name = "materiaAltaMenu";
-            this.materiaAltaMenu.Size = new System.Drawing.Size(140, 26);
+            this.materiaAltaMenu.Size = new System.Drawing.Size(112, 22);
             this.materiaAltaMenu.Text = "Alta";
             this.materiaAltaMenu.Click += new System.EventHandler(this.materiaAltaMenu_Click);
             // 
@@ -106,20 +107,20 @@
             this.usuarioListadoMenu,
             this.usuariosAltaMenu});
             this.UsuariosMenu.Name = "UsuariosMenu";
-            this.UsuariosMenu.Size = new System.Drawing.Size(79, 24);
+            this.UsuariosMenu.Size = new System.Drawing.Size(64, 20);
             this.UsuariosMenu.Text = "Usuarios";
             // 
             // usuarioListadoMenu
             // 
             this.usuarioListadoMenu.Name = "usuarioListadoMenu";
-            this.usuarioListadoMenu.Size = new System.Drawing.Size(140, 26);
+            this.usuarioListadoMenu.Size = new System.Drawing.Size(112, 22);
             this.usuarioListadoMenu.Text = "Listado";
             this.usuarioListadoMenu.Click += new System.EventHandler(this.usuarioListadoMenu_Click);
             // 
             // usuariosAltaMenu
             // 
             this.usuariosAltaMenu.Name = "usuariosAltaMenu";
-            this.usuariosAltaMenu.Size = new System.Drawing.Size(140, 26);
+            this.usuariosAltaMenu.Size = new System.Drawing.Size(112, 22);
             this.usuariosAltaMenu.Text = "Alta";
             this.usuariosAltaMenu.Click += new System.EventHandler(this.usuariosAltaMenu_Click);
             // 
@@ -129,20 +130,20 @@
             this.especialidadlistadoMenuStrip,
             this.especialidadaltaMenuStrip});
             this.especializacionesToolStripMenuItem.Name = "especializacionesToolStripMenuItem";
-            this.especializacionesToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
+            this.especializacionesToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.especializacionesToolStripMenuItem.Text = "Especialidades";
             // 
             // especialidadlistadoMenuStrip
             // 
             this.especialidadlistadoMenuStrip.Name = "especialidadlistadoMenuStrip";
-            this.especialidadlistadoMenuStrip.Size = new System.Drawing.Size(224, 26);
+            this.especialidadlistadoMenuStrip.Size = new System.Drawing.Size(112, 22);
             this.especialidadlistadoMenuStrip.Text = "Listado";
             this.especialidadlistadoMenuStrip.Click += new System.EventHandler(this.especialidadlistadoMenuStrip_Click);
             // 
             // especialidadaltaMenuStrip
             // 
             this.especialidadaltaMenuStrip.Name = "especialidadaltaMenuStrip";
-            this.especialidadaltaMenuStrip.Size = new System.Drawing.Size(224, 26);
+            this.especialidadaltaMenuStrip.Size = new System.Drawing.Size(112, 22);
             this.especialidadaltaMenuStrip.Text = "Alta";
             this.especialidadaltaMenuStrip.Click += new System.EventHandler(this.especialidadaltaMenuStrip_Click);
             // 
@@ -152,31 +153,33 @@
             this.listadoBtn,
             this.altaModulo});
             this.modulosToolStripMenuItem.Name = "modulosToolStripMenuItem";
-            this.modulosToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.modulosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.modulosToolStripMenuItem.Text = "Modulos";
             // 
             // listadoBtn
             // 
             this.listadoBtn.Name = "listadoBtn";
-            this.listadoBtn.Size = new System.Drawing.Size(224, 26);
+            this.listadoBtn.Size = new System.Drawing.Size(112, 22);
             this.listadoBtn.Text = "Listado";
             this.listadoBtn.Click += new System.EventHandler(this.listadoBtn_Click);
             // 
             // altaModulo
             // 
             this.altaModulo.Name = "altaModulo";
-            this.altaModulo.Size = new System.Drawing.Size(224, 26);
+            this.altaModulo.Size = new System.Drawing.Size(112, 22);
             this.altaModulo.Text = "Alta";
             this.altaModulo.Click += new System.EventHandler(this.altaModulo_Click);
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximizeBox = false;
             this.Name = "FormMain";
             this.Text = "Academia";
             this.Activated += new System.EventHandler(this.FormMain_Activated);

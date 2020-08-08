@@ -97,8 +97,8 @@ namespace UI.Desktop
 
         private void altaModulo_Click(object sender, EventArgs e)
         {
-            //ModuloDesktop formModulo = new ModuloDesktop(ApplicationForm.ModoForm.Alta);
-            //formModulo.ShowDialog();
+            ModuloDesktop formModulo = new ModuloDesktop(ApplicationForm.ModoForm.Alta);
+            formModulo.ShowDialog();
         }
     }
 }

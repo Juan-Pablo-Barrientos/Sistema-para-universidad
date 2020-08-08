@@ -58,11 +58,11 @@
             // tsUsuario.ContentPanel
             // 
             this.tsUsuario.ContentPanel.Controls.Add(this.tlUsuario);
-            this.tsUsuario.ContentPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tsUsuario.ContentPanel.Margin = new System.Windows.Forms.Padding(2);
             this.tsUsuario.ContentPanel.Size = new System.Drawing.Size(846, 376);
             this.tsUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tsUsuario.Location = new System.Drawing.Point(0, 0);
-            this.tsUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tsUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.tsUsuario.Name = "tsUsuario";
             this.tsUsuario.Size = new System.Drawing.Size(846, 401);
             this.tsUsuario.TabIndex = 0;
@@ -82,7 +82,7 @@
             this.tlUsuario.Controls.Add(this.btnSalir, 1, 1);
             this.tlUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlUsuario.Location = new System.Drawing.Point(0, 0);
-            this.tlUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.tlUsuario.Name = "tlUsuario";
             this.tlUsuario.RowCount = 2;
             this.tlUsuario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -105,7 +105,7 @@
             this.tlUsuario.SetColumnSpan(this.dgvUsuarios, 12);
             this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvUsuarios.Location = new System.Drawing.Point(2, 2);
-            this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(2);
             this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
@@ -173,7 +173,7 @@
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnActualizar.Location = new System.Drawing.Point(720, 355);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(64, 19);
             this.btnActualizar.TabIndex = 1;
@@ -184,7 +184,7 @@
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(788, 355);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(56, 19);
             this.btnSalir.TabIndex = 2;
@@ -242,7 +242,8 @@
             this.ClientSize = new System.Drawing.Size(846, 401);
             this.Controls.Add(this.tsUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "Usuarios";
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.Usuarios_Load);

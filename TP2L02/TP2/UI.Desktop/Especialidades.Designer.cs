@@ -56,7 +56,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -70,11 +70,11 @@
             // tscEspecializaciones.ContentPanel
             // 
             this.tscEspecializaciones.ContentPanel.Controls.Add(this.tableLayoutPanel1);
-            this.tscEspecializaciones.ContentPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tscEspecializaciones.ContentPanel.Margin = new System.Windows.Forms.Padding(2);
             this.tscEspecializaciones.ContentPanel.Size = new System.Drawing.Size(600, 341);
             this.tscEspecializaciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscEspecializaciones.Location = new System.Drawing.Point(0, 0);
-            this.tscEspecializaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tscEspecializaciones.Margin = new System.Windows.Forms.Padding(2);
             this.tscEspecializaciones.Name = "tscEspecializaciones";
             this.tscEspecializaciones.Size = new System.Drawing.Size(600, 366);
             this.tscEspecializaciones.TabIndex = 2;
@@ -94,7 +94,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnSalir, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -111,7 +111,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.dgvEspecialidades, 2);
             this.dgvEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEspecialidades.Location = new System.Drawing.Point(2, 2);
-            this.dgvEspecialidades.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvEspecialidades.Margin = new System.Windows.Forms.Padding(2);
             this.dgvEspecialidades.MultiSelect = false;
             this.dgvEspecialidades.Name = "dgvEspecialidades";
             this.dgvEspecialidades.RowHeadersWidth = 51;
@@ -141,7 +141,7 @@
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnActualizar.Location = new System.Drawing.Point(459, 320);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(79, 19);
             this.btnActualizar.TabIndex = 1;
@@ -152,7 +152,7 @@
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(542, 320);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(56, 19);
             this.btnSalir.TabIndex = 2;
@@ -211,7 +211,8 @@
             this.Controls.Add(this.tscEspecializaciones);
             this.Controls.Add(this.tableLayoutPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "Especialidades";
             this.Text = "Especialidades";
             this.Load += new System.EventHandler(this.Especialidades_Load);

@@ -123,6 +123,7 @@
             this.ClientSize = new System.Drawing.Size(440, 59);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "EspecialidadDesktop";
             this.Text = "EspecialidadDesktop";
             this.Load += new System.EventHandler(this.EspecialidadDesktop_Load);
