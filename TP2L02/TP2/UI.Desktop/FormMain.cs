@@ -88,5 +88,17 @@ namespace UI.Desktop
                 this.Dispose();
             }
         }
+
+        private void listadoBtn_Click(object sender, EventArgs e)
+        {
+            Modulos formModulos = new Modulos();
+            formModulos.ShowDialog();
+        }
+
+        private void altaModulo_Click(object sender, EventArgs e)
+        {
+            //ModuloDesktop formModulo = new ModuloDesktop(ApplicationForm.ModoForm.Alta);
+            //formModulo.ShowDialog();
+        }
     }
 }

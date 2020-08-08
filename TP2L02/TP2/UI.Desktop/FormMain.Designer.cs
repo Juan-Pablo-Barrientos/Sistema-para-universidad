@@ -40,6 +40,9 @@
             this.especializacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.especialidadlistadoMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.especialidadaltaMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.modulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaModulo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +53,8 @@
             this.ArchivoMenu,
             this.MateriasMenu,
             this.UsuariosMenu,
-            this.especializacionesToolStripMenuItem});
+            this.especializacionesToolStripMenuItem,
+            this.modulosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -131,16 +135,39 @@
             // especialidadlistadoMenuStrip
             // 
             this.especialidadlistadoMenuStrip.Name = "especialidadlistadoMenuStrip";
-            this.especialidadlistadoMenuStrip.Size = new System.Drawing.Size(140, 26);
+            this.especialidadlistadoMenuStrip.Size = new System.Drawing.Size(224, 26);
             this.especialidadlistadoMenuStrip.Text = "Listado";
             this.especialidadlistadoMenuStrip.Click += new System.EventHandler(this.especialidadlistadoMenuStrip_Click);
             // 
             // especialidadaltaMenuStrip
             // 
             this.especialidadaltaMenuStrip.Name = "especialidadaltaMenuStrip";
-            this.especialidadaltaMenuStrip.Size = new System.Drawing.Size(140, 26);
+            this.especialidadaltaMenuStrip.Size = new System.Drawing.Size(224, 26);
             this.especialidadaltaMenuStrip.Text = "Alta";
             this.especialidadaltaMenuStrip.Click += new System.EventHandler(this.especialidadaltaMenuStrip_Click);
+            // 
+            // modulosToolStripMenuItem
+            // 
+            this.modulosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listadoBtn,
+            this.altaModulo});
+            this.modulosToolStripMenuItem.Name = "modulosToolStripMenuItem";
+            this.modulosToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.modulosToolStripMenuItem.Text = "Modulos";
+            // 
+            // listadoBtn
+            // 
+            this.listadoBtn.Name = "listadoBtn";
+            this.listadoBtn.Size = new System.Drawing.Size(224, 26);
+            this.listadoBtn.Text = "Listado";
+            this.listadoBtn.Click += new System.EventHandler(this.listadoBtn_Click);
+            // 
+            // altaModulo
+            // 
+            this.altaModulo.Name = "altaModulo";
+            this.altaModulo.Size = new System.Drawing.Size(224, 26);
+            this.altaModulo.Text = "Alta";
+            this.altaModulo.Click += new System.EventHandler(this.altaModulo_Click);
             // 
             // FormMain
             // 
@@ -176,5 +203,8 @@
         private System.Windows.Forms.ToolStripMenuItem especializacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem especialidadlistadoMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem especialidadaltaMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem modulosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoBtn;
+        private System.Windows.Forms.ToolStripMenuItem altaModulo;
     }
 }

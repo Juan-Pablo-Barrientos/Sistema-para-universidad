@@ -47,8 +47,6 @@ namespace UI.Desktop
             this.Listar();
         }
 
-        //NUEVO Y EDITAR , en proceso 
-
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
             MateriaDesktop formMateria = new MateriaDesktop(ApplicationForm.ModoForm.Alta);
