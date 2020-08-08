@@ -50,6 +50,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidarEspecialidad.cs" />
     <Compile Include="ValidarMateria.cs" />
+    <Compile Include="ValidarModulo.cs" />
     <Compile Include="ValidarUsuario.cs" />
   </ItemGroup>
   <ItemGroup>
