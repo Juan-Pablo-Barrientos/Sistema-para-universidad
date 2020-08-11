@@ -44,22 +44,17 @@ namespace UI.Desktop
             if (txtContra.Text == "admin" && txtNombre.Text == "admin") { this.DialogResult = DialogResult.OK; } //ADMIN
             else
             {
-                usrActual = new UsuarioLogic().getOneNombre(txtNombre.Text);
-                Validador validador = new Validador();
-                if (String.IsNullOrEmpty(usrActual.NombreUsuario))
-                {
-                    BusinessLogic.Notificar("Error", "El usuario no existe", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                usrActual = new UsuarioLogic().getOneNombre(txtNombre.Text);              
+                if (String.IsNullOrEmpty(usrActual.NombreUsuario)) 
+                BusinessLogic.Notificar("Error", "El usuario no existe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else              
+                if (usrActual.Clave != txtContra.Text)  
+                 BusinessLogic.Notificar("Error", "La contraseña no es correcta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
-                {
-                    if (usrActual.Clave != txtContra.Text) validador.AgregarError("Contraseña incorrecta");
-
-                    if (!usrActual.Habilitado) validador.AgregarError("El Usuario no esta habilitado");
-
-                    if (validador.EsValido()) this.DialogResult = DialogResult.OK;
-
-                    else BusinessLogic.Notificar("Error", validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                if (!usrActual.Habilitado)
+                BusinessLogic.Notificar("Error", "El usuario no esta habilitado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else this.DialogResult = DialogResult.OK;
+             
             }
         }
     }

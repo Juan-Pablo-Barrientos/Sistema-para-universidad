@@ -28,37 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.container = new System.Windows.Forms.TableLayoutPanel();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.desc_especialidad = new System.Windows.Forms.Label();
             this.txtIdespecialidades = new System.Windows.Forms.TextBox();
             this.id_especialidad = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.container.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // container
             // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.txtDescripcion, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.desc_especialidad, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtIdespecialidades, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.id_especialidad, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(440, 59);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.container.ColumnCount = 4;
+            this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.container.Controls.Add(this.txtDescripcion, 3, 0);
+            this.container.Controls.Add(this.btnCancelar, 3, 1);
+            this.container.Controls.Add(this.btnAceptar, 2, 1);
+            this.container.Controls.Add(this.desc_especialidad, 2, 0);
+            this.container.Controls.Add(this.txtIdespecialidades, 1, 0);
+            this.container.Controls.Add(this.id_especialidad, 0, 0);
+            this.container.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container.Location = new System.Drawing.Point(0, 0);
+            this.container.Name = "container";
+            this.container.RowCount = 2;
+            this.container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.container.Size = new System.Drawing.Size(440, 59);
+            this.container.TabIndex = 0;
             // 
             // txtDescripcion
             // 
@@ -121,21 +121,21 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(440, 59);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.container);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "EspecialidadDesktop";
             this.Text = "EspecialidadDesktop";
             this.Load += new System.EventHandler(this.EspecialidadDesktop_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.container.ResumeLayout(false);
+            this.container.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel container;
         private System.Windows.Forms.Label id_especialidad;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnCancelar;

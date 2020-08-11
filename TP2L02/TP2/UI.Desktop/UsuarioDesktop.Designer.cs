@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.container = new System.Windows.Forms.TableLayoutPanel();
             this.nombre = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.Label();
@@ -46,44 +46,44 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.usuario = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.container.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // container
             // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.nombre, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.id, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.email, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.clave, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.apellido, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.confirmar, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.chkHabilitado, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtNombre, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtApellido, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtEmail, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtUsuario, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtClave, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtConfirmarClave, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.usuario, 2, 2);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(382, 139);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.container.ColumnCount = 4;
+            this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.container.Controls.Add(this.nombre, 0, 1);
+            this.container.Controls.Add(this.id, 0, 0);
+            this.container.Controls.Add(this.email, 0, 2);
+            this.container.Controls.Add(this.clave, 0, 3);
+            this.container.Controls.Add(this.apellido, 2, 1);
+            this.container.Controls.Add(this.confirmar, 2, 3);
+            this.container.Controls.Add(this.chkHabilitado, 2, 0);
+            this.container.Controls.Add(this.txtID, 1, 0);
+            this.container.Controls.Add(this.txtNombre, 1, 1);
+            this.container.Controls.Add(this.txtApellido, 3, 1);
+            this.container.Controls.Add(this.txtEmail, 1, 2);
+            this.container.Controls.Add(this.txtUsuario, 3, 2);
+            this.container.Controls.Add(this.txtClave, 1, 3);
+            this.container.Controls.Add(this.txtConfirmarClave, 3, 3);
+            this.container.Controls.Add(this.btnCancelar, 3, 4);
+            this.container.Controls.Add(this.btnAceptar, 2, 4);
+            this.container.Controls.Add(this.usuario, 2, 2);
+            this.container.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container.Location = new System.Drawing.Point(0, 0);
+            this.container.Name = "container";
+            this.container.RowCount = 5;
+            this.container.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.container.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.container.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.container.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.container.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.container.Size = new System.Drawing.Size(382, 139);
+            this.container.TabIndex = 0;
             // 
             // nombre
             // 
@@ -242,22 +242,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(382, 139);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.container);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "UsuarioDesktop";
             this.Text = "Usuario";
             this.Load += new System.EventHandler(this.UsuarioDesktop_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.container.ResumeLayout(false);
+            this.container.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel container;
         private System.Windows.Forms.Label nombre;
         private System.Windows.Forms.Label email;
         private System.Windows.Forms.Label clave;

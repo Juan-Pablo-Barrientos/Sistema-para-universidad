@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Util.entities
 {
     //Esta clase se encarga de recopilar los errores que vayan surgiendo en una lista para dsp devolverlos.
-     public class Validador
+     public  class Validador
     {
         private List<string> errores = new List<string>();
         public string Errores 

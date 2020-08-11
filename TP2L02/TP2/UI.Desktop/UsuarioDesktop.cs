@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Logic;
 using Business.Entities;
+using Util.entities;
 
 
 namespace UI.Desktop
@@ -107,16 +108,19 @@ namespace UI.Desktop
             }
         }
         public override void GuardarCambios()
-        {           
+        {
+            MapearADatos();  
             new UsuarioLogic().Save(UsuarioActual);
         }
         public override bool Validar()
-        {
-            //Para validar se usa UsuarioActual y se lo envia a ValidarUsuario. ValidarUsuario devuelve validador, que indentificara los errores de haberlos
-            MapearADatos();
-            var validador = Business.Logic.ValidarUsuario.Validar(UsuarioActual,txtConfirmarClave.Text);  
+        {          
+            var validador = new Validador();
+            List<string> Campos = (this.container.Controls.OfType<TextBox>().Where(txt => txt.ReadOnly == false).Select(txt => txt.Text)).ToList();
+            if (!BusinessLogic.EsMailValido(txtEmail.Text)) validador.AgregarError("Email invalido");
+            if (!Business.Logic.UsuarioLogic.EsContraseñaValida(txtClave.Text, txtConfirmarClave.Text)) validador.AgregarError("Contraseña invalida");
+            if (!BusinessLogic.SonCamposValidos(Campos)) validador.AgregarError("No todos los campos estan completos");           
             if(!validador.EsValido()) BusinessLogic.Notificar("Usuario",validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
-            return validador.EsValido();         
+            return validador.EsValido();       
         }
 
         private void UsuarioDesktop_Load(object sender, EventArgs e)

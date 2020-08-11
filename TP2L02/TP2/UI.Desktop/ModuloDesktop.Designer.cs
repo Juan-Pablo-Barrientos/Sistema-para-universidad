@@ -28,36 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grid = new System.Windows.Forms.TableLayoutPanel();
+            this.container = new System.Windows.Forms.TableLayoutPanel();
             this.labelDescripcion = new System.Windows.Forms.Label();
             this.txtIdModulo = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.labelID = new System.Windows.Forms.Label();
-            this.grid.SuspendLayout();
+            this.container.SuspendLayout();
             this.SuspendLayout();
             // 
-            // grid
+            // container
             // 
-            this.grid.ColumnCount = 4;
-            this.grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.grid.Controls.Add(this.labelDescripcion, 2, 0);
-            this.grid.Controls.Add(this.txtIdModulo, 1, 0);
-            this.grid.Controls.Add(this.btnAceptar, 2, 1);
-            this.grid.Controls.Add(this.btnCancelar, 3, 1);
-            this.grid.Controls.Add(this.txtDescripcion, 3, 0);
-            this.grid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grid.Location = new System.Drawing.Point(0, 0);
-            this.grid.Name = "grid";
-            this.grid.RowCount = 2;
-            this.grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.19277F));
-            this.grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.80723F));
-            this.grid.Size = new System.Drawing.Size(428, 59);
-            this.grid.TabIndex = 0;
+            this.container.ColumnCount = 4;
+            this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.container.Controls.Add(this.labelDescripcion, 2, 0);
+            this.container.Controls.Add(this.txtIdModulo, 1, 0);
+            this.container.Controls.Add(this.btnAceptar, 2, 1);
+            this.container.Controls.Add(this.btnCancelar, 3, 1);
+            this.container.Controls.Add(this.txtDescripcion, 3, 0);
+            this.container.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container.Location = new System.Drawing.Point(0, 0);
+            this.container.Name = "container";
+            this.container.RowCount = 2;
+            this.container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.19277F));
+            this.container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.80723F));
+            this.container.Size = new System.Drawing.Size(428, 59);
+            this.container.TabIndex = 0;
             // 
             // labelDescripcion
             // 
@@ -121,13 +121,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 59);
             this.Controls.Add(this.labelID);
-            this.Controls.Add(this.grid);
+            this.Controls.Add(this.container);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "ModuloDesktop";
             this.Text = "ModuloDesktop";
-            this.grid.ResumeLayout(false);
-            this.grid.PerformLayout();
+            this.container.ResumeLayout(false);
+            this.container.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,7 +135,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel grid;
+        private System.Windows.Forms.TableLayoutPanel container;
         private System.Windows.Forms.Label labelDescripcion;
         private System.Windows.Forms.TextBox txtIdModulo;
         private System.Windows.Forms.Button btnAceptar;

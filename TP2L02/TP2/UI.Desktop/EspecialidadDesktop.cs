@@ -99,12 +99,14 @@ namespace UI.Desktop
         }
         public override void GuardarCambios()
         {
+            MapearADatos();
             new EspecialidadesLogic().Save(EspecialidadActual);
         }
         public override bool Validar()
         {
-            MapearADatos();
-            var validador = Business.Logic.ValidarEspecialidad.Validar(EspecialidadActual);
+            var validador = new Validador();
+            List<string> Campos = (this.container.Controls.OfType<TextBox>().Where(txt => txt.ReadOnly == false).Select(txt => txt.Text)).ToList();
+            if (!BusinessLogic.SonCamposValidos(Campos)) validador.AgregarError("No todos los campos estan completos");
             if (!validador.EsValido()) BusinessLogic.Notificar("Especialidad",validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
             return validador.EsValido();
         }

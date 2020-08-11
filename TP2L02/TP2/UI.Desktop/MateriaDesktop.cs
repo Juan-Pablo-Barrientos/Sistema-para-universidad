@@ -104,16 +104,15 @@ namespace UI.Desktop
             }
         }
         public override void GuardarCambios()
-        {          
+        {  
+            MapearADatos();       
             new MateriaLogic().Save(MateriaActual);
         }
         public override bool Validar()
         {
-            // Los dos IF convierten el .Text en 0 si esta vacio. .Text devolvera un string vacio si es null, pero Conver.ToInt32(String.empty) dara error.
-            if (txtHssemanales.Text == "") txtHssemanales.Text ="0";
-            if (txtHstotales.Text == "") txtHstotales.Text ="0";
-            MapearADatos();
-            var validador = Business.Logic.ValidarMateria.Validar(MateriaActual);
+            var validador = new Validador();
+            List<string> Campos = (this.container.Controls.OfType<TextBox>().Where(txt => txt.ReadOnly == false).Select(txt => txt.Text)).ToList();
+            if (!BusinessLogic.SonCamposValidos(Campos)) validador.AgregarError("No todos los campos estan completos");
             if (!validador.EsValido()) BusinessLogic.Notificar("Materia",validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
             return validador.EsValido();
         }

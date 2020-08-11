@@ -44,6 +44,10 @@ namespace Business.Logic
         {
             UsuarioData.Save(Usuario);
         }
-      
+        static public bool EsContraseñaValida(string contraseña, string confirmar)
+        {
+            return (contraseña.Length > 8) && (contraseña == confirmar);
+        }
+
     }
 }
