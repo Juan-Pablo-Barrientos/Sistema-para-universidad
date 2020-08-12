@@ -142,11 +142,8 @@ namespace UI.Desktop
         //Este metodo esta linkeado con el evento KeyPress, no permite que se ingrese otro caracter que no sea numerico
         //Lo TextBox para la hora lo usan
         private void SoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
-        {           
-            if (!char.IsDigit(e.KeyChar) && (e.KeyChar != '.') )       
-            {
-                e.Handled = true;
-            }          
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) e.Handled = true;                          
         }     
     }
 }
