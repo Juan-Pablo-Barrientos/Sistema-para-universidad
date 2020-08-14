@@ -35,7 +35,7 @@ namespace UI.Desktop
         public PlanDesktop(int ID, ModoForm modo) : this()
         {
             Modo = modo;
-            //PlanActual = new PlanesLogic().getOne(ID);
+            PlanActual = new PlanLogic().getOne(ID);
             MapearDeDatos();
 
         }
@@ -100,7 +100,7 @@ namespace UI.Desktop
         public override void GuardarCambios()
         {
             MapearADatos();
-            //new PlanesLogic().Save(PlanActual);
+            new PlanLogic().Save(PlanActual);
         }
         public override bool Validar()
         {
@@ -129,6 +129,11 @@ namespace UI.Desktop
         }
 
         private void PlanDesktop_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PlanDesktop_Load_1(object sender, EventArgs e)
         {
 
         }

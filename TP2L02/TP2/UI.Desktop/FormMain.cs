@@ -89,16 +89,28 @@ namespace UI.Desktop
             }
         }
 
-        private void listadoBtn_Click(object sender, EventArgs e)
+        private void altaModulo_Click(object sender, EventArgs e)
+        {
+            ModuloDesktop formModulo = new ModuloDesktop(ApplicationForm.ModoForm.Alta);
+            formModulo.ShowDialog();
+        }
+
+        private void listadoModulo_Click(object sender, EventArgs e)
         {
             Modulos formModulos = new Modulos();
             formModulos.ShowDialog();
         }
 
-        private void altaModulo_Click(object sender, EventArgs e)
+        private void listadoPlanes_Click(object sender, EventArgs e)
         {
-            ModuloDesktop formModulo = new ModuloDesktop(ApplicationForm.ModoForm.Alta);
-            formModulo.ShowDialog();
+            Planes formPlanes = new Planes();
+            formPlanes.ShowDialog();
+        }
+
+        private void altaPlanes_Click(object sender, EventArgs e)
+        {
+            PlanDesktop formPlan = new PlanDesktop(ApplicationForm.ModoForm.Alta);
+            formPlan.ShowDialog();
         }
     }
 }

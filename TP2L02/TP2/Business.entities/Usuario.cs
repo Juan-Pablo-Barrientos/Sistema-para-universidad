@@ -51,5 +51,6 @@ namespace Business.Entities
             set { _Habilitado = value; }
         }
 
+
     }
 }

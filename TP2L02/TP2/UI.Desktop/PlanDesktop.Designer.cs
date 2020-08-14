@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.container = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.labelideplan = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.labeldesc = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.container.SuspendLayout();
@@ -55,89 +55,99 @@
             this.container.Controls.Add(this.label3, 0, 1);
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container.Location = new System.Drawing.Point(0, 0);
+            this.container.Margin = new System.Windows.Forms.Padding(4);
             this.container.Name = "container";
             this.container.RowCount = 3;
             this.container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.container.Size = new System.Drawing.Size(438, 82);
+            this.container.Size = new System.Drawing.Size(584, 101);
             this.container.TabIndex = 0;
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Location = new System.Drawing.Point(221, 57);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 22);
-            this.btnAceptar.TabIndex = 0;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(330, 57);
+            this.btnCancelar.Location = new System.Drawing.Point(442, 70);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 22);
+            this.btnCancelar.Size = new System.Drawing.Size(100, 27);
             this.btnCancelar.TabIndex = 1;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // txtDescripcion
+            // btnAceptar
             // 
-            this.txtDescripcion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDescripcion.Location = new System.Drawing.Point(330, 3);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(105, 20);
-            this.txtDescripcion.TabIndex = 2;
+            this.btnAceptar.Location = new System.Drawing.Point(296, 70);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(100, 27);
+            this.btnAceptar.TabIndex = 0;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // txtID
             // 
             this.txtID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtID.Location = new System.Drawing.Point(112, 3);
+            this.txtID.Location = new System.Drawing.Point(150, 4);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(103, 20);
+            this.txtID.Size = new System.Drawing.Size(138, 22);
             this.txtID.TabIndex = 3;
             // 
             // labelideplan
             // 
             this.labelideplan.AutoSize = true;
-            this.labelideplan.Location = new System.Drawing.Point(3, 0);
+            this.labelideplan.Location = new System.Drawing.Point(4, 0);
+            this.labelideplan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelideplan.Name = "labelideplan";
-            this.labelideplan.Size = new System.Drawing.Size(57, 13);
+            this.labelideplan.Size = new System.Drawing.Size(73, 17);
             this.labelideplan.TabIndex = 4;
             this.labelideplan.Text = "ID de Plan";
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDescripcion.Location = new System.Drawing.Point(442, 4);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(138, 22);
+            this.txtDescripcion.TabIndex = 2;
             // 
             // labeldesc
             // 
             this.labeldesc.AutoSize = true;
-            this.labeldesc.Location = new System.Drawing.Point(221, 0);
+            this.labeldesc.Location = new System.Drawing.Point(296, 0);
+            this.labeldesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labeldesc.Name = "labeldesc";
-            this.labeldesc.Size = new System.Drawing.Size(63, 13);
+            this.labeldesc.Size = new System.Drawing.Size(82, 17);
             this.labeldesc.TabIndex = 5;
             this.labeldesc.Text = "Descripcion";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 27);
+            this.label3.Location = new System.Drawing.Point(4, 33);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 13);
+            this.label3.Size = new System.Drawing.Size(124, 17);
             this.label3.TabIndex = 6;
             this.label3.Text = "ID de especialidad";
             // 
             // PlanDesktop
             // 
             this.AcceptButton = this.btnAceptar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 82);
+            this.ClientSize = new System.Drawing.Size(584, 101);
             this.Controls.Add(this.container);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.Name = "PlanDesktop";
             this.Text = "PlanDesktop";
+            this.Load += new System.EventHandler(this.PlanDesktop_Load_1);
             this.container.ResumeLayout(false);
             this.container.PerformLayout();
             this.ResumeLayout(false);

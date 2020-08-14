@@ -8,8 +8,15 @@ namespace Business.Entities
 {
     public class AlumnosIncripcion : BusinessEntity
     {
-        private string _Condicion;
-        public string Condicion
+        public enum Cond
+        {
+            Inscripto,
+            Regular,
+            Aprobado,
+            Libre
+        }
+        private Cond _Condicion;
+        public Cond Condicion
         {
             get { return _Condicion; }
             set { _Condicion = value; }
