@@ -119,7 +119,7 @@ namespace UI.Desktop
             if (!BusinessLogic.EsMailValido(txtEmail.Text)) validador.AgregarError("Email invalido");
             if (!Business.Logic.UsuarioLogic.EsContraseñaValida(txtClave.Text, txtConfirmarClave.Text)) validador.AgregarError("Contraseña invalida");
             if (!BusinessLogic.SonCamposValidos(Campos)) validador.AgregarError("No todos los campos estan completos");           
-            if(!validador.EsValido()) BusinessLogic.Notificar("Usuario",validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
+            if(!validador.EsValido()) BusinessLogic.Notificar("Usuario",validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el erro
             return validador.EsValido();       
         }
 
