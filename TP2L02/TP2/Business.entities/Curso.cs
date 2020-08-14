@@ -48,4 +48,3 @@ namespace Business.Entities
 
     }
 }
-//inscripto,regular,libre y aprobado

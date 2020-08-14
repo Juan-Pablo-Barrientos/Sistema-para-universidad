@@ -40,42 +40,39 @@
             // 
             // container
             // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.txtDescripcion, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.desc_especialidad, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtIdespecialidades, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.id_especialidad, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(587, 73);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.container.ColumnCount = 4;
+            this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.container.Controls.Add(this.txtDescripcion, 3, 0);
+            this.container.Controls.Add(this.btnCancelar, 3, 1);
+            this.container.Controls.Add(this.btnAceptar, 2, 1);
+            this.container.Controls.Add(this.desc_especialidad, 2, 0);
+            this.container.Controls.Add(this.txtIdespecialidades, 1, 0);
+            this.container.Controls.Add(this.id_especialidad, 0, 0);
+            this.container.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container.Location = new System.Drawing.Point(0, 0);
+            this.container.Name = "container";
+            this.container.RowCount = 2;
+            this.container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.container.Size = new System.Drawing.Size(440, 59);
+            this.container.TabIndex = 0;
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDescripcion.Location = new System.Drawing.Point(442, 4);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcion.Location = new System.Drawing.Point(333, 3);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(141, 22);
+            this.txtDescripcion.Size = new System.Drawing.Size(104, 20);
             this.txtDescripcion.TabIndex = 3;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(442, 40);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Location = new System.Drawing.Point(333, 32);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 28);
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -83,10 +80,9 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(296, 40);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptar.Location = new System.Drawing.Point(223, 32);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(100, 28);
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -95,42 +91,38 @@
             // desc_especialidad
             // 
             this.desc_especialidad.AutoSize = true;
-            this.desc_especialidad.Location = new System.Drawing.Point(296, 0);
-            this.desc_especialidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.desc_especialidad.Location = new System.Drawing.Point(223, 0);
             this.desc_especialidad.Name = "desc_especialidad";
-            this.desc_especialidad.Size = new System.Drawing.Size(82, 17);
+            this.desc_especialidad.Size = new System.Drawing.Size(63, 13);
             this.desc_especialidad.TabIndex = 1;
             this.desc_especialidad.Text = "Descripcion";
             // 
             // txtIdespecialidades
             // 
             this.txtIdespecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtIdespecialidades.Location = new System.Drawing.Point(150, 4);
-            this.txtIdespecialidades.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdespecialidades.Location = new System.Drawing.Point(113, 3);
             this.txtIdespecialidades.Name = "txtIdespecialidades";
             this.txtIdespecialidades.ReadOnly = true;
-            this.txtIdespecialidades.Size = new System.Drawing.Size(138, 22);
+            this.txtIdespecialidades.Size = new System.Drawing.Size(104, 20);
             this.txtIdespecialidades.TabIndex = 2;
             // 
             // id_especialidad
             // 
             this.id_especialidad.AutoSize = true;
-            this.id_especialidad.Location = new System.Drawing.Point(4, 0);
-            this.id_especialidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.id_especialidad.Location = new System.Drawing.Point(3, 0);
             this.id_especialidad.Name = "id_especialidad";
-            this.id_especialidad.Size = new System.Drawing.Size(122, 17);
+            this.id_especialidad.Size = new System.Drawing.Size(93, 13);
             this.id_especialidad.TabIndex = 0;
             this.id_especialidad.Text = "Id de especialidad";
             // 
             // EspecialidadDesktop
             // 
             this.AcceptButton = this.btnAceptar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(587, 73);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(440, 59);
+            this.Controls.Add(this.container);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.MaximizeBox = false;
             this.Name = "EspecialidadDesktop";
             this.Text = "EspecialidadDesktop";

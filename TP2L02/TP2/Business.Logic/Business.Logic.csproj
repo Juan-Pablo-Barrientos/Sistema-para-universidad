@@ -46,7 +46,6 @@
     <Compile Include="EspecialidadesLogic.cs" />
     <Compile Include="MateriaLogic.cs" />
     <Compile Include="ModuloLogic.cs" />
-    <Compile Include="PlanLogic.cs" />
     <Compile Include="UsuarioLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

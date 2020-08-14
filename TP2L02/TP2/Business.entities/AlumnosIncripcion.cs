@@ -8,13 +8,11 @@ namespace Business.Entities
 {
     public class AlumnosIncripcion : BusinessEntity
     {
-        
-        public enum Condicion
+        private string _Condicion;
+        public string Condicion
         {
-            Inscripto,
-            Regular,
-            Libre,
-            Aprobado
+            get { return _Condicion; }
+            set { _Condicion = value; }
         }
         private int _IDAlumno;
         public int IDAlumno
@@ -34,14 +32,6 @@ namespace Business.Entities
             get { return _Nota; }
             set { _Nota = value; }
         }
-
-        private Condicion _Cond;
-        public Condicion Cond
-        {
-            get { return _Cond; }
-            set { _Cond = value; }
-        }
-
 
 
 
