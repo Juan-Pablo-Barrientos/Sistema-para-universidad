@@ -156,7 +156,7 @@ namespace Data.Database
 
 
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = especialidad.ID;
-                cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = especialidad.Descripcion;
+                cmdSave.Parameters.Add("@desc_especialidad", SqlDbType.VarChar, 50).Value = especialidad.Descripcion;
                
                 cmdSave.ExecuteNonQuery();
             }

@@ -40,48 +40,52 @@
             // 
             // container
             // 
-            this.container.ColumnCount = 4;
-            this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.container.Controls.Add(this.labelDescripcion, 2, 0);
-            this.container.Controls.Add(this.txtIdModulo, 1, 0);
-            this.container.Controls.Add(this.btnAceptar, 2, 1);
-            this.container.Controls.Add(this.btnCancelar, 3, 1);
-            this.container.Controls.Add(this.txtDescripcion, 3, 0);
-            this.container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container.Location = new System.Drawing.Point(0, 0);
-            this.container.Name = "container";
-            this.container.RowCount = 2;
-            this.container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.19277F));
-            this.container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.80723F));
-            this.container.Size = new System.Drawing.Size(428, 59);
-            this.container.TabIndex = 0;
+            this.grid.ColumnCount = 4;
+            this.grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.grid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.grid.Controls.Add(this.labelDescripcion, 2, 0);
+            this.grid.Controls.Add(this.txtIdModulo, 1, 0);
+            this.grid.Controls.Add(this.btnAceptar, 2, 1);
+            this.grid.Controls.Add(this.btnCancelar, 3, 1);
+            this.grid.Controls.Add(this.txtDescripcion, 3, 0);
+            this.grid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid.Location = new System.Drawing.Point(0, 0);
+            this.grid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grid.Name = "grid";
+            this.grid.RowCount = 2;
+            this.grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.19277F));
+            this.grid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.80723F));
+            this.grid.Size = new System.Drawing.Size(571, 73);
+            this.grid.TabIndex = 0;
             // 
             // labelDescripcion
             // 
             this.labelDescripcion.AutoSize = true;
-            this.labelDescripcion.Location = new System.Drawing.Point(216, 0);
+            this.labelDescripcion.Location = new System.Drawing.Point(289, 0);
+            this.labelDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDescripcion.Name = "labelDescripcion";
-            this.labelDescripcion.Size = new System.Drawing.Size(63, 13);
+            this.labelDescripcion.Size = new System.Drawing.Size(82, 17);
             this.labelDescripcion.TabIndex = 3;
             this.labelDescripcion.Text = "Descripcion";
             // 
             // txtIdModulo
             // 
             this.txtIdModulo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtIdModulo.Location = new System.Drawing.Point(88, 3);
+            this.txtIdModulo.Location = new System.Drawing.Point(118, 4);
+            this.txtIdModulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtIdModulo.Name = "txtIdModulo";
             this.txtIdModulo.ReadOnly = true;
-            this.txtIdModulo.Size = new System.Drawing.Size(122, 20);
+            this.txtIdModulo.Size = new System.Drawing.Size(163, 22);
             this.txtIdModulo.TabIndex = 2;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(216, 31);
+            this.btnAceptar.Location = new System.Drawing.Point(289, 39);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(100, 28);
             this.btnAceptar.TabIndex = 5;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -89,9 +93,10 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(301, 31);
+            this.btnCancelar.Location = new System.Drawing.Point(403, 39);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(100, 28);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -100,29 +105,32 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDescripcion.Location = new System.Drawing.Point(301, 3);
+            this.txtDescripcion.Location = new System.Drawing.Point(403, 4);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(124, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(164, 22);
             this.txtDescripcion.TabIndex = 4;
             // 
             // labelID
             // 
             this.labelID.AutoSize = true;
             this.labelID.Location = new System.Drawing.Point(0, 0);
+            this.labelID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(56, 13);
+            this.labelID.Size = new System.Drawing.Size(71, 17);
             this.labelID.TabIndex = 1;
             this.labelID.Text = "ID Modulo";
             // 
             // ModuloDesktop
             // 
             this.AcceptButton = this.btnAceptar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 59);
+            this.ClientSize = new System.Drawing.Size(571, 73);
             this.Controls.Add(this.labelID);
             this.Controls.Add(this.container);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.MaximizeBox = false;
             this.Name = "ModuloDesktop";
             this.Text = "ModuloDesktop";
