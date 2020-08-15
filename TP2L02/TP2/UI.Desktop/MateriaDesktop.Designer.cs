@@ -41,6 +41,8 @@
             this.txtHstotales = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.cBIdPlan = new System.Windows.Forms.ComboBox();
+            this.labelIdPlan = new System.Windows.Forms.Label();
             this.container.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +53,7 @@
             this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108F));
+            this.container.Controls.Add(this.cBIdPlan, 3, 2);
             this.container.Controls.Add(this.btnAceptar, 2, 3);
             this.container.Controls.Add(this.idmateria, 0, 0);
             this.container.Controls.Add(this.hstotales, 2, 1);
@@ -63,6 +66,7 @@
             this.container.Controls.Add(this.txtHstotales, 3, 1);
             this.container.Controls.Add(this.txtDescripcion, 1, 2);
             this.container.Controls.Add(this.btnCancelar, 3, 3);
+            this.container.Controls.Add(this.labelIdPlan, 2, 2);
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container.Location = new System.Drawing.Point(0, 0);
             this.container.Name = "container";
@@ -178,6 +182,24 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // cBIdPlan
+            // 
+            this.cBIdPlan.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.cBIdPlan.FormattingEnabled = true;
+            this.cBIdPlan.Location = new System.Drawing.Point(303, 63);
+            this.cBIdPlan.Name = "cBIdPlan";
+            this.cBIdPlan.Size = new System.Drawing.Size(102, 21);
+            this.cBIdPlan.TabIndex = 1;
+            // 
+            // labelIdPlan
+            // 
+            this.labelIdPlan.AutoSize = true;
+            this.labelIdPlan.Location = new System.Drawing.Point(203, 60);
+            this.labelIdPlan.Name = "labelIdPlan";
+            this.labelIdPlan.Size = new System.Drawing.Size(42, 13);
+            this.labelIdPlan.TabIndex = 12;
+            this.labelIdPlan.Text = "ID Plan";
+            // 
             // MateriaDesktop
             // 
             this.AcceptButton = this.btnAceptar;
@@ -211,5 +233,7 @@
         private System.Windows.Forms.TextBox txtIdplan;
         private System.Windows.Forms.TextBox txtHstotales;
         private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.ComboBox cBIdPlan;
+        private System.Windows.Forms.Label labelIdPlan;
     }
 }

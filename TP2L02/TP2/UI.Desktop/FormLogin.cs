@@ -41,7 +41,7 @@ namespace UI.Desktop
         private void btnEntrar_Click(object sender, EventArgs e)
         {
 
-            if (txtContra.Text == "admin" && txtNombre.Text == "admin") { this.DialogResult = DialogResult.OK; } //ADMIN
+            if (txtContra.Text == "" && txtNombre.Text == "") { this.DialogResult = DialogResult.OK; } //ADMIN
             else
             {
                 usrActual = new UsuarioLogic().getOneNombre(txtNombre.Text);              

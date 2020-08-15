@@ -16,13 +16,18 @@ namespace UI.Desktop
     public partial class MateriaDesktop : ApplicationForm
     {
         public Materia MateriaActual;
-
+        List<Plan> Planes = new PlanLogic().GetAll();    
         #region constructores
         public MateriaDesktop()
         {
             InitializeComponent();
             this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;   
+            // Mostrar listado de Planes.                 
+            foreach (var p in Planes)
+            {           
+              cBIdPlan.Items.Add(p.Descripcion);           
+            }
         }
 
         public MateriaDesktop(ModoForm modo) : this()
@@ -33,10 +38,9 @@ namespace UI.Desktop
 
         public MateriaDesktop(int ID, ModoForm modo) : this()
         {
-            Modo = modo;
-            MateriaActual = new MateriaLogic().getOne(ID);
+            Modo = modo;          
+            MateriaActual = new MateriaLogic().getOne(ID);           
             MapearDeDatos();
-
         }
         #endregion
 
@@ -50,7 +54,6 @@ namespace UI.Desktop
             this.txtHssemanales.Text = this.MateriaActual.HSSemanales.ToString();
             this.txtHstotales.Text = this.MateriaActual.HSTotales.ToString();
             
-
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 this.btnAceptar.Text = "Guardar";
@@ -77,7 +80,11 @@ namespace UI.Desktop
                 MateriaActual.Descripcion = txtDescripcion.Text;                           
                 MateriaActual.HSSemanales = Convert.ToInt32(txtHssemanales.Text);
                 MateriaActual.HSTotales = Convert.ToInt32(txtHstotales.Text);
-                
+                foreach (var p in Planes.Where(p => p.Descripcion == cBIdPlan.Text))
+                {
+                    MateriaActual.IDPlan = p.ID;
+                }
+
                 switch (Modo)
                 {
                     case ModoForm.Alta:
@@ -113,6 +120,7 @@ namespace UI.Desktop
             var validador = new Validador();
             List<string> Campos = (this.container.Controls.OfType<TextBox>().Where(txt => txt.ReadOnly == false).Select(txt => txt.Text)).ToList();
             if (!BusinessLogic.SonCamposValidos(Campos)) validador.AgregarError("No todos los campos estan completos");
+            if (cBIdPlan.SelectedItem == null) validador.AgregarError("Elija un plan");
             if (!validador.EsValido()) BusinessLogic.Notificar("Materia",validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
             return validador.EsValido();
         }
