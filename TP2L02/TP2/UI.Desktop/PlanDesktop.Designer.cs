@@ -36,6 +36,7 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.labeldesc = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.cBIdEspecialidad = new System.Windows.Forms.ComboBox();
             this.container.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +54,7 @@
             this.container.Controls.Add(this.txtDescripcion, 3, 0);
             this.container.Controls.Add(this.labeldesc, 2, 0);
             this.container.Controls.Add(this.label3, 0, 1);
+            this.container.Controls.Add(this.cBIdEspecialidad, 1, 1);
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container.Location = new System.Drawing.Point(0, 0);
             this.container.Name = "container";
@@ -127,6 +129,15 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "ID de especialidad";
             // 
+            // cBIdEspecialidad
+            // 
+            this.cBIdEspecialidad.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.cBIdEspecialidad.FormattingEnabled = true;
+            this.cBIdEspecialidad.Location = new System.Drawing.Point(112, 30);
+            this.cBIdEspecialidad.Name = "cBIdEspecialidad";
+            this.cBIdEspecialidad.Size = new System.Drawing.Size(103, 21);
+            this.cBIdEspecialidad.TabIndex = 7;
+            // 
             // PlanDesktop
             // 
             this.AcceptButton = this.btnAceptar;
@@ -156,5 +167,6 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label labeldesc;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cBIdEspecialidad;
     }
 }

@@ -53,7 +53,11 @@ namespace UI.Desktop
             this.txtDescripcion.Text = this.MateriaActual.Descripcion;
             this.txtHssemanales.Text = this.MateriaActual.HSSemanales.ToString();
             this.txtHstotales.Text = this.MateriaActual.HSTotales.ToString();
-            
+            foreach (var p in Planes .Where(p => p.ID == MateriaActual.IDPlan))
+            {
+                this.cBIdPlan.Text = p.Descripcion;
+            }
+
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 this.btnAceptar.Text = "Guardar";
@@ -120,7 +124,7 @@ namespace UI.Desktop
             var validador = new Validador();
             List<string> Campos = (this.container.Controls.OfType<TextBox>().Where(txt => txt.ReadOnly == false).Select(txt => txt.Text)).ToList();
             if (!BusinessLogic.SonCamposValidos(Campos)) validador.AgregarError("No todos los campos estan completos");
-            if (cBIdPlan.SelectedItem == null) validador.AgregarError("Elija un plan");
+            if (cBIdPlan.SelectedItem == null) validador.AgregarError("Elija una especialidad");
             if (!validador.EsValido()) BusinessLogic.Notificar("Materia",validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
             return validador.EsValido();
         }

@@ -17,13 +17,17 @@ namespace UI.Desktop
     {
 
         public Plan PlanActual;
-
+        List<Especialidad> Especialidades = new EspecialidadesLogic().GetAll();    
         #region constructores
         public PlanDesktop()
         {
             InitializeComponent();
             this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            foreach (var p in Especialidades)
+            {
+                cBIdEspecialidad.Items.Add(p.Descripcion);
+            }
         }
 
         public PlanDesktop(ModoForm modo) : this()
@@ -46,6 +50,10 @@ namespace UI.Desktop
         {
             this.txtID.Text = this.PlanActual.ID.ToString();
             this.txtDescripcion.Text = this.PlanActual.Descripcion;
+            foreach (var p in Especialidades.Where(p => p.ID == PlanActual.IDEspecialidad)) 
+            {
+                this.cBIdEspecialidad.Text = p.Descripcion;
+            }
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
@@ -71,6 +79,10 @@ namespace UI.Desktop
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 PlanActual.Descripcion = txtDescripcion.Text;
+                foreach (var p in Especialidades.Where(p => p.Descripcion == cBIdEspecialidad.Text))
+                {
+                    PlanActual.IDEspecialidad = p.ID;
+                }
 
                 switch (Modo)
                 {
@@ -107,6 +119,7 @@ namespace UI.Desktop
             var validador = new Validador();
             List<string> Campos = (this.container.Controls.OfType<TextBox>().Where(txt => txt.ReadOnly == false).Select(txt => txt.Text)).ToList();
             if (!BusinessLogic.SonCamposValidos(Campos)) validador.AgregarError("No todos los campos estan completos");
+            if (cBIdEspecialidad.SelectedItem == null) validador.AgregarError("Elija un plan");
             if (!validador.EsValido()) BusinessLogic.Notificar("Plan", validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
             return validador.EsValido();
         }
