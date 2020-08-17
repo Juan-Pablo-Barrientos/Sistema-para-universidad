@@ -39,7 +39,7 @@ namespace UI.Desktop
         public ComisionDesktop(int ID, ModoForm modo) : this()
         {
             Modo = modo;
-        //    ComisionActual = new ComisionLogic().getOne(ID);
+            ComisionActual = new ComisionLogic().getOne(ID);
             MapearDeDatos();
         }
         #endregion
@@ -114,7 +114,7 @@ namespace UI.Desktop
         public override void GuardarCambios()
         {
             MapearADatos();
-           // new ComisionLogic().Save(ComisionActual);
+            new ComisionLogic().Save(ComisionActual);
         }
         public override bool Validar()
         {

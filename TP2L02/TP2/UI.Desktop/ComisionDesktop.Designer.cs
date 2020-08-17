@@ -110,6 +110,7 @@
             this.txtIdComision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtIdComision.Location = new System.Drawing.Point(112, 3);
             this.txtIdComision.Name = "txtIdComision";
+            this.txtIdComision.ReadOnly = true;
             this.txtIdComision.Size = new System.Drawing.Size(103, 20);
             this.txtIdComision.TabIndex = 4;
             // 

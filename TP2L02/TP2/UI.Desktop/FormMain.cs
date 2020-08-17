@@ -112,5 +112,18 @@ namespace UI.Desktop
             PlanDesktop formPlan = new PlanDesktop(ApplicationForm.ModoForm.Alta);
             formPlan.ShowDialog();
         }
+
+        private void listadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Comisiones formComisiones = new Comisiones();
+            formComisiones.ShowDialog();
+        }
+
+        private void altaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PlanDesktop formComision = new PlanDesktop(ApplicationForm.ModoForm.Alta);
+            formComision.ShowDialog();
+
+        }
     }
 }
