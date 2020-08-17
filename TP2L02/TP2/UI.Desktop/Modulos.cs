@@ -51,12 +51,8 @@ namespace UI.Desktop
         private void btnEditar_Click(object sender, EventArgs e)
         {
             int ID = ((Business.Entities.Modulo)this.dgvModulo.SelectedRows[0].DataBoundItem).ID;
-            ModuloDesktop formModulo = new ModuloDesktop(ID, ApplicationForm.ModoForm.Alta);
-
-            if (formModulo.ShowDialog() == DialogResult.OK)
-            {
-                new ModuloLogic().Delete(ID);
-            }
+            ModuloDesktop formModulo = new ModuloDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            formModulo.ShowDialog();          
             this.Listar();
         }
 

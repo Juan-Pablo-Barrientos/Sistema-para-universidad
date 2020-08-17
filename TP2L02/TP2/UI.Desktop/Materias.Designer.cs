@@ -34,15 +34,16 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.Actualizar = new System.Windows.Forms.Button();
             this.dgvMaterias = new System.Windows.Forms.DataGridView();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsNuevo = new System.Windows.Forms.ToolStripButton();
+            this.tsEditar = new System.Windows.Forms.ToolStripButton();
+            this.tsEliminar = new System.Windows.Forms.ToolStripButton();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.desc_materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hs_semanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hs_totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_Plan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsNuevo = new System.Windows.Forms.ToolStripButton();
-            this.tsEditar = new System.Windows.Forms.ToolStripButton();
-            this.tsEliminar = new System.Windows.Forms.ToolStripButton();
+            this.NombrePlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tscMateria.ContentPanel.SuspendLayout();
             this.tscMateria.TopToolStripPanel.SuspendLayout();
             this.tscMateria.SuspendLayout();
@@ -57,11 +58,11 @@
             // tscMateria.ContentPanel
             // 
             this.tscMateria.ContentPanel.Controls.Add(this.tableLayoutPanel1);
-            this.tscMateria.ContentPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tscMateria.ContentPanel.Margin = new System.Windows.Forms.Padding(2);
             this.tscMateria.ContentPanel.Size = new System.Drawing.Size(683, 341);
             this.tscMateria.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tscMateria.Location = new System.Drawing.Point(0, 0);
-            this.tscMateria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tscMateria.Margin = new System.Windows.Forms.Padding(2);
             this.tscMateria.Name = "tscMateria";
             this.tscMateria.Size = new System.Drawing.Size(683, 366);
             this.tscMateria.TabIndex = 0;
@@ -81,7 +82,7 @@
             this.tableLayoutPanel1.Controls.Add(this.dgvMaterias, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -93,7 +94,7 @@
             // 
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalir.Location = new System.Drawing.Point(615, 318);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(66, 21);
             this.btnSalir.TabIndex = 0;
@@ -105,7 +106,7 @@
             // 
             this.Actualizar.Dock = System.Windows.Forms.DockStyle.Right;
             this.Actualizar.Location = new System.Drawing.Point(531, 318);
-            this.Actualizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Actualizar.Margin = new System.Windows.Forms.Padding(2);
             this.Actualizar.Name = "Actualizar";
             this.Actualizar.Size = new System.Drawing.Size(80, 21);
             this.Actualizar.TabIndex = 1;
@@ -123,11 +124,12 @@
             this.desc_materia,
             this.hs_semanales,
             this.hs_totales,
-            this.ID_Plan});
+            this.ID_Plan,
+            this.NombrePlan});
             this.tableLayoutPanel1.SetColumnSpan(this.dgvMaterias, 2);
             this.dgvMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMaterias.Location = new System.Drawing.Point(2, 2);
-            this.dgvMaterias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvMaterias.Margin = new System.Windows.Forms.Padding(2);
             this.dgvMaterias.MultiSelect = false;
             this.dgvMaterias.Name = "dgvMaterias";
             this.dgvMaterias.ReadOnly = true;
@@ -136,51 +138,6 @@
             this.dgvMaterias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMaterias.Size = new System.Drawing.Size(679, 312);
             this.dgvMaterias.TabIndex = 2;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "ID";
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 125;
-            // 
-            // desc_materia
-            // 
-            this.desc_materia.DataPropertyName = "Descripcion";
-            this.desc_materia.HeaderText = "Descripcion";
-            this.desc_materia.MinimumWidth = 6;
-            this.desc_materia.Name = "desc_materia";
-            this.desc_materia.ReadOnly = true;
-            this.desc_materia.Width = 125;
-            // 
-            // hs_semanales
-            // 
-            this.hs_semanales.DataPropertyName = "HSSemanales";
-            this.hs_semanales.HeaderText = "Horas Semanales";
-            this.hs_semanales.MinimumWidth = 6;
-            this.hs_semanales.Name = "hs_semanales";
-            this.hs_semanales.ReadOnly = true;
-            this.hs_semanales.Width = 125;
-            // 
-            // hs_totales
-            // 
-            this.hs_totales.DataPropertyName = "HSTotales";
-            this.hs_totales.HeaderText = "Horas Totales";
-            this.hs_totales.MinimumWidth = 6;
-            this.hs_totales.Name = "hs_totales";
-            this.hs_totales.ReadOnly = true;
-            this.hs_totales.Width = 125;
-            // 
-            // ID_Plan
-            // 
-            this.ID_Plan.DataPropertyName = "IDPlan";
-            this.ID_Plan.HeaderText = "ID Plan";
-            this.ID_Plan.MinimumWidth = 6;
-            this.ID_Plan.Name = "ID_Plan";
-            this.ID_Plan.ReadOnly = true;
-            this.ID_Plan.Width = 125;
             // 
             // toolStrip1
             // 
@@ -225,6 +182,58 @@
             this.tsEliminar.Text = "Eliminar";
             this.tsEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "ID";
+            this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 125;
+            // 
+            // desc_materia
+            // 
+            this.desc_materia.DataPropertyName = "Descripcion";
+            this.desc_materia.HeaderText = "Descripcion";
+            this.desc_materia.MinimumWidth = 6;
+            this.desc_materia.Name = "desc_materia";
+            this.desc_materia.ReadOnly = true;
+            this.desc_materia.Width = 125;
+            // 
+            // hs_semanales
+            // 
+            this.hs_semanales.DataPropertyName = "HSSemanales";
+            this.hs_semanales.HeaderText = "Horas Semanales";
+            this.hs_semanales.MinimumWidth = 6;
+            this.hs_semanales.Name = "hs_semanales";
+            this.hs_semanales.ReadOnly = true;
+            this.hs_semanales.Width = 125;
+            // 
+            // hs_totales
+            // 
+            this.hs_totales.DataPropertyName = "HSTotales";
+            this.hs_totales.HeaderText = "Horas Totales";
+            this.hs_totales.MinimumWidth = 6;
+            this.hs_totales.Name = "hs_totales";
+            this.hs_totales.ReadOnly = true;
+            this.hs_totales.Width = 125;
+            // 
+            // ID_Plan
+            // 
+            this.ID_Plan.DataPropertyName = "IDPlan";
+            this.ID_Plan.HeaderText = "ID Plan";
+            this.ID_Plan.MinimumWidth = 6;
+            this.ID_Plan.Name = "ID_Plan";
+            this.ID_Plan.ReadOnly = true;
+            this.ID_Plan.Visible = false;
+            this.ID_Plan.Width = 125;
+            // 
+            // NombrePlan
+            // 
+            this.NombrePlan.HeaderText = "Plan";
+            this.NombrePlan.Name = "NombrePlan";
+            this.NombrePlan.ReadOnly = true;
+            // 
             // Materias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,7 +241,7 @@
             this.ClientSize = new System.Drawing.Size(683, 366);
             this.Controls.Add(this.tscMateria);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Materias";
             this.Text = "Materias";
@@ -266,5 +275,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hs_semanales;
         private System.Windows.Forms.DataGridViewTextBoxColumn hs_totales;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Plan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombrePlan;
     }
 }

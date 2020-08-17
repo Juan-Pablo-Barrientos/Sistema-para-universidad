@@ -102,8 +102,8 @@ namespace UI.Desktop
                             break;
                         }
                     case ModoForm.Baja:
-                        {
-                            PlanActual.State = BusinessEntity.States.Deleted;
+                        {               
+                            PlanActual.State = BusinessEntity.States.Deleted;                          
                             break;
                         }
                 }

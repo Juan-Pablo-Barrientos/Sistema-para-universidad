@@ -15,7 +15,6 @@ namespace UI.Desktop
     {
         public enum ModoForm
         {
-
             Alta,
             Baja,
             Modificacion,

@@ -48,8 +48,7 @@ namespace UI.Desktop
 
         public override void MapearDeDatos()
         {
-            this.txtIdmateria.Text = this.MateriaActual.ID.ToString();      
-            this.txtIdplan.Text = this.MateriaActual.IDPlan.ToString();
+            this.txtIdmateria.Text = this.MateriaActual.ID.ToString();                  
             this.txtDescripcion.Text = this.MateriaActual.Descripcion;
             this.txtHssemanales.Text = this.MateriaActual.HSSemanales.ToString();
             this.txtHstotales.Text = this.MateriaActual.HSTotales.ToString();
@@ -62,11 +61,11 @@ namespace UI.Desktop
             {
                 this.btnAceptar.Text = "Guardar";
             }
-            else if (Modo == ModoForm.Baja)
+            if (Modo == ModoForm.Baja)
             {
                 this.btnAceptar.Text = "Eliminar";
             }
-            else if (Modo == ModoForm.Consulta)
+            if (Modo == ModoForm.Consulta)
             {
                 this.btnAceptar.Text = "Aceptar";
             }

@@ -13,7 +13,6 @@ namespace Data.Database
         public List<Materia> GetAll()
         {
             //return new List<Usuario>(Usuarios);
-
             //instanciamos el objeto lista a retornar
             List<Materia> materias = new List<Materia>();
             try
@@ -143,39 +142,38 @@ namespace Data.Database
 
             {
 
-                try
-                {
+               try
+               {
 
                     this.OpenConnection();
                     SqlCommand cmdSave = new SqlCommand(
                     "UPDATE materias SET desc_materia = @desc_materia, hs_semanales = @hs_semanales, " +
-                    "hs_totales = @hs_totales, id_plan = @id_plan," +
-                    "WHERE id_materia = @ id", sqlConn);
+                    "hs_totales= @hs_totales, id_plan=@id_plan " +
+                    "WHERE id_materia = @id",sqlConn);
 
 
                     cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = materia.ID;
                     cmdSave.Parameters.Add("@desc_materia", SqlDbType.VarChar, 50).Value = materia.Descripcion;
-                    cmdSave.Parameters.Add("@hs_semanales", SqlDbType.Int, 50).Value = materia.HSSemanales;
-                    cmdSave.Parameters.Add("@hs_totales", SqlDbType.Int, 50).Value = materia.HSTotales;
-                    cmdSave.Parameters.Add("@id_plan", SqlDbType.Int, 50).Value = materia.IDPlan; 
+                    cmdSave.Parameters.Add("@hs_semanales", SqlDbType.Int).Value = materia.HSSemanales;
+                    cmdSave.Parameters.Add("@hs_totales", SqlDbType.Int).Value = materia.HSTotales;
+                    cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = materia.IDPlan; 
                    
                 cmdSave.ExecuteNonQuery();
-                }
-
-                catch (Exception Ex)
-                {
-
-                    Exception ExcepcionManejada =
-                        new Exception("Error al modificar datos de la materia", Ex);
-                    throw ExcepcionManejada;
-                }
-
-                finally
-                {
-                    this.CloseConnection();
-                }
             }
 
+            catch (Exception Ex)
+            {
+
+                Exception ExcepcionManejada =
+                    new Exception("Error al modificar datos de la materia", Ex);
+                throw ExcepcionManejada;
+            }
+
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
 
             protected void Insert(Materia materia)
             {

@@ -39,6 +39,15 @@ namespace Business.Logic
         {
             EspecialidadData.Save(especialidad);
         }
+        public static bool isDeleteValid(int idEspecialidadActual)
+        {
+            List<Plan> Planes = new PlanLogic().GetAll();
+            foreach (var p in Planes)
+            {
+                return p.IDEspecialidad != idEspecialidadActual;
+            }
+            return true;
+        }
 
     }
 }

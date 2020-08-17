@@ -249,7 +249,7 @@ namespace Data.Database
                 SqlCommand cmdSave = new SqlCommand(
                 "UPDATE usuarios SET nombre_usuario = @nombre_usuario, clave = @clave, " +
                 "habilitado = @habilitado, nombre = @nombre, apellido = @apellido, email = @email " +
-                "WHERE id_usuario = @ id", sqlConn);
+                "WHERE id_usuario = @id", sqlConn);
             
 
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = usuario.ID;

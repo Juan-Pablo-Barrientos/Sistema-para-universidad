@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business.Entities;
 using Business.Logic;
 
 namespace UI.Desktop
@@ -33,6 +34,12 @@ namespace UI.Desktop
         {
             MateriaLogic ml = new MateriaLogic();
             this.dgvMaterias.DataSource = ml.GetAll();
+            List<Materia> Ma = new MateriaLogic().GetAll();
+            for (int i = 0; i < Ma.Count; i++)
+            {
+                var esp = new PlanLogic().getOne(Convert.ToInt32(this.dgvMaterias.Rows[i].Cells[4].Value));
+                this.dgvMaterias.Rows[i].Cells[5].Value = esp.Descripcion;
+            }
 
         }
 
@@ -57,12 +64,8 @@ namespace UI.Desktop
         private void tsbEditar_Click(object sender, EventArgs e)
         {
             int ID = ((Business.Entities.Materia)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
-            MateriaDesktop formMateria = new MateriaDesktop(ID, ApplicationForm.ModoForm.Alta);
-
-            if (formMateria.ShowDialog() == DialogResult.OK)
-            {
-                new MateriaLogic().Delete(ID);
-            }
+            MateriaDesktop formMateria = new MateriaDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            formMateria.ShowDialog();
             this.Listar();
         }
     }

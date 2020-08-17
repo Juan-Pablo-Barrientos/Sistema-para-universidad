@@ -37,12 +37,10 @@
             this.hssemanales = new System.Windows.Forms.Label();
             this.txtIdmateria = new System.Windows.Forms.TextBox();
             this.txtHssemanales = new System.Windows.Forms.TextBox();
-            this.txtIdplan = new System.Windows.Forms.TextBox();
             this.txtHstotales = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.cBIdPlan = new System.Windows.Forms.ComboBox();
-            this.labelIdPlan = new System.Windows.Forms.Label();
             this.container.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +51,6 @@
             this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108F));
-            this.container.Controls.Add(this.cBIdPlan, 3, 2);
             this.container.Controls.Add(this.btnAceptar, 2, 3);
             this.container.Controls.Add(this.idmateria, 0, 0);
             this.container.Controls.Add(this.hstotales, 2, 1);
@@ -62,11 +59,10 @@
             this.container.Controls.Add(this.hssemanales, 2, 0);
             this.container.Controls.Add(this.txtIdmateria, 1, 0);
             this.container.Controls.Add(this.txtHssemanales, 3, 0);
-            this.container.Controls.Add(this.txtIdplan, 1, 1);
             this.container.Controls.Add(this.txtHstotales, 3, 1);
             this.container.Controls.Add(this.txtDescripcion, 1, 2);
             this.container.Controls.Add(this.btnCancelar, 3, 3);
-            this.container.Controls.Add(this.labelIdPlan, 2, 2);
+            this.container.Controls.Add(this.cBIdPlan, 1, 1);
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container.Location = new System.Drawing.Point(0, 0);
             this.container.Name = "container";
@@ -111,9 +107,9 @@
             this.idplan.AutoSize = true;
             this.idplan.Location = new System.Drawing.Point(3, 30);
             this.idplan.Name = "idplan";
-            this.idplan.Size = new System.Drawing.Size(42, 13);
+            this.idplan.Size = new System.Drawing.Size(28, 13);
             this.idplan.TabIndex = 3;
-            this.idplan.Text = "ID Plan";
+            this.idplan.Text = "Plan";
             // 
             // descripcion
             // 
@@ -149,14 +145,6 @@
             this.txtHssemanales.TabIndex = 8;
             this.txtHssemanales.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
-            // txtIdplan
-            // 
-            this.txtIdplan.Location = new System.Drawing.Point(103, 33);
-            this.txtIdplan.Name = "txtIdplan";
-            this.txtIdplan.ReadOnly = true;
-            this.txtIdplan.Size = new System.Drawing.Size(94, 20);
-            this.txtIdplan.TabIndex = 9;
-            // 
             // txtHstotales
             // 
             this.txtHstotales.Location = new System.Drawing.Point(303, 33);
@@ -186,19 +174,10 @@
             // 
             this.cBIdPlan.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.cBIdPlan.FormattingEnabled = true;
-            this.cBIdPlan.Location = new System.Drawing.Point(303, 63);
+            this.cBIdPlan.Location = new System.Drawing.Point(103, 33);
             this.cBIdPlan.Name = "cBIdPlan";
-            this.cBIdPlan.Size = new System.Drawing.Size(102, 21);
+            this.cBIdPlan.Size = new System.Drawing.Size(94, 21);
             this.cBIdPlan.TabIndex = 1;
-            // 
-            // labelIdPlan
-            // 
-            this.labelIdPlan.AutoSize = true;
-            this.labelIdPlan.Location = new System.Drawing.Point(203, 60);
-            this.labelIdPlan.Name = "labelIdPlan";
-            this.labelIdPlan.Size = new System.Drawing.Size(42, 13);
-            this.labelIdPlan.TabIndex = 12;
-            this.labelIdPlan.Text = "ID Plan";
             // 
             // MateriaDesktop
             // 
@@ -230,10 +209,8 @@
         private System.Windows.Forms.Label hssemanales;
         private System.Windows.Forms.TextBox txtIdmateria;
         private System.Windows.Forms.TextBox txtHssemanales;
-        private System.Windows.Forms.TextBox txtIdplan;
         private System.Windows.Forms.TextBox txtHstotales;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.ComboBox cBIdPlan;
-        private System.Windows.Forms.Label labelIdPlan;
     }
 }

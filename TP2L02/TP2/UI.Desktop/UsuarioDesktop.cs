@@ -56,11 +56,11 @@ namespace UI.Desktop
             {
                 this.btnAceptar.Text = "Guardar";
             }
-            else if (Modo == ModoForm.Baja)
+            if (Modo == ModoForm.Baja)
             {
                 this.btnAceptar.Text = "Eliminar";
             }
-            else if (Modo == ModoForm.Consulta)
+            if (Modo == ModoForm.Consulta)
             {
                 this.btnAceptar.Text = "Aceptar";
             }

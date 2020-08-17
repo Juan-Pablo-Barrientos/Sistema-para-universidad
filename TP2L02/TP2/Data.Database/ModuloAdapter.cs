@@ -134,32 +134,32 @@ namespace Data.Database
 
         {
 
-            try
-            {
+            //try
+           // {
 
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand(
-                "UPDATE modulos SET desc_modulo = @desc_modulo" +
-                "WHERE id_modulo = @ id", sqlConn);
+                "UPDATE modulos SET desc_modulo = @desc_modulo " +
+                "WHERE id_modulo = @id", sqlConn);
 
 
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = modulo.ID;
                 cmdSave.Parameters.Add("@desc_modulo", SqlDbType.VarChar, 50).Value = modulo.Descripcion;
                 cmdSave.ExecuteNonQuery();
-            }
+           // }
 
-            catch (Exception Ex)
-            {
+            //catch (Exception Ex)
+            //{
 
-                Exception ExcepcionManejada =
-                    new Exception("Error al modificar datos del modulo", Ex);
-                throw ExcepcionManejada;
-            }
+            //    Exception ExcepcionManejada =
+            //        new Exception("Error al modificar datos del modulo", Ex);
+            //    throw ExcepcionManejada;
+            //}
 
-            finally
-            {
-                this.CloseConnection();
-            }
+            //finally
+            //{
+            //    this.CloseConnection();
+            //}
         }
 
 

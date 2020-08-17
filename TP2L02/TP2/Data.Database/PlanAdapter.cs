@@ -153,8 +153,8 @@ namespace Data.Database
 
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand(
-                "UPDATE usuarios SET desc_plan = @desc_plan, id_especialidad=@id_especialidad," +
-                "WHERE id_plan = @ id", sqlConn);
+                "UPDATE planes SET desc_plan = @desc_plan, id_especialidad=@id_especialidad " +
+                "WHERE id_plan = @id", sqlConn);
 
 
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = plan.ID;

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Data.Database;
 using Business.Entities;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace Business.Logic
 {
@@ -39,6 +40,15 @@ namespace Business.Logic
             PlanData.Save(Plan);
         }
 
-      
+        public static bool isDeleteValid(int idPlanActual)
+        {
+            List<Materia> Materias = new MateriaLogic().GetAll();
+            foreach (var m in Materias)
+            {
+              return m.IDPlan != idPlanActual;
+            }
+            return true;
+        }
+     
     }
 }

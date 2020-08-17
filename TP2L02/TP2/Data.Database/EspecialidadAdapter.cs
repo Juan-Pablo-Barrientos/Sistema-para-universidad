@@ -146,33 +146,33 @@ namespace Data.Database
 
         {
 
-            try
-            {
+            //try
+            //{
 
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand(
-                "UPDATE usuarios SET desc_especialidad = @desc_especialidad," +
-                "WHERE id_usuario = @ id", sqlConn);
+                "UPDATE especialidades SET desc_especialidad = @desc_especialidad " +
+                "WHERE id_especialidad = @id", sqlConn);
 
 
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = especialidad.ID;
-                cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = especialidad.Descripcion;
+                cmdSave.Parameters.Add("@desc_especialidad", SqlDbType.VarChar, 50).Value = especialidad.Descripcion;
                
                 cmdSave.ExecuteNonQuery();
-            }
+            //}
 
-            catch (Exception Ex)
-            {
+            //catch (Exception Ex)
+            //{
 
-                Exception ExcepcionManejada =
-                    new Exception("Error al modificar datos de la especialidad", Ex);
-                throw ExcepcionManejada;
-            }
+            //    Exception ExcepcionManejada =
+            //        new Exception("Error al modificar datos de la especialidad", Ex);
+            //    throw ExcepcionManejada;
+            //}
 
-            finally
-            {
-                this.CloseConnection();
-            }
+            //finally
+            //{
+            //    this.CloseConnection();
+            //}
         }
 
 
