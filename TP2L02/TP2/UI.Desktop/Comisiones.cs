@@ -20,11 +20,6 @@ namespace UI.Desktop
             this.dgvComisiones.AutoGenerateColumns = false;
         }
 
-        private void ComisionForm_Load(object sender, EventArgs e)
-        {
-            this.Listar();
-        }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -66,6 +61,11 @@ namespace UI.Desktop
             int ID = ((Business.Entities.Comision)this.dgvComisiones.SelectedRows[0].DataBoundItem).ID;
             ComisionDesktop formComision = new ComisionDesktop(ID, ApplicationForm.ModoForm.Modificacion);
             formComision.ShowDialog();
+            this.Listar();
+        }
+
+        private void Comisiones_Load(object sender, EventArgs e)
+        {
             this.Listar();
         }
     }
