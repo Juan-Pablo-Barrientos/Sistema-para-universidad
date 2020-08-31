@@ -14,7 +14,7 @@ namespace Data.Database
         {
             //return new List<Usuario>(Usuarios);
             //instanciamos el objeto lista a retornar
-            List<Comision> comsiones = new List<Comision>();
+            List<Comision> comisiones = new List<Comision>();
             try
             {
                 //abrimos la conexion a la base de datos con el metodo que creamos antes
@@ -27,13 +27,13 @@ namespace Data.Database
                  * estan en el connection strin)
                  */
 
-                SqlCommand cmdComisions = new SqlCommand("select * from comsiones", sqlConn);
+                SqlCommand cmdComisiones = new SqlCommand("select * from comisiones", sqlConn);
 
                 /*
                  * instanciamos un objeto DataReader que sera
                  * el que recuperara los datos de la BD
                  */
-                SqlDataReader drComisions = cmdComisions.ExecuteReader();
+                SqlDataReader drComisiones = cmdComisiones.ExecuteReader();
 
                 /*
                  * Read() lee una fila de las devueltas por el comando sql
@@ -41,7 +41,7 @@ namespace Data.Database
                  * devuelve verdadero mientras haya podido leer datos y 
                  * avanza a la fila siguiente para el proximo read
                  */
-                while (drComisions.Read())
+                while (drComisiones.Read())
                 {
                     /*creamos un objeto Usuario de la capa de entidades para 
                      * copiar los datos de la fila del DataReader al objeto de
@@ -51,16 +51,16 @@ namespace Data.Database
                     Comision Com = new Comision();
 
                     //ahora copiamos los datos de la fila al objeto
-                    Com.ID = (int)drComisions["id_comision"];
-                    Com.Descripcion = (string)drComisions["desc_comision"];
-                    Com.AnioEspecialidad = (int)drComisions["anio_especialidad"];
-                    Com.IDPlan = (int)drComisions["id_plan"];
+                    Com.ID = (int)drComisiones["id_comision"];
+                    Com.Descripcion = (string)drComisiones["desc_comision"];
+                    Com.AnioEspecialidad = (int)drComisiones["anio_especialidad"];
+                    Com.IDPlan = (int)drComisiones["id_plan"];
                     //agregamos el objeto con datos a la lista que devolveremos
-                    comsiones.Add(Com);
+                    comisiones.Add(Com);
                 }
 
                 //cerramos el DataReader y la conexion a la BD
-                drComisions.Close();
+                drComisiones.Close();
             }
             catch (Exception Ex)
             {
@@ -73,7 +73,7 @@ namespace Data.Database
                 this.CloseConnection();
             }
             //devolvemos el objeto
-            return comsiones;
+            return comisiones;
         }
         public Business.Entities.Comision GetOne(int ID)
         {
@@ -81,18 +81,18 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdComisions = new SqlCommand("select * from comsiones where id_comision=@id", sqlConn);
+                SqlCommand cmdComisions = new SqlCommand("select * from comisiones where id_comision=@id", sqlConn);
                 cmdComisions.Parameters.Add("@id", SqlDbType.Int).Value = ID;
-                SqlDataReader drComisions = cmdComisions.ExecuteReader();
-                if (drComisions.Read())
+                SqlDataReader drComisiones = cmdComisions.ExecuteReader();
+                if (drComisiones.Read())
                 {
-                    Com.ID = (int)drComisions["id_comision"];
-                    Com.Descripcion = (string)drComisions["desc_comision"];
-                    Com.AnioEspecialidad = (int)drComisions["anio_especialidad"];
-                    Com.IDPlan = (int)drComisions["id_plan"];
+                    Com.ID = (int)drComisiones["id_comision"];
+                    Com.Descripcion = (string)drComisiones["desc_comision"];
+                    Com.AnioEspecialidad = (int)drComisiones["anio_especialidad"];
+                    Com.IDPlan = (int)drComisiones["id_plan"];
 
                 }
-                drComisions.Close();
+                drComisiones.Close();
             }
             catch (Exception Ex)
             {
@@ -117,7 +117,7 @@ namespace Data.Database
                 this.OpenConnection();
                 //creamos la sentencia sql y asignamos un valor al parametro
                 SqlCommand cmdDelete =
-                    new SqlCommand("delete comsiones where id_comision=@id", sqlConn);
+                    new SqlCommand("delete comisiones where id_comision=@id", sqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 //ejecutamos la sentencia sql
                 cmdDelete.ExecuteNonQuery();
@@ -145,7 +145,7 @@ namespace Data.Database
 
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand(
-                "UPDATE comsiones SET desc_comision = @desc_comision, anio_especialidad = @anio_especialidad, " +
+                "UPDATE comisiones SET desc_comision = @desc_comision, anio_especialidad = @anio_especialidad, " +
                 "id_plan=@id_plan " +
                 "WHERE id_comision = @id", sqlConn);
 
@@ -178,7 +178,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand(
-                "insert into comsiones(desc_comision,anio_especialidad,id_plan)" +
+                "insert into comisiones(desc_comision,anio_especialidad,id_plan)" +
                 "values(@desc_comision,@anio_especialidad,@id_plan) " +
                 "select @@identity", //esta linea es para recuperar el ID que asigno el sql automaticamente 
                 sqlConn);
