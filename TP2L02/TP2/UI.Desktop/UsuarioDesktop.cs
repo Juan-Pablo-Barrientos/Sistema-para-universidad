@@ -141,5 +141,10 @@ namespace UI.Desktop
         {
             Close();
         }
+
+        private void labellegajo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
