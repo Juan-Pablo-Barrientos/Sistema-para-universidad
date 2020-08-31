@@ -121,7 +121,7 @@ namespace UI.Desktop
 
         private void altaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PlanDesktop formComision = new PlanDesktop(ApplicationForm.ModoForm.Alta);
+            ComisionDesktop formComision = new ComisionDesktop(ApplicationForm.ModoForm.Alta);
             formComision.ShowDialog();
 
         }

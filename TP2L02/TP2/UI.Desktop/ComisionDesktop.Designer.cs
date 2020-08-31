@@ -61,80 +61,72 @@
             this.container.Controls.Add(this.txtAnio, 3, 1);
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container.Location = new System.Drawing.Point(0, 0);
-            this.container.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.container.Name = "container";
             this.container.RowCount = 3;
             this.container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.container.Size = new System.Drawing.Size(584, 110);
+            this.container.Size = new System.Drawing.Size(438, 89);
             this.container.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 17);
+            this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID comision";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(296, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(221, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 17);
+            this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Descripcion";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 36);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(3, 29);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 17);
+            this.label2.Size = new System.Drawing.Size(28, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Plan";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(296, 36);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(221, 29);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 17);
+            this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Año ";
             // 
             // txtIdComision
             // 
             this.txtIdComision.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtIdComision.Location = new System.Drawing.Point(150, 4);
-            this.txtIdComision.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdComision.Location = new System.Drawing.Point(112, 3);
             this.txtIdComision.Name = "txtIdComision";
             this.txtIdComision.ReadOnly = true;
-            this.txtIdComision.Size = new System.Drawing.Size(138, 22);
+            this.txtIdComision.Size = new System.Drawing.Size(103, 20);
             this.txtIdComision.TabIndex = 4;
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDescripcion.Location = new System.Drawing.Point(442, 4);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcion.Location = new System.Drawing.Point(330, 3);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(138, 22);
+            this.txtDescripcion.Size = new System.Drawing.Size(105, 20);
             this.txtDescripcion.TabIndex = 5;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(442, 76);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Location = new System.Drawing.Point(330, 61);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 28);
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -142,10 +134,9 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(296, 76);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptar.Location = new System.Drawing.Point(221, 61);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(100, 28);
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 8;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -155,30 +146,28 @@
             // 
             this.cBIdPlan.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.cBIdPlan.FormattingEnabled = true;
-            this.cBIdPlan.Location = new System.Drawing.Point(150, 40);
-            this.cBIdPlan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cBIdPlan.Location = new System.Drawing.Point(112, 32);
             this.cBIdPlan.Name = "cBIdPlan";
-            this.cBIdPlan.Size = new System.Drawing.Size(136, 24);
+            this.cBIdPlan.Size = new System.Drawing.Size(103, 21);
             this.cBIdPlan.TabIndex = 10;
             // 
             // txtAnio
             // 
             this.txtAnio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAnio.Location = new System.Drawing.Point(442, 40);
-            this.txtAnio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAnio.Location = new System.Drawing.Point(330, 32);
             this.txtAnio.Name = "txtAnio";
-            this.txtAnio.Size = new System.Drawing.Size(138, 22);
+            this.txtAnio.Size = new System.Drawing.Size(105, 20);
             this.txtAnio.TabIndex = 6;
             this.txtAnio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // ComisionDesktop
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 110);
+            this.ClientSize = new System.Drawing.Size(438, 89);
             this.Controls.Add(this.container);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "ComisionDesktop";
             this.Text = "ComisionDesktop";
