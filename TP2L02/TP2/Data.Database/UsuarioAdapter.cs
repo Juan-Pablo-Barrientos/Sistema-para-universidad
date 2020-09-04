@@ -110,8 +110,22 @@ namespace Data.Database
                     usr.Clave = (string)drUsuarios["clave"];
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
                     usr.Nombre = (string)drUsuarios["nombre"];
-                    usr.Apellido = (string)drUsuarios["Apellido"];
+                    usr.Apellido = (string)drUsuarios["apellido"];
                     usr.EMail = (string)drUsuarios["email"];
+                    if ((string)drUsuarios["tipo_usuario"] == "Alumno")
+                    {
+                        usr.TiposUsuario = Usuario.TipoUsuario.Alumno;
+                    }
+                    else
+                    {
+                        usr.TiposUsuario = Usuario.TipoUsuario.Docente;
+                    }
+                    usr.legajo = (string)drUsuarios["legajo"];
+                    usr.fecha_nac = (DateTime)drUsuarios["fecha_nac"];
+                    usr.telefono = (string)drUsuarios["telefono"];
+                    usr.direccion = (string)drUsuarios["direccion"];
+                    
+                        
                     //agregamos el objeto con datos a la lista que devolveremos
                     usuarios.Add(usr);
                 }
@@ -153,6 +167,19 @@ namespace Data.Database
                     usr.Nombre = (string)drUsuarios["nombre"];
                     usr.Apellido = (string)drUsuarios["apellido"];
                     usr.EMail = (string)drUsuarios["email"];
+                    if ((string)drUsuarios["tipo_usuario"] == "Alumno")
+                    {
+                        usr.TiposUsuario = Usuario.TipoUsuario.Alumno;
+                    }
+                    else
+                    {
+                        usr.TiposUsuario = Usuario.TipoUsuario.Docente;
+                    }
+                    usr.legajo = (string)drUsuarios["legajo"];
+                    usr.fecha_nac = (DateTime)drUsuarios["fecha_nac"];
+                    usr.telefono = (string)drUsuarios["telefono"];
+                    usr.direccion = (string)drUsuarios["direccion"];
+
 
                 }
                 drUsuarios.Close();
@@ -192,6 +219,18 @@ namespace Data.Database
                     usr.Nombre = (string)drUsuarios["nombre"];
                     usr.Apellido = (string)drUsuarios["apellido"];
                     usr.EMail = (string)drUsuarios["email"];
+                    if ((string)drUsuarios["tipo_usuario"] == "Alumno")
+                    {
+                        usr.TiposUsuario = Usuario.TipoUsuario.Alumno;
+                    }
+                    else
+                    {
+                        usr.TiposUsuario = Usuario.TipoUsuario.Docente;
+                    }
+                    usr.legajo = (string)drUsuarios["legajo"];
+                    usr.fecha_nac = (DateTime)drUsuarios["fecha_nac"];
+                    usr.telefono = (string)drUsuarios["telefono"];
+                    usr.direccion = (string)drUsuarios["direccion"];
 
                 }
                 drUsuarios.Close();
@@ -249,6 +288,8 @@ namespace Data.Database
                 SqlCommand cmdSave = new SqlCommand(
                 "UPDATE usuarios SET nombre_usuario = @nombre_usuario, clave = @clave, " +
                 "habilitado = @habilitado, nombre = @nombre, apellido = @apellido, email = @email " +
+                "tipo_usuario = @tipo_usuario, legajo = @legajo, fecha_nac = @fecha_nac, telefono = @telefono " +
+                "direccion = @direccion " +
                 "WHERE id_usuario = @id", sqlConn);
             
 
@@ -259,6 +300,11 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
                 cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
                 cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.EMail;
+                cmdSave.Parameters.Add("@tipo_usuario", SqlDbType.VarChar, 50).Value = (usuario.TiposUsuario).ToString();
+                cmdSave.Parameters.Add("@legajo", SqlDbType.VarChar, 50).Value = usuario.legajo;
+                cmdSave.Parameters.Add("@fecha_nac", SqlDbType.VarChar, 50).Value = usuario.fecha_nac;
+                cmdSave.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = usuario.telefono;
+                cmdSave.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = usuario.direccion;
                 cmdSave.ExecuteNonQuery();
             }
 
@@ -284,8 +330,10 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand(
-                "insert into usuarios(nombre_usuario,clave,habilitado,nombre,apellido,email)" +
+                "INSERT into usuarios(nombre_usuario,clave,habilitado,nombre,apellido,email)" +
                 "values(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email) " +
+                "tipo_usuario = @tipo_usuario, legajo = @legajo, fecha_nac = @fecha_nac, telefono = @telefono " +
+                "direccion = @direccion " +
                 "select @@identity", //esta linea es para recuperar el ID que asigno el sql automaticamente
                 sqlConn);
 
@@ -296,6 +344,11 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
                 cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
                 cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.EMail;
+                cmdSave.Parameters.Add("@tipo_usuario", SqlDbType.VarChar, 50).Value = (usuario.TiposUsuario).ToString();
+                cmdSave.Parameters.Add("@legajo", SqlDbType.VarChar, 50).Value = usuario.legajo;
+                cmdSave.Parameters.Add("@fecha_nac", SqlDbType.VarChar, 50).Value = usuario.fecha_nac;
+                cmdSave.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = usuario.telefono;
+                cmdSave.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = usuario.direccion;
                 usuario.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
                 //asi se obtiene el ID que asigno al BD automaticamente
             }

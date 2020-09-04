@@ -10,7 +10,7 @@ namespace Business.Entities
 {
     public class Usuario : BusinessEntity
     {
-        
+
         private string _NombreUsuario;
         public string NombreUsuario
         {
@@ -51,6 +51,47 @@ namespace Business.Entities
             set { _Habilitado = value; }
         }
 
+        public enum TipoUsuario
+        {
+            Alumno,
+            Docente
+
+        }
+
+        private TipoUsuario _TiposUsuario;
+        public TipoUsuario TiposUsuario
+        {
+            get { return _TiposUsuario; }
+            set { _TiposUsuario = value; }
+        }
+
+        private string _legajo;
+        public string legajo
+        {
+            get { return _legajo; }
+            set { _legajo = value; }
+        }
+
+        private DateTime _fecha_nac;
+        public DateTime fecha_nac
+        {
+            get { return _fecha_nac; }
+            set { _fecha_nac = value; }
+        }
+
+        private string _telefono;
+        public string telefono
+        {
+            get { return _telefono; }
+            set { _telefono = value; }
+        }
+
+        private string _direccion;
+        public string direccion
+        {
+            get { return _direccion; }
+            set { _direccion = value; }
+        }
 
     }
 }
