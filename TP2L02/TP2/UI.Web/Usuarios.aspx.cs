@@ -101,7 +101,7 @@ namespace UI.Web
             this.tipoUsuarioDdl.SelectedValue = this.Entity.TiposUsuario.ToString();
             this.legajoTextBox.Text = this.Entity.legajo;
             DateTime dt = DateTime.ParseExact(this.Entity.fecha_nac.ToString(), "d/M/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
-            this.diaNacDdl.SelectedValue=dt.
+           // this.diaNacDdl.SelectedValue;
 
         }
 
