@@ -5,6 +5,7 @@ using Business.Entities;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq.Expressions;
+using static Business.Entities.Usuario;
 
 namespace Data.Database
 {
@@ -121,7 +122,7 @@ namespace Data.Database
                         usr.TiposUsuario = Usuario.TipoUsuario.Docente;
                     }
                     usr.legajo = (string)drUsuarios["legajo"];
-                    usr.fecha_nac = (DateTime)drUsuarios["fecha_nac"];
+                    usr.fecha_nac = drUsuarios["fecha_nac"].ToString();
                     usr.telefono = (string)drUsuarios["telefono"];
                     usr.direccion = (string)drUsuarios["direccion"];
                     
@@ -176,7 +177,7 @@ namespace Data.Database
                         usr.TiposUsuario = Usuario.TipoUsuario.Docente;
                     }
                     usr.legajo = (string)drUsuarios["legajo"];
-                    usr.fecha_nac = (DateTime)drUsuarios["fecha_nac"];
+                    usr.fecha_nac = drUsuarios["fecha_nac"].ToString();
                     usr.telefono = (string)drUsuarios["telefono"];
                     usr.direccion = (string)drUsuarios["direccion"];
 
@@ -228,7 +229,7 @@ namespace Data.Database
                         usr.TiposUsuario = Usuario.TipoUsuario.Docente;
                     }
                     usr.legajo = (string)drUsuarios["legajo"];
-                    usr.fecha_nac = (DateTime)drUsuarios["fecha_nac"];
+                    usr.fecha_nac = drUsuarios["fecha_nac"].ToString();
                     usr.telefono = (string)drUsuarios["telefono"];
                     usr.direccion = (string)drUsuarios["direccion"];
 
@@ -287,8 +288,8 @@ namespace Data.Database
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand(
                 "UPDATE usuarios SET nombre_usuario = @nombre_usuario, clave = @clave, " +
-                "habilitado = @habilitado, nombre = @nombre, apellido = @apellido, email = @email " +
-                "tipo_usuario = @tipo_usuario, legajo = @legajo, fecha_nac = @fecha_nac, telefono = @telefono " +
+                "habilitado = @habilitado, nombre = @nombre, apellido = @apellido, email = @email, " +
+                "tipo_usuario = @tipo_usuario, legajo = @legajo, fecha_nac = @fecha_nac, telefono = @telefono, " +
                 "direccion = @direccion " +
                 "WHERE id_usuario = @id", sqlConn);
             
@@ -313,7 +314,6 @@ namespace Data.Database
 
                 Exception ExcepcionManejada =
                 new Exception("Error al modificar datos del usuario", Ex);
-
                 throw ExcepcionManejada;
             }
 
@@ -330,10 +330,8 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand(
-                "INSERT into usuarios(nombre_usuario,clave,habilitado,nombre,apellido,email)" +
-                "values(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email) " +
-                "tipo_usuario = @tipo_usuario, legajo = @legajo, fecha_nac = @fecha_nac, telefono = @telefono " +
-                "direccion = @direccion " +
+                "insert into usuarios(nombre_usuario,clave,habilitado,nombre,apellido,email, tipo_usuario, legajo, fecha_nac, telefono, direccion)" +
+                "values(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email, @tipo_usuario, @legajo, @fecha_nac, @telefono, @direccion) " +
                 "select @@identity", //esta linea es para recuperar el ID que asigno el sql automaticamente
                 sqlConn);
 
@@ -344,22 +342,24 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
                 cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
                 cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.EMail;
-                cmdSave.Parameters.Add("@tipo_usuario", SqlDbType.VarChar, 50).Value = (usuario.TiposUsuario).ToString();
+                cmdSave.Parameters.Add("@tipo_usuario", SqlDbType.VarChar, 50).Value = usuario.TiposUsuario.ToString(); 
                 cmdSave.Parameters.Add("@legajo", SqlDbType.VarChar, 50).Value = usuario.legajo;
                 cmdSave.Parameters.Add("@fecha_nac", SqlDbType.VarChar, 50).Value = usuario.fecha_nac;
                 cmdSave.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = usuario.telefono;
                 cmdSave.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = usuario.direccion;
                 usuario.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
                 //asi se obtiene el ID que asigno al BD automaticamente
+
+                
             }
 
-            catch (Exception Ex)
-            {
+            //catch (Exception Ex)
+            //{
 
-                Exception ExcepcionManejada =
-                    new Exception("Error al modificar datos del usuario", Ex);
-                throw ExcepcionManejada;
-            }
+            //    Exception ExcepcionManejada =
+            //        new Exception("Error al modificar datos del usuario", Ex);
+            //    throw ExcepcionManejada;
+            //}
 
             finally
             {

@@ -24,6 +24,7 @@ namespace UI.Desktop
         {
             UsuarioLogic ul = new UsuarioLogic(); 
             this.dgvUsuarios.DataSource = ul.GetAll();
+
         }
 
         private void Usuarios_Load(object sender, EventArgs e)

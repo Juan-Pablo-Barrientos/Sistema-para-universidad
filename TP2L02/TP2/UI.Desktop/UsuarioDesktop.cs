@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Business.Logic;
 using Business.Entities;
 using Util.entities;
-
+using System.Globalization;
 
 namespace UI.Desktop
 {
@@ -52,6 +52,15 @@ namespace UI.Desktop
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
             this.txtConfirmarClave.Text = this.UsuarioActual.Clave;
 
+            //---- Bloque en testeo
+            this.txtLegajo.Text = this.UsuarioActual.legajo;
+            this.txtDireccion.Text = this.UsuarioActual.direccion;
+          
+            DateTime dt = DateTime.ParseExact(this.UsuarioActual.fecha_nac, "yyyy/mm/dd", CultureInfo.InvariantCulture);
+            this.txtFec.Text = dt.ToString();
+            this.txtTelefono.Text = this.UsuarioActual.telefono;
+            this.cBTipoDeUsuario.Text = this.UsuarioActual.TiposUsuario.ToString();
+
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 this.btnAceptar.Text = "Guardar";
@@ -79,8 +88,17 @@ namespace UI.Desktop
                 UsuarioActual.Apellido = txtApellido.Text;
                 UsuarioActual.EMail = txtEmail.Text;
                 UsuarioActual.NombreUsuario = txtUsuario.Text;
-                UsuarioActual.Clave = txtClave.Text;           
+                UsuarioActual.Clave = txtClave.Text;
                 UsuarioActual.Habilitado = chkHabilitado.Checked;
+                DateTime dt = DateTime.ParseExact(txtFec.Text.ToString(), "yyyy/m/d", CultureInfo.InvariantCulture);
+                UsuarioActual.fecha_nac = dt.ToString();
+                UsuarioActual.direccion = txtDireccion.Text;
+                UsuarioActual.telefono = txtTelefono.Text;
+                UsuarioActual.legajo = txtLegajo.Text;                
+                if (cBTipoDeUsuario.Text == "Alumno" )
+                UsuarioActual.TiposUsuario = Usuario.TipoUsuario.Alumno;
+                if (cBTipoDeUsuario.Text == "Docente")
+                UsuarioActual.TiposUsuario = Usuario.TipoUsuario.Docente;
 
                 switch (Modo)
                 {
@@ -130,11 +148,11 @@ namespace UI.Desktop
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (Validar())
+          //  if (Validar())
             {
                 GuardarCambios();               
                 Close();
-            }     
+            }        
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
