@@ -95,7 +95,7 @@
             this.container.Controls.Add(this.cBTipoDeUsuario, 1, 6);
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container.Location = new System.Drawing.Point(0, 0);
-            this.container.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.container.Margin = new System.Windows.Forms.Padding(4);
             this.container.Name = "container";
             this.container.RowCount = 8;
             this.container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
@@ -134,7 +134,7 @@
             // 
             this.chkHabilitado.AutoSize = true;
             this.chkHabilitado.Location = new System.Drawing.Point(291, 4);
-            this.chkHabilitado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkHabilitado.Margin = new System.Windows.Forms.Padding(4);
             this.chkHabilitado.Name = "chkHabilitado";
             this.chkHabilitado.Size = new System.Drawing.Size(93, 21);
             this.chkHabilitado.TabIndex = 8;
@@ -146,7 +146,7 @@
             // 
             this.txtID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtID.Location = new System.Drawing.Point(151, 4);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(132, 22);
@@ -156,7 +156,7 @@
             // 
             this.txtNombre.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNombre.Location = new System.Drawing.Point(151, 39);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(132, 22);
             this.txtNombre.TabIndex = 11;
@@ -194,7 +194,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(291, 249);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(100, 28);
             this.btnAceptar.TabIndex = 18;
@@ -206,7 +206,7 @@
             // 
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancelar.Location = new System.Drawing.Point(407, 249);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 28);
             this.btnCancelar.TabIndex = 17;
@@ -228,7 +228,7 @@
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(151, 179);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(132, 22);
             this.txtDireccion.TabIndex = 27;
@@ -237,7 +237,7 @@
             // 
             this.txtTelefono.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTelefono.Location = new System.Drawing.Point(407, 179);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(320, 22);
             this.txtTelefono.TabIndex = 28;
@@ -266,7 +266,7 @@
             // 
             this.txtConfirmarClave.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtConfirmarClave.Location = new System.Drawing.Point(407, 144);
-            this.txtConfirmarClave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtConfirmarClave.Margin = new System.Windows.Forms.Padding(4);
             this.txtConfirmarClave.Name = "txtConfirmarClave";
             this.txtConfirmarClave.Size = new System.Drawing.Size(320, 22);
             this.txtConfirmarClave.TabIndex = 16;
@@ -275,7 +275,7 @@
             // 
             this.txtClave.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtClave.Location = new System.Drawing.Point(407, 109);
-            this.txtClave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtClave.Margin = new System.Windows.Forms.Padding(4);
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(320, 22);
             this.txtClave.TabIndex = 15;
@@ -303,7 +303,7 @@
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(151, 74);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(132, 22);
             this.txtApellido.TabIndex = 12;
@@ -312,7 +312,7 @@
             // 
             this.txtEmail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtEmail.Location = new System.Drawing.Point(407, 39);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(320, 22);
             this.txtEmail.TabIndex = 13;
@@ -320,7 +320,7 @@
             // txtFec
             // 
             this.txtFec.Location = new System.Drawing.Point(151, 144);
-            this.txtFec.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFec.Margin = new System.Windows.Forms.Padding(4);
             this.txtFec.Name = "txtFec";
             this.txtFec.Size = new System.Drawing.Size(132, 22);
             this.txtFec.TabIndex = 26;
@@ -348,7 +348,7 @@
             // txtLegajo
             // 
             this.txtLegajo.Location = new System.Drawing.Point(151, 109);
-            this.txtLegajo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLegajo.Margin = new System.Windows.Forms.Padding(4);
             this.txtLegajo.Name = "txtLegajo";
             this.txtLegajo.Size = new System.Drawing.Size(132, 22);
             this.txtLegajo.TabIndex = 29;
@@ -357,7 +357,7 @@
             // 
             this.txtUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtUsuario.Location = new System.Drawing.Point(407, 74);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(320, 22);
             this.txtUsuario.TabIndex = 14;
@@ -370,7 +370,7 @@
             "Alumno",
             "Docente"});
             this.cBTipoDeUsuario.Location = new System.Drawing.Point(151, 214);
-            this.cBTipoDeUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cBTipoDeUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.cBTipoDeUsuario.Name = "cBTipoDeUsuario";
             this.cBTipoDeUsuario.Size = new System.Drawing.Size(132, 24);
             this.cBTipoDeUsuario.TabIndex = 30;
@@ -384,7 +384,7 @@
             this.ClientSize = new System.Drawing.Size(731, 284);
             this.Controls.Add(this.container);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.Name = "UsuarioDesktop";
             this.Text = "Usuario";

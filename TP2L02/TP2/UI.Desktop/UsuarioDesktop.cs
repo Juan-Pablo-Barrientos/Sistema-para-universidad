@@ -55,7 +55,7 @@ namespace UI.Desktop
             //---- Bloque en testeo
             this.txtLegajo.Text = this.UsuarioActual.legajo;
             this.txtDireccion.Text = this.UsuarioActual.direccion;         
-            this.txtFec.Text = this.UsuarioActual.fecha_nac.ToString();
+            this.txtFec.Text = this.UsuarioActual.fecha_nac.ToString().Truncate(10);
             this.txtTelefono.Text = this.UsuarioActual.telefono;
             this.cBTipoDeUsuario.Text = this.UsuarioActual.TiposUsuario.ToString();
 
