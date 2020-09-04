@@ -72,8 +72,8 @@ namespace Business.Entities
             set { _legajo = value; }
         }
 
-        private string _fecha_nac;
-        public string fecha_nac
+        private DateTime _fecha_nac;
+        public DateTime fecha_nac
         {
             get { return _fecha_nac; }
             set { _fecha_nac = value; }

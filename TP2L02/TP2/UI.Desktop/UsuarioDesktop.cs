@@ -55,8 +55,7 @@ namespace UI.Desktop
             //---- Bloque en testeo
             this.txtLegajo.Text = this.UsuarioActual.legajo;
             this.txtDireccion.Text = this.UsuarioActual.direccion;         
-            DateTime dt = DateTime.ParseExact(this.UsuarioActual.fecha_nac, "yyyy/mm/dd", CultureInfo.InvariantCulture);
-            this.txtFec.Text = dt.ToString();
+            this.txtFec.Text = this.UsuarioActual.fecha_nac.ToString();
             this.txtTelefono.Text = this.UsuarioActual.telefono;
             this.cBTipoDeUsuario.Text = this.UsuarioActual.TiposUsuario.ToString();
 
@@ -88,8 +87,9 @@ namespace UI.Desktop
                 UsuarioActual.EMail = txtEmail.Text;
                 UsuarioActual.NombreUsuario = txtUsuario.Text;
                 UsuarioActual.Clave = txtClave.Text;
-                UsuarioActual.Habilitado = chkHabilitado.Checked;                
-                UsuarioActual.fecha_nac = txtFec.Text;
+                UsuarioActual.Habilitado = chkHabilitado.Checked;
+                DateTime dt = DateTime.Parse(txtFec.Text.ToString());
+                UsuarioActual.fecha_nac = dt;
                 UsuarioActual.direccion = txtDireccion.Text;
                 UsuarioActual.telefono = txtTelefono.Text;
                 UsuarioActual.legajo = txtLegajo.Text;                

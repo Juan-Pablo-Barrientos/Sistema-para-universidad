@@ -122,7 +122,7 @@ namespace Data.Database
                         usr.TiposUsuario = Usuario.TipoUsuario.Docente;
                     }
                     usr.legajo = (string)drUsuarios["legajo"];
-                    usr.fecha_nac = drUsuarios["fecha_nac"].ToString();
+                    usr.fecha_nac = (DateTime)drUsuarios["fecha_nac"];
                     usr.telefono = (string)drUsuarios["telefono"];
                     usr.direccion = (string)drUsuarios["direccion"];
                     
@@ -177,7 +177,7 @@ namespace Data.Database
                         usr.TiposUsuario = Usuario.TipoUsuario.Docente;
                     }
                     usr.legajo = (string)drUsuarios["legajo"];
-                    usr.fecha_nac = drUsuarios["fecha_nac"].ToString();
+                    usr.fecha_nac = (DateTime)drUsuarios["fecha_nac"];
                     usr.telefono = (string)drUsuarios["telefono"];
                     usr.direccion = (string)drUsuarios["direccion"];
 
@@ -229,7 +229,7 @@ namespace Data.Database
                         usr.TiposUsuario = Usuario.TipoUsuario.Docente;
                     }
                     usr.legajo = (string)drUsuarios["legajo"];
-                    usr.fecha_nac = drUsuarios["fecha_nac"].ToString();
+                    usr.fecha_nac = (DateTime)drUsuarios["fecha_nac"];
                     usr.telefono = (string)drUsuarios["telefono"];
                     usr.direccion = (string)drUsuarios["direccion"];
 
@@ -302,8 +302,9 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
                 cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.EMail;
                 cmdSave.Parameters.Add("@tipo_usuario", SqlDbType.VarChar, 50).Value = (usuario.TiposUsuario).ToString();
-                cmdSave.Parameters.Add("@legajo", SqlDbType.VarChar, 50).Value = usuario.legajo;
-                cmdSave.Parameters.Add("@fecha_nac", SqlDbType.VarChar, 50).Value = usuario.fecha_nac;
+                cmdSave.Parameters.Add("@legajo", SqlDbType.VarChar, 50).Value = usuario.legajo; 
+                string dt2 = usuario.fecha_nac.ToString("yyyy-M-d");
+                cmdSave.Parameters.Add("@fecha_nac", SqlDbType.VarChar, 50).Value = dt2;
                 cmdSave.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = usuario.telefono;
                 cmdSave.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = usuario.direccion;
                 cmdSave.ExecuteNonQuery();
@@ -344,7 +345,8 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.EMail;
                 cmdSave.Parameters.Add("@tipo_usuario", SqlDbType.VarChar, 50).Value = usuario.TiposUsuario.ToString(); 
                 cmdSave.Parameters.Add("@legajo", SqlDbType.VarChar, 50).Value = usuario.legajo;
-                cmdSave.Parameters.Add("@fecha_nac", SqlDbType.VarChar, 50).Value = usuario.fecha_nac;
+                string dt2 = usuario.fecha_nac.ToString("yyyy-M-d");
+                cmdSave.Parameters.Add("@fecha_nac", SqlDbType.VarChar, 50).Value = dt2;
                 cmdSave.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = usuario.telefono;
                 cmdSave.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = usuario.direccion;
                 usuario.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
