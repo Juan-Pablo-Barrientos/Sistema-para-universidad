@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -97,6 +98,11 @@ namespace UI.Web
             this.emailTextBox.Text = this.Entity.EMail;
             this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
             this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
+            this.tipoUsuarioDdl.SelectedValue = this.Entity.TiposUsuario.ToString();
+            this.legajoTextBox.Text = this.Entity.legajo;
+            DateTime dt = DateTime.ParseExact(this.Entity.fecha_nac.ToString(), "d/M/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
+            this.diaNacDdl.SelectedValue=dt.
+
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)

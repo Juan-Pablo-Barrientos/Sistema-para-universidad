@@ -37,6 +37,37 @@
         <asp:Label ID="repetirClaveLabel" runat="server" Text="Repetir Clave: "></asp:Label>
         <asp:TextBox ID="repetirClaveTextBox" TextMode="Password" runat="server"></asp:TextBox>
         <br />
+        <asp:Label ID="tipo_usuarioLabel" runat="server" Text="Tipo de Usuario: "></asp:Label>
+        <asp:DropDownList ID="tipoUsuarioDdl" runat="server">
+            <asp:ListItem>Usuario</asp:ListItem>
+            <asp:ListItem>Administrador</asp:ListItem>
+            <asp:ListItem>Docente</asp:ListItem>
+        </asp:DropDownList>
+        <br />
+        <asp:Label ID="legajoLabel" runat="server" Text="Legajo: "></asp:Label>
+        <asp:TextBox ID="legajoTextBox" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="fechaNacLabel" runat="server" Text="Fecha de nacimiento: "></asp:Label>
+        <br />
+        <asp:Label ID="diaNacLabel" runat="server" Text="Dia: "></asp:Label>
+        <asp:DropDownList ID="diaNacDdl" runat="server">
+            <asp:ListItem>1</asp:ListItem>
+            <asp:ListItem>2</asp:ListItem>
+        </asp:DropDownList>
+        <asp:Label ID="mesNacLabel" runat="server" Text="Mes: "></asp:Label>
+        <asp:DropDownList ID="mesNacDdl" runat="server">
+            <asp:ListItem Value="1">Enero</asp:ListItem>
+        </asp:DropDownList>
+        <asp:Label ID="añoNacLabel" runat="server" Text="Año: "></asp:Label>
+        <asp:TextBox ID="añoNacTextBox" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="telefonoLabel" runat="server" Text="Telefono: "></asp:Label>
+        <asp:TextBox ID="telefonoTextBox" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="direccionLabel" runat="server" Text="direccion: "></asp:Label>
+        <asp:TextBox ID="direccionTextBox" runat="server"></asp:TextBox>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+        <br />
         <asp:Panel ID="formActionsPanel" runat="server">
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
             <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
