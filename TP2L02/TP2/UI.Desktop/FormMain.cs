@@ -36,10 +36,7 @@ namespace UI.Desktop
 
         }
 
-        private void materiasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        
         private void materialistadomenu_Click(object sender, EventArgs e)
         {
             Materias formMateria = new Materias();
@@ -106,6 +103,8 @@ namespace UI.Desktop
                             UsuariosMenu.Visible = false;
                             EspecialidadesMenu.Visible = false;
                             ModulosMenu.Visible = false;
+                            MisCursosAlumnoMenu.Visible = false;
+                            InscribirseMenu.Visible = false;
 
                             break;
 
@@ -116,8 +115,17 @@ namespace UI.Desktop
                             UsuariosMenu.Visible = false;
                             EspecialidadesMenu.Visible = false;
                             ModulosMenu.Visible = false;
+                            MisCursosDocenteMenu.Visible = false;
 
                             break;
+
+                        case "Admin":
+                            MisCursosAlumnoMenu.Visible = false;
+                            MisCursosDocenteMenu.Visible = false;
+                            InscribirseMenu.Visible = false;
+
+                            break;
+
                     }
                 }  
                else
@@ -161,6 +169,21 @@ namespace UI.Desktop
         {
             ComisionDesktop formComision = new ComisionDesktop(ApplicationForm.ModoForm.Alta);
             formComision.ShowDialog();
+
+        }
+
+        private void MisCursosAlumnoMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InscribirseMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MisCursosDocenteMenu_Click(object sender, EventArgs e)
+        {
 
         }
     }
