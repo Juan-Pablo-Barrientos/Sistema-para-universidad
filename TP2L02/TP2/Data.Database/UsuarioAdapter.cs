@@ -113,14 +113,13 @@ namespace Data.Database
                     usr.Nombre = (string)drUsuarios["nombre"];
                     usr.Apellido = (string)drUsuarios["apellido"];
                     usr.EMail = (string)drUsuarios["email"];
-                    if ((string)drUsuarios["tipo_usuario"] == "Alumno")
-                    {
-                        usr.TiposUsuario = Usuario.TipoUsuario.Alumno;
-                    }
-                    else
-                    {
+                    if ((string)drUsuarios["tipo_usuario"] == "Alumno")                  
+                        usr.TiposUsuario = Usuario.TipoUsuario.Alumno;                 
+                    if ((string)drUsuarios["tipo_usuario"] == "Docente")                   
                         usr.TiposUsuario = Usuario.TipoUsuario.Docente;
-                    }
+                    if((string)drUsuarios["tipo_usuario"] == "Admin")
+                        usr.TiposUsuario = Usuario.TipoUsuario.Admin;
+
                     usr.legajo = (string)drUsuarios["legajo"];
                     usr.fecha_nac = (DateTime)drUsuarios["fecha_nac"];
                     usr.telefono = (string)drUsuarios["telefono"];
@@ -169,13 +168,11 @@ namespace Data.Database
                     usr.Apellido = (string)drUsuarios["apellido"];
                     usr.EMail = (string)drUsuarios["email"];
                     if ((string)drUsuarios["tipo_usuario"] == "Alumno")
-                    {
                         usr.TiposUsuario = Usuario.TipoUsuario.Alumno;
-                    }
-                    else
-                    {
+                    if ((string)drUsuarios["tipo_usuario"] == "Docente")
                         usr.TiposUsuario = Usuario.TipoUsuario.Docente;
-                    }
+                    if ((string)drUsuarios["tipo_usuario"] == "Admin")
+                        usr.TiposUsuario = Usuario.TipoUsuario.Admin;
                     usr.legajo = (string)drUsuarios["legajo"];
                     usr.fecha_nac = (DateTime)drUsuarios["fecha_nac"];
                     usr.telefono = (string)drUsuarios["telefono"];
@@ -221,13 +218,11 @@ namespace Data.Database
                     usr.Apellido = (string)drUsuarios["apellido"];
                     usr.EMail = (string)drUsuarios["email"];
                     if ((string)drUsuarios["tipo_usuario"] == "Alumno")
-                    {
                         usr.TiposUsuario = Usuario.TipoUsuario.Alumno;
-                    }
-                    else
-                    {
+                    if ((string)drUsuarios["tipo_usuario"] == "Docente")
                         usr.TiposUsuario = Usuario.TipoUsuario.Docente;
-                    }
+                    if ((string)drUsuarios["tipo_usuario"] == "Admin")
+                        usr.TiposUsuario = Usuario.TipoUsuario.Admin;
                     usr.legajo = (string)drUsuarios["legajo"];
                     usr.fecha_nac = (DateTime)drUsuarios["fecha_nac"];
                     usr.telefono = (string)drUsuarios["telefono"];

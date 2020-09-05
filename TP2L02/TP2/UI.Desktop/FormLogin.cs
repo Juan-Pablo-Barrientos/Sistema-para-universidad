@@ -15,8 +15,19 @@ namespace UI.Desktop
 {
     public partial class FormLogin : Form
     {
-        public Usuario usrActual;
-        
+        private static Usuario _usuarioLogueado;
+             
+        public static Usuario usuarioLogueado
+        {
+            get { return _usuarioLogueado; }
+            set { _usuarioLogueado = value; }
+        }
+       
+        public static Usuario GetUsuarioLogueado()
+        {
+            return usuarioLogueado;
+        }
+
         public FormLogin()
         {
             InitializeComponent();
@@ -41,20 +52,21 @@ namespace UI.Desktop
         private void btnEntrar_Click(object sender, EventArgs e)
         {
 
-            if (txtContra.Text == "" && txtNombre.Text == "") { this.DialogResult = DialogResult.OK; } //ADMIN
+            if (txtContra.Text == "" && txtNombre.Text == "") { this.DialogResult = DialogResult.OK; } //Super ADMIN
             else
             {
-                usrActual = new UsuarioLogic().getOneNombre(txtNombre.Text);              
-                if (String.IsNullOrEmpty(usrActual.NombreUsuario)) 
+                usuarioLogueado = new UsuarioLogic().getOneNombre(txtNombre.Text);              
+                if (String.IsNullOrEmpty(usuarioLogueado.NombreUsuario)) 
                 BusinessLogic.Notificar("Error", "El usuario no existe", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else              
-                if (usrActual.Clave != txtContra.Text)  
+                if (usuarioLogueado.Clave != txtContra.Text)  
                  BusinessLogic.Notificar("Error", "La contraseña no es correcta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
-                if (!usrActual.Habilitado)
+                if (!usuarioLogueado.Habilitado)
                 BusinessLogic.Notificar("Error", "El usuario no esta habilitado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else this.DialogResult = DialogResult.OK;
-             
+
+                                            
             }
         }
     }

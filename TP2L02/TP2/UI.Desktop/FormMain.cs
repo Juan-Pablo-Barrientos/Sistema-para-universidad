@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,9 +14,15 @@ namespace UI.Desktop
 {
     public partial class FormMain : Form
     {
+        public object EspecialidadMenu { get; private set; }
+
         public FormMain()
         {
             InitializeComponent();
+        }
+        private void FormMainLoad(object sender, EventArgs e)
+        {
+            
         }
 
         private void FormMain_Click(object sender, EventArgs e)
@@ -70,11 +77,7 @@ namespace UI.Desktop
             formEspecializaciones.ShowDialog();
         }
 
-        private void FormMainLoad(object sender, EventArgs e)
-        {
-            
-
-        }
+  
 
         private void FormMain_Activated(object sender, EventArgs e)
         {
@@ -86,6 +89,41 @@ namespace UI.Desktop
             if (appLogin.ShowDialog() != DialogResult.OK)
             {
                 this.Dispose();
+            }
+            else
+            {               
+               Usuario UsuarioLogeado = FormLogin.GetUsuarioLogueado(); // Obtiene el usuario logeado de FormLogin
+               if (UsuarioLogeado != null) 
+                { 
+                    txtUsuarioLogeado.Text = UsuarioLogeado.NombreUsuario;
+
+                    switch (UsuarioLogeado.TiposUsuario.ToString())
+                    {
+                        case "Docente":
+                            MateriasMenu.Visible = false;
+                            PlanesMenu.Visible = false;
+                            ComisionMenu.Visible = false;
+                            UsuariosMenu.Visible = false;
+                            EspecialidadesMenu.Visible = false;
+                            ModulosMenu.Visible = false;
+
+                            break;
+
+                        case "Alumno":
+                            MateriasMenu.Visible = false;
+                            PlanesMenu.Visible = false;
+                            ComisionMenu.Visible = false;
+                            UsuariosMenu.Visible = false;
+                            EspecialidadesMenu.Visible = false;
+                            ModulosMenu.Visible = false;
+
+                            break;
+                    }
+                }  
+               else
+                    txtUsuarioLogeado.Text = "SuperAdmin";
+               
+               
             }
         }
 
