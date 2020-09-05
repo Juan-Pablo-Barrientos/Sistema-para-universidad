@@ -97,6 +97,8 @@ namespace UI.Desktop
                 UsuarioActual.TiposUsuario = Usuario.TipoUsuario.Alumno;
                 if (cBTipoDeUsuario.Text == "Docente")
                 UsuarioActual.TiposUsuario = Usuario.TipoUsuario.Docente;
+                if (cBTipoDeUsuario.Text == "Admin")
+                UsuarioActual.TiposUsuario = Usuario.TipoUsuario.Admin;
 
                 switch (Modo)
                 {

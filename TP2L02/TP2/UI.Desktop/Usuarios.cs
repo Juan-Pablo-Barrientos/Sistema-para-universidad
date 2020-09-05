@@ -24,7 +24,12 @@ namespace UI.Desktop
         {
             UsuarioLogic ul = new UsuarioLogic(); 
             this.dgvUsuarios.DataSource = ul.GetAll();
-
+            List<Usuario> Us = new UsuarioLogic().GetAll();
+            for (int i = 0; i < Us.Count; i++)
+            {
+            var esp = new UsuarioLogic().getOne(Convert.ToInt32(this.dgvUsuarios.Rows[i].Cells[0].Value));
+            this.dgvUsuarios.Rows[i].Cells[7].Value = esp.TiposUsuario.ToString();
+            }
         }
 
         private void Usuarios_Load(object sender, EventArgs e)

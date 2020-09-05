@@ -54,8 +54,8 @@ namespace Business.Entities
         public enum TipoUsuario
         {
             Alumno,
-            Docente
-
+            Docente,
+            Admin
         }
 
         private TipoUsuario _TiposUsuario;

@@ -34,16 +34,16 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.Actualizar = new System.Windows.Forms.Button();
             this.dgvMaterias = new System.Windows.Forms.DataGridView();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsNuevo = new System.Windows.Forms.ToolStripButton();
-            this.tsEditar = new System.Windows.Forms.ToolStripButton();
-            this.tsEliminar = new System.Windows.Forms.ToolStripButton();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.desc_materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hs_semanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hs_totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_Plan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombrePlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsNuevo = new System.Windows.Forms.ToolStripButton();
+            this.tsEditar = new System.Windows.Forms.ToolStripButton();
+            this.tsEliminar = new System.Windows.Forms.ToolStripButton();
             this.tscMateria.ContentPanel.SuspendLayout();
             this.tscMateria.TopToolStripPanel.SuspendLayout();
             this.tscMateria.SuspendLayout();
@@ -139,49 +139,6 @@
             this.dgvMaterias.Size = new System.Drawing.Size(679, 312);
             this.dgvMaterias.TabIndex = 2;
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsNuevo,
-            this.tsEditar,
-            this.tsEliminar});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(153, 25);
-            this.toolStrip1.TabIndex = 0;
-            // 
-            // tsNuevo
-            // 
-            this.tsNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsNuevo.Image")));
-            this.tsNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsNuevo.Name = "tsNuevo";
-            this.tsNuevo.Size = new System.Drawing.Size(46, 22);
-            this.tsNuevo.Text = "Nuevo";
-            this.tsNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
-            // 
-            // tsEditar
-            // 
-            this.tsEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsEditar.Image")));
-            this.tsEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsEditar.Name = "tsEditar";
-            this.tsEditar.Size = new System.Drawing.Size(41, 22);
-            this.tsEditar.Text = "Editar";
-            this.tsEditar.Click += new System.EventHandler(this.tsbEditar_Click);
-            // 
-            // tsEliminar
-            // 
-            this.tsEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsEliminar.Image")));
-            this.tsEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsEliminar.Name = "tsEliminar";
-            this.tsEliminar.Size = new System.Drawing.Size(54, 22);
-            this.tsEliminar.Text = "Eliminar";
-            this.tsEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
-            // 
             // id
             // 
             this.id.DataPropertyName = "ID";
@@ -233,6 +190,49 @@
             this.NombrePlan.HeaderText = "Plan";
             this.NombrePlan.Name = "NombrePlan";
             this.NombrePlan.ReadOnly = true;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsNuevo,
+            this.tsEditar,
+            this.tsEliminar});
+            this.toolStrip1.Location = new System.Drawing.Point(3, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(153, 25);
+            this.toolStrip1.TabIndex = 0;
+            // 
+            // tsNuevo
+            // 
+            this.tsNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsNuevo.Image")));
+            this.tsNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsNuevo.Name = "tsNuevo";
+            this.tsNuevo.Size = new System.Drawing.Size(46, 22);
+            this.tsNuevo.Text = "Nuevo";
+            this.tsNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
+            // 
+            // tsEditar
+            // 
+            this.tsEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsEditar.Image")));
+            this.tsEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsEditar.Name = "tsEditar";
+            this.tsEditar.Size = new System.Drawing.Size(41, 22);
+            this.tsEditar.Text = "Editar";
+            this.tsEditar.Click += new System.EventHandler(this.tsbEditar_Click);
+            // 
+            // tsEliminar
+            // 
+            this.tsEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsEliminar.Image")));
+            this.tsEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsEliminar.Name = "tsEliminar";
+            this.tsEliminar.Size = new System.Drawing.Size(54, 22);
+            this.tsEliminar.Text = "Eliminar";
+            this.tsEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
             // Materias
             // 
