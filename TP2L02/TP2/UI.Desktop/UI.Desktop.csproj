@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlumnosIncripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlumnosIncripcion.Designer.cs">
+      <DependentUpon>AlumnosIncripcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlumnosIncripcionDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlumnosIncripcionDesktop.Designer.cs">
+      <DependentUpon>AlumnosIncripcionDesktop.cs</DependentUpon>
+    </Compile>
     <Compile Include="ApplicationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +75,18 @@
     </Compile>
     <Compile Include="Comisiones.Designer.cs">
       <DependentUpon>Comisiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocenteCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocenteCurso.Designer.cs">
+      <DependentUpon>DocenteCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocenteCursoDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocenteCursoDesktop.Designer.cs">
+      <DependentUpon>DocenteCursoDesktop.cs</DependentUpon>
     </Compile>
     <Compile Include="EspecialidadDesktop.cs">
       <SubType>Form</SubType>
@@ -138,6 +162,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AlumnosIncripcionDesktop.resx">
+      <DependentUpon>AlumnosIncripcionDesktop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Comisiones.resx">
       <DependentUpon>Comisiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocenteCursoDesktop.resx">
+      <DependentUpon>DocenteCursoDesktop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EspecialidadDesktop.resx">
       <DependentUpon>EspecialidadDesktop.cs</DependentUpon>

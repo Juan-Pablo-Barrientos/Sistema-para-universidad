@@ -54,6 +54,13 @@
             this.InscribirseMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.MisCursosAlumnoMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.MisCursosDocenteMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.InscribirUsuarioMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.docenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaDocenteCurso = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDocenteCurso = new System.Windows.Forms.ToolStripMenuItem();
+            this.alumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaAlumnoInscripcion = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoAlumnoInscripcion = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,13 +75,14 @@
             this.ModulosMenu,
             this.PlanesMenu,
             this.ComisionMenu,
+            this.InscribirUsuarioMenu,
             this.InscribirseMenu,
             this.MisCursosAlumnoMenu,
             this.MisCursosDocenteMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(712, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(855, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -271,12 +279,67 @@
             this.MisCursosDocenteMenu.Text = "Mis Cursos";
             this.MisCursosDocenteMenu.Click += new System.EventHandler(this.MisCursosDocenteMenu_Click);
             // 
+            // InscribirUsuarioMenu
+            // 
+            this.InscribirUsuarioMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.docenteToolStripMenuItem,
+            this.alumnoToolStripMenuItem});
+            this.InscribirUsuarioMenu.Name = "InscribirUsuarioMenu";
+            this.InscribirUsuarioMenu.Size = new System.Drawing.Size(103, 20);
+            this.InscribirUsuarioMenu.Text = "Inscribir usuario";
+            // 
+            // docenteToolStripMenuItem
+            // 
+            this.docenteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaDocenteCurso,
+            this.listadoDocenteCurso});
+            this.docenteToolStripMenuItem.Name = "docenteToolStripMenuItem";
+            this.docenteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.docenteToolStripMenuItem.Text = "Docente";
+            // 
+            // altaDocenteCurso
+            // 
+            this.altaDocenteCurso.Name = "altaDocenteCurso";
+            this.altaDocenteCurso.Size = new System.Drawing.Size(180, 22);
+            this.altaDocenteCurso.Text = "Alta";
+            this.altaDocenteCurso.Click += new System.EventHandler(this.altaDocenteCurso_Click);
+            // 
+            // listadoDocenteCurso
+            // 
+            this.listadoDocenteCurso.Name = "listadoDocenteCurso";
+            this.listadoDocenteCurso.Size = new System.Drawing.Size(180, 22);
+            this.listadoDocenteCurso.Text = "Listado";
+            this.listadoDocenteCurso.Click += new System.EventHandler(this.listadoDocenteCurso_Click);
+            // 
+            // alumnoToolStripMenuItem
+            // 
+            this.alumnoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaAlumnoInscripcion,
+            this.listadoAlumnoInscripcion});
+            this.alumnoToolStripMenuItem.Name = "alumnoToolStripMenuItem";
+            this.alumnoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alumnoToolStripMenuItem.Text = "Alumno";
+            // 
+            // altaAlumnoInscripcion
+            // 
+            this.altaAlumnoInscripcion.Name = "altaAlumnoInscripcion";
+            this.altaAlumnoInscripcion.Size = new System.Drawing.Size(180, 22);
+            this.altaAlumnoInscripcion.Text = "Alta";
+            this.altaAlumnoInscripcion.Click += new System.EventHandler(this.altaAlumnoInscripcion_Click);
+            // 
+            // listadoAlumnoInscripcion
+            // 
+            this.listadoAlumnoInscripcion.Name = "listadoAlumnoInscripcion";
+            this.listadoAlumnoInscripcion.Size = new System.Drawing.Size(180, 22);
+            this.listadoAlumnoInscripcion.Text = "Listado";
+            this.listadoAlumnoInscripcion.Click += new System.EventHandler(this.listadoAlumnoInscripcion_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(712, 366);
+            this.ClientSize = new System.Drawing.Size(855, 366);
             this.Controls.Add(this.txtUsuarioLogeado);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
@@ -324,5 +387,12 @@
         private System.Windows.Forms.ToolStripMenuItem InscribirseMenu;
         private System.Windows.Forms.ToolStripMenuItem MisCursosAlumnoMenu;
         private System.Windows.Forms.ToolStripMenuItem MisCursosDocenteMenu;
+        private System.Windows.Forms.ToolStripMenuItem InscribirUsuarioMenu;
+        private System.Windows.Forms.ToolStripMenuItem docenteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem altaDocenteCurso;
+        private System.Windows.Forms.ToolStripMenuItem listadoDocenteCurso;
+        private System.Windows.Forms.ToolStripMenuItem alumnoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem altaAlumnoInscripcion;
+        private System.Windows.Forms.ToolStripMenuItem listadoAlumnoInscripcion;
     }
 }

@@ -105,6 +105,7 @@ namespace UI.Desktop
                             ModulosMenu.Visible = false;
                             MisCursosAlumnoMenu.Visible = false;
                             InscribirseMenu.Visible = false;
+                            InscribirUsuarioMenu.Visible = false;
 
                             break;
 
@@ -116,6 +117,7 @@ namespace UI.Desktop
                             EspecialidadesMenu.Visible = false;
                             ModulosMenu.Visible = false;
                             MisCursosDocenteMenu.Visible = false;
+                            InscribirUsuarioMenu.Visible = false;
 
                             break;
 
@@ -183,6 +185,26 @@ namespace UI.Desktop
         }
 
         private void MisCursosDocenteMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void altaDocenteCurso_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listadoDocenteCurso_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void altaAlumnoInscripcion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listadoAlumnoInscripcion_Click(object sender, EventArgs e)
         {
 
         }
