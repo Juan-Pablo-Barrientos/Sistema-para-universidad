@@ -162,6 +162,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AlumnosIncripcion.resx">
+      <DependentUpon>AlumnosIncripcion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AlumnosIncripcionDesktop.resx">
       <DependentUpon>AlumnosIncripcionDesktop.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Comisiones.resx">
       <DependentUpon>Comisiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocenteCurso.resx">
+      <DependentUpon>DocenteCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DocenteCursoDesktop.resx">
       <DependentUpon>DocenteCursoDesktop.cs</DependentUpon>

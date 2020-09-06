@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlumInsLogic.cs" />
     <Compile Include="BusinessLogic.cs" />
     <Compile Include="ComisionLogic.cs" />
+    <Compile Include="DocCurLogic.cs" />
     <Compile Include="EspecialidadesLogic.cs" />
     <Compile Include="MateriaLogic.cs" />
     <Compile Include="ModuloLogic.cs" />
