@@ -105,7 +105,7 @@ namespace Data.Database
 
                     Usuario usr = new Usuario();
 
-                    //ahora copiamos los datos de la fila al objeto
+                    ///ahora copiamos los datos de la fila al objeto
                     usr.ID = (int)drUsuarios["id_usuario"];
                     usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
                     usr.Clave = (string)drUsuarios["clave"];
