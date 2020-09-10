@@ -62,6 +62,7 @@ namespace Data.Database
                     cur.IDComision = (int)drCursos["id_comision"];
                     cur.AnioCalendario = (int)drCursos["anio_calendario"];
                     cur.Cupo = (int)drCursos["cupo"];
+                    cur.Descripcion =(string)drCursos["desc_curso"];
                     //agregamos el objeto con datos a la lista que devolveremos
                     cursos.Add(cur);
                 }
@@ -102,6 +103,7 @@ namespace Data.Database
                     cur.IDComision = (int)drCursos["id_comision"];
                     cur.AnioCalendario = (int)drCursos["anio_calendario"];
                     cur.Cupo = (int)drCursos["cupo"];
+                    cur.Descripcion = (string)drCursos["desc_curso"];
                 }
                 drCursos.Close();
             }
@@ -158,7 +160,7 @@ namespace Data.Database
             SqlCommand cmdSave = new SqlCommand(
             "UPDATE cursos SET id_materia = @id_materia, " +
             "id_comision = @id_comision, anio_calendario = @anio_calendario, " +
-            "cupo = @cupo " +
+            "cupo = @cupo, desc_curso = @dec_curso " +
             "WHERE id_especialidad = @id", sqlConn);
 
 
@@ -167,6 +169,7 @@ namespace Data.Database
             cmdSave.Parameters.Add("@id_materia", SqlDbType.Int).Value = cur.IDMateria;
             cmdSave.Parameters.Add("@cupo", SqlDbType.Int).Value = cur.Cupo;
             cmdSave.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = cur.AnioCalendario;
+            cmdSave.Parameters.Add("@desc_curso", SqlDbType.VarChar, 50);
 
             cmdSave.ExecuteNonQuery();
             //}
@@ -192,8 +195,8 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand(
-                "INSERT into cursos(id_comision,id_materia,cupo,anio_calendario)" +
-                "values(@id_comision,@id_materia,@cupo,@anio_calendario) " +
+                "INSERT into cursos(id_comision,id_materia,cupo,anio_calendario,desc_curso)" +
+                "values(@id_comision,@id_materia,@cupo,@anio_calendario,@desc_curso) " +
                 "select @@identity", //esta linea es para recuperar el ID que asigno el sql automaticamente
                 sqlConn);
 
@@ -202,6 +205,8 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@id_materia", SqlDbType.Int).Value = cur.IDMateria;
                 cmdSave.Parameters.Add("@cupo", SqlDbType.Int).Value = cur.Cupo;
                 cmdSave.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = cur.AnioCalendario;
+                cmdSave.Parameters.Add("@desc_curso", SqlDbType.VarChar, 50).Value=cur.Descripcion;
+
                 cur.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
                 //asi se obtiene el ID que asigno al BD automaticamente
             }

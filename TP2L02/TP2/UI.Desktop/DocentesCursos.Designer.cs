@@ -1,6 +1,6 @@
 ﻿namespace UI.Desktop
 {
-    partial class DocenteCurso
+    partial class DocentesCursos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DocenteCurso));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DocentesCursos));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.tsDocenteCurso = new System.Windows.Forms.ToolStrip();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();

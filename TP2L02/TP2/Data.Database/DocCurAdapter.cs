@@ -165,7 +165,7 @@ namespace Data.Database
             cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = docCur.ID;
             cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = docCur.IDCurso;
             cmdSave.Parameters.Add("@id_docente", SqlDbType.Int).Value = docCur.IDDocente;
-            cmdSave.Parameters.Add("@cargo", SqlDbType.VarChar, 50).Value = docCur.Cargo;
+            cmdSave.Parameters.Add("@cargo", SqlDbType.VarChar, 50).Value = docCur.Cargo.ToString();
 
             cmdSave.ExecuteNonQuery();
             //}
@@ -199,7 +199,7 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = docCur.ID;
                 cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = docCur.IDCurso;
                 cmdSave.Parameters.Add("@id_docente", SqlDbType.Int).Value = docCur.IDDocente;
-                cmdSave.Parameters.Add("@cargo", SqlDbType.VarChar, 50).Value = docCur.Cargo;
+                cmdSave.Parameters.Add("@cargo", SqlDbType.VarChar, 50).Value = docCur.Cargo.ToString();
                 docCur.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
                 //asi se obtiene el ID que asigno al BD automaticamente
             }

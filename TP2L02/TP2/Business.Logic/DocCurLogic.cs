@@ -10,14 +10,14 @@ using Business.Entities;
 namespace Business.Logic
 {
 
-    public class DocCursLogic : BusinessLogic
+    public class DocCurLogic : BusinessLogic
     {
         private Data.Database.DocCurAdapter _DocCurData;
         public DocCurAdapter DocCurData { get => _DocCurData; set => _DocCurData = value; }
 
 
         //Metodos
-        public DocCursLogic()
+        public DocCurLogic()
         {
             DocCurData = new Data.Database.DocCurAdapter();
         }

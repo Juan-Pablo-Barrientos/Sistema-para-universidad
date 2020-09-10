@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlumnosIncripcion.cs">
+    <Compile Include="AlumnosIncripciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AlumnosIncripcion.Designer.cs">
-      <DependentUpon>AlumnosIncripcion.cs</DependentUpon>
+    <Compile Include="AlumnosIncripciones.Designer.cs">
+      <DependentUpon>AlumnosIncripciones.cs</DependentUpon>
     </Compile>
     <Compile Include="AlumnosIncripcionDesktop.cs">
       <SubType>Form</SubType>
@@ -76,11 +76,23 @@
     <Compile Include="Comisiones.Designer.cs">
       <DependentUpon>Comisiones.cs</DependentUpon>
     </Compile>
-    <Compile Include="DocenteCurso.cs">
+    <Compile Include="Cursos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DocenteCurso.Designer.cs">
-      <DependentUpon>DocenteCurso.cs</DependentUpon>
+    <Compile Include="Cursos.Designer.cs">
+      <DependentUpon>Cursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CursoDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CursoDesktop.Designer.cs">
+      <DependentUpon>CursoDesktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocentesCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocentesCursos.Designer.cs">
+      <DependentUpon>DocentesCursos.cs</DependentUpon>
     </Compile>
     <Compile Include="DocenteCursoDesktop.cs">
       <SubType>Form</SubType>
@@ -162,8 +174,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AlumnosIncripcion.resx">
-      <DependentUpon>AlumnosIncripcion.cs</DependentUpon>
+    <EmbeddedResource Include="AlumnosIncripciones.resx">
+      <DependentUpon>AlumnosIncripciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AlumnosIncripcionDesktop.resx">
       <DependentUpon>AlumnosIncripcionDesktop.cs</DependentUpon>
@@ -177,8 +189,11 @@
     <EmbeddedResource Include="Comisiones.resx">
       <DependentUpon>Comisiones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DocenteCurso.resx">
-      <DependentUpon>DocenteCurso.cs</DependentUpon>
+    <EmbeddedResource Include="CursoDesktop.resx">
+      <DependentUpon>CursoDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocentesCursos.resx">
+      <DependentUpon>DocentesCursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DocenteCursoDesktop.resx">
       <DependentUpon>DocenteCursoDesktop.cs</DependentUpon>

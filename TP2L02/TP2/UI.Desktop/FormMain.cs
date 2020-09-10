@@ -191,7 +191,8 @@ namespace UI.Desktop
 
         private void altaDocenteCurso_Click(object sender, EventArgs e)
         {
-
+            DocCurDesktop formDocCur = new DocCurDesktop(ApplicationForm.ModoForm.Alta);
+            formDocCur.ShowDialog();
         }
 
         private void listadoDocenteCurso_Click(object sender, EventArgs e)
@@ -201,12 +202,18 @@ namespace UI.Desktop
 
         private void altaAlumnoInscripcion_Click(object sender, EventArgs e)
         {
-
+         
         }
 
         private void listadoAlumnoInscripcion_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CursosAltastrip_Click(object sender, EventArgs e)
+        {
+            CursoDesktop formCurso = new CursoDesktop(ApplicationForm.ModoForm.Alta);
+            formCurso.ShowDialog();
         }
     }
 }

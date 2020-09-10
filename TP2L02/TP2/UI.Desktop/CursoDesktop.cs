@@ -13,41 +13,38 @@ using Util.entities;
 
 namespace UI.Desktop
 {
-    public partial class DocCurDesktop : ApplicationForm
+    public partial class CursoDesktop : ApplicationForm
     {
-        public DocenteCurso DocCurActual;
-        List<Usuario> Usuarios = new UsuarioLogic().GetAll();
-        List<Curso> Cursos = new CursosLogic().GetAll();
-
+        public Curso CursoActual;
+        List<Comision> Comisiones = new ComisionLogic().GetAll();
+        List<Materia> Materias = new MateriaLogic().GetAll();
         #region constructores
-        public DocCurDesktop()
+        public CursoDesktop()
         {
             InitializeComponent();
             this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-
-            foreach (var u in Usuarios)
+            // Mostrar listado de Comisiones.                 
+            foreach (var c in Comisiones)
             {
-                if (u.TiposUsuario.ToString() == "Docente")
-                    cBDocente.Items.Add(u.NombreUsuario);
+                cBComision.Items.Add(c.Descripcion);
             }
-            foreach (var c in Cursos)
+            foreach (var c in Materias)
             {
-                cBCurso.Items.Add(c.Descripcion);
+                cBMateria.Items.Add(c.Descripcion);
             }
-
         }
 
-        public DocCurDesktop(ModoForm modo) : this()
+        public CursoDesktop(ModoForm modo) : this()
         {
             Modo = modo;
         }
 
 
-        public DocCurDesktop(int ID, ModoForm modo) : this()
+        public CursoDesktop(int ID, ModoForm modo) : this()
         {
             Modo = modo;
-            DocCurActual = new DocCurLogic().getOne(ID);
+            CursoActual = new CursosLogic().getOne(ID);
             MapearDeDatos();
         }
         #endregion
@@ -56,18 +53,18 @@ namespace UI.Desktop
 
         public override void MapearDeDatos()
         {
-            this.txtIdDocenteCurso.Text = this.DocCurActual.ID.ToString();
-            this.cBCargo.Text = this.DocCurActual.Cargo.ToString();
-
-
-            foreach (var u in Usuarios.Where(u => u.ID == DocCurActual.IDDocente))
+            this.txtIDCurso.Text = this.CursoActual.ID.ToString();
+            this.txtAnio.Text = this.CursoActual.AnioCalendario.ToString();
+            this.txtCupo.Text = this.CursoActual.Cupo.ToString();
+            this.txtDescripcion.Text = this.CursoActual.Descripcion;
+            
+            foreach (var p in Comisiones.Where(p => p.ID == CursoActual.IDComision))
             {
-                this.cBDocente.Text = u.NombreUsuario;
+                this.cBComision.Text = p.Descripcion;
             }
-
-            foreach (var c in Cursos.Where(c => c.ID == DocCurActual.IDCurso))
+            foreach (var p in Materias.Where(p => p.ID == CursoActual.IDMateria))
             {
-                this.cBCurso.Text = c.Descripcion;
+                this.cBMateria.Text = p.Descripcion;
             }
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
@@ -89,47 +86,42 @@ namespace UI.Desktop
 
             if (Modo == ModoForm.Alta)
             {
-                DocCurActual = new DocenteCurso();
+                CursoActual = new Curso();
             }
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
-
-                if (cBCargo.Text == "Docente")
-                    DocCurActual.Cargo = DocenteCurso.TiposCargos.Docente;
-                if (cBCargo.Text == "Auxiliar")
-                    DocCurActual.Cargo = DocenteCurso.TiposCargos.Auxiliar;
-                if (cBCargo.Text == "Jefecatedra")
-                    DocCurActual.Cargo = DocenteCurso.TiposCargos.Jefecatedra;
-
-                foreach (var p in Usuarios.Where(p => p.NombreUsuario == cBDocente.Text))
+                CursoActual.Descripcion = txtDescripcion.Text;
+                CursoActual.AnioCalendario = Convert.ToInt32(txtAnio.Text);
+                CursoActual.Cupo = Convert.ToInt32(txtCupo.Text);
+                foreach (var p in Materias.Where(p => p.Descripcion == cBMateria.Text))
                 {
-                    DocCurActual.IDDocente = p.ID;
+                    CursoActual.IDMateria = p.ID;
                 }
-                foreach (var p in Cursos.Where(p => p.Descripcion == cBCurso.Text))
+                foreach (var p in Comisiones.Where(p => p.Descripcion == cBComision.Text))
                 {
-                    DocCurActual.IDCurso = p.ID;
+                    CursoActual.IDComision = p.ID;
                 }
 
                 switch (Modo)
                 {
                     case ModoForm.Alta:
                         {
-                            DocCurActual.State = BusinessEntity.States.New;
+                            CursoActual.State = BusinessEntity.States.New;
                             break;
                         }
                     case ModoForm.Modificacion:
                         {
-                            DocCurActual.State = BusinessEntity.States.Modified;
+                            CursoActual.State = BusinessEntity.States.Modified;
                             break;
                         }
                     case ModoForm.Consulta:
                         {
-                            DocCurActual.State = BusinessEntity.States.Unmodified;
+                            CursoActual.State = BusinessEntity.States.Unmodified;
                             break;
                         }
                     case ModoForm.Baja:
                         {
-                            DocCurActual.State = BusinessEntity.States.Deleted;
+                            CursoActual.State = BusinessEntity.States.Deleted;
                             break;
                         }
                 }
@@ -138,15 +130,16 @@ namespace UI.Desktop
         public override void GuardarCambios()
         {
             MapearADatos();
-            new DocCurLogic().Save(DocCurActual);
+            new CursosLogic().Save(CursoActual);
         }
         public override bool Validar()
         {
             var validador = new Validador();
             List<string> Campos = (this.container.Controls.OfType<TextBox>().Where(txt => txt.ReadOnly == false).Select(txt => txt.Text)).ToList();
             if (!BusinessLogic.SonCamposValidos(Campos)) validador.AgregarError("No todos los campos estan completos");
-            if (cBCargo.SelectedItem == null) validador.AgregarError("Elija un cargo");
-            if (!validador.EsValido()) BusinessLogic.Notificar("DocenteCurso", validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
+            if (cBComision.SelectedItem == null) validador.AgregarError("Elija una comision");
+            if (cBMateria.SelectedItem == null) validador.AgregarError("Elija una materia");
+            if (!validador.EsValido()) BusinessLogic.Notificar("Curso", validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
             return validador.EsValido();
         }
 
@@ -167,7 +160,7 @@ namespace UI.Desktop
             Close();
         }
 
-        private void DocCurDesktop_Load(object sender, EventArgs e)
+        private void CursoDesktop_Load(object sender, EventArgs e)
         {
 
         }
