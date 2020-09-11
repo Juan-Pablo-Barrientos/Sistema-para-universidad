@@ -62,6 +62,10 @@ namespace Data.Database
                     docCur.IDDocente = (int)drDocCurs["id_docente"];
                     if ((string)drDocCurs["cargo"] == "Docente")
                         docCur.Cargo = DocenteCurso.TiposCargos.Docente;
+                    if ((string)drDocCurs["cargo"] == "Jefecatedra")
+                        docCur.Cargo = DocenteCurso.TiposCargos.Jefecatedra;
+                    if ((string)drDocCurs["cargo"] == "Auxiliar")
+                        docCur.Cargo = DocenteCurso.TiposCargos.Auxiliar;                    
                     //agregamos el objeto con datos a la lista que devolveremos
                     DocCurs.Add(docCur);
                 }
@@ -102,6 +106,10 @@ namespace Data.Database
                     docCur.IDDocente = (int)drDocCurs["id_docente"];
                     if ((string)drDocCurs["cargo"] == "Docente")
                         docCur.Cargo = DocenteCurso.TiposCargos.Docente;
+                    if ((string)drDocCurs["cargo"] == "Auxiliar")
+                        docCur.Cargo = DocenteCurso.TiposCargos.Auxiliar;
+                    if ((string)drDocCurs["cargo"] == "Jefecatedra")
+                        docCur.Cargo = DocenteCurso.TiposCargos.Jefecatedra;
 
                 }
                 drDocCurs.Close();
@@ -203,7 +211,7 @@ namespace Data.Database
                 docCur.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
                 //asi se obtiene el ID que asigno al BD automaticamente
             }
-
+            
             catch (Exception Ex)
             {
 

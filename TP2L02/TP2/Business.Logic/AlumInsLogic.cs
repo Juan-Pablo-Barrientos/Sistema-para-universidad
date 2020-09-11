@@ -39,6 +39,25 @@ namespace Business.Logic
         {
             AlumInData.Save(alumIn);
         }
+
+        public static bool isInscripcionValid(string stringusario, string stringcurso)
+        {
+            List<AlumnosIncripcion> Inscripciones = new AlumInsLogic().GetAll();
+            List<Usuario> Usuarios = new UsuarioLogic().GetAll();
+            List<Curso> Cursos = new CursosLogic().GetAll();
+            foreach (var u in Usuarios.Where(u => u.NombreUsuario == stringusario))
+            {
+                foreach (var c in Cursos.Where(c => c.Descripcion == stringcurso))
+                {
+                    foreach (var i in Inscripciones.Where(i => i.IDAlumno == u.ID))
+                    {
+                        if (i.IDCurso == c.ID) return false;
+                    }
+                }
+            }
+            return true;           
+        }
+
         public static bool isDeleteValid(int idEspecialidadActual)
         {
             List<Plan> Planes = new PlanLogic().GetAll();

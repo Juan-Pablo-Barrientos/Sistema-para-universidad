@@ -7,24 +7,179 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business.Entities;
+using Business.Logic;
+using Util.entities;
 
 namespace UI.Desktop
 {
-    public partial class AlumnosIncripcionDesktop : Form
+    public partial class AlumnosInscripcionDesktop : ApplicationForm
     {
-        public AlumnosIncripcionDesktop()
+        public AlumnosIncripcion AlumnosInscripcionActual;
+        List<Curso> Cursos = new CursosLogic().GetAll();
+        List<Usuario> Usuarios = new UsuarioLogic().GetAll();
+            
+        #region constructores
+        public AlumnosInscripcionDesktop()
         {
             InitializeComponent();
+            this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;                        
+            foreach (var p in Usuarios)
+            {
+                if (p.TiposUsuario.ToString() == "Alumno")
+                    cBAlumno.Items.Add(p.NombreUsuario);
+            }
+            foreach (var p in Cursos)
+            {
+                cBCurso.Items.Add(p.Descripcion);
+            }
+        }
+
+        public AlumnosInscripcionDesktop(ModoForm modo) : this()
+        {
+            Modo = modo;
+        }
+
+
+        public AlumnosInscripcionDesktop(int ID, ModoForm modo) : this()
+        {
+            Modo = modo;
+            AlumnosInscripcionActual = new AlumInsLogic().getOne(ID);
+            MapearDeDatos();
+        }
+        #endregion
+
+
+
+        public override void MapearDeDatos()
+        {
+            this.txtInscripcion.Text = this.AlumnosInscripcionActual.ID.ToString();
+            this.txtNota.Text = this.AlumnosInscripcionActual.Nota.ToString();
+            this.cBCondicion.Text = this.AlumnosInscripcionActual.Condicion.ToString();                
+            foreach (var p in Cursos.Where(p => p.ID == AlumnosInscripcionActual.IDCurso))
+            {
+                this.cBCurso.Text = p.Descripcion;
+            }
+            foreach (var p in Usuarios.Where(p => p.ID == AlumnosInscripcionActual.IDAlumno))
+            {
+                this.cBAlumno.Text = p.NombreUsuario;
+            }
+
+            if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
+            {
+                this.btnAceptar.Text = "Guardar";
+            }
+            if (Modo == ModoForm.Baja)
+            {
+                this.btnAceptar.Text = "Eliminar";
+            }
+            if (Modo == ModoForm.Consulta)
+            {
+                this.btnAceptar.Text = "Aceptar";
+            }
+
+        }
+        public override void MapearADatos()
+        {
+
+            if (Modo == ModoForm.Alta)
+            {
+                AlumnosInscripcionActual = new AlumnosIncripcion();
+            }
+            if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
+            {   
+                if(!String.IsNullOrEmpty(txtNota.Text)) 
+                AlumnosInscripcionActual.Nota = Convert.ToInt32(txtNota.Text);   
+                
+                if (cBCondicion.Text == "Inscripto")
+                    AlumnosInscripcionActual.Condicion = AlumnosIncripcion.Cond.Inscripto;
+                if (cBCondicion.Text == "Regular")
+                    AlumnosInscripcionActual.Condicion = AlumnosIncripcion.Cond.Regular;
+                if (cBCondicion.Text == "Aprobado")
+                    AlumnosInscripcionActual.Condicion = AlumnosIncripcion.Cond.Aprobado;
+                if (cBCondicion.Text == "Libre")
+                    AlumnosInscripcionActual.Condicion = AlumnosIncripcion.Cond.Libre;
+
+                foreach (var p in Cursos.Where(p => p.Descripcion == cBCurso.Text))
+                {
+                    AlumnosInscripcionActual.IDCurso = p.ID;
+                }
+                foreach (var p in Usuarios.Where(p => p.NombreUsuario == cBAlumno.Text))
+                {
+                    AlumnosInscripcionActual.IDAlumno = p.ID;
+                }
+
+
+                switch (Modo)
+                {
+                    case ModoForm.Alta:
+                        {
+                            AlumnosInscripcionActual.State = BusinessEntity.States.New;
+                            break;
+                        }
+                    case ModoForm.Modificacion:
+                        {
+                            AlumnosInscripcionActual.State = BusinessEntity.States.Modified;
+                            break;
+                        }
+                    case ModoForm.Consulta:
+                        {
+                            AlumnosInscripcionActual.State = BusinessEntity.States.Unmodified;
+                            break;
+                        }
+                    case ModoForm.Baja:
+                        {
+                            AlumnosInscripcionActual.State = BusinessEntity.States.Deleted;
+                            break;
+                        }
+                }
+            }
+        }
+        public override void GuardarCambios()
+        {
+            MapearADatos();
+            new AlumInsLogic().Save(AlumnosInscripcionActual);
+        }
+        public override bool Validar()
+        {
+            var validador = new Validador();
+            if (!AlumInsLogic.isInscripcionValid(cBAlumno.Text,cBCurso.Text))
+                validador.AgregarError("El Alumno ya esta inscripto en ese curso");
+            if (cBCondicion.SelectedItem == null) validador.AgregarError("Elija una condicion ");
+            if (cBCurso.SelectedItem == null) validador.AgregarError("Elija un curso ");
+            if (cBAlumno.SelectedItem == null) validador.AgregarError("Elija un Alumno");
+            if (!validador.EsValido()) BusinessLogic.Notificar("AlumnosInscripcion", validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
+            return validador.EsValido();
+        }
+
+
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (Validar())
+            {
+                GuardarCambios();
+
+                Close();
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            Close();
+        }
+
+        private void AlumnosInscripcionDesktop_Load(object sender, EventArgs e)
+        {
 
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        //Este metodo esta linkeado con el evento KeyPress, no permite que se ingrese otro caracter que no sea numerico
+        //Lo TextBox para la hora lo usan.
+        private void SoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) e.Handled = true;
         }
     }
 }

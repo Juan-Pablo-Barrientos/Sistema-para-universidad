@@ -202,7 +202,9 @@ namespace UI.Desktop
 
         private void altaAlumnoInscripcion_Click(object sender, EventArgs e)
         {
-         
+            AlumnosInscripcionDesktop formAlumnoInscrpcion = new AlumnosInscripcionDesktop(ApplicationForm.ModoForm.Alta);
+            formAlumnoInscrpcion.ShowDialog();
+
         }
 
         private void listadoAlumnoInscripcion_Click(object sender, EventArgs e)

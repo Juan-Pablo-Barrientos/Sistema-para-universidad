@@ -141,11 +141,13 @@ namespace UI.Desktop
             new DocCurLogic().Save(DocCurActual);
         }
         public override bool Validar()
-        {
-            var validador = new Validador();
-            List<string> Campos = (this.container.Controls.OfType<TextBox>().Where(txt => txt.ReadOnly == false).Select(txt => txt.Text)).ToList();
-            if (!BusinessLogic.SonCamposValidos(Campos)) validador.AgregarError("No todos los campos estan completos");
+        {        
+            var validador = new Validador();           
+            if (!DocCurLogic.isInscripcionValid(cBDocente.Text,cBCurso.Text))
+                validador.AgregarError("El docente ya esta inscripto en ese curso");
             if (cBCargo.SelectedItem == null) validador.AgregarError("Elija un cargo");
+            if (cBDocente.SelectedItem == null) validador.AgregarError("Elija un Docente");
+            if (cBCurso.SelectedItem == null) validador.AgregarError("Elija un curso");
             if (!validador.EsValido()) BusinessLogic.Notificar("DocenteCurso", validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
             return validador.EsValido();
         }

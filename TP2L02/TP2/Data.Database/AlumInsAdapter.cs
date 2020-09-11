@@ -133,8 +133,6 @@ namespace Data.Database
             }
             return alumIn;
 
-
-
         }
 
         public void Delete(int ID)
