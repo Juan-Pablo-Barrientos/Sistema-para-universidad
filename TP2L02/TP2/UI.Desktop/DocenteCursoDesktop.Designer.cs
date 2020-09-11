@@ -61,12 +61,13 @@
             this.container.Controls.Add(this.btnAceptar, 2, 2);
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container.Location = new System.Drawing.Point(0, 0);
+            this.container.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.container.Name = "container";
             this.container.RowCount = 1;
             this.container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.container.Size = new System.Drawing.Size(500, 94);
+            this.container.Size = new System.Drawing.Size(667, 116);
             this.container.TabIndex = 0;
             // 
             // cBCurso
@@ -74,9 +75,10 @@
             this.cBCurso.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.cBCurso.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cBCurso.FormattingEnabled = true;
-            this.cBCurso.Location = new System.Drawing.Point(96, 34);
+            this.cBCurso.Location = new System.Drawing.Point(129, 42);
+            this.cBCurso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cBCurso.Name = "cBCurso";
-            this.cBCurso.Size = new System.Drawing.Size(150, 21);
+            this.cBCurso.Size = new System.Drawing.Size(200, 24);
             this.cBCurso.TabIndex = 5;
             // 
             // cBCargo
@@ -88,44 +90,49 @@
             "Docente",
             "Jefecatedra",
             "Auxiliar"});
-            this.cBCargo.Location = new System.Drawing.Point(345, 34);
+            this.cBCargo.Location = new System.Drawing.Point(462, 42);
+            this.cBCargo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cBCargo.Name = "cBCargo";
-            this.cBCargo.Size = new System.Drawing.Size(152, 21);
+            this.cBCargo.Size = new System.Drawing.Size(201, 24);
             this.cBCargo.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 31);
+            this.label1.Location = new System.Drawing.Point(4, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.Size = new System.Drawing.Size(45, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Curso";
             // 
             // txtIdDocenteCurso
             // 
             this.txtIdDocenteCurso.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtIdDocenteCurso.Location = new System.Drawing.Point(96, 3);
+            this.txtIdDocenteCurso.Location = new System.Drawing.Point(129, 4);
+            this.txtIdDocenteCurso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtIdDocenteCurso.Name = "txtIdDocenteCurso";
             this.txtIdDocenteCurso.ReadOnly = true;
-            this.txtIdDocenteCurso.Size = new System.Drawing.Size(150, 20);
+            this.txtIdDocenteCurso.Size = new System.Drawing.Size(200, 22);
             this.txtIdDocenteCurso.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Location = new System.Drawing.Point(4, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.Size = new System.Drawing.Size(71, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Id Dictado";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(252, 0);
+            this.label3.Location = new System.Drawing.Point(337, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.Size = new System.Drawing.Size(61, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Docente";
             // 
@@ -134,25 +141,28 @@
             this.cBDocente.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.cBDocente.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cBDocente.FormattingEnabled = true;
-            this.cBDocente.Location = new System.Drawing.Point(345, 3);
+            this.cBDocente.Location = new System.Drawing.Point(462, 4);
+            this.cBDocente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cBDocente.Name = "cBDocente";
-            this.cBDocente.Size = new System.Drawing.Size(152, 21);
+            this.cBDocente.Size = new System.Drawing.Size(201, 24);
             this.cBDocente.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(252, 31);
+            this.label4.Location = new System.Drawing.Point(337, 38);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(46, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Cargo";
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(345, 65);
+            this.btnCancelar.Location = new System.Drawing.Point(462, 80);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(100, 28);
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -160,9 +170,10 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(252, 65);
+            this.btnAceptar.Location = new System.Drawing.Point(337, 80);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(100, 28);
             this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -170,10 +181,11 @@
             // 
             // DocCurDesktop
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 94);
+            this.ClientSize = new System.Drawing.Size(667, 116);
             this.Controls.Add(this.container);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "DocCurDesktop";
             this.Text = "DocenteCursoDesktop";
             this.container.ResumeLayout(false);

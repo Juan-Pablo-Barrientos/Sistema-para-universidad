@@ -39,8 +39,8 @@
         <br />
         <asp:Label ID="tipo_usuarioLabel" runat="server" Text="Tipo de Usuario: "></asp:Label>
         <asp:DropDownList ID="tipoUsuarioDdl" runat="server">
-            <asp:ListItem>Usuario</asp:ListItem>
-            <asp:ListItem>Administrador</asp:ListItem>
+            <asp:ListItem>Alumno</asp:ListItem>
+            <asp:ListItem>Admin</asp:ListItem>
             <asp:ListItem>Docente</asp:ListItem>
         </asp:DropDownList>
         <br />
@@ -50,16 +50,13 @@
         <asp:Label ID="fechaNacLabel" runat="server" Text="Fecha de nacimiento: "></asp:Label>
         <br />
         <asp:Label ID="diaNacLabel" runat="server" Text="Dia: "></asp:Label>
-        <asp:DropDownList ID="diaNacDdl" runat="server">
-            <asp:ListItem>1</asp:ListItem>
-            <asp:ListItem>2</asp:ListItem>
+        <asp:DropDownList ID="diaNacDdl" runat="server" >
         </asp:DropDownList>
         <asp:Label ID="mesNacLabel" runat="server" Text="Mes: "></asp:Label>
-        <asp:DropDownList ID="mesNacDdl" runat="server">
-            <asp:ListItem Value="1">Enero</asp:ListItem>
+        <asp:DropDownList ID="mesNacDdl" runat="server" onselectedindexchanged="mesNacDdl_SelectedIndexChanged">
         </asp:DropDownList>
         <asp:Label ID="añoNacLabel" runat="server" Text="Año: "></asp:Label>
-        <asp:TextBox ID="añoNacTextBox" runat="server"></asp:TextBox>
+        <asp:DropDownList ID="añoNacDdl" runat="server" onselectedindexchanged="añoNacDdl_SelectedIndexChanged"></asp:DropDownList>
         <br />
         <asp:Label ID="telefonoLabel" runat="server" Text="Telefono: "></asp:Label>
         <asp:TextBox ID="telefonoTextBox" runat="server"></asp:TextBox>

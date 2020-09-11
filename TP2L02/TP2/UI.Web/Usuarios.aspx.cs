@@ -14,17 +14,6 @@ namespace UI.Web
     {
         #region Propiedades
         UsuarioLogic _logic;
-        public enum FormModes
-        {
-            Alta,
-            Baja,
-            Modificacion
-        }
-        public FormModes FormMode
-        {
-            get { return (FormModes)this.ViewState["FormMode"]; }
-            set { this.ViewState["FormMode"] = value; }
-        }
         private UsuarioLogic Logic
         {
             get
@@ -36,6 +25,18 @@ namespace UI.Web
                 return _logic;
             }
         }
+        public enum FormModes
+        {
+            Alta,
+            Baja,
+            Modificacion
+        }
+        public FormModes FormMode
+        {
+            get { return (FormModes)this.ViewState["FormMode"]; }
+            set { this.ViewState["FormMode"] = value; }
+        }
+
 
         private Usuario Entity
         {
@@ -76,7 +77,13 @@ namespace UI.Web
         #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadGrid();
+
+            if (!IsPostBack)
+            {
+                LoadGrid();
+                cargarDiasCalendario();
+                this.FormMode = FormModes.Modificacion;
+            }
         }
 
         private void LoadGrid()
@@ -88,6 +95,35 @@ namespace UI.Web
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedID = (int)this.GridView1.SelectedValue;
+                if (this.FormMode == FormModes.Modificacion)
+                    if (this.IsEntitySelected)
+                    {
+                        this.formPanel.Visible = true;
+                        this.FormMode = FormModes.Modificacion;
+                        this.LoadForm(this.SelectedID);
+                        this.EnableForm(true);
+                    }
+                if (this.FormMode == FormModes.Baja)
+                {
+                    if (this.IsEntitySelected)
+                    {
+
+                        this.formPanel.Visible = true;
+                        this.FormMode = FormModes.Baja;
+                        this.EnableForm(false);
+                        this.LoadForm(this.SelectedID);
+                    }
+                }
+            if (this.FormMode == FormModes.Alta)
+            {
+                if (this.IsEntitySelected)
+                {
+                    this.formPanel.Visible = true;
+                    this.FormMode = FormModes.Modificacion;
+                    this.LoadForm(this.SelectedID);
+                    this.EnableForm(true);
+                }
+            }
         }
 
         private void LoadForm(int id)
@@ -100,9 +136,13 @@ namespace UI.Web
             this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
             this.tipoUsuarioDdl.SelectedValue = this.Entity.TiposUsuario.ToString();
             this.legajoTextBox.Text = this.Entity.legajo;
-            DateTime dt = DateTime.ParseExact(this.Entity.fecha_nac.ToString(), "d/M/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
-           // this.diaNacDdl.SelectedValue;
-
+            DateTime dt = this.Entity.fecha_nac;
+            this.añoNacDdl.SelectedValue = dt.Year.ToString();
+            this.mesNacDdl.SelectedValue = dt.Month.ToString();
+            FillDays();
+            this.diaNacDdl.SelectedValue = dt.Day.ToString();
+            this.telefonoTextBox.Text = this.Entity.telefono;
+            this.direccionTextBox.Text = this.Entity.direccion;
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -112,6 +152,7 @@ namespace UI.Web
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Modificacion;
                 this.LoadForm(this.SelectedID);
+                this.EnableForm(true);
             }
         }
         private void LoadEntity(Usuario usuario)
@@ -122,6 +163,18 @@ namespace UI.Web
             usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
             usuario.Clave = this.claveTextBox.Text;
             usuario.Habilitado = this.habilitadoCheckBox.Checked;
+            if (this.tipoUsuarioDdl.SelectedValue == "Alumno")
+                usuario.TiposUsuario = Usuario.TipoUsuario.Alumno;
+            if (this.tipoUsuarioDdl.SelectedValue == "Docente")
+                usuario.TiposUsuario = Usuario.TipoUsuario.Docente;
+            if (this.tipoUsuarioDdl.SelectedValue == "Admin")
+                usuario.TiposUsuario = Usuario.TipoUsuario.Admin;
+            usuario.legajo = this.legajoTextBox.Text;
+            string fecha = String.Concat(this.diaNacDdl.SelectedValue, "/", this.mesNacDdl.SelectedValue, "/", this.añoNacDdl.SelectedValue);
+            DateTime dt = DateTime.Parse(fecha);
+            usuario.fecha_nac = dt;
+            usuario.telefono = this.telefonoTextBox.Text;
+            usuario.direccion = this.direccionTextBox.Text;
         }
         private void SaveEntity(Usuario usuario)
         {
@@ -156,22 +209,30 @@ namespace UI.Web
             }
             this.formPanel.Visible = false;
         }
-        private void EnableForm(bool enable)
+        private void EnableForm(bool check)
         {
-            this.nombreTextBox.Enabled = enable;
-            this.apellidoTextBox.Enabled = enable;
-            this.emailTextBox.Enabled = enable;
-            this.nombreUsuarioTextBox.Enabled = enable;
-            this.claveTextBox.Visible = enable;
-            this.claveLabel.Visible = enable;
-            this.repetirClaveTextBox.Visible = enable;
-            this.repetirClaveLabel.Visible = enable;
+            this.nombreTextBox.Enabled = check;
+            this.apellidoTextBox.Enabled = check;
+            this.emailTextBox.Enabled = check;
+            this.nombreUsuarioTextBox.Enabled = check;
+            this.claveTextBox.Visible = check;
+            this.claveLabel.Visible = check;
+            this.repetirClaveTextBox.Visible = check;
+            this.repetirClaveLabel.Visible = check;
+            this.tipoUsuarioDdl.Enabled = check;
+            this.legajoTextBox.Enabled = check;
+            this.diaNacDdl.Enabled = check;
+            this.mesNacDdl.Enabled = check;
+            this.añoNacDdl.Enabled = check;
+            this.telefonoTextBox.Enabled = check;
+            this.direccionTextBox.Enabled = check;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
         {
             if (this.IsEntitySelected)
             {
+
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Baja;
                 this.EnableForm(false);
@@ -197,12 +258,66 @@ namespace UI.Web
             this.emailTextBox.Text = string.Empty;
             this.habilitadoCheckBox.Checked = false;
             this.nombreUsuarioTextBox.Text = string.Empty;
+            this.tipoUsuarioDdl.SelectedValue = "Alumno";
+            this.legajoTextBox.Text = string.Empty;
+            this.diaNacDdl.SelectedValue = "1";
+            this.mesNacDdl.SelectedValue = "1";
+            this.añoNacDdl.SelectedValue = "2000";
+            this.telefonoTextBox.Text = string.Empty;
+            this.direccionTextBox.Text = string.Empty;
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)
         {
             this.ClearForm();
             this.LoadGrid();
+            this.formPanel.Visible = false;
+        }
+        private void cargarDiasCalendario()
+        {
+            if (Page.IsPostBack == false)
+            {
+                {
+                    //Fill Years
+                    for (int i = 1960; i <= 2020; i++)
+                    {
+                        añoNacDdl.Items.Add(i.ToString());
+                    }
+                    añoNacDdl.Items.FindByValue(System.DateTime.Now.Year.ToString()).Selected = true;  //set current year as selected
+
+                    //Fill Months
+                    for (int i = 1; i <= 12; i++)
+                    {
+                        mesNacDdl.Items.Add(i.ToString());
+                    }
+                    mesNacDdl.Items.FindByValue(System.DateTime.Now.Month.ToString()).Selected = true; // Set current month as selected
+
+                    //Fill days
+                    FillDays();
+                }
+            }
+
+        }
+        public void FillDays()
+        {
+            diaNacDdl.Items.Clear();
+            //getting numbner of days in selected month & year
+            int noofdays = DateTime.DaysInMonth(Convert.ToInt32(añoNacDdl.SelectedValue), Convert.ToInt32(mesNacDdl.SelectedValue));
+
+            //Fill days
+            for (int i = 1; i <= noofdays; i++)
+            {
+                diaNacDdl.Items.Add(i.ToString());
+            }
+            diaNacDdl.Items.FindByValue(System.DateTime.Now.Day.ToString()).Selected = true;// Set current date as selected
+        }
+        protected void añoNacDdl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillDays();
+        }
+        protected void mesNacDdl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillDays();
         }
     }
 }
