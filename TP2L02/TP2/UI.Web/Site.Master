@@ -3,6 +3,12 @@
 <html >
     <head runat="server">
         <title>Academia</title>
+        <style type="text/css">
+            .auto-style1 {
+                width: 100%;
+                height: 120px;
+            }
+        </style>
     </head>
     <body>
         <form id ="bodyForm" runat="server">
