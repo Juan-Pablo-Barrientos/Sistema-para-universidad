@@ -37,14 +37,18 @@ namespace UI.Web
                 if (usuarioLogueado.Clave != contraseñaTextBox.Text)
                 {
                     Page.Response.Write("Usuario y/o contraseña incorrectos");
+                    contraseñaTextBox.Text = "";
                 }
                 if ((!usuarioLogueado.Habilitado) && (usuarioLogueado.Clave == contraseñaTextBox.Text))
                 {
                     Page.Response.Write("Usuario no esta habilitado");
+                    contraseñaTextBox.Text = "";
                 }
                 if ((usuarioLogueado.Habilitado) && (usuarioLogueado.Clave == contraseñaTextBox.Text))
                 {
-                    Response.Redirect("~/Default.aspx");
+                    //Response.Redirect("~/Default.aspx");
+                    Session["user"] = usuarioTextBox.Text;
+                    Page.Response.Write(Session["user"]);
                 }
 
 
