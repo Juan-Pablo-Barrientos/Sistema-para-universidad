@@ -1,0 +1,20 @@
+﻿body {
+}
+.column {
+    float: left;
+    width: 150px;
+    border-style:solid;
+    border-color: black;
+    height:100px;
+}
+.separate {
+    width:50px;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

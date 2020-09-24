@@ -1,24 +1,48 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="UI.Web.Site" %>
 
-<html >
-    <head runat="server">
-        <title>Academia</title>
-        <style type="text/css">
-            .auto-style1 {
-                width: 100%;
-                height: 120px;
-            }
-        </style>
-    </head>
-    <body>
-        <form id ="bodyForm" runat="server">
-            <asp:Menu runat="server" ID="menu" DataSourceID="SiteMapDataSource">
-            </asp:Menu>
-            <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
-            <div>
-                <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server">
-                </asp:ContentPlaceHolder>
+
+<html>
+<head runat="server">
+    <title>Academia</title>
+    
+<link href="~/CSS/StyleSheet1.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <form id="bodyForm" runat="server">
+
+        <div class="row">
+            <div class="column">
+                <asp:Menu runat="server" ID="menu" DataSourceID="SiteMapDataSource" OnMenuItemDataBound="Menu1_MenuItemDataBound">
+                </asp:Menu>
+                <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
             </div>
-        </form>
-    </body>
+
+            <div class="column" style="border-style:hidden ;width:10px">
+            </div>
+
+            <div class="column" style="border-style:hidden">
+                <div>
+                    <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row">
+                Usuario: <asp:Label ID="NombreUsr" runat="server"></asp:Label>
+                
+            </div>
+        <div class="row">
+                Tipo de Usuario: <asp:Label ID="TipoUsr" runat="server"></asp:Label>
+            </div>
+    </form>
+</body>
 </html>

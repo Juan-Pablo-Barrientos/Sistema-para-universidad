@@ -46,9 +46,8 @@ namespace UI.Web
                 }
                 if ((usuarioLogueado.Habilitado) && (usuarioLogueado.Clave == contraseñaTextBox.Text))
                 {
-                    //Response.Redirect("~/Default.aspx");
                     Session["user"] = usuarioTextBox.Text;
-                    Page.Response.Write(Session["user"]);
+                    Response.Redirect("~/Default.aspx");
                 }
 
 
