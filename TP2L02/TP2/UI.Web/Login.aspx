@@ -24,7 +24,9 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="height: 64px">&nbsp;</td>
+            <td style="height: 64px">
+                <asp:LinkButton ID="contraseñaRecupLB" runat="server" OnClick="contraseniaRecup">He olvidado mi contraseña</asp:LinkButton>
+            </td>
             <td style="height: 64px">
                 <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click" Text="Login" />
             </td>

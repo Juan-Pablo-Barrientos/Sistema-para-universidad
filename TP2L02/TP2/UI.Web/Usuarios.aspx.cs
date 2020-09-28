@@ -82,7 +82,7 @@ namespace UI.Web
             {
                 LoadGrid();
                 cargarDiasCalendario();
-                this.FormMode = FormModes.Modificacion;
+                this.FormMode = FormModes.Baja;
             }
         }
 
@@ -95,25 +95,25 @@ namespace UI.Web
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedID = (int)this.GridView1.SelectedValue;
-                if (this.FormMode == FormModes.Modificacion)
-                    if (this.IsEntitySelected)
-                    {
-                        this.formPanel.Visible = true;
-                        this.FormMode = FormModes.Modificacion;
-                        this.LoadForm(this.SelectedID);
-                        this.EnableForm(true);
-                    }
-                if (this.FormMode == FormModes.Baja)
+            if (this.FormMode == FormModes.Modificacion)
+                if (this.IsEntitySelected)
                 {
-                    if (this.IsEntitySelected)
-                    {
-
-                        this.formPanel.Visible = true;
-                        this.FormMode = FormModes.Baja;
-                        this.EnableForm(false);
-                        this.LoadForm(this.SelectedID);
-                    }
+                    this.formPanel.Visible = true;
+                    this.FormMode = FormModes.Modificacion;
+                    this.LoadForm(this.SelectedID);
+                    this.EnableForm(true);
                 }
+            if (this.FormMode == FormModes.Baja)
+            {
+                if (this.IsEntitySelected)
+                {
+
+                    this.formPanel.Visible = true;
+                    this.FormMode = FormModes.Baja;
+                    this.EnableForm(false);
+                    this.LoadForm(this.SelectedID);
+                }
+            }
             if (this.FormMode == FormModes.Alta)
             {
                 if (this.IsEntitySelected)
@@ -143,8 +143,12 @@ namespace UI.Web
             this.diaNacDdl.SelectedValue = dt.Day.ToString();
             this.telefonoTextBox.Text = this.Entity.telefono;
             this.direccionTextBox.Text = this.Entity.direccion;
+            if (this.Entity.pregunta != "falta")
+            {
+                this.preguntaContraDdl.SelectedValue = this.Entity.pregunta;
+                this.respuestaContraTextBox.Text = this.Entity.respuesta;
+            }
         }
-
         protected void editarLinkButton_Click(object sender, EventArgs e)
         {
             if (this.IsEntitySelected)
@@ -175,6 +179,8 @@ namespace UI.Web
             usuario.fecha_nac = dt;
             usuario.telefono = this.telefonoTextBox.Text;
             usuario.direccion = this.direccionTextBox.Text;
+            usuario.pregunta = this.preguntaContraDdl.SelectedValue;
+            usuario.respuesta = this.respuestaContraTextBox.Text;
         }
         private void SaveEntity(Usuario usuario)
         {
@@ -226,6 +232,8 @@ namespace UI.Web
             this.añoNacDdl.Enabled = check;
             this.telefonoTextBox.Enabled = check;
             this.direccionTextBox.Enabled = check;
+            this.respuestaContraTextBox.Enabled = check;
+            this.preguntaContraDdl.Enabled = check;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -265,6 +273,8 @@ namespace UI.Web
             this.añoNacDdl.SelectedValue = "2000";
             this.telefonoTextBox.Text = string.Empty;
             this.direccionTextBox.Text = string.Empty;
+            this.respuestaContraTextBox.Text = string.Empty;
+            this.preguntaContraDdl.SelectedValue = "Apodo de su infancia";
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)

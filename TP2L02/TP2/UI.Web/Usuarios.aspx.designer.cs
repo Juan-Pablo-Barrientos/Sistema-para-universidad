@@ -303,13 +303,40 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox direccionTextBox;
 
         /// <summary>
-        /// ValidationSummary1 control.
+        /// preguntaContralbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        protected global::System.Web.UI.WebControls.Label preguntaContralbl;
+
+        /// <summary>
+        /// preguntaContraDdl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList preguntaContraDdl;
+
+        /// <summary>
+        /// respuestaContralbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label respuestaContralbl;
+
+        /// <summary>
+        /// respuestaContraTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox respuestaContraTextBox;
 
         /// <summary>
         /// formActionsPanel control.

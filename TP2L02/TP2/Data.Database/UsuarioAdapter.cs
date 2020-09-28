@@ -124,7 +124,8 @@ namespace Data.Database
                     usr.fecha_nac = (DateTime)drUsuarios["fecha_nac"];
                     usr.telefono = (string)drUsuarios["telefono"];
                     usr.direccion = (string)drUsuarios["direccion"];
-                    
+                    usr.pregunta = (string)drUsuarios["pregunta"];
+                    usr.respuesta = (string)drUsuarios["respuesta"];
                         
                     //agregamos el objeto con datos a la lista que devolveremos
                     usuarios.Add(usr);
@@ -177,7 +178,8 @@ namespace Data.Database
                     usr.fecha_nac = (DateTime)drUsuarios["fecha_nac"];
                     usr.telefono = (string)drUsuarios["telefono"];
                     usr.direccion = (string)drUsuarios["direccion"];
-
+                    usr.pregunta = (string)drUsuarios["pregunta"];
+                    usr.respuesta = (string)drUsuarios["respuesta"];
 
                 }
                 drUsuarios.Close();
@@ -227,6 +229,8 @@ namespace Data.Database
                     usr.fecha_nac = (DateTime)drUsuarios["fecha_nac"];
                     usr.telefono = (string)drUsuarios["telefono"];
                     usr.direccion = (string)drUsuarios["direccion"];
+                    usr.pregunta = (string)drUsuarios["pregunta"];
+                    usr.respuesta = (string)drUsuarios["respuesta"];
 
                 }
                 drUsuarios.Close();
@@ -285,7 +289,7 @@ namespace Data.Database
                 "UPDATE usuarios SET nombre_usuario = @nombre_usuario, clave = @clave, " +
                 "habilitado = @habilitado, nombre = @nombre, apellido = @apellido, email = @email, " +
                 "tipo_usuario = @tipo_usuario, legajo = @legajo, fecha_nac = @fecha_nac, telefono = @telefono, " +
-                "direccion = @direccion " +
+                "direccion = @direccion, pregunta = @pregunta, respuesta = @respuesta " +
                 "WHERE id_usuario = @id", sqlConn);
             
 
@@ -302,6 +306,8 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@fecha_nac", SqlDbType.VarChar, 50).Value = dt2;
                 cmdSave.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = usuario.telefono;
                 cmdSave.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = usuario.direccion;
+                cmdSave.Parameters.Add("@pregunta", SqlDbType.VarChar, 200).Value = usuario.pregunta;
+                cmdSave.Parameters.Add("@respuesta", SqlDbType.VarChar, 50).Value = usuario.respuesta;
                 cmdSave.ExecuteNonQuery();
             }
 
@@ -326,8 +332,8 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand(
-                "insert into usuarios(nombre_usuario,clave,habilitado,nombre,apellido,email, tipo_usuario, legajo, fecha_nac, telefono, direccion)" +
-                "values(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email, @tipo_usuario, @legajo, @fecha_nac, @telefono, @direccion) " +
+                "insert into usuarios(nombre_usuario,clave,habilitado,nombre,apellido,email, tipo_usuario, legajo, fecha_nac, telefono, direccion,pregunta,respuesta)" +
+                "values(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email, @tipo_usuario, @legajo, @fecha_nac, @telefono, @direccion, @pregunta, @respuesta) " +
                 "select @@identity", //esta linea es para recuperar el ID que asigno el sql automaticamente
                 sqlConn);
 
@@ -344,6 +350,8 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@fecha_nac", SqlDbType.VarChar, 50).Value = dt2;
                 cmdSave.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = usuario.telefono;
                 cmdSave.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = usuario.direccion;
+                cmdSave.Parameters.Add("@pregunta", SqlDbType.VarChar, 200).Value = usuario.pregunta;
+                cmdSave.Parameters.Add("@respuesta", SqlDbType.VarChar, 50).Value = usuario.respuesta;
                 usuario.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
                 //asi se obtiene el ID que asigno al BD automaticamente
 

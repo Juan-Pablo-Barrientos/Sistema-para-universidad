@@ -81,7 +81,7 @@ namespace UI.Web
             if (!IsPostBack)
             {
                 LoadGrid();
-                this.FormMode = FormModes.Modificacion;
+                this.FormMode = FormModes.Baja;
                 this.IdTextBox.Enabled = false;
             }
         }

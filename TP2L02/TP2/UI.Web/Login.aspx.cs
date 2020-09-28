@@ -28,6 +28,19 @@ namespace UI.Web
             
         }
 
+        protected void contraseniaRecup(object sender, EventArgs e)
+        {
+            usuarioLogueado = new UsuarioLogic().getOneNombre(usuarioTextBox.Text);
+            if (usuarioTextBox.Text == usuarioLogueado.NombreUsuario)
+            {
+                Session["user"] = usuarioTextBox.Text;
+                Response.Redirect("~/RecuperarContraseña.aspx");
+            }
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Usuario no existe" + "');", true);
+            }
+        }
+
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             if (usuarioTextBox.Text == "" && contraseñaTextBox.Text == "") 

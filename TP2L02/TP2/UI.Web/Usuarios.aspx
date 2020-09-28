@@ -63,7 +63,15 @@
         <br />
         <asp:Label ID="direccionLabel" runat="server" Text="direccion: "></asp:Label>
         <asp:TextBox ID="direccionTextBox" runat="server"></asp:TextBox>
-        <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+        <asp:Label ID="preguntaContralbl" runat="server" Text="Pregunta para recuperar contraseña"></asp:Label>
+        <asp:DropDownList ID="preguntaContraDdl" runat="server" Height="19px" Width="307px">
+            <asp:ListItem>Nombre de su primer perro</asp:ListItem>
+            <asp:ListItem>Nombre de su ciudad de nacimiento</asp:ListItem>
+            <asp:ListItem>Apodo de su infancia</asp:ListItem>
+        </asp:DropDownList>
+        <br />
+        <asp:Label ID="respuestaContralbl" runat="server" Text="Respuesta: "></asp:Label>
+        <asp:TextBox ID="respuestaContraTextBox" runat="server"></asp:TextBox>
         <br />
         <asp:Panel ID="formActionsPanel" runat="server">
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>

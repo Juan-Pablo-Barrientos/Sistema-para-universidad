@@ -82,7 +82,7 @@ namespace UI.Web
             {
                 List<Especialidad> especialidades = new EspecialidadesLogic().GetAll();
                 LoadGrid();
-                this.FormMode = FormModes.Modificacion;
+                this.FormMode = FormModes.Baja;
                 this.IdTextBox.Enabled = false;
                 foreach (var p in especialidades)
                 {

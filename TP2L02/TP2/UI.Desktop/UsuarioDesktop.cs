@@ -99,7 +99,11 @@ namespace UI.Desktop
                 UsuarioActual.TiposUsuario = Usuario.TipoUsuario.Docente;
                 if (cBTipoDeUsuario.Text == "Admin")
                 UsuarioActual.TiposUsuario = Usuario.TipoUsuario.Admin;
-
+                if (UsuarioActual.pregunta == null)
+                {
+                    UsuarioActual.pregunta = "falta";
+                    UsuarioActual.respuesta = "falta";
+                }
                 switch (Modo)
                 {
                     case ModoForm.Alta:

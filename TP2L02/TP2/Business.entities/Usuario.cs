@@ -93,5 +93,18 @@ namespace Business.Entities
             set { _direccion = value; }
         }
 
+        private string _pregunta;
+        public string pregunta
+        {
+            get { return _pregunta; }
+            set { _pregunta = value; }
+        }
+        private string _respuesta;
+        public string respuesta
+        {
+            get { return _respuesta; }
+            set { _respuesta = value; }
+        }
+
     }
 }

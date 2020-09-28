@@ -51,6 +51,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox contraseñaTextBox;
 
         /// <summary>
+        /// contraseñaRecupLB control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton contraseñaRecupLB;
+
+        /// <summary>
         /// btnLogin control.
         /// </summary>
         /// <remarks>
