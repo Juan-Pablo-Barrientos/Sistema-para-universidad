@@ -32,12 +32,17 @@ namespace UI.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            NombreUsr.Text = Session["user"].ToString();
-            Entity = Logic.getOneNombre(Session["user"].ToString());
-            TipoUsr.Text = this.Entity.TiposUsuario.ToString();
             
-
-
+            NombreUsr.Text = Session["user"].ToString();
+            //Entity = Logic.getOneNombre(Session["user"].ToString());
+            if (NombreUsr.Text != "SuperAdmin")
+            {
+                TipoUsr.Text = this.Entity.TiposUsuario.ToString();
+            }
+            else
+            {
+                TipoUsr.Text = "SuperAdmin";
+            }
         }
         protected void Menu1_MenuItemDataBound(object sender, MenuEventArgs e)
         {
@@ -46,31 +51,33 @@ namespace UI.Web
             
 
             System.Web.UI.WebControls.MenuItem itemToRemove = menu.FindItem(mapNode.Title);
-
-            if (this.Entity.TiposUsuario.ToString() == "Alumno")
+            if (NombreUsr.Text != "SuperAdmin")
             {
-                if (mapNode.Title == "Usuarios")
+                if (this.Entity.TiposUsuario.ToString() == "Alumno")
                 {
-                    System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
-                    if (parent != null)
+                    if (mapNode.Title == "Usuarios")
                     {
-                        parent.ChildItems.Remove(e.Item);
+                        System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
+                        if (parent != null)
+                        {
+                            parent.ChildItems.Remove(e.Item);
+                        }
                     }
-                }
-                if (mapNode.Title == "Especialidades")
-                {
-                    System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
-                    if (parent != null)
+                    if (mapNode.Title == "Especialidades")
                     {
-                        parent.ChildItems.Remove(e.Item);
+                        System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
+                        if (parent != null)
+                        {
+                            parent.ChildItems.Remove(e.Item);
+                        }
                     }
-                }
-                if (mapNode.Title == "Planes")
-                {
-                    System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
-                    if (parent != null)
+                    if (mapNode.Title == "Planes")
                     {
-                        parent.ChildItems.Remove(e.Item);
+                        System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
+                        if (parent != null)
+                        {
+                            parent.ChildItems.Remove(e.Item);
+                        }
                     }
                 }
             }

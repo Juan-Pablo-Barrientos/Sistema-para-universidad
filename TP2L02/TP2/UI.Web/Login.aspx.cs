@@ -30,7 +30,11 @@ namespace UI.Web
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            if (contraseñaTextBox.Text == "" && contraseñaTextBox.Text == "") { Response.Redirect("~/Default.aspx"); } //Super ADMIN
+            if (usuarioTextBox.Text == "" && contraseñaTextBox.Text == "") 
+            {
+                Session["user"] = "SuperAdmin";
+                Response.Redirect("~/Default.aspx");   
+            } //Super ADMIN
             else
             {
                 usuarioLogueado = new UsuarioLogic().getOneNombre(usuarioTextBox.Text);
