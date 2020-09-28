@@ -34,9 +34,10 @@ namespace UI.Web
         {
             
             NombreUsr.Text = Session["user"].ToString();
-            //Entity = Logic.getOneNombre(Session["user"].ToString());
+            
             if (NombreUsr.Text != "SuperAdmin")
             {
+                Entity = Logic.getOneNombre(Session["user"].ToString());
                 TipoUsr.Text = this.Entity.TiposUsuario.ToString();
             }
             else
