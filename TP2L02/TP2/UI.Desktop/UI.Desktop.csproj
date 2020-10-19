@@ -46,17 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlumnosIncripciones.cs">
+    <Compile Include="AlumnosInscripcion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AlumnosIncripciones.Designer.cs">
-      <DependentUpon>AlumnosIncripciones.cs</DependentUpon>
+    <Compile Include="AlumnosInscripcion.Designer.cs">
+      <DependentUpon>AlumnosInscripcion.cs</DependentUpon>
     </Compile>
-    <Compile Include="AlumnosIncripcionDesktop.cs">
+    <Compile Include="AlumnosInscripcionDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AlumnosIncripcionDesktop.Designer.cs">
-      <DependentUpon>AlumnosIncripcionDesktop.cs</DependentUpon>
+    <Compile Include="AlumnosInscripcionDesktop.Designer.cs">
+      <DependentUpon>AlumnosInscripcionDesktop.cs</DependentUpon>
     </Compile>
     <Compile Include="ApplicationForm.cs">
       <SubType>Form</SubType>
@@ -174,11 +174,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AlumnosIncripciones.resx">
-      <DependentUpon>AlumnosIncripciones.cs</DependentUpon>
+    <EmbeddedResource Include="AlumnosInscripcion.resx">
+      <DependentUpon>AlumnosInscripcion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AlumnosIncripcionDesktop.resx">
-      <DependentUpon>AlumnosIncripcionDesktop.cs</DependentUpon>
+    <EmbeddedResource Include="AlumnosInscripcionDesktop.resx">
+      <DependentUpon>AlumnosInscripcionDesktop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
@@ -191,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CursoDesktop.resx">
       <DependentUpon>CursoDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cursos.resx">
+      <DependentUpon>Cursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DocentesCursos.resx">
       <DependentUpon>DocentesCursos.cs</DependentUpon>

@@ -152,7 +152,7 @@ namespace UI.Desktop
             return validador.EsValido();
         }
 
-
+        
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {

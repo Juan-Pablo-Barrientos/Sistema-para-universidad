@@ -91,7 +91,110 @@ namespace Data.Database
 
         }
 
+        public List<AlumnosIncripcion> GetMisCursos(int id)
+        {
+    
+            List<AlumnosIncripcion> alumIns = new List<AlumnosIncripcion>();
+            try
+            {
+        
+                this.OpenConnection();
+            
+                SqlCommand cmdAlumIns = new SqlCommand("select * from alumnos_inscripciones where id_alumno=@id", sqlConn);
+                cmdAlumIns.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                SqlDataReader drAlumIns = cmdAlumIns.ExecuteReader();
 
+                while (drAlumIns.Read())
+                {
+            
+
+                    AlumnosIncripcion alumIn = new AlumnosIncripcion();
+
+                    alumIn.ID = (int)drAlumIns["id_inscripcion"];
+                    alumIn.IDAlumno = (int)drAlumIns["id_alumno"];
+                    alumIn.IDCurso = (int)drAlumIns["id_curso"];
+                    alumIn.Nota = (int)drAlumIns["nota"];
+                    if ((string)drAlumIns["condicion"] == "Aprobado")
+                        alumIn.Condicion = AlumnosIncripcion.Cond.Aprobado;
+                    if ((string)drAlumIns["condicion"] == "Inscripto")
+                        alumIn.Condicion = AlumnosIncripcion.Cond.Inscripto;
+                    if ((string)drAlumIns["condicion"] == "Libre")
+                        alumIn.Condicion = AlumnosIncripcion.Cond.Libre;
+                    if ((string)drAlumIns["condicion"] == "Regular")
+                        alumIn.Condicion = AlumnosIncripcion.Cond.Regular;
+              
+                    alumIns.Add(alumIn);
+                }
+
+    
+                drAlumIns.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de alumnos inscriptos", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+         
+            return alumIns;
+
+        }
+
+        public List<AlumnosIncripcion> GetAlumnosPorCurso(int id)
+        {
+
+            List<AlumnosIncripcion> alumIns = new List<AlumnosIncripcion>();
+            try
+            {
+
+                this.OpenConnection();
+                SqlCommand cmdAlumIns = new SqlCommand("select * from alumnos_inscripciones where id_curso=@id", sqlConn);
+                cmdAlumIns.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                SqlDataReader drAlumIns = cmdAlumIns.ExecuteReader();
+
+                while (drAlumIns.Read())
+                {
+
+
+                    AlumnosIncripcion alumIn = new AlumnosIncripcion();
+
+                    alumIn.ID = (int)drAlumIns["id_inscripcion"];
+                    alumIn.IDAlumno = (int)drAlumIns["id_alumno"];
+                    alumIn.IDCurso = (int)drAlumIns["id_curso"];
+                    alumIn.Nota = (int)drAlumIns["nota"];
+                    if ((string)drAlumIns["condicion"] == "Aprobado")
+                        alumIn.Condicion = AlumnosIncripcion.Cond.Aprobado;
+                    if ((string)drAlumIns["condicion"] == "Inscripto")
+                        alumIn.Condicion = AlumnosIncripcion.Cond.Inscripto;
+                    if ((string)drAlumIns["condicion"] == "Libre")
+                        alumIn.Condicion = AlumnosIncripcion.Cond.Libre;
+                    if ((string)drAlumIns["condicion"] == "Regular")
+                        alumIn.Condicion = AlumnosIncripcion.Cond.Regular;
+
+                    alumIns.Add(alumIn);
+                }
+
+
+                drAlumIns.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de alumnos inscriptos", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+
+            return alumIns;
+
+        }
 
         public Business.Entities.AlumnosIncripcion GetOne(int ID)
         {
@@ -171,13 +274,13 @@ namespace Data.Database
             SqlCommand cmdSave = new SqlCommand(
             "UPDATE alumnos_inscripciones SET id_alumno = @id_alumno, " +
             "id_curso=@id_curso,condicion=@condicion,nota=@nota " +
-            "WHERE id_inscripciones = @id", sqlConn);
+            "WHERE id_inscripcion = @id", sqlConn);
 
 
             cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = alumIn.ID;
             cmdSave.Parameters.Add("@id_alumno", SqlDbType.Int).Value = alumIn.IDAlumno;
             cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = alumIn.IDCurso;
-            cmdSave.Parameters.Add("@condicion", SqlDbType.VarChar, 50).Value = alumIn.Condicion;
+            cmdSave.Parameters.Add("@condicion", SqlDbType.VarChar, 50).Value = alumIn.Condicion.ToString();
             cmdSave.Parameters.Add("@nota", SqlDbType.Int).Value = alumIn.Nota;
 
             cmdSave.ExecuteNonQuery();

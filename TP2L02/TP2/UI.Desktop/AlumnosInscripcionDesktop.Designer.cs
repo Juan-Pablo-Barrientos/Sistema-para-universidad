@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.container = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelAlumno = new System.Windows.Forms.Label();
+            this.labelCurso = new System.Windows.Forms.Label();
+            this.labelCondicion = new System.Windows.Forms.Label();
             this.labelNota = new System.Windows.Forms.Label();
             this.txtNota = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.cBCurso = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelID = new System.Windows.Forms.Label();
             this.txtInscripcion = new System.Windows.Forms.TextBox();
             this.cBAlumno = new System.Windows.Forms.ComboBox();
             this.cBCondicion = new System.Windows.Forms.ComboBox();
@@ -51,15 +51,15 @@
             this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.container.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.container.Controls.Add(this.label1, 0, 2);
-            this.container.Controls.Add(this.label5, 0, 1);
-            this.container.Controls.Add(this.label3, 2, 1);
+            this.container.Controls.Add(this.labelAlumno, 0, 2);
+            this.container.Controls.Add(this.labelCurso, 0, 1);
+            this.container.Controls.Add(this.labelCondicion, 2, 1);
             this.container.Controls.Add(this.labelNota, 2, 0);
             this.container.Controls.Add(this.txtNota, 3, 0);
             this.container.Controls.Add(this.btnCancelar, 3, 3);
             this.container.Controls.Add(this.btnAceptar, 2, 3);
             this.container.Controls.Add(this.cBCurso, 1, 1);
-            this.container.Controls.Add(this.label4, 0, 0);
+            this.container.Controls.Add(this.labelID, 0, 0);
             this.container.Controls.Add(this.txtInscripcion, 1, 0);
             this.container.Controls.Add(this.cBAlumno, 1, 2);
             this.container.Controls.Add(this.cBCondicion, 3, 1);
@@ -74,32 +74,32 @@
             this.container.Size = new System.Drawing.Size(419, 111);
             this.container.TabIndex = 0;
             // 
-            // label1
+            // labelAlumno
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Alumno";
+            this.labelAlumno.AutoSize = true;
+            this.labelAlumno.Location = new System.Drawing.Point(3, 54);
+            this.labelAlumno.Name = "labelAlumno";
+            this.labelAlumno.Size = new System.Drawing.Size(42, 13);
+            this.labelAlumno.TabIndex = 1;
+            this.labelAlumno.Text = "Alumno";
             // 
-            // label5
+            // labelCurso
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 27);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Curso";
+            this.labelCurso.AutoSize = true;
+            this.labelCurso.Location = new System.Drawing.Point(3, 27);
+            this.labelCurso.Name = "labelCurso";
+            this.labelCurso.Size = new System.Drawing.Size(34, 13);
+            this.labelCurso.TabIndex = 5;
+            this.labelCurso.Text = "Curso";
             // 
-            // label3
+            // labelCondicion
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(211, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Condicion";
+            this.labelCondicion.AutoSize = true;
+            this.labelCondicion.Location = new System.Drawing.Point(211, 27);
+            this.labelCondicion.Name = "labelCondicion";
+            this.labelCondicion.Size = new System.Drawing.Size(54, 13);
+            this.labelCondicion.TabIndex = 3;
+            this.labelCondicion.Text = "Condicion";
             // 
             // labelNota
             // 
@@ -147,14 +147,14 @@
             this.cBCurso.Size = new System.Drawing.Size(98, 21);
             this.cBCurso.TabIndex = 13;
             // 
-            // label4
+            // labelID
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Id Inscripcion";
+            this.labelID.AutoSize = true;
+            this.labelID.Location = new System.Drawing.Point(3, 0);
+            this.labelID.Name = "labelID";
+            this.labelID.Size = new System.Drawing.Size(70, 13);
+            this.labelID.TabIndex = 4;
+            this.labelID.Text = "Id Inscripcion";
             // 
             // txtInscripcion
             // 
@@ -205,9 +205,9 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel container;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelID;
+        private System.Windows.Forms.Label labelCurso;
+        private System.Windows.Forms.Label labelCondicion;
         private System.Windows.Forms.Label labelNota;
         private System.Windows.Forms.TextBox txtNota;
         private System.Windows.Forms.TextBox txtInscripcion;
@@ -215,7 +215,7 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.ComboBox cBAlumno;
         private System.Windows.Forms.ComboBox cBCurso;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelAlumno;
         private System.Windows.Forms.ComboBox cBCondicion;
     }
 }

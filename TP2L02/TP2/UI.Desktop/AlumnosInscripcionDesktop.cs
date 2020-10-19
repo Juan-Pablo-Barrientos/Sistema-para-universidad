@@ -18,13 +18,15 @@ namespace UI.Desktop
         public AlumnosIncripcion AlumnosInscripcionActual;
         List<Curso> Cursos = new CursosLogic().GetAll();
         List<Usuario> Usuarios = new UsuarioLogic().GetAll();
-            
+
+        Usuario UsuarioActual = FormLogin.GetUsuarioLogueado();
+        
         #region constructores
         public AlumnosInscripcionDesktop()
         {
             InitializeComponent();
             this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;                        
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;                      
             foreach (var p in Usuarios)
             {
                 if (p.TiposUsuario.ToString() == "Alumno")
@@ -33,6 +35,21 @@ namespace UI.Desktop
             foreach (var p in Cursos)
             {
                 cBCurso.Items.Add(p.Descripcion);
+            }
+
+            if (UsuarioActual!=null && UsuarioActual.TiposUsuario.ToString() == "Alumno")
+            {
+                cBAlumno.Visible = false;
+                cBCondicion.Visible = false;
+                txtNota.Visible = false;
+                labelAlumno.Visible = false;
+                labelCondicion.Visible = false;
+                labelNota.Visible = false;
+            }
+            else if (UsuarioActual != null && UsuarioActual.TiposUsuario.ToString() == "Docente")
+            {
+                cBAlumno.Enabled = false;
+                cBCurso.Enabled = false;              
             }
         }
 
@@ -88,28 +105,40 @@ namespace UI.Desktop
                 AlumnosInscripcionActual = new AlumnosIncripcion();
             }
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
-            {   
-                if(!String.IsNullOrEmpty(txtNota.Text)) 
-                AlumnosInscripcionActual.Nota = Convert.ToInt32(txtNota.Text);   
-                
-                if (cBCondicion.Text == "Inscripto")
+            {
+                if (UsuarioActual != null && UsuarioActual.TiposUsuario.ToString() == "Alumno")
+                {
                     AlumnosInscripcionActual.Condicion = AlumnosIncripcion.Cond.Inscripto;
-                if (cBCondicion.Text == "Regular")
-                    AlumnosInscripcionActual.Condicion = AlumnosIncripcion.Cond.Regular;
-                if (cBCondicion.Text == "Aprobado")
-                    AlumnosInscripcionActual.Condicion = AlumnosIncripcion.Cond.Aprobado;
-                if (cBCondicion.Text == "Libre")
-                    AlumnosInscripcionActual.Condicion = AlumnosIncripcion.Cond.Libre;
 
-                foreach (var p in Cursos.Where(p => p.Descripcion == cBCurso.Text))
-                {
-                    AlumnosInscripcionActual.IDCurso = p.ID;
-                }
-                foreach (var p in Usuarios.Where(p => p.NombreUsuario == cBAlumno.Text))
-                {
-                    AlumnosInscripcionActual.IDAlumno = p.ID;
+                    foreach (var p in Cursos.Where(p => p.Descripcion == cBCurso.Text))
+                    {
+                        AlumnosInscripcionActual.IDCurso = p.ID;
+                    }
+                    AlumnosInscripcionActual.IDAlumno = UsuarioActual.ID;
                 }
 
+                else { 
+                if (!String.IsNullOrEmpty(txtNota.Text))
+                        AlumnosInscripcionActual.Nota = Convert.ToInt32(txtNota.Text);
+
+                    if (cBCondicion.Text == "Inscripto")
+                        AlumnosInscripcionActual.Condicion = AlumnosIncripcion.Cond.Inscripto;
+                    if (cBCondicion.Text == "Regular")
+                        AlumnosInscripcionActual.Condicion = AlumnosIncripcion.Cond.Regular;
+                    if (cBCondicion.Text == "Aprobado")
+                        AlumnosInscripcionActual.Condicion = AlumnosIncripcion.Cond.Aprobado;
+                    if (cBCondicion.Text == "Libre")
+                        AlumnosInscripcionActual.Condicion = AlumnosIncripcion.Cond.Libre;
+
+                    foreach (var p in Cursos.Where(p => p.Descripcion == cBCurso.Text))
+                    {
+                        AlumnosInscripcionActual.IDCurso = p.ID;
+                    }
+                    foreach (var p in Usuarios.Where(p => p.NombreUsuario == cBAlumno.Text))
+                    {
+                        AlumnosInscripcionActual.IDAlumno = p.ID;
+                    }
+                }
 
                 switch (Modo)
                 {
@@ -144,23 +173,35 @@ namespace UI.Desktop
         public override bool Validar()
         {
             var validador = new Validador();
-            if (!AlumInsLogic.isInscripcionValid(cBAlumno.Text,cBCurso.Text))
-                validador.AgregarError("El Alumno ya esta inscripto en ese curso");
-            if (cBCondicion.SelectedItem == null) validador.AgregarError("Elija una condicion ");
+             
+             if (UsuarioActual != null && UsuarioActual.TiposUsuario.ToString() == "Alumno")
+             {
+             if (!AlumInsLogic.isInscripcionValid(UsuarioActual.NombreUsuario, cBCurso.Text))
+                   validador.AgregarError("Usted ya está inscripto en este curso");
+             if (cBCurso.SelectedItem == null) validador.AgregarError("Elija un curso ");
+             }
+             else if (UsuarioActual != null && UsuarioActual.TiposUsuario.ToString() == "Docente")
+             {
+            
+             }
+            else 
+            {
             if (cBCurso.SelectedItem == null) validador.AgregarError("Elija un curso ");
+            if (cBCondicion.SelectedItem == null) validador.AgregarError("Elija una condicion ");            
             if (cBAlumno.SelectedItem == null) validador.AgregarError("Elija un Alumno");
+            if ((!AlumInsLogic.isInscripcionValid(cBAlumno.Text, cBCurso.Text)) & (Modo != ModoForm.Modificacion))
+                    validador.AgregarError("El Alumno ya esta inscripto en ese curso");
+            }           
             if (!validador.EsValido()) BusinessLogic.Notificar("AlumnosInscripcion", validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error
             return validador.EsValido();
+
         }
-
-
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (Validar())
             {
                 GuardarCambios();
-
                 Close();
             }
         }

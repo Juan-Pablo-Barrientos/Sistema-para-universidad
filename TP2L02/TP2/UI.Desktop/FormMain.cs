@@ -74,8 +74,6 @@ namespace UI.Desktop
             formEspecializaciones.ShowDialog();
         }
 
-  
-
         private void FormMain_Activated(object sender, EventArgs e)
         {
             
@@ -132,8 +130,7 @@ namespace UI.Desktop
                 }  
                else
                     txtUsuarioLogeado.Text = "SuperAdmin";
-               
-               
+                              
             }
         }
 
@@ -176,17 +173,20 @@ namespace UI.Desktop
 
         private void MisCursosAlumnoMenu_Click(object sender, EventArgs e)
         {
-
+            AlumnosInscripcion formAlumnosInscripcion = new AlumnosInscripcion();
+            formAlumnosInscripcion.ShowDialog();
         }
 
         private void InscribirseMenu_Click(object sender, EventArgs e)
         {
-
+            AlumnosInscripcionDesktop formAlumnoInscrpcion = new AlumnosInscripcionDesktop(ApplicationForm.ModoForm.Alta);
+            formAlumnoInscrpcion.ShowDialog();
         }
 
         private void MisCursosDocenteMenu_Click(object sender, EventArgs e)
         {
-
+            DocentesCursos DocentesCursos= new DocentesCursos();
+            DocentesCursos.ShowDialog();
         }
 
         private void altaDocenteCurso_Click(object sender, EventArgs e)
@@ -197,7 +197,8 @@ namespace UI.Desktop
 
         private void listadoDocenteCurso_Click(object sender, EventArgs e)
         {
-
+            DocentesCursos DocentesCursos = new DocentesCursos();
+            DocentesCursos.ShowDialog();
         }
 
         private void altaAlumnoInscripcion_Click(object sender, EventArgs e)
@@ -209,13 +210,20 @@ namespace UI.Desktop
 
         private void listadoAlumnoInscripcion_Click(object sender, EventArgs e)
         {
-
+            AlumnosInscripcion formAlumnosInscripcion = new AlumnosInscripcion();
+            formAlumnosInscripcion.ShowDialog();
         }
 
         private void CursosAltastrip_Click(object sender, EventArgs e)
         {
             CursoDesktop formCurso = new CursoDesktop(ApplicationForm.ModoForm.Alta);
             formCurso.ShowDialog();
+        }
+
+        private void listadoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Cursos formCursos = new Cursos();
+            formCursos.ShowDialog();
         }
     }
 }

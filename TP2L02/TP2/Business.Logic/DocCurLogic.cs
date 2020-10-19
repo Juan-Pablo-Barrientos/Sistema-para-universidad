@@ -26,6 +26,10 @@ namespace Business.Logic
         {
             return DocCurData.GetAll();
         }
+        public List<DocenteCurso> GetMisCursos(int id)
+        {
+            return DocCurData.GetMisCursos(id);
+        }
         public Business.Entities.DocenteCurso getOne(int ID)
         {
             return DocCurData.GetOne(ID);

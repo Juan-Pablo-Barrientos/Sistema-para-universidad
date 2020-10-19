@@ -87,7 +87,53 @@ namespace Data.Database
             return DocCurs;
 
         }
+        public List<DocenteCurso> GetMisCursos(int id)
+        {
 
+            List<DocenteCurso> DocCurs = new List<DocenteCurso>();
+            try
+            {
+               
+                this.OpenConnection();
+       
+                SqlCommand cmdDocCurs = new SqlCommand("select * from docentes_cursos where id_docente=@id", sqlConn);
+                cmdDocCurs.Parameters.Add("@id", SqlDbType.Int).Value = id;
+
+                SqlDataReader drDocCurs = cmdDocCurs.ExecuteReader();
+
+          
+                while (drDocCurs.Read())
+                {               
+                    DocenteCurso docCur = new DocenteCurso();                
+                    docCur.ID = (int)drDocCurs["id_dictado"];
+                    docCur.IDCurso = (int)drDocCurs["id_curso"];
+                    docCur.IDDocente = (int)drDocCurs["id_docente"];
+                    if ((string)drDocCurs["cargo"] == "Docente")
+                        docCur.Cargo = DocenteCurso.TiposCargos.Docente;
+                    if ((string)drDocCurs["cargo"] == "Jefecatedra")
+                        docCur.Cargo = DocenteCurso.TiposCargos.Jefecatedra;
+                    if ((string)drDocCurs["cargo"] == "Auxiliar")
+                        docCur.Cargo = DocenteCurso.TiposCargos.Auxiliar;
+                   
+                    DocCurs.Add(docCur);
+                }
+               
+                drDocCurs.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de docentes y cursos", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            //devolvemos el objeto
+            return DocCurs;
+
+        }
 
 
         public Business.Entities.DocenteCurso GetOne(int ID)

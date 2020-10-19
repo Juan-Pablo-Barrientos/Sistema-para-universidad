@@ -49,6 +49,9 @@
             this.ComisionMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CursosMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoCursotrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.CursosAltastrip = new System.Windows.Forms.ToolStripMenuItem();
             this.InscribirUsuarioMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.docenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaDocenteCurso = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,9 +64,6 @@
             this.MisCursosDocenteMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUsuarioLogeado = new System.Windows.Forms.TextBox();
-            this.CursosMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.CursosAltastrip = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,11 +78,11 @@
             this.ModulosMenu,
             this.PlanesMenu,
             this.ComisionMenu,
+            this.CursosMenu,
             this.InscribirUsuarioMenu,
             this.InscribirseMenu,
             this.MisCursosAlumnoMenu,
-            this.MisCursosDocenteMenu,
-            this.CursosMenu});
+            this.MisCursosDocenteMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -163,14 +163,14 @@
             // especialidadlistadoMenuStrip
             // 
             this.especialidadlistadoMenuStrip.Name = "especialidadlistadoMenuStrip";
-            this.especialidadlistadoMenuStrip.Size = new System.Drawing.Size(180, 22);
+            this.especialidadlistadoMenuStrip.Size = new System.Drawing.Size(112, 22);
             this.especialidadlistadoMenuStrip.Text = "Listado";
             this.especialidadlistadoMenuStrip.Click += new System.EventHandler(this.especialidadlistadoMenuStrip_Click);
             // 
             // especialidadaltaMenuStrip
             // 
             this.especialidadaltaMenuStrip.Name = "especialidadaltaMenuStrip";
-            this.especialidadaltaMenuStrip.Size = new System.Drawing.Size(180, 22);
+            this.especialidadaltaMenuStrip.Size = new System.Drawing.Size(112, 22);
             this.especialidadaltaMenuStrip.Text = "Alta";
             this.especialidadaltaMenuStrip.Click += new System.EventHandler(this.especialidadaltaMenuStrip_Click);
             // 
@@ -186,14 +186,14 @@
             // listadoModulo
             // 
             this.listadoModulo.Name = "listadoModulo";
-            this.listadoModulo.Size = new System.Drawing.Size(180, 22);
+            this.listadoModulo.Size = new System.Drawing.Size(112, 22);
             this.listadoModulo.Text = "Listado";
             this.listadoModulo.Click += new System.EventHandler(this.listadoModulo_Click);
             // 
             // altaModulo
             // 
             this.altaModulo.Name = "altaModulo";
-            this.altaModulo.Size = new System.Drawing.Size(180, 22);
+            this.altaModulo.Size = new System.Drawing.Size(112, 22);
             this.altaModulo.Text = "Alta";
             this.altaModulo.Click += new System.EventHandler(this.altaModulo_Click);
             // 
@@ -209,14 +209,14 @@
             // listadoPlanes
             // 
             this.listadoPlanes.Name = "listadoPlanes";
-            this.listadoPlanes.Size = new System.Drawing.Size(180, 22);
+            this.listadoPlanes.Size = new System.Drawing.Size(112, 22);
             this.listadoPlanes.Text = "Listado";
             this.listadoPlanes.Click += new System.EventHandler(this.listadoPlanes_Click);
             // 
             // altaPlanes
             // 
             this.altaPlanes.Name = "altaPlanes";
-            this.altaPlanes.Size = new System.Drawing.Size(180, 22);
+            this.altaPlanes.Size = new System.Drawing.Size(112, 22);
             this.altaPlanes.Text = "Alta";
             this.altaPlanes.Click += new System.EventHandler(this.altaPlanes_Click);
             // 
@@ -232,16 +232,39 @@
             // listadoToolStripMenuItem
             // 
             this.listadoToolStripMenuItem.Name = "listadoToolStripMenuItem";
-            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.listadoToolStripMenuItem.Text = "Listado";
             this.listadoToolStripMenuItem.Click += new System.EventHandler(this.listadoToolStripMenuItem_Click);
             // 
             // altaToolStripMenuItem
             // 
             this.altaToolStripMenuItem.Name = "altaToolStripMenuItem";
-            this.altaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.altaToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.altaToolStripMenuItem.Text = "Alta";
             this.altaToolStripMenuItem.Click += new System.EventHandler(this.altaToolStripMenuItem_Click);
+            // 
+            // CursosMenu
+            // 
+            this.CursosMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listadoCursotrip,
+            this.CursosAltastrip});
+            this.CursosMenu.Name = "CursosMenu";
+            this.CursosMenu.Size = new System.Drawing.Size(55, 20);
+            this.CursosMenu.Text = "Cursos";
+            // 
+            // listadoCursotrip
+            // 
+            this.listadoCursotrip.Name = "listadoCursotrip";
+            this.listadoCursotrip.Size = new System.Drawing.Size(180, 22);
+            this.listadoCursotrip.Text = "Listado";
+            this.listadoCursotrip.Click += new System.EventHandler(this.listadoToolStripMenuItem1_Click);
+            // 
+            // CursosAltastrip
+            // 
+            this.CursosAltastrip.Name = "CursosAltastrip";
+            this.CursosAltastrip.Size = new System.Drawing.Size(180, 22);
+            this.CursosAltastrip.Text = "Alta";
+            this.CursosAltastrip.Click += new System.EventHandler(this.CursosAltastrip_Click);
             // 
             // InscribirUsuarioMenu
             // 
@@ -258,7 +281,7 @@
             this.altaDocenteCurso,
             this.listadoDocenteCurso});
             this.docenteToolStripMenuItem.Name = "docenteToolStripMenuItem";
-            this.docenteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.docenteToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.docenteToolStripMenuItem.Text = "Docente";
             // 
             // altaDocenteCurso
@@ -281,7 +304,7 @@
             this.altaAlumnoInscripcion,
             this.listadoAlumnoInscripcion});
             this.alumnoToolStripMenuItem.Name = "alumnoToolStripMenuItem";
-            this.alumnoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alumnoToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.alumnoToolStripMenuItem.Text = "Alumno";
             // 
             // altaAlumnoInscripcion
@@ -337,28 +360,6 @@
             this.txtUsuarioLogeado.ReadOnly = true;
             this.txtUsuarioLogeado.Size = new System.Drawing.Size(100, 20);
             this.txtUsuarioLogeado.TabIndex = 3;
-            // 
-            // CursosMenu
-            // 
-            this.CursosMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listadoToolStripMenuItem1,
-            this.CursosAltastrip});
-            this.CursosMenu.Name = "CursosMenu";
-            this.CursosMenu.Size = new System.Drawing.Size(55, 20);
-            this.CursosMenu.Text = "Cursos";
-            // 
-            // listadoToolStripMenuItem1
-            // 
-            this.listadoToolStripMenuItem1.Name = "listadoToolStripMenuItem1";
-            this.listadoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.listadoToolStripMenuItem1.Text = "Listado";
-            // 
-            // CursosAltastrip
-            // 
-            this.CursosAltastrip.Name = "CursosAltastrip";
-            this.CursosAltastrip.Size = new System.Drawing.Size(180, 22);
-            this.CursosAltastrip.Text = "Alta";
-            this.CursosAltastrip.Click += new System.EventHandler(this.CursosAltastrip_Click);
             // 
             // FormMain
             // 
@@ -421,7 +422,7 @@
         private System.Windows.Forms.ToolStripMenuItem altaAlumnoInscripcion;
         private System.Windows.Forms.ToolStripMenuItem listadoAlumnoInscripcion;
         private System.Windows.Forms.ToolStripMenuItem CursosMenu;
-        private System.Windows.Forms.ToolStripMenuItem listadoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem listadoCursotrip;
         private System.Windows.Forms.ToolStripMenuItem CursosAltastrip;
     }
 }

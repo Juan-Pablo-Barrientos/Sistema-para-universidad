@@ -26,6 +26,15 @@ namespace Business.Logic
         {
             return AlumInData.GetAll();
         }
+
+        public List<AlumnosIncripcion> GetMisCursos(int id)
+        {
+            return AlumInData.GetMisCursos(id);
+        }
+        public List<AlumnosIncripcion> GetAlumnosPorCurso(int id)
+        {
+            return AlumInData.GetAlumnosPorCurso(id);
+        }
         public Business.Entities.AlumnosIncripcion getOne(int ID)
         {
             return AlumInData.GetOne(ID);
