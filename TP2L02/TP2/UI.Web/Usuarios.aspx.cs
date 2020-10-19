@@ -220,6 +220,7 @@ namespace UI.Web
             this.nombreTextBox.Enabled = check;
             this.apellidoTextBox.Enabled = check;
             this.emailTextBox.Enabled = check;
+            this.habilitadoCheckBox.Enabled = check;
             this.nombreUsuarioTextBox.Enabled = check;
             this.claveTextBox.Visible = check;
             this.claveLabel.Visible = check;

@@ -26,10 +26,10 @@
         <asp:Label ID="IdLabel" runat="server" Text="Id: "></asp:Label>
         <asp:TextBox ID="IdTextBox" runat="server"></asp:TextBox>
         <br />
-        <asp:Label ID="DescripcionLabel" runat="server" Text="DescripcionLabel: "></asp:Label>
+        <asp:Label ID="DescripcionLabel" runat="server" Text="Descripcion: "></asp:Label>
         <asp:TextBox ID="DescripcionTextBox" runat="server" Width="452px"></asp:TextBox>
         <br />
-        Id especialidad:
+        Especialidad:
         <asp:DropDownList ID="idEspDdl" runat="server">
         </asp:DropDownList>
         <br />

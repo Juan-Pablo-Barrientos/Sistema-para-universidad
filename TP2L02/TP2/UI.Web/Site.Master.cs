@@ -80,6 +80,22 @@ namespace UI.Web
                             parent.ChildItems.Remove(e.Item);
                         }
                     }
+                    if (mapNode.Title == "Materias")
+                    {
+                        System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
+                        if (parent != null)
+                        {
+                            parent.ChildItems.Remove(e.Item);
+                        }
+                    }
+                    if (mapNode.Title == "Comisiones")
+                    {
+                        System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
+                        if (parent != null)
+                        {
+                            parent.ChildItems.Remove(e.Item);
+                        }
+                    }
                 }
             }
         }

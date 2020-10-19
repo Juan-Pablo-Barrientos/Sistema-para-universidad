@@ -61,7 +61,7 @@
         <asp:Label ID="telefonoLabel" runat="server" Text="Telefono: "></asp:Label>
         <asp:TextBox ID="telefonoTextBox" runat="server"></asp:TextBox>
         <br />
-        <asp:Label ID="direccionLabel" runat="server" Text="direccion: "></asp:Label>
+        <asp:Label ID="direccionLabel" runat="server" Text="Direccion: "></asp:Label>
         <asp:TextBox ID="direccionTextBox" runat="server"></asp:TextBox>
         <asp:Label ID="preguntaContralbl" runat="server" Text="Pregunta para recuperar contraseña"></asp:Label>
         <asp:DropDownList ID="preguntaContraDdl" runat="server" Height="19px" Width="307px">
