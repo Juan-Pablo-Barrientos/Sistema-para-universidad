@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Data.Database;
 using Business.Entities;
-
+using System.Windows.Forms.VisualStyles;
+using System.Runtime.CompilerServices;
 
 namespace Business.Logic
 {
@@ -39,15 +40,27 @@ namespace Business.Logic
         {
             CursosData.Save(curso);
         }
-        public static bool isDeleteValid(int idEspecialidadActual)
-        {
-            List<Plan> Planes = new PlanLogic().GetAll();
-            foreach (var p in Planes)
-            {
-                return p.IDEspecialidad != idEspecialidadActual;
-            }
-            return true;
-        }
 
+        //public static bool isDeleteValid(int idEspecialidadActual)
+        //{
+        //    List<Plan> Planes = new PlanLogic().GetAll();
+        //    foreach (var p in Planes)
+        //    {
+        //        return p.IDEspecialidad != idEspecialidadActual;
+        //    }
+        //    return true;
+        //}
+
+        public static bool IsCursoFull(string stringcurso)
+        {         
+            List<Curso> Cursos = new CursosLogic().GetAll();
+            foreach (var c in Cursos.Where(c => c.Descripcion == stringcurso))
+            {                                                
+            Curso Cur = new CursosLogic().getOne(c.ID);
+            List<AlumnosIncripcion> Inscripciones = new AlumInsLogic().GetAlumnosPorCurso(c.ID);
+            return Cur.Cupo == Inscripciones.Count;
+            }
+            return false;
+        }
     }
 }

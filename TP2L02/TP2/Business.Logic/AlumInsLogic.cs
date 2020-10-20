@@ -66,16 +66,5 @@ namespace Business.Logic
             }
             return true;           
         }
-
-        public static bool isDeleteValid(int idEspecialidadActual)
-        {
-            List<Plan> Planes = new PlanLogic().GetAll();
-            foreach (var p in Planes)
-            {
-                return p.IDEspecialidad != idEspecialidadActual;
-            }
-            return true;
-        }
-
     }
 }

@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Business.Entities
 {
+
     public class Curso : BusinessEntity
     {
+       
+
         private int _AnioCalendario;
         public int AnioCalendario
         {
@@ -41,10 +44,6 @@ namespace Business.Entities
             get { return _IDMateria; }
             set { _IDMateria = value; }
         }
-
-
-
-
-
+           
     }
 }

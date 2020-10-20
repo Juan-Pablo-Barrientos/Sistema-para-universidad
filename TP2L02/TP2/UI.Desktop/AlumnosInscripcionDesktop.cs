@@ -179,6 +179,7 @@ namespace UI.Desktop
              if (!AlumInsLogic.isInscripcionValid(UsuarioActual.NombreUsuario, cBCurso.Text))
                    validador.AgregarError("Usted ya está inscripto en este curso");
              if (cBCurso.SelectedItem == null) validador.AgregarError("Elija un curso ");
+             if (CursosLogic.IsCursoFull(cBCurso.Text))  validador.AgregarError("El curso esta lleno");
              }
              else if (UsuarioActual != null && UsuarioActual.TiposUsuario.ToString() == "Docente")
              {

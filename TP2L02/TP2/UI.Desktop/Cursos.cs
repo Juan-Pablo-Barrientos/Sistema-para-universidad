@@ -12,8 +12,10 @@ using Business.Logic;
 
 namespace UI.Desktop
 {
+    
     public partial class Cursos : Form
     {
+        Usuario UsuarioActual = FormLogin.GetUsuarioLogueado();
         public Cursos()
         {
             InitializeComponent();
@@ -70,6 +72,18 @@ namespace UI.Desktop
 
         private void Curso_Load(object sender, EventArgs e)
         {
+            if (UsuarioActual != null && UsuarioActual.TiposUsuario.ToString() == "Alumno")
+            {
+                this.tsEliminar.Visible = false;
+                this.tsNuevo.Visible = false;
+                this.tsEditar.Visible = false;
+            }                       
+            if (UsuarioActual != null &&  UsuarioActual.TiposUsuario.ToString() == "Docente")
+            {
+                this.tsEliminar.Visible = false;
+                this.tsNuevo.Visible = false;
+                this.tsEditar.Visible = false;
+            }
             this.Listar();
         }
     }
