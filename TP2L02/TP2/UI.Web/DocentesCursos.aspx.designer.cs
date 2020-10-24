@@ -11,7 +11,7 @@ namespace UI.Web
 {
 
 
-    public partial class Cursos
+    public partial class DocentesCursos
     {
 
         /// <summary>
@@ -42,94 +42,76 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Panel formPanel;
 
         /// <summary>
-        /// Control IdLabel.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label IdLabel;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control IdTextBox.
+        /// Control txtID.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox IdTextBox;
+        protected global::System.Web.UI.WebControls.TextBox txtID;
 
         /// <summary>
-        /// Control DescripcionLabel.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DescripcionLabel;
+        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control DescripcionTextBox.
+        /// Control ddlCurso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DescripcionTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCurso;
 
         /// <summary>
-        /// Control CupoLabel.
+        /// Control Label3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CupoLabel;
+        protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control CupoTextBox.
+        /// Control ddlDocente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CupoTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDocente;
 
         /// <summary>
-        /// Control AnioCalendarioLabel.
+        /// Control Label4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AnioCalendarioLabel;
+        protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Control AnioDdl.
+        /// Control ddlCargo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList AnioDdl;
-
-        /// <summary>
-        /// Control idComisionDdl.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList idComisionDdl;
-
-        /// <summary>
-        /// Control idMateriaDdl.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList idMateriaDdl;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCargo;
 
         /// <summary>
         /// Control formActionsPanel.

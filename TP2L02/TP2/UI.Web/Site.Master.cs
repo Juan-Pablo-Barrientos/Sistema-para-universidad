@@ -32,9 +32,9 @@ namespace UI.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             NombreUsr.Text = Session["user"].ToString();
-            
+
             if (NombreUsr.Text != "SuperAdmin")
             {
                 Entity = Logic.getOneNombre(Session["user"].ToString());
@@ -45,11 +45,11 @@ namespace UI.Web
                 TipoUsr.Text = "SuperAdmin";
             }
         }
+
         protected void Menu1_MenuItemDataBound(object sender, MenuEventArgs e)
         {
             System.Web.UI.WebControls.Menu menu = (System.Web.UI.WebControls.Menu)sender;
             SiteMapNode mapNode = (SiteMapNode)e.Item.DataItem;
-            
 
             System.Web.UI.WebControls.MenuItem itemToRemove = menu.FindItem(mapNode.Title);
             if (NombreUsr.Text != "SuperAdmin")
@@ -96,8 +96,17 @@ namespace UI.Web
                             parent.ChildItems.Remove(e.Item);
                         }
                     }
+                    if (mapNode.Title == "DocenteCursos")
+                    {
+                        System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
+                        if (parent != null)
+                        {
+                            parent.ChildItems.Remove(e.Item);
+                        }
+                    }
                 }
             }
         }
+       
     }
 }

@@ -8,19 +8,20 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Business.Entities;
 using Business.Logic;
+
 namespace UI.Web
 {
-    public partial class Cursos : System.Web.UI.Page
+    public partial class DocentesCursos : System.Web.UI.Page
     {
         #region Propiedades
-        CursosLogic _logic;
-        private CursosLogic Logic
+        DocCurLogic _logic;
+        private DocCurLogic Logic
         {
             get
             {
                 if (_logic == null)
                 {
-                    _logic = new CursosLogic { };
+                    _logic = new DocCurLogic { };
                 }
                 return _logic;
             }
@@ -38,7 +39,7 @@ namespace UI.Web
         }
 
 
-        private Curso Entity
+        private DocenteCurso Entity
         {
             get;
             set;
@@ -80,26 +81,22 @@ namespace UI.Web
             LoadGrid();
             if (!IsPostBack)
             {
-                List<Materia> materias = new MateriaLogic().GetAll();
-                List<Comision> comisiones = new ComisionLogic().GetAll();
+                List<Usuario> Usuarios = new UsuarioLogic().GetAll();
+                List<Curso> Cursos = new CursosLogic().GetAll();
                 LoadGrid();
                 this.FormMode = FormModes.Baja;
-                this.IdTextBox.Enabled = false;
+                this.txtID.Enabled = false;
 
-                foreach (var m in materias)
+                foreach (var u in Usuarios)
                 {
-                    idMateriaDdl.Items.Add(m.Descripcion);
+                    if (u.TiposUsuario.ToString() == "Docente")
+                        ddlDocente.Items.Add(u.NombreUsuario);
                 }
-                foreach (var c in comisiones)
+                foreach (var c in Cursos)
                 {
-                    idComisionDdl.Items.Add(c.Descripcion);
+                    ddlCurso.Items.Add(c.Descripcion);
                 }
-                int anio2 = (DateTime.Now).Year;
 
-                for (int anio = 1900; anio <= anio2; anio++)
-                {
-                    AnioDdl.Items.Add(anio.ToString());
-                }
             }
         }
 
@@ -107,16 +104,16 @@ namespace UI.Web
         {
             this.GridView1.DataSource = this.Logic.GetAll();
             this.GridView1.DataBind();
-            List<Curso> cur = new CursosLogic().GetAll();
+            List<DocenteCurso> cur = new DocCurLogic().GetAll();
             for (int i = 0; i < cur.Count; i++)
             {
-                var mat = new MateriaLogic().getOne(Convert.ToInt32(this.GridView1.Rows[i].Cells[6].Text));
-                this.GridView1.Rows[i].Cells[7].Text = mat.Descripcion;
+                var mat = new UsuarioLogic().getOne(Convert.ToInt32(this.GridView1.Rows[i].Cells[2].Text));
+                this.GridView1.Rows[i].Cells[5].Text = mat.NombreUsuario;
             }
             for (int i = 0; i < cur.Count; i++)
             {
-                var com = new ComisionLogic().getOne(Convert.ToInt32(this.GridView1.Rows[i].Cells[4].Text));
-                this.GridView1.Rows[i].Cells[5].Text = com.Descripcion;
+                var com = new CursosLogic().getOne(Convert.ToInt32(this.GridView1.Rows[i].Cells[1].Text));
+                this.GridView1.Rows[i].Cells[4].Text = com.Descripcion;
             }
         }
 
@@ -156,20 +153,21 @@ namespace UI.Web
 
         private void LoadForm(int id)
         {
-            List<Materia> mat = new MateriaLogic().GetAll();
-            List<Comision> com = new ComisionLogic().GetAll();
+            List<Usuario> Usuarios = new UsuarioLogic().GetAll();
+            List<Curso> Cursos = new CursosLogic().GetAll();
             this.Entity = this.Logic.getOne(id);
-            this.IdTextBox.Text = this.Entity.ID.ToString();
-            this.DescripcionTextBox.Text = this.Entity.Descripcion;
-            this.CupoTextBox.Text = this.Entity.Cupo.ToString();
-            this.AnioDdl.SelectedValue = this.Entity.AnioCalendario.ToString();
-            foreach (var c in com.Where(c => c.ID == this.Entity.IDComision))
+
+            this.txtID.Text = this.Entity.ID.ToString();      
+            this.ddlCargo.SelectedValue = this.Entity.Cargo.ToString();
+
+            foreach (var u in Usuarios.Where(u => u.ID == this.Entity.IDDocente))
             {
-                this.idComisionDdl.Text = c.Descripcion;
+                this.ddlDocente.Text = u.NombreUsuario;
             }
-            foreach (var m in mat.Where(m => m.ID == this.Entity.IDMateria))
+
+            foreach (var c in Cursos.Where(c => c.ID == this.Entity.IDCurso))
             {
-                this.idMateriaDdl.Text = m.Descripcion;
+                this.ddlCurso.Text = c.Descripcion;
             }
         }
 
@@ -183,27 +181,32 @@ namespace UI.Web
                 this.EnableForm(true);
             }
         }
-        private void LoadEntity(Curso curso)
+        private void LoadEntity(DocenteCurso DocenteCurso)
         {
-            List<Comision> com = new ComisionLogic().GetAll();
-            List<Materia> mat = new MateriaLogic().GetAll();
-            curso.Descripcion = this.DescripcionTextBox.Text;
-            curso.AnioCalendario = Convert.ToInt32(this.AnioDdl.SelectedValue);
-            curso.Cupo = Convert.ToInt32(this.CupoTextBox.Text);
-            foreach (var m in mat.Where(m => m.Descripcion == idMateriaDdl.Text))
+            List<Usuario> Usuarios = new UsuarioLogic().GetAll();
+            List<Curso> Cursos = new CursosLogic().GetAll();
+
+            if (ddlCargo.Text == "Docente")
+                DocenteCurso.Cargo = DocenteCurso.TiposCargos.Docente;
+            if (ddlCargo.Text == "Auxiliar")
+                DocenteCurso.Cargo = DocenteCurso.TiposCargos.Auxiliar;
+            if (ddlCargo.Text == "JefeCatedra")
+                DocenteCurso.Cargo = DocenteCurso.TiposCargos.Jefecatedra;
+
+            foreach (var p in Usuarios.Where(p => p.NombreUsuario == ddlDocente.Text))
             {
-                curso.IDMateria = m.ID;
+                DocenteCurso.IDDocente = p.ID;
             }
-            foreach (var c in com.Where(c => c.Descripcion == idComisionDdl.Text))
+            foreach (var p in Cursos.Where(p => p.Descripcion == ddlCurso.Text))
             {
-                curso.IDComision = c.ID;
+                DocenteCurso.IDCurso = p.ID;
             }
 
 
         }
-        private void SaveEntity(Curso curso)
+        private void SaveEntity(DocenteCurso DocenteCurso)
         {
-            this.Logic.Save(curso);
+            this.Logic.Save(DocenteCurso);
         }
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
@@ -215,7 +218,7 @@ namespace UI.Web
                     this.LoadGrid();
                     break;
                 case FormModes.Modificacion:
-                    this.Entity = new Curso();
+                    this.Entity = new DocenteCurso();
                     this.Entity.ID = this.SelectedID;
                     this.Entity.State = BusinessEntity.States.Modified;
                     this.LoadEntity(this.Entity);
@@ -224,7 +227,7 @@ namespace UI.Web
                     this.formPanel.Visible = false;
                     break;
                 case FormModes.Alta:
-                    this.Entity = new Curso();
+                    this.Entity = new DocenteCurso();
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
@@ -236,11 +239,10 @@ namespace UI.Web
         }
         private void EnableForm(bool check)
         {
-            this.CupoTextBox.Enabled = check;
-            this.DescripcionTextBox.Enabled = check;
-            this.idComisionDdl.Enabled = check;
-            this.idMateriaDdl.Enabled = check;
-            this.AnioDdl.Enabled = check;
+            this.txtID.Enabled = check;
+            this.ddlCargo.Enabled = check;
+            this.ddlCurso.Enabled = check;
+            this.ddlDocente.Enabled = check;          
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -268,8 +270,7 @@ namespace UI.Web
         }
         private void ClearForm()
         {
-            this.IdTextBox.Text = string.Empty;
-            this.DescripcionTextBox.Text = string.Empty;
+            this.txtID.Text = string.Empty;          
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)
@@ -278,7 +279,5 @@ namespace UI.Web
             this.LoadGrid();
             this.formPanel.Visible = false;
         }
-
-     
     }
 }

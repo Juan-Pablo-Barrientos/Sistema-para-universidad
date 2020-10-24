@@ -6,8 +6,10 @@
 	<siteMapNode url="~/Planes.aspx" title="Planes"  description="Seccion Planes" />
 	<siteMapNode url="~/Materias.aspx" title="Materias"  description="Seccion Materias" />
 	<siteMapNode url="~/Comisiones.aspx" title="Comisiones"  description="Seccion Comisiones" />
+	<siteMapNode url="~/DocentesCursos.aspx" title="DocenteCurso"  description="Seccion DocentesCursos" />  
 	<siteMapNode url="~/Cursos.aspx" title="Cursos"  description="Seccion Cursos" />
 	<siteMapNode url="~/Login.aspx" title="Cerrar Sesion"  description="Cerrar Sesion" />
+	  
   </siteMapNode>
 
 	
