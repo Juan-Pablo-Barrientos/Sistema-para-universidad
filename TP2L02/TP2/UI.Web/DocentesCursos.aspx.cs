@@ -156,7 +156,6 @@ namespace UI.Web
             List<Usuario> Usuarios = new UsuarioLogic().GetAll();
             List<Curso> Cursos = new CursosLogic().GetAll();
             this.Entity = this.Logic.getOne(id);
-
             this.txtID.Text = this.Entity.ID.ToString();      
             this.ddlCargo.SelectedValue = this.Entity.Cargo.ToString();
 
@@ -190,7 +189,7 @@ namespace UI.Web
                 DocenteCurso.Cargo = DocenteCurso.TiposCargos.Docente;
             if (ddlCargo.Text == "Auxiliar")
                 DocenteCurso.Cargo = DocenteCurso.TiposCargos.Auxiliar;
-            if (ddlCargo.Text == "JefeCatedra")
+            if (ddlCargo.Text == "Jefecatedra")
                 DocenteCurso.Cargo = DocenteCurso.TiposCargos.Jefecatedra;
 
             foreach (var p in Usuarios.Where(p => p.NombreUsuario == ddlDocente.Text))

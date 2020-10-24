@@ -184,7 +184,7 @@ namespace Data.Database
                 this.OpenConnection();
                 //creamos la sentencia sql y asignamos un valor al parametro
                 SqlCommand cmdDelete =
-                    new SqlCommand("delete docente_curso where id_dictado=@id", sqlConn);
+                    new SqlCommand("delete docentes_cursos where id_dictado=@id", sqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 //ejecutamos la sentencia sql
                 cmdDelete.ExecuteNonQuery();

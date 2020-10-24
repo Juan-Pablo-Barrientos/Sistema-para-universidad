@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DocentesCursos.aspx.cs" Inherits="UI.Web.DocentesCursos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
-    <asp:Panel ID="gridPanel" runat="server" Height="111px" Width="671px">
-        <asp:GridView ID="GridView1" runat="server" Width="679px" AutoGenerateColumns="False" Height="141px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" DataKeyNames="ID" SelectedRowStyle-BackColor="Black"
+    <asp:Panel ID="gridPanel" runat="server" >
+        <asp:GridView ID="GridView1" runat="server" Width="679px" AutoGenerateColumns="False" Height="141px" DataKeyNames="ID" OnSelectedIndexChanged="GridView1_SelectedIndexChanged"  SelectedRowStyle-BackColor="Black"
             SelectedRowStyle-ForeColor="White">
             <Columns>
-                <asp:BoundField DataField="ID" HeaderText="Id Inscripcion" />
+                <asp:BoundField DataField="Id" HeaderText="Id" />
                 <asp:BoundField DataField="IDCurso" HeaderText="ID Curso" />
                 <asp:BoundField DataField="IDDocente" HeaderText="ID Docente" />
                 <asp:BoundField DataField="Cargo" HeaderText="Cargo" />
@@ -32,7 +32,7 @@
         <asp:Label ID="Label4" runat="server" Text="Cargo"></asp:Label>
         <br />
         <asp:DropDownList ID="ddlCargo" runat="server">
-            <asp:ListItem>JefeCatedra</asp:ListItem>
+            <asp:ListItem Value="Jefecatedra">Jefecatedra</asp:ListItem>
             <asp:ListItem Value="Auxiliar"></asp:ListItem>
             <asp:ListItem>Docente</asp:ListItem>
         </asp:DropDownList>
