@@ -15,26 +15,26 @@
         </asp:GridView>
     </asp:Panel>
      <asp:Panel ID="FormPanel" runat="server"  Visible="False">
-   <asp:Label ID="Label1" runat="server" Text="ID"></asp:Label>
-  <asp:TextBox ID="IDtxt" runat="server" Height="16px" Width="92px"></asp:TextBox>
+   <asp:Label ID="LabelID" runat="server" Text="ID"></asp:Label>
+  <asp:TextBox ID="IDtxt" runat="server" Height="16px" Width="92px" ReadOnly="True"></asp:TextBox>
          <br />
-<asp:Label ID="Label6" runat="server" Text="Alumno"></asp:Label>
+<asp:Label ID="LabelAlum" runat="server" Text="Alumno"></asp:Label>
           <asp:DropDownList ID="Alumnoddl" runat="server">
     </asp:DropDownList>
        <br />
-    <asp:Label ID="Label2" runat="server" Text="Curso"></asp:Label>
+    <asp:Label ID="LabelCur" runat="server" Text="Curso"></asp:Label>
   <asp:DropDownList ID="Cursoddl" runat="server">
     </asp:DropDownList>
                 <br />
-         <asp:Label ID="Label3" runat="server" Text="Condicion"></asp:Label>
+         <asp:Label ID="LabelCond" runat="server" Text="Condicion"></asp:Label>
   <asp:DropDownList ID="Condicionddl" runat="server">
-      <asp:ListItem Value="  Inscripto"></asp:ListItem>
+      <asp:ListItem Value="Inscripto"></asp:ListItem>
       <asp:ListItem Value="Regular"></asp:ListItem>
       <asp:ListItem Value="Aprobado"></asp:ListItem>
       <asp:ListItem Value="Libre"></asp:ListItem>
     </asp:DropDownList>
             <br />
-         <asp:Label ID="Label4" runat="server" Text="Nota"></asp:Label>
+         <asp:Label ID="LabelNota" runat="server" Text="Nota"></asp:Label>
        <asp:TextBox ID="Notatxt" runat="server" Height="16px" Width="92px"></asp:TextBox>
      <asp:Panel ID="FormActionPanel" runat="server" Height="20px" Width="119px">                
          <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>

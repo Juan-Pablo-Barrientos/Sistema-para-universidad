@@ -15,6 +15,7 @@ namespace UI.Web
     {
         #region Propiedades
         DocCurLogic _logic;
+        Usuario UsuarioLogueado;
         private DocCurLogic Logic
         {
             get
@@ -78,7 +79,14 @@ namespace UI.Web
         #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadGrid();
+
+            UsuarioLogueado = new UsuarioLogic().getOneNombre(Session["user"].ToString());
+            if (UsuarioLogueado.ID != 0 && UsuarioLogueado.TiposUsuario.ToString() == "Docente")
+            {
+                this.editarLinkButton.Visible = false;
+                this.eliminarLinkButton.Visible = false;
+                this.nuevoLinkButton.Visible = false;
+            }
             if (!IsPostBack)
             {
                 List<Usuario> Usuarios = new UsuarioLogic().GetAll();
@@ -102,9 +110,18 @@ namespace UI.Web
 
         private void LoadGrid()
         {
-            this.GridView1.DataSource = this.Logic.GetAll();
+            List<DocenteCurso> cur;
+            if (UsuarioLogueado.ID != 0 && UsuarioLogueado.TiposUsuario.ToString() == "Docente")
+            {
+                this.GridView1.DataSource = this.Logic.GetMisCursos(UsuarioLogueado.ID);
+                cur = new DocCurLogic().GetMisCursos(UsuarioLogueado.ID);
+            }
+            else
+            {
+                this.GridView1.DataSource = this.Logic.GetAll();
+                cur = new DocCurLogic().GetAll();
+            }              
             this.GridView1.DataBind();
-            List<DocenteCurso> cur = new DocCurLogic().GetAll();
             for (int i = 0; i < cur.Count; i++)
             {
                 var mat = new UsuarioLogic().getOne(Convert.ToInt32(this.GridView1.Rows[i].Cells[2].Text));
@@ -120,34 +137,44 @@ namespace UI.Web
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedID = (int)this.GridView1.SelectedValue;
-            if (this.FormMode == FormModes.Modificacion)
-                if (this.IsEntitySelected)
-                {
-                    this.formPanel.Visible = true;
-                    this.FormMode = FormModes.Modificacion;
-                    this.LoadForm(this.SelectedID);
-                    this.EnableForm(true);
-                }
-            if (this.FormMode == FormModes.Baja)
+            if (UsuarioLogueado.ID != 0 && UsuarioLogueado.TiposUsuario.ToString() == "Docente") 
             {
-                if (this.IsEntitySelected)
-                {
-
-                    this.formPanel.Visible = true;
-                    this.FormMode = FormModes.Baja;
-                    this.EnableForm(false);
-                    this.LoadForm(this.SelectedID);
-                }
+                var docCur = new DocCurLogic().getOne(this.SelectedID);
+                Session["idcurso"] = docCur.IDCurso;
+                Response.Redirect("~/AlumnosInscripciones.aspx");
             }
-            if (this.FormMode == FormModes.Alta)
+            else
             {
-                if (this.IsEntitySelected)
+
+                if (this.FormMode == FormModes.Modificacion)
+                    if (this.IsEntitySelected)
+                    {
+                        this.formPanel.Visible = true;
+                        this.FormMode = FormModes.Modificacion;
+                        this.LoadForm(this.SelectedID);
+                        this.EnableForm(true);
+                    }
+                if (this.FormMode == FormModes.Baja)
                 {
-                    this.formPanel.Visible = true;
-                    this.FormMode = FormModes.Modificacion;
-                    this.LoadForm(this.SelectedID);
-                    this.EnableForm(true);
+                    if (this.IsEntitySelected)
+                    {
+
+                        this.formPanel.Visible = true;
+                        this.FormMode = FormModes.Baja;
+                        this.EnableForm(false);
+                        this.LoadForm(this.SelectedID);
+                    }
                 }
+                if (this.FormMode == FormModes.Alta)
+                {
+                    if (this.IsEntitySelected)
+                    {
+                        this.formPanel.Visible = true;
+                        this.FormMode = FormModes.Modificacion;
+                        this.LoadForm(this.SelectedID);
+                        this.EnableForm(true);
+                    }
+                } 
             }
         }
 
@@ -184,7 +211,6 @@ namespace UI.Web
         {
             List<Usuario> Usuarios = new UsuarioLogic().GetAll();
             List<Curso> Cursos = new CursosLogic().GetAll();
-
             if (ddlCargo.Text == "Docente")
                 DocenteCurso.Cargo = DocenteCurso.TiposCargos.Docente;
             if (ddlCargo.Text == "Auxiliar")

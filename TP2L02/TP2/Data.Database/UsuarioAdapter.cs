@@ -239,7 +239,7 @@ namespace Data.Database
             {
                 Exception ExcepcionManejada =
                 new Exception("No se pudo recuperar el usuario", Ex);
-                throw ExcepcionManejada;
+              //  throw ExcepcionManejada;
 
             }
             finally

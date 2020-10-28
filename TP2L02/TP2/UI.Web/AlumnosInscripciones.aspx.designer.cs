@@ -42,13 +42,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Panel FormPanel;
 
         /// <summary>
-        /// Control Label1.
+        /// Control LabelID.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label LabelID;
 
         /// <summary>
         /// Control IDtxt.
@@ -60,13 +60,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox IDtxt;
 
         /// <summary>
-        /// Control Label6.
+        /// Control LabelAlum.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.Label LabelAlum;
 
         /// <summary>
         /// Control Alumnoddl.
@@ -78,13 +78,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.DropDownList Alumnoddl;
 
         /// <summary>
-        /// Control Label2.
+        /// Control LabelCur.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label LabelCur;
 
         /// <summary>
         /// Control Cursoddl.
@@ -96,13 +96,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.DropDownList Cursoddl;
 
         /// <summary>
-        /// Control Label3.
+        /// Control LabelCond.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label LabelCond;
 
         /// <summary>
         /// Control Condicionddl.
@@ -114,13 +114,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.DropDownList Condicionddl;
 
         /// <summary>
-        /// Control Label4.
+        /// Control LabelNota.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label LabelNota;
 
         /// <summary>
         /// Control Notatxt.

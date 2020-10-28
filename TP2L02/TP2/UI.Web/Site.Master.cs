@@ -34,7 +34,6 @@ namespace UI.Web
         {
 
             NombreUsr.Text = Session["user"].ToString();
-
             if (NombreUsr.Text != "SuperAdmin")
             {
                 Entity = Logic.getOneNombre(Session["user"].ToString());
@@ -104,9 +103,64 @@ namespace UI.Web
                             parent.ChildItems.Remove(e.Item);
                         }
                     }
+                
                 }
+                if (this.Entity.TiposUsuario.ToString() == "Docente")
+                {
+                    if (mapNode.Title == "Usuarios")
+                    {
+                        System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
+                        if (parent != null)
+                        {
+                            parent.ChildItems.Remove(e.Item);
+                        }
+                    }
+                    if (mapNode.Title == "Especialidades")
+                    {
+                        System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
+                        if (parent != null)
+                        {
+                            parent.ChildItems.Remove(e.Item);
+                        }
+                    }
+                    if (mapNode.Title == "Planes")
+                    {
+                        System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
+                        if (parent != null)
+                        {
+                            parent.ChildItems.Remove(e.Item);
+                        }
+                    }
+                    if (mapNode.Title == "Materias")
+                    {
+                        System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
+                        if (parent != null)
+                        {
+                            parent.ChildItems.Remove(e.Item);
+                        }
+                    }
+                    if (mapNode.Title == "Comisiones")
+                    {
+                        System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
+                        if (parent != null)
+                        {
+                            parent.ChildItems.Remove(e.Item);
+                        }
+                    }
+                    if (mapNode.Title == "AlumnoInscripcion")
+                    {
+                        System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
+                        if (parent != null)
+                        {
+                            parent.ChildItems.Remove(e.Item);
+                        }
+                    }
+
+                }
+
             }
+               
         }
-       
+
     }
 }
