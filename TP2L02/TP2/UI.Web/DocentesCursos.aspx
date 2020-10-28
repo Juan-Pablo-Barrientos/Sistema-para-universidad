@@ -1,7 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DocentesCursos.aspx.cs" Inherits="UI.Web.DocentesCursos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
     <asp:Panel ID="gridPanel" runat="server" >
-        <asp:GridView ID="GridView1" runat="server" Width="679px" AutoGenerateColumns="False" Height="141px" DataKeyNames="ID" OnSelectedIndexChanged="GridView1_SelectedIndexChanged"  SelectedRowStyle-BackColor="Black"
+        <asp:GridView ID="GridView1" runat="server" 
+            Width="679px" AutoGenerateColumns="False" 
+            Height="141px" DataKeyNames="ID" 
+            OnSelectedIndexChanged="GridView1_SelectedIndexChanged"  
+            SelectedRowStyle-BackColor="Black"
             SelectedRowStyle-ForeColor="White">
             <Columns>
                 <asp:BoundField DataField="Id" HeaderText="Id" />
