@@ -57,7 +57,7 @@
             this.container.Controls.Add(this.cBIdEspecialidad, 1, 1);
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container.Location = new System.Drawing.Point(0, 0);
-            this.container.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.container.Margin = new System.Windows.Forms.Padding(4);
             this.container.Name = "container";
             this.container.RowCount = 3;
             this.container.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -69,7 +69,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(442, 70);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 27);
             this.btnCancelar.TabIndex = 1;
@@ -80,7 +80,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(296, 70);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(100, 27);
             this.btnAceptar.TabIndex = 0;
@@ -92,7 +92,7 @@
             // 
             this.txtID.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtID.Location = new System.Drawing.Point(150, 4);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(138, 22);
@@ -112,7 +112,7 @@
             // 
             this.txtDescripcion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDescripcion.Location = new System.Drawing.Point(442, 4);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(138, 22);
             this.txtDescripcion.TabIndex = 2;
@@ -142,7 +142,7 @@
             this.cBIdEspecialidad.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.cBIdEspecialidad.FormattingEnabled = true;
             this.cBIdEspecialidad.Location = new System.Drawing.Point(150, 37);
-            this.cBIdEspecialidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cBIdEspecialidad.Margin = new System.Windows.Forms.Padding(4);
             this.cBIdEspecialidad.Name = "cBIdEspecialidad";
             this.cBIdEspecialidad.Size = new System.Drawing.Size(136, 24);
             this.cBIdEspecialidad.TabIndex = 7;
@@ -155,7 +155,7 @@
             this.ClientSize = new System.Drawing.Size(584, 101);
             this.Controls.Add(this.container);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.Name = "PlanDesktop";
             this.Text = "PlanDesktop";
