@@ -44,9 +44,13 @@ namespace UI.Desktop
         }
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-            int ID = ((Business.Entities.Comision)this.dgvComisiones.SelectedRows[0].DataBoundItem).ID;
-            new ComisionLogic().Delete(ID);
-            this.Listar();
+            if (ComisionLogic.isDeleteValid(((Business.Entities.Comision)this.dgvComisiones.SelectedRows[0].DataBoundItem).ID))
+            {
+                int ID = ((Business.Entities.Comision)this.dgvComisiones.SelectedRows[0].DataBoundItem).ID;
+                new ComisionLogic().Delete(ID);
+                this.Listar(); 
+            }
+            else  BusinessLogic.Notificar("Plan", "Este plan esta vinculada con un curso", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void tsbNuevo_Click(object sender, EventArgs e)

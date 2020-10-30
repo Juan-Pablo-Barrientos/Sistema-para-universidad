@@ -49,9 +49,13 @@ namespace UI.Desktop
         }
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-            int ID = ((Business.Entities.Materia)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
-            new MateriaLogic().Delete(ID);
-            this.Listar();
+            if (MateriaLogic.isDeleteValid(((Business.Entities.Materia)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID))
+            {
+                int ID = ((Business.Entities.Materia)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
+                new MateriaLogic().Delete(ID);
+                this.Listar();
+            }
+            else BusinessLogic.Notificar("Materia", "Esta materia esta vinculada con un curso", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void tsbNuevo_Click(object sender, EventArgs e)

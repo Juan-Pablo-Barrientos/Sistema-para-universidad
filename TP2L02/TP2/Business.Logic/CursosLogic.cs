@@ -41,15 +41,19 @@ namespace Business.Logic
             CursosData.Save(curso);
         }
 
-        //public static bool isDeleteValid(int idEspecialidadActual)
-        //{
-        //    List<Plan> Planes = new PlanLogic().GetAll();
-        //    foreach (var p in Planes)
-        //    {
-        //        return p.IDEspecialidad != idEspecialidadActual;
-        //    }
-        //    return true;
-        //}
+        public static bool isDeleteValid(int idCursoActual)
+        {
+            List<DocenteCurso> Doc = new DocCurLogic().GetAll();
+            List<AlumnosIncripcion> Alm = new AlumInsLogic().GetAll();
+            foreach (var a in Alm)
+            {
+                foreach (var c in Doc)
+                {
+                    if (a.IDCurso == idCursoActual || c.IDCurso == idCursoActual) return false;
+                }
+            }
+            return true;
+        }
 
         public static bool IsCursoFull(string stringcurso)
         {         

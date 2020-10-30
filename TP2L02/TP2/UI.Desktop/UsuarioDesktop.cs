@@ -51,8 +51,6 @@ namespace UI.Desktop
             this.txtApellido.Text = this.UsuarioActual.Apellido;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
             this.txtConfirmarClave.Text = this.UsuarioActual.Clave;
-
-            //---- Bloque en testeo
             this.txtLegajo.Text = this.UsuarioActual.legajo;
             this.txtDireccion.Text = this.UsuarioActual.direccion;         
             this.txtFec.Text = this.UsuarioActual.fecha_nac.ToString().Truncate(10);
@@ -152,7 +150,7 @@ namespace UI.Desktop
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-          //  if (Validar())
+            if (Validar())
             {
                 GuardarCambios();               
                 Close();

@@ -143,7 +143,7 @@ namespace Data.Database
             finally { 
             this.CloseConnection();
                     }
-            //devolvemos el objeto
+           
             return usuarios;
 
         }
@@ -238,9 +238,7 @@ namespace Data.Database
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada =
-                new Exception("No se pudo recuperar el usuario", Ex);
-              //  throw ExcepcionManejada;
-
+                new Exception("No se pudo recuperar el usuario", Ex);            
             }
             finally
             {
@@ -257,11 +255,9 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                //creamos la sentencia sql y asignamos un valor al parametro
                 SqlCommand cmdDelete =
                     new SqlCommand("delete usuarios where id_usuario=@id", sqlConn);
-                cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
-                //ejecutamos la sentencia sql
+                cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;               
                 cmdDelete.ExecuteNonQuery();
             }
       
@@ -291,8 +287,6 @@ namespace Data.Database
                 "tipo_usuario = @tipo_usuario, legajo = @legajo, fecha_nac = @fecha_nac, telefono = @telefono, " +
                 "direccion = @direccion, pregunta = @pregunta, respuesta = @respuesta " +
                 "WHERE id_usuario = @id", sqlConn);
-            
-
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = usuario.ID;
                 cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
                 cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
@@ -353,18 +347,16 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@pregunta", SqlDbType.VarChar, 200).Value = usuario.pregunta;
                 cmdSave.Parameters.Add("@respuesta", SqlDbType.VarChar, 50).Value = usuario.respuesta;
                 usuario.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
-                //asi se obtiene el ID que asigno al BD automaticamente
-
-                
+              
             }
 
-            //catch (Exception Ex)
-            //{
+            catch (Exception Ex)
+            {
 
-            //    Exception ExcepcionManejada =
-            //        new Exception("Error al modificar datos del usuario", Ex);
-            //    throw ExcepcionManejada;
-            //}
+                Exception ExcepcionManejada =
+                    new Exception("Error al modificar datos del usuario", Ex);
+                throw ExcepcionManejada;
+            }
 
             finally
             {

@@ -34,7 +34,7 @@ namespace UI.Desktop
                 cBMateria.Items.Add(c.Descripcion);
             }
         }
-
+        
         public CursoDesktop(ModoForm modo) : this()
         {
             Modo = modo;

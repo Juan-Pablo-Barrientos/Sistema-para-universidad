@@ -61,7 +61,7 @@ namespace UI.Desktop
             new PlanLogic().Delete(ID);
             this.Listar();
             }
-            else BusinessLogic.Notificar("Plan", "Este plan esta vinculado con una materia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else BusinessLogic.Notificar("Plan", "Este plan esta vinculado con una materia o una comision", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)

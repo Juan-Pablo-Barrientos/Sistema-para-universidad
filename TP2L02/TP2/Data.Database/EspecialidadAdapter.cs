@@ -1,69 +1,44 @@
-﻿using System;
+﻿using Business.Entities;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using Business.Entities;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq.Expressions;
 
 namespace Data.Database
 {
     public class EspecialidadAdapter : Adapter
     {
-        // Esta región solo se usa en esta etapa donde los datos se mantienen en memoria.
-        // Al modificar este proyecto para que acceda a la base de datos esta será eliminada
+
         private static List<Especialidad> _Especialidades;
 
 
         public List<Especialidad> GetAll()
         {
-            //return new List<Especialidad>(Usuarios);
 
-            //instanciamos el objeto lista a retornar
             List<Especialidad> especialidades = new List<Especialidad>();
             try
             {
-                //abrimos la conexion a la base de datos con el metodo que creamos antes
                 this.OpenConnection();
 
-                /*
-                 * creamos un objeto SqlCommand que sera la sentencia Sql
-                 * que vamos a ejecutar contra la base de datos
-                 * (los datos de la BD usuario, contraseña, servidor, etc.
-                 * estan en el connection strin)
-                 */
+
 
                 SqlCommand cmdEspecialidades = new SqlCommand("select * from especialidades", sqlConn);
 
-                /*
-                 * instanciamos un objeto DataReader que sera
-                 * el que recuperara los datos de la BD
-                 */
+
                 SqlDataReader drEspecialidades = cmdEspecialidades.ExecuteReader();
 
-                /*
-                 * Read() lee una fila de las devueltas por el comando sql
-                 * carga los datos en drUsuarios para poder accederlos,
-                 * devuelve verdadero mientras haya podido leer datos y 
-                 * avanza a la fila siguiente para el proximo read
-                 */
+
                 while (drEspecialidades.Read())
                 {
-                    /*creamos un objeto Usuario de la capa de entidades para 
-                     * copiar los datos de la fila del DataReader al objeto de
-                     * entidades
-                     */
+
 
                     Especialidad esp = new Especialidad();
 
-                    //ahora copiamos los datos de la fila al objeto
                     esp.ID = (int)drEspecialidades["id_especialidad"];
                     esp.Descripcion = (string)drEspecialidades["desc_especialidad"];
-                    //agregamos el objeto con datos a la lista que devolveremos
                     especialidades.Add(esp);
                 }
 
-                //cerramos el DataReader y la conexion a la BD
                 drEspecialidades.Close();
             }
             catch (Exception Ex)
@@ -76,7 +51,6 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
-            //devolvemos el objeto
             return especialidades;
 
         }
@@ -122,11 +96,9 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                //creamos la sentencia sql y asignamos un valor al parametro
                 SqlCommand cmdDelete =
-                    new SqlCommand("delete especialidades where id_especialidad=@id", sqlConn);
+    new SqlCommand("delete especialidades where id_especialidad=@id", sqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
-                //ejecutamos la sentencia sql
                 cmdDelete.ExecuteNonQuery();
             }
 
@@ -146,8 +118,8 @@ namespace Data.Database
 
         {
 
-            //try
-            //{
+            try
+            {
 
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand(
@@ -157,22 +129,22 @@ namespace Data.Database
 
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = especialidad.ID;
                 cmdSave.Parameters.Add("@desc_especialidad", SqlDbType.VarChar, 50).Value = especialidad.Descripcion;
-               
+
                 cmdSave.ExecuteNonQuery();
-            //}
+            }
 
-            //catch (Exception Ex)
-            //{
+            catch (Exception Ex)
+            {
 
-            //    Exception ExcepcionManejada =
-            //        new Exception("Error al modificar datos de la especialidad", Ex);
-            //    throw ExcepcionManejada;
-            //}
+                Exception ExcepcionManejada =
+                    new Exception("Error al modificar datos de la especialidad", Ex);
+                throw ExcepcionManejada;
+            }
 
-            //finally
-            //{
-            //    this.CloseConnection();
-            //}
+            finally
+            {
+                this.CloseConnection();
+            }
         }
 
 
@@ -184,13 +156,11 @@ namespace Data.Database
                 SqlCommand cmdSave = new SqlCommand(
                 "insert into especialidades(desc_especialidad)" +
                 "values(@desc_especialidad) " +
-                "select @@identity", //esta linea es para recuperar el ID que asigno el sql automaticamente
-                sqlConn);
+                "select @@identity", sqlConn);
 
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = especialidad.ID;
                 cmdSave.Parameters.Add("@desc_especialidad", SqlDbType.VarChar, 50).Value = especialidad.Descripcion;
                 especialidad.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
-                //asi se obtiene el ID que asigno al BD automaticamente
             }
 
             catch (Exception Ex)

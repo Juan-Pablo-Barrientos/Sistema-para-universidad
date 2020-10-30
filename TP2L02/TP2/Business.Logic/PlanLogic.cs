@@ -42,10 +42,14 @@ namespace Business.Logic
 
         public static bool isDeleteValid(int idPlanActual)
         {
+            List<Comision> Comisiones = new ComisionLogic().GetAll();
             List<Materia> Materias = new MateriaLogic().GetAll();
             foreach (var m in Materias)
             {
-              return m.IDPlan != idPlanActual;
+                foreach (var c in Comisiones)
+                {
+                    if (m.IDPlan == idPlanActual || c.IDPlan == idPlanActual) return false;                                                                                                                           
+                }
             }
             return true;
         }

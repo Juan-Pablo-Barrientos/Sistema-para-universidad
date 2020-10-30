@@ -44,7 +44,7 @@ namespace Business.Logic
             List<Plan> Planes = new PlanLogic().GetAll();
             foreach (var p in Planes)
             {
-                return p.IDEspecialidad != idEspecialidadActual;
+                if (p.IDEspecialidad == idEspecialidadActual) return false;
             }
             return true;
         }

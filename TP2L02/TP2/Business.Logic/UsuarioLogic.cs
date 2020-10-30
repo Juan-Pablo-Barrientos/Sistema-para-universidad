@@ -35,7 +35,6 @@ namespace Business.Logic
             return UsuarioData.GetOneNombre(nombreusr);
         }
 
-
         public void Delete(int ID)
         {
             UsuarioData.Delete(ID);
@@ -48,6 +47,32 @@ namespace Business.Logic
         {
             return (contraseña.Length > 8) && (contraseña == confirmar);
         }
-
+        public static bool isDeleteValid(int idUsuarioActual)
+        {
+            List<DocenteCurso> Doc = new DocCurLogic().GetAll();
+            List<AlumnosIncripcion> Alm = new AlumInsLogic().GetAll();
+            foreach (var a in Alm)
+            {
+                foreach (var c in Doc)
+                {
+                    if (a.IDAlumno == idUsuarioActual || c.IDDocente == idUsuarioActual) return false;
+                }
+            }
+            return true;
+        }
+        public void BorrarInscripciones(int ID)
+        {
+            Usuario us = this.getOne(ID);
+            if (us.TiposUsuario.ToString() == "Docente")
+            {          
+            DocCurLogic dcl = new DocCurLogic();
+            dcl.DeleteAll(ID); 
+            }
+            if (us.TiposUsuario.ToString() == "Alumno")
+            {
+                AlumInsLogic ail = new AlumInsLogic();
+                ail.DeleteAll(ID);
+            }
+        }
     }
 }

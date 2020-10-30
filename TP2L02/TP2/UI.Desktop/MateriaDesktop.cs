@@ -22,8 +22,7 @@ namespace UI.Desktop
         {
             InitializeComponent();
             this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;   
-            // Mostrar listado de Planes.                 
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;                        
             foreach (var p in Planes)
             {           
               cBIdPlan.Items.Add(p.Descripcion);           

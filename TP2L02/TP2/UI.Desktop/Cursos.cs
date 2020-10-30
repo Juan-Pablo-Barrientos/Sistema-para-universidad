@@ -50,9 +50,13 @@ namespace UI.Desktop
         }
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-            int ID = ((Business.Entities.Curso)this.dvgCursos.SelectedRows[0].DataBoundItem).ID;
-            new CursosLogic().Delete(ID);
-            this.Listar();
+            if (CursosLogic.isDeleteValid(((Business.Entities.Curso)this.dvgCursos.SelectedRows[0].DataBoundItem).ID))
+            {
+                int ID = ((Business.Entities.Curso)this.dvgCursos.SelectedRows[0].DataBoundItem).ID;
+                new CursosLogic().Delete(ID);
+                this.Listar(); 
+            }
+            else BusinessLogic.Notificar("Curso", "Hay usuarios inscriptos a este curso", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void tsbNuevo_Click(object sender, EventArgs e)

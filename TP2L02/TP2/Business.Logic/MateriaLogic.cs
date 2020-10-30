@@ -38,6 +38,15 @@ namespace Business.Logic
         {
             MateriaData.Save(Materia);
         }
+        public static bool isDeleteValid(int idMateriaActual)
+        {           
+            List<Curso> Cursos = new CursosLogic().GetAll();
+            foreach (var c in Cursos)
+            {                
+              if (c.IDMateria == idMateriaActual) return false;         
+            }
+            return true;
+        }
 
     }
 }

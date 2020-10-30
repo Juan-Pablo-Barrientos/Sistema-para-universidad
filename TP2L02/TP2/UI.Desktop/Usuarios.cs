@@ -59,8 +59,19 @@ namespace UI.Desktop
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
             int ID = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
-            new UsuarioLogic().Delete(ID);
-            this.Listar();
+            if (!UsuarioLogic.isDeleteValid(ID))
+            {
+                DialogResult dr = MessageBox.Show("Si continua, eliminara todas las incripciones del usuario.", "Atencion", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (dr == DialogResult.Yes) 
+                { 
+                var ul = new UsuarioLogic();
+                ul.BorrarInscripciones(ID);
+                ul.Delete(ID);
+                this.Listar(); 
+                }
+            }
+           else new UsuarioLogic().Delete(ID);
+           this.Listar();
         }
     }
 }

@@ -44,6 +44,10 @@ namespace Business.Logic
         {
             AlumInData.Delete(ID);
         }
+        public void DeleteAll (int ID)
+        {
+            AlumInData.DeleteAll(ID);
+        }
         public void Save(Business.Entities.AlumnosIncripcion alumIn)
         {
             AlumInData.Save(alumIn);
