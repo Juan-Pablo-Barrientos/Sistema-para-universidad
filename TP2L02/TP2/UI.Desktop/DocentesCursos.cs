@@ -36,15 +36,29 @@ namespace UI.Desktop
 
         void Listar()
         {
+            List<DocenteCurso> Ma;
             if (UsuarioActual != null && UsuarioActual.TiposUsuario.ToString() == "Docente")
             {
                 DocCurLogic ul = new DocCurLogic();
                 this.dgvDocCur.DataSource = ul.GetMisCursos(UsuarioActual.ID);
+                Ma = ul.GetMisCursos(UsuarioActual.ID);
             }
             else
-            {
+            {                
                 DocCurLogic ul = new DocCurLogic();
                 this.dgvDocCur.DataSource = ul.GetAll();
+                Ma = ul.GetAll();
+            }
+
+            for (int i = 0; i < Ma.Count; i++)
+            {
+                var esp = new UsuarioLogic().getOne(Convert.ToInt32(this.dgvDocCur.Rows[i].Cells[2].Value));
+                this.dgvDocCur.Rows[i].Cells[4].Value = esp.NombreUsuario;
+            }
+            for (int i = 0; i < Ma.Count; i++)
+            {
+                var esp = new CursosLogic().getOne(Convert.ToInt32(this.dgvDocCur.Rows[i].Cells[1].Value));
+                this.dgvDocCur.Rows[i].Cells[3].Value = esp.Descripcion;
             }
         }
 

@@ -193,6 +193,7 @@
             this.id_alumno.HeaderText = "ID Alumno";
             this.id_alumno.Name = "id_alumno";
             this.id_alumno.ReadOnly = true;
+            this.id_alumno.Visible = false;
             // 
             // id_curso
             // 
@@ -200,6 +201,7 @@
             this.id_curso.HeaderText = "ID Curso";
             this.id_curso.Name = "id_curso";
             this.id_curso.ReadOnly = true;
+            this.id_curso.Visible = false;
             // 
             // usuario
             // 
