@@ -145,5 +145,10 @@ namespace UI.Desktop
         {
 
         }
+
+        private void PlanDesktop_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

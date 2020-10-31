@@ -28,17 +28,21 @@
         <asp:TextBox ID="IdTextBox" runat="server"></asp:TextBox>
         <br />
         <asp:Label ID="DescripcionLabel" runat="server" Text="Descripcion: "></asp:Label>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="DescripcionTextBox" Display="None" ErrorMessage="Complete descripcion"></asp:RequiredFieldValidator>
         <asp:TextBox ID="DescripcionTextBox" runat="server" Width="452px"></asp:TextBox>
         <br />
         <asp:Label ID="HSSemanalesLabel" runat="server" Text="Horas Semanales: "></asp:Label>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="HSSemanalesTextBox" Display="None" ErrorMessage="Complete horas semanales"></asp:RequiredFieldValidator>
         <asp:TextBox ID="HSSemanalesTextBox" runat="server" Width="452px"></asp:TextBox>
         <br />
         <asp:Label ID="HSTotalesLabel" runat="server" Text="Horas Totales: "></asp:Label>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="HSTotalesTextBox" Display="None" ErrorMessage="Complete horas totales"></asp:RequiredFieldValidator>
         <asp:TextBox ID="HSTotalesTextBox" runat="server" Width="452px"></asp:TextBox>
         <br />
         Plan:
         <asp:DropDownList ID="idPlanDdl" runat="server">
         </asp:DropDownList>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
         <br />
         <asp:Panel ID="formActionsPanel" runat="server">
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>

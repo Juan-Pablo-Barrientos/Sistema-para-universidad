@@ -38,9 +38,11 @@
         <br />
         <asp:Label ID="DescripcionLabel" runat="server" Text="Descripcion: "></asp:Label>
         <asp:TextBox ID="DescripcionTextBox" runat="server" Width="452px"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="DescripcionTextBox" Display="None" ErrorMessage="Complete descripcion"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="CupoLabel" runat="server" Text="Cupo: "></asp:Label>
         <asp:TextBox ID="CupoTextBox" runat="server" Width="452px"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="CupoTextBox" Display="None" ErrorMessage="Complete cupo"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="AnioCalendarioLabel" runat="server" Text="Año calendario: "></asp:Label>
         <asp:DropDownList ID="AnioDdl" runat="server"></asp:DropDownList>
@@ -52,6 +54,7 @@
         Materia:
         <asp:DropDownList ID="idMateriaDdl" runat="server">
         </asp:DropDownList>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
         <br />
         <asp:Panel ID="formActionsPanel" runat="server">
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>

@@ -82,7 +82,7 @@ namespace UI.Web
             {
                 LoadGrid();
                 cargarDiasCalendario();
-                this.FormMode = FormModes.Baja;
+                this.FormMode = FormModes.Modificacion;
             }
         }
 
@@ -189,31 +189,34 @@ namespace UI.Web
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
-            switch (this.FormMode)
+            if (Page.IsValid)
             {
-                case FormModes.Baja:
-                    this.DeleteEntity(this.SelectedID);
-                    this.LoadGrid();
-                    break;
-                case FormModes.Modificacion:
-                    this.Entity = new Usuario();
-                    this.Entity.ID = this.SelectedID;
-                    this.Entity.State = BusinessEntity.States.Modified;
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    this.formPanel.Visible = false;
-                    break;
-                case FormModes.Alta:
-                    this.Entity = new Usuario();
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    break;
-                default:
-                    break;
+                switch (this.FormMode)
+                {
+                    case FormModes.Baja:
+                        this.DeleteEntity(this.SelectedID);
+                        this.LoadGrid();
+                        break;
+                    case FormModes.Modificacion:
+                        this.Entity = new Usuario();
+                        this.Entity.ID = this.SelectedID;
+                        this.Entity.State = BusinessEntity.States.Modified;
+                        this.LoadEntity(this.Entity);
+                        this.SaveEntity(this.Entity);
+                        this.LoadGrid();
+                        this.formPanel.Visible = false;
+                        break;
+                    case FormModes.Alta:
+                        this.Entity = new Usuario();
+                        this.LoadEntity(this.Entity);
+                        this.SaveEntity(this.Entity);
+                        this.LoadGrid();
+                        break;
+                    default:
+                        break;
+                }
+                this.formPanel.Visible = false;
             }
-            this.formPanel.Visible = false;
         }
         private void EnableForm(bool check)
         {

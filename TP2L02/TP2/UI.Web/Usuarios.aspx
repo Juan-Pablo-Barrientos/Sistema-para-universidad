@@ -18,24 +18,33 @@
     <asp:Panel ID="formPanel" Visible="false" runat="server">
         <asp:Label ID="nombreLabel" runat="server" Text="Nombre: "></asp:Label>
         <asp:TextBox ID="nombreTextBox" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="nombreTextBox" Display="None" ErrorMessage="Complete nombre"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="apellidoLabel" runat="server" Text="Apellido: "></asp:Label>
         <asp:TextBox ID="apellidoTextBox" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="apellidoTextBox" Display="None" ErrorMessage="Complete apellido"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="emailLabel" runat="server" Text="EMail: "></asp:Label>
         <asp:TextBox ID="emailTextBox" runat="server"></asp:TextBox>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="emailTextBox" Display="None" ErrorMessage="Formato de email invalido" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="emailTextBox" Display="None" ErrorMessage="Complete email"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="habilitadoLabel" runat="server" Text="Habilitado: "></asp:Label>
         <asp:CheckBox ID="habilitadoCheckBox" runat="server"></asp:CheckBox>
         <br />
         <asp:Label ID="nombreUsuarioLabel" runat="server" Text="Usuario: "></asp:Label>
         <asp:TextBox ID="nombreUsuarioTextBox" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="nombreUsuarioTextBox" Display="None" ErrorMessage="Complete usuario"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="claveLabel" runat="server" Text="Clave: "></asp:Label>
         <asp:TextBox ID="claveTextBox" TextMode="Password" runat="server"></asp:TextBox>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="claveTextBox" Display="None" ErrorMessage="La contraseña tiene que tener 8 o mas caracteres y menos de 32" ValidationExpression="^.{8,32}$"></asp:RegularExpressionValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="claveTextBox" Display="None" ErrorMessage="Complete clave"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="repetirClaveLabel" runat="server" Text="Repetir Clave: "></asp:Label>
         <asp:TextBox ID="repetirClaveTextBox" TextMode="Password" runat="server"></asp:TextBox>
+        <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToCompare="claveTextBox" ControlToValidate="repetirClaveTextBox" Display="None" ErrorMessage="La contraseña tiene que coincidir"></asp:CompareValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="repetirClaveTextBox" Display="None" ErrorMessage="Complete repetir contraseña"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="tipo_usuarioLabel" runat="server" Text="Tipo de Usuario: "></asp:Label>
         <asp:DropDownList ID="tipoUsuarioDdl" runat="server">
@@ -46,6 +55,7 @@
         <br />
         <asp:Label ID="legajoLabel" runat="server" Text="Legajo: "></asp:Label>
         <asp:TextBox ID="legajoTextBox" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="legajoTextBox" Display="None" ErrorMessage="Complete legajo"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="fechaNacLabel" runat="server" Text="Fecha de nacimiento: "></asp:Label>
         <br />
@@ -60,9 +70,12 @@
         <br />
         <asp:Label ID="telefonoLabel" runat="server" Text="Telefono: "></asp:Label>
         <asp:TextBox ID="telefonoTextBox" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="telefonoTextBox" Display="None" ErrorMessage="Complete telefono"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="direccionLabel" runat="server" Text="Direccion: "></asp:Label>
         <asp:TextBox ID="direccionTextBox" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="direccionTextBox" Display="None" ErrorMessage="Complete direccion"></asp:RequiredFieldValidator>
+        <br />
         <asp:Label ID="preguntaContralbl" runat="server" Text="Pregunta para recuperar contraseña"></asp:Label>
         <asp:DropDownList ID="preguntaContraDdl" runat="server" Height="19px" Width="307px">
             <asp:ListItem>Nombre de su primer perro</asp:ListItem>
@@ -72,6 +85,9 @@
         <br />
         <asp:Label ID="respuestaContralbl" runat="server" Text="Respuesta: "></asp:Label>
         <asp:TextBox ID="respuestaContraTextBox" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="respuestaContraTextBox" Display="None" ErrorMessage="Complete respuesta"></asp:RequiredFieldValidator>
+        <br />
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
         <br />
         <asp:Panel ID="formActionsPanel" runat="server">
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>

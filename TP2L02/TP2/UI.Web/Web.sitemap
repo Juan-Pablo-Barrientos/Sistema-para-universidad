@@ -1,20 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-  <siteMapNode url="~/Default.aspx" title="Home"  description="Pagina principal">
-    <siteMapNode url="~/Usuarios.aspx" title="Usuarios"  description="Seccion Usuarios" />
-	  <siteMapNode url="~/" title="Especialidades"  description="Seccion Especialidades" >
-		<siteMapNode url="~/Especialidades.aspx" title="Especialidades"  description="Seccion Especialidades" />
-		<siteMapNode url="~/EspecialidadesReportes.aspx" title="EspecialidadesReportes"  description="Seccion Especialidades" />
-	  </siteMapNode>
-	<siteMapNode url="~/Planes.aspx" title="Planes"  description="Seccion Planes" />
-	<siteMapNode url="~/Materias.aspx" title="Materias"  description="Seccion Materias" />
-	<siteMapNode url="~/Comisiones.aspx" title="Comisiones"  description="Seccion Comisiones" />
-	<siteMapNode url="~/DocentesCursos.aspx" title="DocenteCurso"  description="Seccion DocentesCursos" />
-	<siteMapNode url="~/AlumnosInscripciones.aspx" title="AlumnoInscripcion"  description="Seccion Inscripciones" />
-	<siteMapNode url="~/Cursos.aspx" title="Cursos"  description="Seccion Cursos" />
-	<siteMapNode url="~/Login.aspx" title="Cerrar Sesion"  description="Cerrar Sesion" />
-	  
-  </siteMapNode>
-
-	
+	<siteMapNode url="~/Default.aspx" title="Home"  description="Pagina principal">
+		<siteMapNode url="" title="Usuarios"  description="Seccion Cursos" >
+			<siteMapNode url="~/Usuarios.aspx" title="Alta, Baja, Modificacion"  description="Seccion Alta, Baja, Modificacion" />
+			<siteMapNode url="~/UsuariosReportes.aspx" title="Reportes"  description="Seccion Reportes" />
+		</siteMapNode>
+		<siteMapNode url="" title="Especialidades"  description="Seccion Especialidades" >
+			<siteMapNode url="~/Especialidades.aspx" title="Alta, Baja, Modificacion"  description="Seccion Alta, Baja, Modificacion" />
+			<siteMapNode url="~/EspecialidadesReportes.aspx" title="Reportes"  description="Seccion Reportes" />
+		</siteMapNode>
+		<siteMapNode url="" title="Planes"  description="Seccion Planes" >
+			<siteMapNode url="~/Planes.aspx" title="Alta, Baja, Modificacion"  description="Seccion Alta, Baja, Modificacion" />"
+			<siteMapNode url="~/PlanesReportes.aspx" title="Reportes"  description="Seccion Reportess" />
+		</siteMapNode>
+		<siteMapNode url="" title="Materias"  description="Seccion Materias" >
+			<siteMapNode url="~/Materias.aspx" title="Alta, Baja, Modificacion"  description="Seccion Alta, Baja, Modificacion" />
+			<siteMapNode url="~/MateriasReportes.aspx" title="Reportes"  description="Seccion Reportes" />
+		</siteMapNode>
+		<siteMapNode url="" title="Comisiones"  description="Seccion Comisiones" >
+			<siteMapNode url="~/Comisiones.aspx" title="Alta, Baja, Modificacion"  description="Seccion Alta, Baja, Modificacion" />
+			<siteMapNode url="~/ComisionesReportes.aspx" title="Reportes"  description="Seccion Reportes" />
+		</siteMapNode>
+		<siteMapNode url="" title="Cursos"  description="Seccion Cursos" >
+			<siteMapNode url="~/Cursos.aspx" title="Alta, Baja, Modificacion"  description="Seccion Alta, Baja, Modificacion" />
+			<siteMapNode url="~/CursosReportes.aspx" title="Reportes"  description="Seccion Reportes" />
+		</siteMapNode>
+		<siteMapNode url="~/DocentesCursos.aspx" title="DocenteCurso"  description="Seccion DocentesCursos" />
+		<siteMapNode url="~/AlumnosInscripciones.aspx" title="AlumnoInscripcion"  description="Seccion Inscripciones" />
+		<siteMapNode url="~/Login.aspx" title="Cerrar Sesion"  description="Cerrar Sesion" />
+	</siteMapNode>
 </siteMap>

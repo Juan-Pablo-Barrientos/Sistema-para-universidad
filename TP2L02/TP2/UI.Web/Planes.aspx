@@ -25,6 +25,7 @@
     <asp:Panel ID="formPanel" Visible="false" runat="server">
         <asp:Label ID="IdLabel" runat="server" Text="Id: "></asp:Label>
         <asp:TextBox ID="IdTextBox" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="DescripcionTextBox" Display="None" ErrorMessage="Complete Descripcion"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="DescripcionLabel" runat="server" Text="Descripcion: "></asp:Label>
         <asp:TextBox ID="DescripcionTextBox" runat="server" Width="452px"></asp:TextBox>
@@ -32,6 +33,8 @@
         Especialidad:
         <asp:DropDownList ID="idEspDdl" runat="server">
         </asp:DropDownList>
+        <br />
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
         <br />
         <asp:Panel ID="formActionsPanel" runat="server">
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
