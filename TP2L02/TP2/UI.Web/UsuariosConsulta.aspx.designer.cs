@@ -15,13 +15,13 @@ namespace UI.Web
     {
 
         /// <summary>
-        /// TextBox1 control.
+        /// nombreUsuarioTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox nombreUsuarioTextBox;
 
         /// <summary>
         /// btnConsultar control.
@@ -33,6 +33,24 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Button btnConsultar;
 
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+
+        /// <summary>
+        /// Label223 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label223;
+
+        /// <summary>
         /// idLabel control.
         /// </summary>
         /// <remarks>
@@ -42,22 +60,40 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Label idLabel;
 
         /// <summary>
-        /// Label2 control.
+        /// label2222 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label label2222;
 
         /// <summary>
-        /// Label3 control.
+        /// nombreUsuarioLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label nombreUsuarioLabel;
+
+        /// <summary>
+        /// Label23233 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label23233;
+
+        /// <summary>
+        /// habilitadoCheck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox habilitadoCheck;
 
         /// <summary>
         /// Label4 control.
@@ -69,6 +105,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
+        /// nombreLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label nombreLabel;
+
+        /// <summary>
         /// Label5 control.
         /// </summary>
         /// <remarks>
@@ -76,6 +121,15 @@ namespace UI.Web
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label5;
+
+        /// <summary>
+        /// apellidoLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label apellidoLabel;
 
         /// <summary>
         /// Label6 control.
@@ -87,6 +141,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Label Label6;
 
         /// <summary>
+        /// emailLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label emailLabel;
+
+        /// <summary>
         /// Label7 control.
         /// </summary>
         /// <remarks>
@@ -94,6 +157,15 @@ namespace UI.Web
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label7;
+
+        /// <summary>
+        /// tipoUsrLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tipoUsrLabel;
 
         /// <summary>
         /// Label8 control.
@@ -105,6 +177,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Label Label8;
 
         /// <summary>
+        /// legajoLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label legajoLabel;
+
+        /// <summary>
         /// Label9 control.
         /// </summary>
         /// <remarks>
@@ -114,6 +195,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Label Label9;
 
         /// <summary>
+        /// telefonoLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label telefonoLabel;
+
+        /// <summary>
         /// Label10 control.
         /// </summary>
         /// <remarks>
@@ -121,5 +211,32 @@ namespace UI.Web
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label10;
+
+        /// <summary>
+        /// direccionLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label direccionLabel;
+
+        /// <summary>
+        /// Label23234 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label23234;
+
+        /// <summary>
+        /// fechaNacLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label fechaNacLabel;
     }
 }

@@ -36,7 +36,7 @@ namespace UI.Web
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            if (usuarioTextBox.Text == "" && contraseñaTextBox.Text == "") 
+            if (usuarioTextBox.Text == "admin" && contraseñaTextBox.Text == "admin") 
             {
                 Session["user"] = "SuperAdmin";
                 Response.Redirect("~/Default.aspx");   
