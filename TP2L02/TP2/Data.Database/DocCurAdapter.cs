@@ -182,7 +182,7 @@ namespace Data.Database
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 cmdDelete.ExecuteNonQuery();
             }
-
+            
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada =

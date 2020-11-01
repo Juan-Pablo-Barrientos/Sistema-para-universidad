@@ -226,7 +226,8 @@ namespace UI.Web
               
             }
             else 
-          {         
+            {
+            if (!String.IsNullOrEmpty(this.Notatxt.Text))            
             AlumnoInscripcion.Nota =Convert.ToInt32(this.Notatxt.Text);
             if (Condicionddl.Text == "Inscripto")
             AlumnoInscripcion.Condicion = AlumnosIncripcion.Cond.Inscripto;
