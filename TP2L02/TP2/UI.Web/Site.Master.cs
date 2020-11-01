@@ -172,12 +172,8 @@ namespace UI.Web
                             parent.ChildItems.Remove(e.Item);
                         }
                     }
-
                 }
-
             }
-               
         }
-
     }
 }

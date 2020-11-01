@@ -95,6 +95,7 @@
     <Content Include="RecuperarContraseña.aspx" />
     <Content Include="RecuperarContraseña2.aspx" />
     <Content Include="Usuarios.aspx" />
+    <Content Include="UsuariosConsulta.aspx" />
     <Content Include="UsuariosReportes.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
@@ -241,6 +242,13 @@
     </Compile>
     <Compile Include="Usuarios.aspx.designer.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosConsulta.aspx.cs">
+      <DependentUpon>UsuariosConsulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UsuariosConsulta.aspx.designer.cs">
+      <DependentUpon>UsuariosConsulta.aspx</DependentUpon>
     </Compile>
     <Compile Include="UsuariosReportes.aspx.cs">
       <DependentUpon>UsuariosReportes.aspx</DependentUpon>

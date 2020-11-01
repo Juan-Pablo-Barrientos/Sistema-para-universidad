@@ -2,6 +2,7 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
 	<siteMapNode url="~/Default.aspx" title="Home"  description="Pagina principal">
 		<siteMapNode url="" title="Usuarios"  description="Seccion Cursos" >
+			<siteMapNode url="~/UsuariosConsulta.aspx" title="Consulta"  description="Seccion Consulta" />
 			<siteMapNode url="~/Usuarios.aspx" title="Alta, Baja, Modificacion"  description="Seccion Alta, Baja, Modificacion" />
 			<siteMapNode url="~/UsuariosReportes.aspx" title="Reportes"  description="Seccion Reportes" />
 		</siteMapNode>
