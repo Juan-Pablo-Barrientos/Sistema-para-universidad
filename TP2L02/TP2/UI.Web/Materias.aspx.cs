@@ -185,8 +185,16 @@ namespace UI.Web
             switch (this.FormMode)
             {
                 case FormModes.Baja:
-                    this.DeleteEntity(this.SelectedID);
-                    this.LoadGrid();
+                    if (Business.Logic.MateriaLogic.isDeleteValid(this.SelectedID))
+                    {
+                        this.DeleteEntity(this.SelectedID);
+                        this.LoadGrid();
+                        this.formPanel.Visible = false;
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Esta especialidad no puede ser eliminada", "alert('Esta materia no puede ser eliminada por que ya esta asignada a un curso')", true);
+                    }
                     break;
                 case FormModes.Modificacion:
                     this.Entity = new Materia();
@@ -202,11 +210,11 @@ namespace UI.Web
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
+                    this.formPanel.Visible = false;
                     break;
                 default:
                     break;
             }
-            this.formPanel.Visible = false;
         }
         private void EnableForm(bool check)
         {

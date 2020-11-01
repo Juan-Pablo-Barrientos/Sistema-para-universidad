@@ -211,8 +211,16 @@ namespace UI.Web
             switch (this.FormMode)
             {
                 case FormModes.Baja:
-                    this.DeleteEntity(this.SelectedID);
-                    this.LoadGrid();
+                    if (Business.Logic.CursosLogic.isDeleteValid(this.SelectedID))
+                    {
+                        this.DeleteEntity(this.SelectedID);
+                        this.LoadGrid();
+                        this.formPanel.Visible = false;
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Esta comision no puede ser eliminada", "alert('Este curso no puede ser eliminado por que existen usuarios inscriptos')", true);
+                    }
                     break;
                 case FormModes.Modificacion:
                     this.Entity = new Curso();
@@ -228,11 +236,11 @@ namespace UI.Web
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
+                    this.formPanel.Visible = false;
                     break;
                 default:
                     break;
             }
-            this.formPanel.Visible = false;
         }
         private void EnableForm(bool check)
         {

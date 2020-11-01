@@ -136,6 +136,8 @@ namespace UI.Web
             this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
             this.tipoUsuarioDdl.SelectedValue = this.Entity.TiposUsuario.ToString();
             this.legajoTextBox.Text = this.Entity.legajo;
+            this.claveTextBox.Text = this.Entity.Clave;
+            this.repetirClaveTextBox.Text = this.Entity.Clave;
             DateTime dt = this.Entity.fecha_nac;
             this.añoNacDdl.SelectedValue = dt.Year.ToString();
             this.mesNacDdl.SelectedValue = dt.Month.ToString();
@@ -189,15 +191,25 @@ namespace UI.Web
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid)
-            {
+            
                 switch (this.FormMode)
                 {
                     case FormModes.Baja:
-                        this.DeleteEntity(this.SelectedID);
-                        this.LoadGrid();
+                        if (Business.Logic.PlanLogic.isDeleteValid(this.SelectedID))
+                        {
+                            this.Logic.BorrarInscripciones(this.SelectedID);
+                            this.DeleteEntity(this.SelectedID);
+                            this.LoadGrid();
+                            this.formPanel.Visible = false;
+                        }
+                        else
+                        {
+                            this.DeleteEntity(this.SelectedID);
+                        }
                         break;
                     case FormModes.Modificacion:
+                    if (Page.IsValid)
+                    {
                         this.Entity = new Usuario();
                         this.Entity.ID = this.SelectedID;
                         this.Entity.State = BusinessEntity.States.Modified;
@@ -205,19 +217,25 @@ namespace UI.Web
                         this.SaveEntity(this.Entity);
                         this.LoadGrid();
                         this.formPanel.Visible = false;
+                    }
                         break;
+                    
                     case FormModes.Alta:
+                    if (Page.IsValid)
+                    {
                         this.Entity = new Usuario();
                         this.LoadEntity(this.Entity);
                         this.SaveEntity(this.Entity);
                         this.LoadGrid();
+                        this.formPanel.Visible = false;
+                    }
                         break;
+                    
                     default:
                         break;
                 }
-                this.formPanel.Visible = false;
             }
-        }
+        
         private void EnableForm(bool check)
         {
             this.nombreTextBox.Enabled = check;
@@ -225,10 +243,10 @@ namespace UI.Web
             this.emailTextBox.Enabled = check;
             this.habilitadoCheckBox.Enabled = check;
             this.nombreUsuarioTextBox.Enabled = check;
-            this.claveTextBox.Visible = check;
-            this.claveLabel.Visible = check;
-            this.repetirClaveTextBox.Visible = check;
-            this.repetirClaveLabel.Visible = check;
+            this.claveTextBox.Enabled = check;
+            this.claveLabel.Enabled = check;
+            this.repetirClaveTextBox.Enabled = check;
+            this.repetirClaveLabel.Enabled = check;
             this.tipoUsuarioDdl.Enabled = check;
             this.legajoTextBox.Enabled = check;
             this.diaNacDdl.Enabled = check;
@@ -272,6 +290,8 @@ namespace UI.Web
             this.nombreUsuarioTextBox.Text = string.Empty;
             this.tipoUsuarioDdl.SelectedValue = "Alumno";
             this.legajoTextBox.Text = string.Empty;
+            this.claveTextBox.Text = string.Empty;
+            this.repetirClaveTextBox.Text = string.Empty;
             this.diaNacDdl.SelectedValue = "1";
             this.mesNacDdl.SelectedValue = "1";
             this.añoNacDdl.SelectedValue = "2000";

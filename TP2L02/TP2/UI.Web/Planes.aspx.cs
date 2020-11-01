@@ -181,8 +181,16 @@ namespace UI.Web
             switch (this.FormMode)
             {
                 case FormModes.Baja:
+                    if (Business.Logic.PlanLogic.isDeleteValid(this.SelectedID))
+                    {
                         this.DeleteEntity(this.SelectedID);
                         this.LoadGrid();
+                        this.formPanel.Visible = false;
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Esta especialidad no puede ser eliminada", "alert('Este plan no puede ser eliminado por que ya esta asignado a una materia o comision')", true);
+                    }
                     break;
                 case FormModes.Modificacion:
                     this.Entity = new Plan();
@@ -198,11 +206,11 @@ namespace UI.Web
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
+                    this.formPanel.Visible = false;
                     break;
                 default:
                     break;
             }
-            this.formPanel.Visible = false;
         }
         private void EnableForm(bool check)
         {

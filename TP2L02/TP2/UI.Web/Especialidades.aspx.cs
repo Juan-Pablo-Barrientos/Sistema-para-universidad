@@ -157,13 +157,15 @@ namespace UI.Web
             switch (this.FormMode)
             {
                 case FormModes.Baja:
-                    if (EspecialidadesLogic.isDeleteValid(this.SelectedID))
-                        {
+                    if (Business.Logic.EspecialidadesLogic.isDeleteValid(this.SelectedID))
+                    {
                         this.DeleteEntity(this.SelectedID);
                         this.LoadGrid();
+                        this.formPanel.Visible = false;
                     }
-                    else {
-                        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Hay por lo menos un plan utilizando esta especialidad" + "');", true);
+                    else
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Esta especialidad no puede ser eliminada", "alert('Esta especialidad no puede ser eliminada por que ya esta asignada a un plan')", true);
                     }
                     break;
                 case FormModes.Modificacion:
@@ -180,11 +182,11 @@ namespace UI.Web
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
+                    this.formPanel.Visible = false;
                     break;
                 default:
                     break;
             }
-            this.formPanel.Visible = false;
         }
         private void EnableForm(bool check)
         {

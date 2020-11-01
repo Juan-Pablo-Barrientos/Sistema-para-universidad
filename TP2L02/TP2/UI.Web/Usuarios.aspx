@@ -37,12 +37,12 @@
         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="nombreUsuarioTextBox" Display="None" ErrorMessage="Complete usuario"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="claveLabel" runat="server" Text="Clave: "></asp:Label>
-        <asp:TextBox ID="claveTextBox" TextMode="Password" runat="server"></asp:TextBox>
+        <asp:TextBox ID="claveTextBox" runat="server"></asp:TextBox>
         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="claveTextBox" Display="None" ErrorMessage="La contraseña tiene que tener 8 o mas caracteres y menos de 32" ValidationExpression="^.{8,32}$"></asp:RegularExpressionValidator>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="claveTextBox" Display="None" ErrorMessage="Complete clave"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="repetirClaveLabel" runat="server" Text="Repetir Clave: "></asp:Label>
-        <asp:TextBox ID="repetirClaveTextBox" TextMode="Password" runat="server"></asp:TextBox>
+        <asp:TextBox ID="repetirClaveTextBox" runat="server"></asp:TextBox>
         <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToCompare="claveTextBox" ControlToValidate="repetirClaveTextBox" Display="None" ErrorMessage="La contraseña tiene que coincidir"></asp:CompareValidator>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="repetirClaveTextBox" Display="None" ErrorMessage="Complete repetir contraseña"></asp:RequiredFieldValidator>
         <br />

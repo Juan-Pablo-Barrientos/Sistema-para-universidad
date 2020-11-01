@@ -50,7 +50,7 @@ namespace UI.Desktop
                 new ComisionLogic().Delete(ID);
                 this.Listar(); 
             }
-            else  BusinessLogic.Notificar("Plan", "Este plan esta vinculada con un curso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else  BusinessLogic.Notificar("Comision", "Esta comision esta vinculada con un curso", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void tsbNuevo_Click(object sender, EventArgs e)
