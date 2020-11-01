@@ -95,7 +95,7 @@ namespace UI.Web
                             parent.ChildItems.Remove(e.Item);
                         }
                     }
-                    if (mapNode.Title == "DocenteCursos")
+                    if (mapNode.Title == "DocenteCurso")
                     {
                         System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
                         if (parent != null)
@@ -103,7 +103,15 @@ namespace UI.Web
                             parent.ChildItems.Remove(e.Item);
                         }
                     }
-                
+                    if (mapNode.Title == "Cursos")
+                    {
+                        System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
+                        if (parent != null)
+                        {
+                            parent.ChildItems.Remove(e.Item);
+                        }
+                    }
+
                 }
                 if (this.Entity.TiposUsuario.ToString() == "Docente")
                 {
@@ -148,6 +156,15 @@ namespace UI.Web
                         }
                     }
                     if (mapNode.Title == "AlumnoInscripcion")
+                    {
+                        System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
+                        if (parent != null)
+                        {
+                            parent.ChildItems.Remove(e.Item);
+                        }
+                    }
+
+                    if (mapNode.Title == "Cursos")
                     {
                         System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
                         if (parent != null)
