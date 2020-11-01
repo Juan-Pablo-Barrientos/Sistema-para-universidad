@@ -100,6 +100,7 @@ namespace UI.Web
 
         private void LoadForm(int id)
         {
+            this.idLabel.Text = this.Entity.ID.ToString();
             this.nombreLabel.Text = this.Entity.Nombre;
             this.apellidoLabel.Text = this.Entity.Apellido;
             this.emailLabel.Text = this.Entity.EMail;

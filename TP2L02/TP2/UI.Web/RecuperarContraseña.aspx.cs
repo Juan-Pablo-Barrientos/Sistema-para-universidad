@@ -77,17 +77,20 @@ namespace UI.Web
 
         protected void ingresarNuevaContraseñaBtn_Click(object sender, EventArgs e)
         {
-            if (nuevaContraseñaTextBox.Text == confirmarContraseñaTextBox.Text)
+            if (Page.IsValid)
             {
-                this.Entity = new UsuarioLogic().getOneNombre(Session["user"].ToString());
-                this.Entity.Clave = nuevaContraseñaTextBox.Text;
-                this.Entity.State = BusinessEntity.States.Modified;
-                this.Logic.Save(this.Entity);
-                Response.Redirect("~/login.aspx");
-            }
-            else
-            {
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "contraseña no coincide" + "');", true);
+                if (nuevaContraseñaTextBox.Text == confirmarContraseñaTextBox.Text)
+                {
+                    this.Entity = new UsuarioLogic().getOneNombre(Session["user"].ToString());
+                    this.Entity.Clave = nuevaContraseñaTextBox.Text;
+                    this.Entity.State = BusinessEntity.States.Modified;
+                    this.Logic.Save(this.Entity);
+                    Response.Redirect("~/login.aspx");
+                }
+                else
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "contraseña no coincide" + "');", true);
+                }
             }
         }
     }

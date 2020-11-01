@@ -52,6 +52,7 @@
             </td>
             <td>
                 <asp:TextBox ID="nuevaContraseñaTextBox" runat="server" Visible="False"></asp:TextBox>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="nuevaContraseñaTextBox" ErrorMessage="La contraseña tiene que tener 8 o mas caracteres y menos de 32" ValidationExpression="^.{8,32}$"></asp:RegularExpressionValidator>
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -61,6 +62,7 @@
             </td>
             <td>
                 <asp:TextBox ID="confirmarContraseñaTextBox" runat="server" Visible="False"></asp:TextBox>
+                <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="nuevaContraseñaTextBox" ControlToValidate="confirmarContraseñaTextBox" ErrorMessage="La contraseña no coincide"></asp:CompareValidator>
             </td>
             <td>&nbsp;</td>
         </tr>
