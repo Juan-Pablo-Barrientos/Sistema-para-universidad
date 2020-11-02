@@ -23,6 +23,7 @@
                 <asp:Menu runat="server" ID="menu" DataSourceID="SiteMapDataSource" OnMenuItemDataBound="Menu1_MenuItemDataBound">
                 </asp:Menu>
                 <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
+                <asp:SiteMapPath runat="server" /> 
             </div>
 
             <div class="column" style="border-style:hidden ;width:50px">

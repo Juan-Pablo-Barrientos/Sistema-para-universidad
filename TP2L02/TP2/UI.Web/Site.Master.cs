@@ -43,6 +43,25 @@ namespace UI.Web
             {
                 TipoUsr.Text = "SuperAdmin";
             }
+
+            SiteMap.SiteMapResolve += (o, args) =>
+            {
+                if (SiteMap.CurrentNode == null)
+                    return null;
+
+                SiteMapNode currentNode = SiteMap.CurrentNode.Clone(true);
+                currentNode.Title = "AlumnoInscripcion";
+
+                SiteMapNode tempNode = currentNode;
+                if (this.Entity != null)
+                {
+                    if (this.Entity.TiposUsuario.ToString() == "Alumno")
+                    {
+                        tempNode.Title = "MisCursos";
+                    }
+                }
+                return currentNode;
+            };
         }
 
         protected void Menu1_MenuItemDataBound(object sender, MenuEventArgs e)

@@ -131,8 +131,8 @@ namespace Data.Database
                 SqlCommand cmdSave = new SqlCommand(
                 "UPDATE cursos SET id_materia = @id_materia, " +
                 "id_comision = @id_comision, anio_calendario = @anio_calendario, " +
-                "cupo = @cupo, desc_curso = @dec_curso " +
-                "WHERE id_especialidad = @id", sqlConn);
+                "cupo = @cupo, desc_curso = @desc_curso " +
+                "WHERE id_curso = @id", sqlConn);
 
 
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = cur.ID;
@@ -140,8 +140,7 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@id_materia", SqlDbType.Int).Value = cur.IDMateria;
                 cmdSave.Parameters.Add("@cupo", SqlDbType.Int).Value = cur.Cupo;
                 cmdSave.Parameters.Add("@anio_calendario", SqlDbType.Int).Value = cur.AnioCalendario;
-                cmdSave.Parameters.Add("@desc_curso", SqlDbType.VarChar, 50);
-
+                cmdSave.Parameters.Add("@desc_curso", SqlDbType.VarChar, 50).Value = cur.Descripcion;
                 cmdSave.ExecuteNonQuery();
             }
 
