@@ -63,10 +63,10 @@
         <asp:DropDownList ID="diaNacDdl" runat="server" >
         </asp:DropDownList>
         <asp:Label ID="mesNacLabel" runat="server" Text="Mes: "></asp:Label>
-        <asp:DropDownList ID="mesNacDdl" runat="server" onselectedindexchanged="mesNacDdl_SelectedIndexChanged">
+        <asp:DropDownList ID="mesNacDdl" runat="server" onselectedindexchanged="mesNacDdl_SelectedIndexChanged" AutoPostBack="True">
         </asp:DropDownList>
         <asp:Label ID="añoNacLabel" runat="server" Text="Año: "></asp:Label>
-        <asp:DropDownList ID="añoNacDdl" runat="server" onselectedindexchanged="añoNacDdl_SelectedIndexChanged"></asp:DropDownList>
+        <asp:DropDownList ID="añoNacDdl" runat="server" onselectedindexchanged="añoNacDdl_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
         <br />
         <asp:Label ID="telefonoLabel" runat="server" Text="Telefono: "></asp:Label>
         <asp:TextBox ID="telefonoTextBox" runat="server"></asp:TextBox>
