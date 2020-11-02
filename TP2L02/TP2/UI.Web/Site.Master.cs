@@ -7,10 +7,12 @@ using System.Web.UI.WebControls;
 using Business.Entities;
 using Business.Logic;
 
+
 namespace UI.Web
 {
     public partial class Site : System.Web.UI.MasterPage
     {
+
         UsuarioLogic _logic;
         private UsuarioLogic Logic
         {
@@ -44,24 +46,7 @@ namespace UI.Web
                 TipoUsr.Text = "SuperAdmin";
             }
 
-            SiteMap.SiteMapResolve += (o, args) =>
-            {
-                if (SiteMap.CurrentNode == null)
-                    return null;
 
-                SiteMapNode currentNode = SiteMap.CurrentNode.Clone(true);
-                currentNode.Title = "AlumnoInscripcion";
-
-                SiteMapNode tempNode = currentNode;
-                if (this.Entity != null)
-                {
-                    if (this.Entity.TiposUsuario.ToString() == "Alumno")
-                    {
-                        tempNode.Title = "MisCursos";
-                    }
-                }
-                return currentNode;
-            };
         }
 
         protected void Menu1_MenuItemDataBound(object sender, MenuEventArgs e)
@@ -74,11 +59,21 @@ namespace UI.Web
             {
                 if (this.Entity.TiposUsuario.ToString() == "Alumno")
                 {
+                    if (mapNode.Title == "AlumnoInscripcion")
+                    {
+                        System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
+                        if (parent != null)
+                        {
+                            e.Item.Text = "Mis Cursos";
+                        }
+                    }
+
                     if (mapNode.Title == "Usuarios")
                     {
                         System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
                         if (parent != null)
                         {
+
                             parent.ChildItems.Remove(e.Item);
                         }
                     }
@@ -134,6 +129,15 @@ namespace UI.Web
                 }
                 if (this.Entity.TiposUsuario.ToString() == "Docente")
                 {
+
+                    if (mapNode.Title == "DocenteCurso")
+                    {
+                        System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
+                        if (parent != null)
+                        {
+                            e.Item.Text = "Mis cursos";
+                        }
+                    }
                     if (mapNode.Title == "Usuarios")
                     {
                         System.Web.UI.WebControls.MenuItem parent = e.Item.Parent;
