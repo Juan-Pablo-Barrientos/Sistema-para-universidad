@@ -104,7 +104,7 @@ namespace UI.Desktop
                             MisCursosAlumnoMenu.Visible = false;
                             InscribirseMenu.Visible = false;
                             InscribirUsuarioMenu.Visible = false;
-
+                            CursosAltastrip.Visible = false;
                             break;
 
                         case "Alumno":
@@ -116,6 +116,7 @@ namespace UI.Desktop
                             ModulosMenu.Visible = false;
                             MisCursosDocenteMenu.Visible = false;
                             InscribirUsuarioMenu.Visible = false;
+                            CursosAltastrip.Visible = false;
 
                             break;
 
