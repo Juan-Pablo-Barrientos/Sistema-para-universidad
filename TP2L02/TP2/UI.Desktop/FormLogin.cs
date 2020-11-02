@@ -64,9 +64,7 @@ namespace UI.Desktop
                 else
                 if (!usuarioLogueado.Habilitado)
                 BusinessLogic.Notificar("Error", "El usuario no esta habilitado", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else this.DialogResult = DialogResult.OK;
-
-                                            
+                else this.DialogResult = DialogResult.OK;                                           
             }
         }
     }

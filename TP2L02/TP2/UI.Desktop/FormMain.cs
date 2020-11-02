@@ -33,7 +33,7 @@ namespace UI.Desktop
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Application.Restart();        
         }
 
         
