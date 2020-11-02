@@ -88,8 +88,9 @@ namespace UI.Desktop
                 UsuarioActual.NombreUsuario = txtUsuario.Text;
                 UsuarioActual.Clave = txtClave.Text;
                 UsuarioActual.Habilitado = chkHabilitado.Checked;
+                if (!String.IsNullOrEmpty(txtFec.Text)) { 
                 DateTime dt = DateTime.Parse(txtFec.Text.ToString());
-                UsuarioActual.fecha_nac = dt;
+                UsuarioActual.fecha_nac = dt;}
                 UsuarioActual.direccion = txtDireccion.Text;
                 UsuarioActual.telefono = txtTelefono.Text;
                 UsuarioActual.legajo = txtLegajo.Text;                
@@ -152,7 +153,7 @@ namespace UI.Desktop
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-          //  if (Validar())
+            if (Validar())
             {
                 GuardarCambios();               
                 Close();
