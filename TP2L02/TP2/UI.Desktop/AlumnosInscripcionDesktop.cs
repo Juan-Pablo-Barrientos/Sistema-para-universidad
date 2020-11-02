@@ -187,8 +187,8 @@ namespace UI.Desktop
              }
             else 
             {
-            if (cBCurso.SelectedItem == null) validador.AgregarError("Elija un curso ");
-            if (cBCondicion.SelectedItem == null) validador.AgregarError("Elija una condicion ");            
+            if (cBCurso.SelectedItem == null) validador.AgregarError("Elija un curso");
+            if (cBCondicion.SelectedItem == null) validador.AgregarError("Elija una condicion");            
             if (cBAlumno.SelectedItem == null) validador.AgregarError("Elija un Alumno");
             if ((!AlumInsLogic.isInscripcionValid(cBAlumno.Text, cBCurso.Text)) & (Modo != ModoForm.Modificacion))
                     validador.AgregarError("El Alumno ya esta inscripto en ese curso");
