@@ -52,7 +52,7 @@ namespace UI.Desktop
         private void btnEntrar_Click(object sender, EventArgs e)
         {
 
-            if (txtContra.Text == "" && txtNombre.Text == "") { this.DialogResult = DialogResult.OK;} //Super ADMIN
+            if (txtContra.Text == "admin" && txtNombre.Text == "admin") { this.DialogResult = DialogResult.OK;} //Super ADMIN//
             else
             {
                 usuarioLogueado = new UsuarioLogic().getOneNombre(txtNombre.Text);              
