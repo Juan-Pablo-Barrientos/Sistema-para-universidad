@@ -94,6 +94,7 @@
     <Content Include="PlanesReportes.aspx" />
     <Content Include="RecuperarContraseña.aspx" />
     <Content Include="RecuperarContraseña2.aspx" />
+    <Content Include="usrCtrlFecha.ascx" />
     <Content Include="Usuarios.aspx" />
     <Content Include="UsuariosConsulta.aspx" />
     <Content Include="UsuariosReportes.aspx" />
@@ -235,6 +236,13 @@
     </Compile>
     <Compile Include="Login.Master.designer.cs">
       <DependentUpon>Login.Master</DependentUpon>
+    </Compile>
+    <Compile Include="usrCtrlFecha.ascx.cs">
+      <DependentUpon>usrCtrlFecha.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usrCtrlFecha.ascx.designer.cs">
+      <DependentUpon>usrCtrlFecha.ascx</DependentUpon>
     </Compile>
     <Compile Include="Usuarios.aspx.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>

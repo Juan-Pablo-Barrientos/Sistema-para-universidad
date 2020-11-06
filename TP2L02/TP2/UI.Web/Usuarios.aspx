@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="UI.Web.Usuarios" %>
+<%@ Register src="usrCtrlFecha.ascx" tagname="usrCtrlFecha" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
     <asp:Panel ID="gridPanel" runat="server">
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"
@@ -59,14 +60,7 @@
         <br />
         <asp:Label ID="fechaNacLabel" runat="server" Text="Fecha de nacimiento: "></asp:Label>
         <br />
-        <asp:Label ID="diaNacLabel" runat="server" Text="Dia: "></asp:Label>
-        <asp:DropDownList ID="diaNacDdl" runat="server" >
-        </asp:DropDownList>
-        <asp:Label ID="mesNacLabel" runat="server" Text="Mes: "></asp:Label>
-        <asp:DropDownList ID="mesNacDdl" runat="server" onselectedindexchanged="mesNacDdl_SelectedIndexChanged" AutoPostBack="True">
-        </asp:DropDownList>
-        <asp:Label ID="añoNacLabel" runat="server" Text="Año: "></asp:Label>
-        <asp:DropDownList ID="añoNacDdl" runat="server" onselectedindexchanged="añoNacDdl_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+        <uc1:usrCtrlFecha ID="usrCtrlFecha1" runat="server" />
         <br />
         <asp:Label ID="telefonoLabel" runat="server" Text="Telefono: "></asp:Label>
         <asp:TextBox ID="telefonoTextBox" runat="server"></asp:TextBox>

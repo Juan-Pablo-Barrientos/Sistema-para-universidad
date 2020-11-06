@@ -303,58 +303,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Label fechaNacLabel;
 
         /// <summary>
-        /// diaNacLabel control.
+        /// usrCtrlFecha1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label diaNacLabel;
-
-        /// <summary>
-        /// diaNacDdl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList diaNacDdl;
-
-        /// <summary>
-        /// mesNacLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label mesNacLabel;
-
-        /// <summary>
-        /// mesNacDdl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList mesNacDdl;
-
-        /// <summary>
-        /// añoNacLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label añoNacLabel;
-
-        /// <summary>
-        /// añoNacDdl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList añoNacDdl;
+        protected global::UI.Web.usrCtrlFecha usrCtrlFecha1;
 
         /// <summary>
         /// telefonoLabel control.

@@ -81,7 +81,7 @@ namespace UI.Web
             if (!IsPostBack)
             {
                 LoadGrid();
-                cargarDiasCalendario();
+                this.usrCtrlFecha1.cargarDiasCalendario();
                 this.FormMode = FormModes.Modificacion;
             }
         }
@@ -139,10 +139,10 @@ namespace UI.Web
             this.claveTextBox.Text = this.Entity.Clave;
             this.repetirClaveTextBox.Text = this.Entity.Clave;
             DateTime dt = this.Entity.fecha_nac;
-            this.añoNacDdl.SelectedValue = dt.Year.ToString();
-            this.mesNacDdl.SelectedValue = dt.Month.ToString();
-            FillDays();
-            this.diaNacDdl.SelectedValue = dt.Day.ToString();
+            this.usrCtrlFecha1.setAnio(dt.Year.ToString());
+            this.usrCtrlFecha1.setMes(dt.Month.ToString());
+            this.usrCtrlFecha1.FillDays();
+            this.usrCtrlFecha1.setDia(dt.Day.ToString()); 
             this.telefonoTextBox.Text = this.Entity.telefono;
             this.direccionTextBox.Text = this.Entity.direccion;
             if (this.Entity.pregunta != "falta")
@@ -176,7 +176,7 @@ namespace UI.Web
             if (this.tipoUsuarioDdl.SelectedValue == "Admin")
                 usuario.TiposUsuario = Usuario.TipoUsuario.Admin;
             usuario.legajo = this.legajoTextBox.Text;
-            string fecha = String.Concat(this.diaNacDdl.SelectedValue, "/", this.mesNacDdl.SelectedValue, "/", this.añoNacDdl.SelectedValue);
+            string fecha = String.Concat(this.usrCtrlFecha1.getDia(), "/", this.usrCtrlFecha1.getMes(), "/", this.usrCtrlFecha1.getAnio());
             DateTime dt = DateTime.Parse(fecha);
             usuario.fecha_nac = dt;
             usuario.telefono = this.telefonoTextBox.Text;
@@ -249,9 +249,9 @@ namespace UI.Web
             this.repetirClaveLabel.Enabled = check;
             this.tipoUsuarioDdl.Enabled = check;
             this.legajoTextBox.Enabled = check;
-            this.diaNacDdl.Enabled = check;
-            this.mesNacDdl.Enabled = check;
-            this.añoNacDdl.Enabled = check;
+            this.usrCtrlFecha1.setAnio(check);
+            this.usrCtrlFecha1.setDia(check);
+            this.usrCtrlFecha1.setMes(check);
             this.telefonoTextBox.Enabled = check;
             this.direccionTextBox.Enabled = check;
             this.respuestaContraTextBox.Enabled = check;
@@ -292,9 +292,9 @@ namespace UI.Web
             this.legajoTextBox.Text = string.Empty;
             this.claveTextBox.Text = string.Empty;
             this.repetirClaveTextBox.Text = string.Empty;
-            this.diaNacDdl.SelectedValue = "1";
-            this.mesNacDdl.SelectedValue = "1";
-            this.añoNacDdl.SelectedValue = "2000";
+            this.usrCtrlFecha1.setDia("1");
+            this.usrCtrlFecha1.setMes("1");
+            this.usrCtrlFecha1.setAnio("2000");
             this.telefonoTextBox.Text = string.Empty;
             this.direccionTextBox.Text = string.Empty;
             this.respuestaContraTextBox.Text = string.Empty;
@@ -306,52 +306,6 @@ namespace UI.Web
             this.ClearForm();
             this.LoadGrid();
             this.formPanel.Visible = false;
-        }
-        private void cargarDiasCalendario()
-        {
-            if (Page.IsPostBack == false)
-            {
-                {
-                    //Fill Years
-                    for (int i = 1960; i <= 2020; i++)
-                    {
-                        añoNacDdl.Items.Add(i.ToString());
-                    }
-                    añoNacDdl.Items.FindByValue(System.DateTime.Now.Year.ToString()).Selected = true;  //set current year as selected
-
-                    //Fill Months
-                    for (int i = 1; i <= 12; i++)
-                    {
-                        mesNacDdl.Items.Add(i.ToString());
-                    }
-                    mesNacDdl.Items.FindByValue(System.DateTime.Now.Month.ToString()).Selected = true; // Set current month as selected
-
-                    //Fill days
-                    FillDays();
-                }
-            }
-
-        }
-        public void FillDays()
-        {
-            diaNacDdl.Items.Clear();
-            //getting numbner of days in selected month & year
-            int noofdays = DateTime.DaysInMonth(Convert.ToInt32(añoNacDdl.SelectedValue), Convert.ToInt32(mesNacDdl.SelectedValue));
-
-            //Fill days
-            for (int i = 1; i <= noofdays; i++)
-            {
-                diaNacDdl.Items.Add(i.ToString());
-            }
-            diaNacDdl.Items.FindByValue(System.DateTime.Now.Day.ToString()).Selected = true;// Set current date as selected
-        }
-        protected void añoNacDdl_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FillDays();
-        }
-        protected void mesNacDdl_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FillDays();
         }
     }
 }
