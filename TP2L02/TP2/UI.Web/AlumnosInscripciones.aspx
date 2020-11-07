@@ -27,7 +27,7 @@
     </asp:DropDownList>
                 <br />
          <asp:Label ID="LabelCond" runat="server" Text="Condicion"></asp:Label>
-  <asp:DropDownList ID="Condicionddl" runat="server">
+  <asp:DropDownList ID="Condicionddl" runat="server" AutoPostBack="True" OnTextChanged="Condicionddl_TextChanged">
       <asp:ListItem Value="Inscripto"></asp:ListItem>
       <asp:ListItem Value="Regular"></asp:ListItem>
       <asp:ListItem Value="Aprobado"></asp:ListItem>
@@ -35,7 +35,8 @@
     </asp:DropDownList>
             <br />
          <asp:Label ID="LabelNota" runat="server" Text="Nota"></asp:Label>
-       <asp:TextBox ID="Notatxt" runat="server" Height="16px" Width="92px"></asp:TextBox>
+         <asp:DropDownList ID="Notatxt" runat="server">
+         </asp:DropDownList>
      <asp:Panel ID="FormActionPanel" runat="server" Height="20px" Width="119px">                
          <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
          <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>

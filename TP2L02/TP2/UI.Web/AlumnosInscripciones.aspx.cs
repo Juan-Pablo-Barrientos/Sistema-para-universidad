@@ -330,5 +330,30 @@ namespace UI.Web
             this.LoadGrid();
             this.FormPanel.Visible = false;
         }
+
+        protected void Condicionddl_TextChanged(object sender, EventArgs e)
+        {
+            Notatxt.Items.Clear();
+            if (Condicionddl.Text == "Regular" || Condicionddl.Text == "Aprobado")
+            {
+                Notatxt.Items.Add("6");
+                Notatxt.Items.Add("7");
+                Notatxt.Items.Add("8");
+                Notatxt.Items.Add("9");
+                Notatxt.Items.Add("10");
+            }
+            if (Condicionddl.Text == "Libre")
+            {
+                Notatxt.Items.Add("5");
+                Notatxt.Items.Add("4");
+                Notatxt.Items.Add("3");
+                Notatxt.Items.Add("2");
+                Notatxt.Items.Add("1");
+                Notatxt.Items.Add("0");
+            }
+            if (Condicionddl.Text == "Inscripto")
+            {
+            }
+        }
     }
 }

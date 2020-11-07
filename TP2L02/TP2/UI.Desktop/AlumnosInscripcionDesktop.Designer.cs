@@ -33,7 +33,6 @@
             this.labelCurso = new System.Windows.Forms.Label();
             this.labelCondicion = new System.Windows.Forms.Label();
             this.labelNota = new System.Windows.Forms.Label();
-            this.txtNota = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.cBCurso = new System.Windows.Forms.ComboBox();
@@ -41,6 +40,7 @@
             this.txtInscripcion = new System.Windows.Forms.TextBox();
             this.cBAlumno = new System.Windows.Forms.ComboBox();
             this.cBCondicion = new System.Windows.Forms.ComboBox();
+            this.txtNota = new System.Windows.Forms.ComboBox();
             this.container.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +55,6 @@
             this.container.Controls.Add(this.labelCurso, 0, 1);
             this.container.Controls.Add(this.labelCondicion, 2, 1);
             this.container.Controls.Add(this.labelNota, 2, 0);
-            this.container.Controls.Add(this.txtNota, 3, 0);
             this.container.Controls.Add(this.btnCancelar, 3, 3);
             this.container.Controls.Add(this.btnAceptar, 2, 3);
             this.container.Controls.Add(this.cBCurso, 1, 1);
@@ -63,6 +62,7 @@
             this.container.Controls.Add(this.txtInscripcion, 1, 0);
             this.container.Controls.Add(this.cBAlumno, 1, 2);
             this.container.Controls.Add(this.cBCondicion, 3, 1);
+            this.container.Controls.Add(this.txtNota, 3, 0);
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container.Location = new System.Drawing.Point(0, 0);
             this.container.Name = "container";
@@ -109,14 +109,6 @@
             this.labelNota.Size = new System.Drawing.Size(30, 13);
             this.labelNota.TabIndex = 2;
             this.labelNota.Text = "Nota";
-            // 
-            // txtNota
-            // 
-            this.txtNota.Location = new System.Drawing.Point(315, 3);
-            this.txtNota.Name = "txtNota";
-            this.txtNota.Size = new System.Drawing.Size(100, 20);
-            this.txtNota.TabIndex = 8;
-            this.txtNota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // btnCancelar
             // 
@@ -186,6 +178,16 @@
             this.cBCondicion.Name = "cBCondicion";
             this.cBCondicion.Size = new System.Drawing.Size(101, 21);
             this.cBCondicion.TabIndex = 15;
+            this.cBCondicion.TextChanged += new System.EventHandler(this.cBCondicion_TextChanged);
+            // 
+            // txtNota
+            // 
+            this.txtNota.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtNota.FormattingEnabled = true;
+            this.txtNota.Location = new System.Drawing.Point(315, 3);
+            this.txtNota.Name = "txtNota";
+            this.txtNota.Size = new System.Drawing.Size(101, 21);
+            this.txtNota.TabIndex = 16;
             // 
             // AlumnosInscripcionDesktop
             // 
@@ -209,7 +211,6 @@
         private System.Windows.Forms.Label labelCurso;
         private System.Windows.Forms.Label labelCondicion;
         private System.Windows.Forms.Label labelNota;
-        private System.Windows.Forms.TextBox txtNota;
         private System.Windows.Forms.TextBox txtInscripcion;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
@@ -217,5 +218,6 @@
         private System.Windows.Forms.ComboBox cBCurso;
         private System.Windows.Forms.Label labelAlumno;
         private System.Windows.Forms.ComboBox cBCondicion;
+        private System.Windows.Forms.ComboBox txtNota;
     }
 }

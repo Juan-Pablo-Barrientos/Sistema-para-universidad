@@ -57,13 +57,13 @@ namespace UI.Desktop
             {
                 usuarioLogueado = new UsuarioLogic().getOneNombre(txtNombre.Text);              
                 if (String.IsNullOrEmpty(usuarioLogueado.NombreUsuario)) 
-                BusinessLogic.Notificar("Error", "El usuario no existe", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                BusinessLogic.Notificar("Error", "No se pudo ingresar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else              
                 if (usuarioLogueado.Clave != txtContra.Text)  
-                 BusinessLogic.Notificar("Error", "La contraseña no es correcta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 BusinessLogic.Notificar("Error", "No se pudo ingresar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 if (!usuarioLogueado.Habilitado)
-                BusinessLogic.Notificar("Error", "El usuario no esta habilitado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                BusinessLogic.Notificar("Error", "No se pudo ingresar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else this.DialogResult = DialogResult.OK;                                           
             }
         }

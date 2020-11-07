@@ -217,11 +217,30 @@ namespace UI.Desktop
 
         }
 
-        //Este metodo esta linkeado con el evento KeyPress, no permite que se ingrese otro caracter que no sea numerico
-        //Lo TextBox para la hora lo usan.
-        private void SoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
+        private void cBCondicion_TextChanged(object sender, EventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) e.Handled = true;
+            
+           txtNota.Items.Clear();
+           if(cBCondicion.Text == "Regular" || cBCondicion.Text == "Aprobado")
+           {
+                txtNota.Items.Add("6");
+                txtNota.Items.Add("7");
+                txtNota.Items.Add("8");
+                txtNota.Items.Add("9");
+                txtNota.Items.Add("10");
+           }        
+           if (cBCondicion.Text == "Libre")
+           {
+                txtNota.Items.Add("5");
+                txtNota.Items.Add("4");
+                txtNota.Items.Add("3");
+                txtNota.Items.Add("2");
+                txtNota.Items.Add("1");
+                txtNota.Items.Add("0");
+            }
+           if (cBCondicion.Text == "Inscripto")
+           {
+           }
         }
     }
 }
