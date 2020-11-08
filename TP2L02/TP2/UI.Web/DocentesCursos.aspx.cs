@@ -83,6 +83,7 @@ namespace UI.Web
             UsuarioLogueado = new UsuarioLogic().getOneNombre(Session["user"].ToString());
             if (UsuarioLogueado.ID != 0 && UsuarioLogueado.TiposUsuario.ToString() == "Docente")
             {
+                this.GridView1.Columns[6].HeaderText = "Ver Alumnos";
                 this.editarLinkButton.Visible = false;
                 this.eliminarLinkButton.Visible = false;
                 this.nuevoLinkButton.Visible = false;

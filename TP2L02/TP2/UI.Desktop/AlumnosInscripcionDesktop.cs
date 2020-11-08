@@ -221,8 +221,10 @@ namespace UI.Desktop
         {
             
            txtNota.Items.Clear();
+           txtNota.Text = null;
            if(cBCondicion.Text == "Regular" || cBCondicion.Text == "Aprobado")
            {
+                
                 txtNota.Items.Add("6");
                 txtNota.Items.Add("7");
                 txtNota.Items.Add("8");
@@ -231,6 +233,7 @@ namespace UI.Desktop
            }        
            if (cBCondicion.Text == "Libre")
            {
+                
                 txtNota.Items.Add("5");
                 txtNota.Items.Add("4");
                 txtNota.Items.Add("3");
@@ -240,6 +243,7 @@ namespace UI.Desktop
             }
            if (cBCondicion.Text == "Inscripto")
            {
+                
            }
         }
     }
