@@ -94,6 +94,11 @@
     <Content Include="PlanesReportes.aspx" />
     <Content Include="RecuperarContraseña.aspx" />
     <Content Include="RecuperarContraseña2.aspx" />
+    <None Include="Scripts\jquery-3.5.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.5.1.js" />
+    <Content Include="Scripts\jquery-3.5.1.min.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.min.js" />
     <Content Include="usrCtrlFecha.ascx" />
     <Content Include="Usuarios.aspx" />
     <Content Include="UsuariosConsulta.aspx" />
@@ -289,6 +294,8 @@
     <None Include="packages.config" />
     <Content Include="Site.Master" />
     <Content Include="Login.Master" />
+    <Content Include="Scripts\jquery-3.5.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.5.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

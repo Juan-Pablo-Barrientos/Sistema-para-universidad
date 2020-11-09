@@ -45,7 +45,13 @@ namespace UI.Web
             {
                 TipoUsr.Text = "SuperAdmin";
             }
+            if (!IsPostBack)
+            {
+                if (Session["Modo"].ToString() == "Oscuro")
+                    btnModo.Checked = true;
+                else btnModo.Checked = false;
 
+            }
 
         }
 
@@ -197,6 +203,14 @@ namespace UI.Web
                     }
                 }
             }
+        }
+
+        protected void btnModo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (btnModo.Checked)
+                Session["Modo"] = "Oscuro";
+            else Session["Modo"] = "Claro";
+
         }
     }
 }

@@ -1,12 +1,12 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="UI.Web.Site" %>
 
-
+<script src="Scripts/jquery-3.5.1.js"></script>
 <html>
 <head runat="server">
     <title>Academia</title>
-    
-<link href="~/CSS/StyleSheet1.css" rel="stylesheet" type="text/css" />
-    </head>
+
+    <link href="~/CSS/StyleSheet1.css" rel="stylesheet" type="text/css" />
+</head>
 <body>
 
 
@@ -19,24 +19,38 @@
                 <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
             </div>
 
-            <div class="column" style="border-style:hidden ;width:50px">
+            <div class="column" style="border-style: hidden; width: 50px">
             </div>
 
-            <div class="column" style="border-style:hidden">
+            <div class="column" style="border-style: hidden">
                 <div>
                     <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server">
                     </asp:ContentPlaceHolder>
                 </div>
             </div>
-            
+
         </div>
         <div class="row">
-                Usuario: <asp:Label ID="NombreUsr" runat="server"></asp:Label>
-                
-            </div>
+            <asp:Label ID="lblModo" runat="server">Modo: </asp:Label>
+            <asp:CheckBox ID="btnModo" runat="server" Text="Oscuro" AutoPostBack="True" OnCheckedChanged="btnModo_CheckedChanged" ViewStateMode="Enabled" />
+        </div>
         <div class="row">
-                Tipo de Usuario: <asp:Label ID="TipoUsr" runat="server"></asp:Label>
-            </div>
+            Usuario:
+            <asp:Label ID="NombreUsr" runat="server"></asp:Label>
+
+        </div>
+        <div class="row">
+            Tipo de Usuario:
+            <asp:Label ID="TipoUsr" runat="server"></asp:Label>
+        </div>
     </form>
 </body>
 </html>
+
+<script>
+    
+    if ($("#btnModo").attr('checked')) {
+        $("body").addClass("dark-mode");
+        $(".wrapper").addClass("dark-mode");
+    }
+</script>

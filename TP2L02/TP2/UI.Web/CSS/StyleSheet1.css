@@ -1,15 +1,45 @@
 ﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
 }
+
+    body.dark-mode {
+        background-color: black;
+        color: grey;
+    }
+
+
+.wrapper {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s all ease;
+    width: 100%;
+    height: 100%;
+}
+
+    .wrapper.dark-mode {
+        color: grey;
+    }
+
 .column {
     float: left;
     width: 350px;
-    border-style:solid;
+    border-style: solid;
     border-color: black;
-    height:205px;
+    height: 205px;
 }
-.separate {
-    width:50px;
 
+.separate {
+    width: 50px;
 }
 
 /* Clear floats after the columns */
