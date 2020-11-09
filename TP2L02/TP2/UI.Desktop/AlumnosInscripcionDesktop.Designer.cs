@@ -196,6 +196,7 @@
             this.ClientSize = new System.Drawing.Size(419, 111);
             this.Controls.Add(this.container);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AlumnosInscripcionDesktop";
             this.Text = "AlumnosIncripcionDesktop";
             this.container.ResumeLayout(false);

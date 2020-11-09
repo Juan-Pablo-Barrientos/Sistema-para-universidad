@@ -190,7 +190,8 @@ namespace UI.Desktop
             if (cBCurso.SelectedItem == null) validador.AgregarError("Elija un curso");
             if (cBCondicion.SelectedItem == null) validador.AgregarError("Elija una condicion");            
             if (cBAlumno.SelectedItem == null) validador.AgregarError("Elija un Alumno");
-            if ((!AlumInsLogic.isInscripcionValid(cBAlumno.Text, cBCurso.Text)) & (Modo != ModoForm.Modificacion))
+                if (CursosLogic.IsCursoFull(cBCurso.Text)) validador.AgregarError("El curso esta lleno");
+                if ((!AlumInsLogic.isInscripcionValid(cBAlumno.Text, cBCurso.Text)) & (Modo != ModoForm.Modificacion))
                     validador.AgregarError("El Alumno ya esta inscripto en ese curso");
             }           
             if (!validador.EsValido()) BusinessLogic.Notificar("AlumnosInscripcion", validador.Errores, MessageBoxButtons.OK, MessageBoxIcon.Error);//Si no es valido, mustra el error

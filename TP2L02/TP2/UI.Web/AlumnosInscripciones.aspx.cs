@@ -281,8 +281,7 @@ namespace UI.Web
                     else
                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "No se pudo anotar", "alert('Este usuario ya está anotado o el curso esta lleno')", true);
                     break;
-
-                case FormModes.Alta:
+                    case FormModes.Alta:
                     if (AlumInsLogic.isInscripcionValid(Alumnoddl.Text, Cursoddl.Text) && !CursosLogic.IsCursoFull(Cursoddl.Text)) 
                     {
                     this.Entity = new AlumnosIncripcion();

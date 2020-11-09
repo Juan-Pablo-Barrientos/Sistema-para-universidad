@@ -34,16 +34,16 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvDocCur = new System.Windows.Forms.DataGridView();
-            this.tsDocenteCurso = new System.Windows.Forms.ToolStrip();
-            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
-            this.btnEditar = new System.Windows.Forms.ToolStripButton();
-            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.id_dictado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Docente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tsDocenteCurso = new System.Windows.Forms.ToolStrip();
+            this.btnNuevo = new System.Windows.Forms.ToolStripButton();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -136,6 +136,44 @@
             this.dgvDocCur.Size = new System.Drawing.Size(596, 314);
             this.dgvDocCur.TabIndex = 2;
             // 
+            // id_dictado
+            // 
+            this.id_dictado.DataPropertyName = "ID";
+            this.id_dictado.HeaderText = "ID Dicatado";
+            this.id_dictado.Name = "id_dictado";
+            // 
+            // id_curso
+            // 
+            this.id_curso.DataPropertyName = "IDCurso";
+            this.id_curso.HeaderText = "ID Curso";
+            this.id_curso.Name = "id_curso";
+            this.id_curso.Visible = false;
+            // 
+            // id_docente
+            // 
+            this.id_docente.DataPropertyName = "IDDOcente";
+            this.id_docente.HeaderText = "ID Docente";
+            this.id_docente.Name = "id_docente";
+            this.id_docente.Visible = false;
+            // 
+            // Curso
+            // 
+            this.Curso.HeaderText = "Curso";
+            this.Curso.Name = "Curso";
+            this.Curso.ReadOnly = true;
+            // 
+            // Docente
+            // 
+            this.Docente.HeaderText = "Docente";
+            this.Docente.Name = "Docente";
+            this.Docente.ReadOnly = true;
+            // 
+            // cargo
+            // 
+            this.cargo.DataPropertyName = "Cargo";
+            this.cargo.HeaderText = "Cargo";
+            this.cargo.Name = "cargo";
+            // 
             // tsDocenteCurso
             // 
             this.tsDocenteCurso.Dock = System.Windows.Forms.DockStyle.None;
@@ -179,44 +217,6 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
-            // id_dictado
-            // 
-            this.id_dictado.DataPropertyName = "ID";
-            this.id_dictado.HeaderText = "ID Dicatado";
-            this.id_dictado.Name = "id_dictado";
-            // 
-            // id_curso
-            // 
-            this.id_curso.DataPropertyName = "IDCurso";
-            this.id_curso.HeaderText = "ID Curso";
-            this.id_curso.Name = "id_curso";
-            this.id_curso.Visible = false;
-            // 
-            // id_docente
-            // 
-            this.id_docente.DataPropertyName = "IDDOcente";
-            this.id_docente.HeaderText = "ID Docente";
-            this.id_docente.Name = "id_docente";
-            this.id_docente.Visible = false;
-            // 
-            // Curso
-            // 
-            this.Curso.HeaderText = "Curso";
-            this.Curso.Name = "Curso";
-            this.Curso.ReadOnly = true;
-            // 
-            // Docente
-            // 
-            this.Docente.HeaderText = "Docente";
-            this.Docente.Name = "Docente";
-            this.Docente.ReadOnly = true;
-            // 
-            // cargo
-            // 
-            this.cargo.DataPropertyName = "Cargo";
-            this.cargo.HeaderText = "Cargo";
-            this.cargo.Name = "cargo";
-            // 
             // DocentesCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,6 +225,7 @@
             this.Controls.Add(this.toolStripContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "DocentesCursos";
             this.Text = "DocenteCurso";
             this.Load += new System.EventHandler(this.DocCur_Load);
