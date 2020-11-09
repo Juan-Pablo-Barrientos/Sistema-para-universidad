@@ -268,7 +268,7 @@ namespace UI.Web
                     break;
 
                 case FormModes.Modificacion:
-                    if (AlumInsLogic.isInscripcionValid(Alumnoddl.Text, Cursoddl.Text))
+                    if (AlumInsLogic.isInscripcionValid(Alumnoddl.Text, Cursoddl.Text) && !CursosLogic.IsCursoFull(Cursoddl.Text))
                     {
                    this.Entity = new AlumnosIncripcion();
                     this.Entity.ID = this.SelectedID;
@@ -279,19 +279,19 @@ namespace UI.Web
                     this.FormPanel.Visible = false;                 
                     }
                     else
-                   ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "No se pudo anotar", "alert('Este usuario ya está anotado')", true);
+                   ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "No se pudo anotar", "alert('Este usuario ya está anotado o el curso esta lleno')", true);
                     break;
 
                 case FormModes.Alta:
-                    if (AlumInsLogic.isInscripcionValid(Alumnoddl.Text, Cursoddl.Text)) 
+                    if (AlumInsLogic.isInscripcionValid(Alumnoddl.Text, Cursoddl.Text) && !CursosLogic.IsCursoFull(Cursoddl.Text)) 
                     {
-                        this.Entity = new AlumnosIncripcion();
+                    this.Entity = new AlumnosIncripcion();
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
-                     }
+                    }
                     else
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "No se pudo anotar", "alert('Este usuario ya está anotado')", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "No se pudo anotar", "alert('Este usuario ya está anotado o el curso esta lleno')", true);
                     break;
                     
             
