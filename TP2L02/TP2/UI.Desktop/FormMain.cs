@@ -67,7 +67,7 @@ namespace UI.Desktop
             formEspecializacion.ShowDialog();
             
         }
-
+        
         private void especialidadlistadoMenuStrip_Click(object sender, EventArgs e)
         {
             Especialidades formEspecializaciones = new Especialidades();

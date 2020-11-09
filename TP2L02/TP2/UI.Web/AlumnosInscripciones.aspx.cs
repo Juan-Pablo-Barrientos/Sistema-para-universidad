@@ -259,31 +259,48 @@ namespace UI.Web
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
+            
             switch (this.FormMode)
             {
                 case FormModes.Baja:
                     this.DeleteEntity(this.SelectedID);
                     this.LoadGrid();
                     break;
+
                 case FormModes.Modificacion:
-                    this.Entity = new AlumnosIncripcion();
+                    if (AlumInsLogic.isInscripcionValid(Alumnoddl.Text, Cursoddl.Text))
+                    {
+                   this.Entity = new AlumnosIncripcion();
                     this.Entity.ID = this.SelectedID;
                     this.Entity.State = BusinessEntity.States.Modified;
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
-                    this.FormPanel.Visible = false;
+                    this.FormPanel.Visible = false;                 
+                    }
+                    else
+                   ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "No se pudo anotar", "alert('Este usuario ya está anotado')", true);
                     break;
+
                 case FormModes.Alta:
-                    this.Entity = new AlumnosIncripcion();
+                    if (AlumInsLogic.isInscripcionValid(Alumnoddl.Text, Cursoddl.Text)) 
+                    {
+                        this.Entity = new AlumnosIncripcion();
                     this.LoadEntity(this.Entity);
                     this.SaveEntity(this.Entity);
                     this.LoadGrid();
+                     }
+                    else
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "No se pudo anotar", "alert('Este usuario ya está anotado')", true);
                     break;
-                default:
+                    
+            
+            default:
                     break;
             }
             this.FormPanel.Visible = false;
+            
+            
         }
         private void EnableForm(bool check)
         {

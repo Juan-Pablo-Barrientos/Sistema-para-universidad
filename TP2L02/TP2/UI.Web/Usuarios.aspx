@@ -1,6 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="UI.Web.Usuarios" %>
 <%@ Register src="usrCtrlFecha.ascx" tagname="usrCtrlFecha" tagprefix="uc1" %>
+
+    
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
+    <link href="~/CSS/StyleSheet1.css" rel="stylesheet" type="text/css" />
+
     <asp:Panel ID="gridPanel" runat="server">
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"
             SelectedRowStyle-BackColor="Black"

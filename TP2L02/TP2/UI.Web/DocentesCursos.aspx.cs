@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Globalization;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Business.Entities;
+﻿using Business.Entities;
 using Business.Logic;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.UI;
 
 namespace UI.Web
 {
@@ -121,7 +117,7 @@ namespace UI.Web
             {
                 this.GridView1.DataSource = this.Logic.GetAll();
                 cur = new DocCurLogic().GetAll();
-            }              
+            }
             this.GridView1.DataBind();
             for (int i = 0; i < cur.Count; i++)
             {
@@ -138,7 +134,7 @@ namespace UI.Web
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedID = (int)this.GridView1.SelectedValue;
-            if (UsuarioLogueado.ID != 0 && UsuarioLogueado.TiposUsuario.ToString() == "Docente") 
+            if (UsuarioLogueado.ID != 0 && UsuarioLogueado.TiposUsuario.ToString() == "Docente")
             {
                 var docCur = new DocCurLogic().getOne(this.SelectedID);
                 Session["idcurso"] = docCur.IDCurso;
@@ -175,7 +171,7 @@ namespace UI.Web
                         this.LoadForm(this.SelectedID);
                         this.EnableForm(true);
                     }
-                } 
+                }
             }
         }
 
@@ -184,7 +180,7 @@ namespace UI.Web
             List<Usuario> Usuarios = new UsuarioLogic().GetAll();
             List<Curso> Cursos = new CursosLogic().GetAll();
             this.Entity = this.Logic.getOne(id);
-            this.txtID.Text = this.Entity.ID.ToString();      
+            this.txtID.Text = this.Entity.ID.ToString();
             this.ddlCargo.SelectedValue = this.Entity.Cargo.ToString();
 
             foreach (var u in Usuarios.Where(u => u.ID == this.Entity.IDDocente))
@@ -243,21 +239,33 @@ namespace UI.Web
                     this.DeleteEntity(this.SelectedID);
                     this.LoadGrid();
                     break;
+
                 case FormModes.Modificacion:
-                    this.Entity = new DocenteCurso();
-                    this.Entity.ID = this.SelectedID;
-                    this.Entity.State = BusinessEntity.States.Modified;
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    this.formPanel.Visible = false;
+                    if (DocCurLogic.isInscripcionValid(ddlDocente.Text, ddlCurso.Text))
+                    {
+                        this.Entity = new DocenteCurso();
+                        this.Entity.ID = this.SelectedID;
+                        this.Entity.State = BusinessEntity.States.Modified;
+                        this.LoadEntity(this.Entity);
+                        this.SaveEntity(this.Entity);
+                        this.LoadGrid();
+                        this.formPanel.Visible = false;
+                    }
+                    else
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "No se pudo anotar", "alert('Este usuario ya está anotado')", true);
                     break;
                 case FormModes.Alta:
-                    this.Entity = new DocenteCurso();
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
+                    if (DocCurLogic.isInscripcionValid(ddlDocente.Text, ddlCurso.Text))
+                    {
+                        this.Entity = new DocenteCurso();
+                        this.LoadEntity(this.Entity);
+                        this.SaveEntity(this.Entity);
+                        this.LoadGrid();
+                    }
+                    else
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "No se pudo anotar", "alert('Este usuario ya está anotado')", true);
                     break;
+
                 default:
                     break;
             }
@@ -268,7 +276,7 @@ namespace UI.Web
             this.txtID.Enabled = check;
             this.ddlCargo.Enabled = check;
             this.ddlCurso.Enabled = check;
-            this.ddlDocente.Enabled = check;          
+            this.ddlDocente.Enabled = check;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -296,7 +304,7 @@ namespace UI.Web
         }
         private void ClearForm()
         {
-            this.txtID.Text = string.Empty;          
+            this.txtID.Text = string.Empty;
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)
