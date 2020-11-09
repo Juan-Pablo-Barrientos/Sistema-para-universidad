@@ -37,6 +37,9 @@
     border-color: black;
     height: 205px;
 }
+    .column.dark-mode {
+        border-color: grey;
+    }
 
 .separate {
     width: 50px;

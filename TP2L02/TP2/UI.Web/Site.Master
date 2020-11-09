@@ -8,8 +8,6 @@
     <link href="~/CSS/StyleSheet1.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
-
     <form id="bodyForm" runat="server">
 
         <div class="row">
@@ -48,9 +46,9 @@
 </html>
 
 <script>
-    
     if ($("#btnModo").attr('checked')) {
         $("body").addClass("dark-mode");
         $(".wrapper").addClass("dark-mode");
+        $(".column").addClass("dark-mode");
     }
 </script>
